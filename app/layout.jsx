@@ -1,9 +1,9 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import Header from "./src/components/Header/Header";
+import MobileNav from "./src/components/Header/MobileNav";
 const inter = Roboto({ 
   subsets: ["latin"],
-  weight:'400' 
+  weight:'400',
 });
 
 export const metadata = {
@@ -13,9 +13,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
+    <html lang="fr">
+      <body className={`${inter.className}`}>
+        <header>
+          <MobileNav className="md:hidden"/>
+        </header>
         <main>
         {children}
         </main>

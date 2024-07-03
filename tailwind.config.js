@@ -10,6 +10,12 @@ module.exports = {
       backgroundImage: {
       
       },
+      colors:{
+        'solid': '#0F5E35',
+        'contrast-1': '#F9F9F9',
+        'contrast-2': '#F1F4F2',
+        'contrast-3': '#0E2B1A', 
+     }
     },
   },
   plugins: [],
