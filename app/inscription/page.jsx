@@ -15,6 +15,11 @@ const prices = [
   { price: 145, category: "Jeunes - Loisirs", time: "2h/semaine - 50h/saison" },
 ];
 
+const times = [
+  {day: "Lundi", time: "18h00 - 20h00"},
+  {day: "Mercredi", time: "15h00 - 20h30"},
+]
+
 const documents = [
   { name: "Bordereau de demande de licence", pdf: "/club.pdf" },
   { name: "Fiche de renseignement jeune *", pdf: "" },
@@ -28,17 +33,26 @@ const documents = [
 
 export default function inscription() {
   return (
-    <section className="p-6 md:w-4/6 m-auto">
+    <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
 
       <h1 className="text-xl text-center font-bold p-4 mb-8">Inscrivez-vous à nimporte quelle période de l&apos;année !</h1>
 
-      <div className="mb-8 ">
+      <div className="flex justify-between mb-8 ">
+        <div>
         <p>
           <strong>TT Farguais</strong>
         </p>
         <p>Carré des Forges</p>
         <p>3 av. de la Laurence</p>
         <p>33370 Fargues Saint Hilaire</p>
+        </div>
+        <div>
+          {times.map((time, index) => (
+            <p key={index}>
+              <span className="font-bold">{time.day}:</span> {time.time}
+            </p>
+          ))}
+        </div>
       </div>
 
       <section className="flex flex-col gap-4 mb-8 ">
