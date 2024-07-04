@@ -58,7 +58,7 @@ export default function MobileNav() {
         <ul className="flex flex-col items-center gap-10 text-xl">
           {urls.map((url, index) => (
             <li key={index}>
-              <Link href={url.path} className="px-2 py-4">{url.name}</Link>
+              <Link href={url.path} className="px-2 py-4 font-bold">{url.name}</Link>
             </li>
           ))}
         </ul>
@@ -68,7 +68,7 @@ export default function MobileNav() {
       <ul className="flex  items-center gap-5 lg:gap-10 p-4 " >
           {urls.map((url, index) => (
             <li key={index}>
-              <Link href={url.path} className="px-2 py-4">{url.name}</Link>
+              <Link href={url.path} className="px-2 py-4 font-bold hover:text-solid">{url.name}</Link>
             </li>
           ))}
         </ul>
