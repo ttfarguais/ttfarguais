@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'ttfarguais': 'url("/club.jpg")',
+        'ttfCreate': 'url("/Create.jpg")',
       },
       colors:{
         'solid': '#0F5E35',
