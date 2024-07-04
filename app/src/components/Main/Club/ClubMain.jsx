@@ -8,7 +8,7 @@ export default function ClubMain({membres}) {
 
     <article className="flex flex-col lg:flex-1 gap-4">
 
-    <div className="gap-4 sm:p-10 text-justify">
+    <div className="gap-4 sm:p-10 text-justify lg:w-4/6 m-auto">
     
     {/* <Image src={TTFCreate} width={500} height={500}  alt="Logo TTFarguais" className="m-auto mb-10 lg:float-right lg:ml-4 lg:mb-4"/> */}
     {/* <div className="mb-4"> */}
