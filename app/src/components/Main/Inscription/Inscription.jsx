@@ -4,8 +4,8 @@ export default function Inscription({times, prices, documents}) {
 
       <h1 className="text-xl text-center font-bold p-4 mb-8">Inscrivez-vous à n&apos;importe quelle période de l&apos;année !</h1>
 
-      <div className="flex justify-between mb-8 ">
-        <div>
+      <div className="flex flex-col md:flex-row justify-between mb-8 ">
+        <div className="mb-4 md:mb-0">
         <p>
           <strong>TT Farguais</strong>
         </p>

@@ -58,7 +58,7 @@ export default function Navbar() {
         <ul className="flex flex-col items-center gap-10 text-xl">
           {urls.map((url, index) => (
             <li key={index}>
-              <Link href={url.path} className="px-2 py-4 font-bold">{url.name}</Link>
+              <Link onClick={() => setBurgerMenu(!burgerMenu)} href={url.path} className="px-2 py-4 font-bold">{url.name}</Link>
             </li>
           ))}
         </ul>
