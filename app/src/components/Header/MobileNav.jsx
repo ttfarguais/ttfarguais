@@ -31,7 +31,7 @@ export default function Navbar() {
   function CloseIcoMenu() {
     return (
       <IoClose
-            className="md:hidden absolute right-5 z-50 w-10 h-10 text-contrast-1"
+            className="md:hidden fixed right-5 z-50 w-10 h-10 text-contrast-1"
             onClick={() => setBurgerMenu(!burgerMenu)}
           />
     )
