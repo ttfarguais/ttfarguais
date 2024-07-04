@@ -1,6 +1,12 @@
-'use client'
-import ClubMain from "../src/components/Main/Club/ClubMain"
-import Cover from "../src/components/Main/Club/Cover"
+import ClubMain from "../src/components/Main/Club/ClubMain";
+import Cover from "../src/components/Main/Club/Cover";
+
+export const metadata = {
+  title: "TTFarguais - Le Club",
+  description:
+    "Club de tennis de table de Fargues Saint Hilaire depuis 1992. Toutes notre histoire et nos membres.",
+};
+
 export default function leClubPage (){
  
   const membres = [

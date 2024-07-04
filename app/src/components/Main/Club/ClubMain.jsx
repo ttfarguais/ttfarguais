@@ -9,11 +9,8 @@ export default function ClubMain({membres}) {
     <article className="flex flex-col lg:flex-1 gap-4">
 
     <div className="gap-4 sm:p-10 text-justify lg:w-4/6 m-auto">
-    
-    {/* <Image src={TTFCreate} width={500} height={500}  alt="Logo TTFarguais" className="m-auto mb-10 lg:float-right lg:ml-4 lg:mb-4"/> */}
-    {/* <div className="mb-4"> */}
    
-    <p  className="mb-4">
+    <p className="mb-4">
         Créé à l’initiative d’<span className="font-bold">Alain MOTILLON</span> au cours de l’automne 1991, le <strong>TENNIS DE TABLE FARGUAIS</strong> obtient l’accord de la municipalité de <strong>FARGUES-St-HILAIRE</strong> afin d’utiliser la salle des fêtes pour ses entraînements et ses compétitions, puis dépose ses statuts en avril 1992, s’affilie à la FFTT et engage ainsi ses premières équipes en compétition pour la saison 1992/1993.
       </p> 
       <p className="mb-4">
@@ -37,10 +34,6 @@ export default function ClubMain({membres}) {
       </p>
     </div>
     
-    {/* <div className="flex  w-full  justify-center lg:order-first items-center">
-      <Image src={TTFCreate} width={500} height={500}  alt="Logo TTFarguais"/>
-    </div> */}
-    {/* </div> */}
     </article>
 
 
