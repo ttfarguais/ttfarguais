@@ -39,7 +39,7 @@ export default function Footer(){
         </div>
   
       <div className="flex flex-col items-center gap-2 text-xs sm:text-sm">
-        <p>&copy; 2024 TTFarguais</p>
+        <p>&copy; 2024 <strong>TTFarguais</strong></p>
         <p>Site réalisé par <a href="https://romain-hernandez.com/" className="">Roms</a> et <a href="/">Barenko</a></p>
       </div>
     </div>
