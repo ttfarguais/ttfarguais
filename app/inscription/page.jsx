@@ -26,14 +26,14 @@ export default function inscription() {
   ]
   
   const documents = [
-    { name: "Bordereau de demande de licence", pdf: "/licence.pdf" },
-    { name: "Fiche de renseignement jeune *", pdf: "/fiche-renseignements-jeunes.pdf" },
+    { name: "Bordereau de demande de licence", pdf: "/pdf/licence.pdf" },
+    { name: "Fiche de renseignement jeune *", pdf: "/pdf/fiche-renseignements-jeunes.pdf" },
     {
       name: "Certificat pour médical pour la pratique du tennis de table",
-      pdf: "/certificat-medical.pdf",
+      pdf: "/pdf/certificat-medical.pdf",
     },
-    { name: "Questionnaire de Santé pour personne Majeur *", pdf: "/autoquestionnaire-medical-majeur.pdf" },
-    { name: "Questionnaire de Santé pour personne Mineur *", pdf: "/autoquestionnaire-medical-mineur.pdf" },
+    { name: "Questionnaire de Santé pour personne Majeur *", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
+    { name: "Questionnaire de Santé pour personne Mineur *", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
   ];
 
   return (

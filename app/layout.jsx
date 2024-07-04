@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
+import AnnouceBar from "./src/components/Header/AnnouceBar";
 import Navbar from "./src/components/Header/MobileNav";
 const inter = Roboto({ 
   subsets: ["latin"],
@@ -13,10 +14,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  const announce = "Rejoignez-nous pour les championnats régionaux ce samedi !";
+
   return (
     <html lang="fr">
       <body className={`${inter.className}`}>
         <header>
+          <AnnouceBar text={announce} />
           <Navbar />
         </header>
         <main>
