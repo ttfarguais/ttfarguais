@@ -22,7 +22,7 @@ export default function Navbar() {
   function IcoMenu() {
     return (
       <GiHamburgerMenu
-            className="md:hidden absolute right-5 z-10 w-10 h-10"
+            className="md:hidden absolute right-5 w-10 h-10 text-contrast-3"
             onClick={() => setBurgerMenu(!burgerMenu)}
           />
     )
@@ -31,7 +31,7 @@ export default function Navbar() {
   function CloseIcoMenu() {
     return (
       <IoClose
-            className="md:hidden absolute right-5 z-10 w-10 h-10 text-contrast-1"
+            className="md:hidden absolute right-5 z-50 w-10 h-10 text-contrast-1"
             onClick={() => setBurgerMenu(!burgerMenu)}
           />
     )
@@ -39,7 +39,7 @@ export default function Navbar() {
   
   return (
 
-    <section className={`relative md:flex md:justify-between border-b md:px-10`}>
+    <section className={`relative md:flex md:justify-between border-b md:px-10 text-contrast-3`}>
 
       <div className="flex justify-between items-center p-6">
         <Link href="/" className="w-16 sm:w-24">
@@ -51,7 +51,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`md:hidden fixed top-0 flex flex-col justify-center bg-solid text-contrast-1 h-lvh w-full transition-all ${
+        className={`md:hidden fixed z-10 top-0 flex flex-col justify-center bg-solid text-contrast-1 h-lvh w-full transition-all ${
           burgerMenu ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
