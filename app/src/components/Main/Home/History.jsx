@@ -1,6 +1,6 @@
 export default function History() {
   return (
-    <section className="p-2 flex flex-col gap-4 mb-10 items-center">
+    <section className="p-2 flex flex-col gap-4 mb-16 items-center">
       <h2 className="text-center font-bold uppercase text-xl">Quelques mots</h2>
       <article className="text-center flex flex-col gap-2 p-2 sm:w-4/6 xl:w-2/6">
         <p>

@@ -9,7 +9,7 @@ const announcements = [
 
 export default function Announcement() {
   return (
-    <section className="bg-contrast-2 border-t flex flex-col items-center ">
+    <section className="bg-contrast-2 border-t flex flex-col items-center py-6">
       {announcements.map((announcement, index) => (
         <AnnouncementCard 
           src={announcement.src}
@@ -18,6 +18,7 @@ export default function Announcement() {
           alt={announcement.alt}
           title={announcement.title}
           description={announcement.description}
+          isLast={index === announcements.length - 1}
         />
       ))}
     </section>

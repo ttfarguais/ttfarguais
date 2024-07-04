@@ -3,7 +3,7 @@ export default function Cover(){
   return (
    <section>
 
-<section className="mb-10">
+<section className="mb-16">
       <div className={`relative flex w-full h-56 sm:h-68 md:h-72 lg:h-96  bg-ttfarguais bg-cover items-end px-8 py-6 sm:p-10 md:p-16 lg:justify-center`}>
         <div aria-hidden="true" className="absolute z-0 inset-0 w-full bg-black opacity-60 h-56 sm:h-68 md:h-72 lg:h-96" ></div>
         <div className="relative text-contrast-1 xl:w-4/6">

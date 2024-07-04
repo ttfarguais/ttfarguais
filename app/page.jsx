@@ -5,9 +5,8 @@ export default function Home() {
   return (
     <main>
      <Cover />
-     <Announcement />
-     <Cover />
       <History />
+     <Announcement />
     </main>
   );
 }
