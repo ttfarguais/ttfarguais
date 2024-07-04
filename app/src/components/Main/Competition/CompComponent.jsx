@@ -10,7 +10,7 @@ export default function compComponent({ images, titre }) {
         </div>
         <div className="flex flex-wrap gap-5 m-auto justify-center">
         {Array.isArray(images) ? images.map((img, index) => (
-          <a key={index} href={img} target="_blank" rel="noopener noreferrer" className="shadow-xl">
+          <a key={index} href={img} target="_blank" rel="noopener noreferrer" className="shadow-2xl">
             <Image src={img} width={300} height={300} alt="test" />
           </a>
         )) : null}
