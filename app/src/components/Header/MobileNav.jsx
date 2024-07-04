@@ -16,7 +16,7 @@ const urls = [
 
 
 
-export default function MobileNav() {
+export default function Navbar() {
   const [burgerMenu, setBurgerMenu] = useState(false);
 
   function IcoMenu() {
@@ -39,7 +39,7 @@ export default function MobileNav() {
   
   return (
 
-    <header className={`relative md:flex md:justify-between border-b`}>
+    <section className={`relative md:flex md:justify-between border-b md:px-10`}>
 
       <div className="flex justify-between items-center p-6">
         <Link href="/" className="w-16 sm:w-24">
@@ -74,6 +74,6 @@ export default function MobileNav() {
         </ul>
       </div>
 
-    </header>
+    </section>
   );
 }
