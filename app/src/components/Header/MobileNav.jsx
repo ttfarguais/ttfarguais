@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import TTFLogo from "../../../../public/TTFargues-logo-Contour.svg";
+import TTFLogo from "../../../../public/TTFargues-logo-Plein.svg";
 const urls = [
   { name: "Accueil", path: "/" },
   { name: "Le club", path: "/leclub" },
