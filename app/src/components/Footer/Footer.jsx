@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 export default function Footer(){
   return (
   <section>
-    <div className="flex flex-col bg-solid text-contrast-1 p-6 ">
+    <div className="flex flex-col bg-solid text-contrast-1 px-8 py-6 ">
       <div className="flex justify-between sm:justify-around mb-10 w-full">
         <div className="flex flex-col gap-2 text-xs sm:text-sm sm:text-center">
           <h3 className="font-bold text-sm sm:text-lg">Retrouvez-nous</h3>

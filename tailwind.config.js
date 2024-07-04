@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-      
+        'ttfarguais': 'url("/club.jpg")',
       },
       colors:{
         'solid': '#0F5E35',
