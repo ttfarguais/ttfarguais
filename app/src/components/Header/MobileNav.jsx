@@ -43,7 +43,13 @@ export default function Navbar() {
 
       <div className="flex justify-between items-center p-6">
         <Link href="/" className="w-16 sm:w-24">
-          <Image src={TTFLogo} width={500} height={500} alt="logo TTfarguais" />
+          <Image src={TTFLogo}
+          width={500}
+          height={500}
+          alt="logo TTfarguais"
+          className="w-auto"
+          />
+          
         </Link>
 
         {!burgerMenu ? IcoMenu() : CloseIcoMenu()}
@@ -51,7 +57,7 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`md:hidden fixed z-10 top-0 flex flex-col justify-center bg-solid text-contrast-1 h-lvh w-full transition-all ${
+        className={`md:hidden fixed z-20 top-0 flex flex-col justify-center bg-solid text-contrast-1 h-lvh w-full transition-all ${
           burgerMenu ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

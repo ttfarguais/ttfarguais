@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 export default function Footer(){
   return (
-  <section>
+  <>
     <div className="flex flex-col bg-solid text-contrast-1 px-8 pb-6 pt-10 ">
       <div className="flex flex-row-reverse justify-center items-center gap-16 mb-10 w-full">
         <div className="flex flex-col gap-2 text-xs sm:text-sm ">
@@ -27,6 +27,6 @@ export default function Footer(){
         <p>Site réalisé par <a href="https://romain-hernandez.com/" className="" target="_blank" >Roms</a> et <a href="/" target="_blank">Barenko</a></p>
       </div>
     </div>
-  </section>
+  </>
   )
 }

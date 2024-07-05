@@ -1,5 +1,5 @@
-import Image from "next/image"
-import ButtonGreen from "../../ButtonGreen"
+import Image from "next/image";
+import ButtonGreen from "../../ButtonGreen";
 
 export default function AnnouncementCard({ src, alt, title, description, url, isLast }) {
   // Condition pour déterminer s'il s'agit du dernier élément
@@ -11,8 +11,9 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
         <Image
           className="absolute top-0 left-0 h-full w-full object-cover"
           src={src}
-          layout="fill"
           alt={alt}
+          width={500}
+          height={500}
         />
       </div>
       <div className="p-4 sm:w-2/4">
