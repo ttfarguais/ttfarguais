@@ -8,7 +8,7 @@ export default function competitionPage (){
 
   return (
     <>
-    <h1 className="text-center font-bold p-6 text-lg">Competition</h1>
+    <h1 className="text-center font-bold p-6 text-xl">Competition</h1>
     <CompComponent images={imageCompet} titre={"Fiche de  competitions"}/>
     <CompComponent images={imageCompetiteur} titre={'Fiches Competiteur'}/>
     </>

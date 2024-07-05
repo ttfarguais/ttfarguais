@@ -41,7 +41,7 @@ export default function ClubMain({membres}) {
 
     <section className="bg-contrast-2 px-4 py-10">
       <h1 className="text-center text-lg font-bold uppercase mb-10">Membres du bureau</h1>
-      <div className="flex gap-6 md:gap-10  justify-center flex-wrap">
+      <div className="flex gap-6 md:gap-16  justify-center flex-wrap">
       {membres.map((membre, index) =>(
       <MemberCard membre={membre} key={index}></MemberCard>
       ))}
