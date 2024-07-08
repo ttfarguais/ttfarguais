@@ -1,10 +1,10 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
-export async function GET() {
-  return NextResponse.json({
-    message: "Hello world!"
-  });
-}
+// export async function GET() {
+//   return NextResponse.json({
+//     message: "Hello world!"
+//   });
+// }
 
 // export default async function handler(req, res) {
 //   const response = await GET();
