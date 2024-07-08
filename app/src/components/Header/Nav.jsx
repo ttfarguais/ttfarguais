@@ -11,7 +11,7 @@ export default function Nav() {
     {
       title: "Le club",
       url: "/leclub",
-      subLinks: [{ title: "Entrainement", url: "/entrainement" }],
+      subLinks: [{ title: "Entrainements", url: "/entrainements" }],
     },
     { title: "Inscription", url: "/inscription" },
     { title: "Compétition", url: "/competition" },

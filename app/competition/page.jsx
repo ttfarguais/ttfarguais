@@ -1,5 +1,11 @@
-'use client'
-import CompComponent from "../src/components/Main/Competition/CompComponent"
+import CompComponent from "../src/components/Main/Competition/CompComponent";
+
+export const metadata = {
+  title: "TTFarguais - Compétition",
+  description:
+    "Retrouvez toutes les informations relatives aux compétitions du club de tennis de table de Fargues Saint Hilaire.",
+};
+
 export default function competitionPage (){
   
  const imageCompet = ["/competition/compet-1.jpg","/competition/compet-2.jpg","/competition/compet-3.jpg","/competition/compet-4.jpg","/competition/compet-5.jpg"]
