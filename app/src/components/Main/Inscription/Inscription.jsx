@@ -28,7 +28,7 @@ export default function Inscription({times, prices, documents}) {
           {prices.map((price, index) => (
             <li key={index}>
               <p>
-                <span className="font-bold">- {price.price}</span>: {price.category}{" "}
+                <span className="font-bold">- {price.price} €</span>: {price.category}{" "}
                 {price.time ? `(${price.time})` : null}.
               </p>
             </li>
@@ -46,7 +46,7 @@ export default function Inscription({times, prices, documents}) {
         <p  className="font-bold mb-4">- Certificat médical fortement conseillé pour les jeunes.</p>
 
         <div>
-          <h2 className="mb-8">
+          <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
             Documents à fournir (<span>* À fournir obligatoirement</span>)
           </h2>
           <ul className="flex flex-col gap-6">

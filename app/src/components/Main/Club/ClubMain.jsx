@@ -6,9 +6,11 @@ export default function ClubMain({membres}) {
     <>
     <section className="flex flex-col lg:flex-row gap-10 sm:gap-2 p-6 text-center lg:text-left">
 
-    <article className="flex flex-col lg:flex-1 gap-4">
+    <article className="flex flex-col lg:flex-1 gap-4 items-center mt-8">
+    <h1 className="text-xl font-bold">Tennis de Table Farguais : Une Aventure Sportive et Communautaire</h1>
 
     <div className="gap-4 sm:p-10 text-justify lg:w-4/6 m-auto">
+
    
     <p className="mb-4">
         Créé à l’initiative d’<span className="font-bold">Alain MOTILLON</span> au cours de l’automne 1991, le <strong>TENNIS DE TABLE FARGUAIS</strong> obtient l’accord de la municipalité de <strong>FARGUES-St-HILAIRE</strong> afin d’utiliser la salle des fêtes pour ses entraînements et ses compétitions, puis dépose ses statuts en avril 1992, s’affilie à la FFTT et engage ainsi ses premières équipes en compétition pour la saison 1992/1993.
