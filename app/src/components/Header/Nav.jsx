@@ -92,7 +92,7 @@ export default function Nav() {
           >
             <Link
               href={link.url}
-              className="flex items-center py-2 px-6  hover:bg-solid transition hover:text-white rounded-xl "
+              className="flex items-center py-2 px-6 gap-4 hover:bg-solid transition hover:text-white rounded-xl "
             >
               {link.title}{" "}
               {link.subLinks ? <IoArrowDown className="inline" /> : null}
