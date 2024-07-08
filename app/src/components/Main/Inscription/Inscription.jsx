@@ -1,5 +1,7 @@
+import Maps from "../Maps"
 export default function Inscription({times, prices, documents}) {
   return (
+    <>
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
 
       <h1 className="text-xl text-center font-bold p-4 mb-8">Inscrivez-vous à n&apos;importe quelle période de l&apos;année !</h1>
@@ -57,7 +59,7 @@ export default function Inscription({times, prices, documents}) {
                   <a
                     href={document.pdf}
                     download={`${document.pdf}.pdf`}
-                    className="text-contrast-1 py-1 px-4 rounded-xl bg-solid text-sm hover:bg-contrast-3 transition-all"
+                    className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
                     aria-label={`Télécharger ${document.name}`}
                   >
                     Télécharger
@@ -68,7 +70,11 @@ export default function Inscription({times, prices, documents}) {
           </ul>
         </div>
       </section>
-    
+       
     </section>
+       <section className="w-full">
+       <Maps></Maps>
+     </section>
+    </>
   )
 }

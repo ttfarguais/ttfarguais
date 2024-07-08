@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 
-export default function inscription() {
+export default function inscriptionPage() {
 
   const prices = [
     { price: 120, category: "Adultes - Compétiteurs" },
