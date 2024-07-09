@@ -53,7 +53,7 @@ export default function Nav() {
             <div className="flex items-center gap-5 mb-4 sm:mb-6">
               <Link
                 href={link.url}
-                className="flex items-center hover:bg-solid transition hover:text-white rounded-xl  gap-6"
+                className="flex items-center hover:bg-solid transition hover:text-white rounded-xl  gap-6 uppercase"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
                 {link.title}
@@ -72,6 +72,7 @@ export default function Nav() {
                     <Link
                       href={subLink.url}
                       onClick={() => setMenuOpen(!menuOpen)}
+                      className="uppercase"
                     >
                       {subLink.title}
                     </Link>
@@ -82,7 +83,7 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-      <ul className="hidden lg:flex">
+      <ul className="hidden lg:flex gap-2">
         {navLinks.map((link, index) => (
           <li
             key={index}
@@ -92,7 +93,7 @@ export default function Nav() {
           >
             <Link
               href={link.url}
-              className="flex items-center py-2 px-6 gap-4 hover:bg-solid transition hover:text-white rounded-xl "
+              className="flex items-center py-2 px-6 gap-4 hover:bg-solid transition hover:text-white rounded-xl uppercase"
             >
               {link.title}{" "}
               {link.subLinks ? <IoArrowDown className="inline" /> : null}
@@ -103,7 +104,7 @@ export default function Nav() {
                   <li className="flex flex-col " key={subIndex}>
                     <Link
                       href={subLink.url}
-                      className="curved-underline py-2 px-6 hover:bg-solid transition hover:text-white bg-white rounded-xl text-center"
+                      className="curved-underline py-2 px-6 hover:bg-solid transition hover:text-white bg-white rounded-xl text-center uppercase"
                     >
                       {subLink.title}
                     </Link>

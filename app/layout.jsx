@@ -11,7 +11,7 @@ const inter = Roboto({
 
 export const metadata = {
   title: "TTFarguais - Accueil",
-  description: "Club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives au club.",
+  description: "Club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives au club. Venez nous rejoindre !",
 };
 
 export default function RootLayout({ children }) {
