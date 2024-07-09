@@ -11,10 +11,12 @@ export default function Nav() {
     {
       title: "Le club",
       url: "/leclub",
-      subLinks: [{ title: "Entrainements", url: "/entrainements" }],
+      subLinks: [{ title: "Entrainements", url: "/entrainements" },
+        { title: "Le bureau", url: "/bureau" }
+      ],
     },
     { title: "Inscription", url: "/inscription" },
-    { title: "Compétition", url: "/competition"},
+    { title: "Compétition", url: "/competition"  },
     { title: "Contact", url: "/contact" },
   ];
 
@@ -83,8 +85,6 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-
-      {/* desktop */}
       <ul className="hidden lg:flex gap-2">
         {navLinks.map((link, index) => (
           <li
@@ -101,7 +101,7 @@ export default function Nav() {
               {link.subLinks ? <IoArrowDown className="inline" /> : null}
             </Link>
             {link.subLinks && activeIndex === index && (
-              <ul className="absolute left-0 top-10 flex flex-col">
+              <ul className="absolute top-10 flex flex-col">
                 {link.subLinks.map((subLink, subIndex) => (
                   <li className="flex flex-col " key={subIndex}>
                     <Link

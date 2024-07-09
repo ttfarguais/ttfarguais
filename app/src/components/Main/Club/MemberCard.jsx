@@ -7,7 +7,7 @@ export default function MemberCard({membre}){
     width={100}
     height={100}
     alt="photo des membres du bureau"
-    className="m-auto w-32 h-32 object-cover object-top"/>
+    className="m-auto w-32 h-32 object-cover object-top rounded-xl"/>
     <strong className="text-center">{membre.lastname} {membre.firstname}</strong>
   </article>
   )
