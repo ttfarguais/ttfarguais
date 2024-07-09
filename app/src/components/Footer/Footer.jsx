@@ -76,7 +76,7 @@ export default function Footer() {
               Roms
             </a>{" "}
             &{" "}
-            <a href="/" target="_blank">
+            <a href="https://www.linkedin.com/in/ugo-matassa/" target="_blank">
               Barenko
             </a>
           </p>

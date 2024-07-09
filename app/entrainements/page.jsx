@@ -1,4 +1,4 @@
-import Training from "../src/components/Main/training/Traning";
+import Training from "../src/components/Main/Training/Traning";
 
 export const metadata = {
   title: "TTFarguais - Entrainements",

@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ArticlePage({}) {
 const roms = "https://romain-hernandez.com/";
-const barenko = "https://www.barenko.com/";
+const barenko = "https://www.linkedin.com/in/ugo-matassa/";
 
   return (
     <section className="mb-16 md:w-4/6 m-auto 2xl:w-3/6">
