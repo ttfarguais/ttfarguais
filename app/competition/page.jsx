@@ -23,13 +23,11 @@ export default function competitionPage (){
           name: "Départemental 4",
           image: D4,
           alt: "fiche de compétition départemental 4",
-          info:""
         },
         D2: {
           name: "Départemental 2",
           image: D2,
           alt: "fiche de compétition départemental 2",
-          info:""
         },
       },
     },
@@ -40,7 +38,6 @@ export default function competitionPage (){
           name: "Régional 3",
           image: R3,
           alt: "fiche de compétition régional 3",
-          info:""
         },
       },
     },
@@ -51,7 +48,6 @@ export default function competitionPage (){
           name: "Pré-Régional",
           image: PR ,
           alt: "fiche de compétition pré-régional",
-          info:""
         },
       },
     },
@@ -62,7 +58,6 @@ export default function competitionPage (){
           name: "Critérium 1",
           image: CRIT,
           alt: "fiche de compétition critérium",
-          info:""
         },
       },
     },

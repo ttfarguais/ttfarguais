@@ -7,15 +7,15 @@ export const metadata = {
 
 export default function ClassementPage() {
   const stageFile = {
-    stage2: "/competition/classement.jpg",
+    stage2: "/competition/classementJoueurs/classement.jpg",
   };
 
   const monthlyProgressionFile = {
-    Mai: "/competition/progressionMensuelle.jpg",
+    Mai: "/competition/progressionMensuelle/progressionMensuelle.jpg",
   };
 
   const seasonProgressionFile = {
-    2024: "/competition/progressionSaison.jpg",
+    2024: "/competition/progressionSaison/progressionSaison.jpg",
   };
 
   const stageClassements = [
