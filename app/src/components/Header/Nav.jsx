@@ -27,7 +27,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky z-50 flex lg:flex-col px-8 sm:px-8 py-6 items-center justify-between gap-4 border-b bg-white">
+    <nav className="sticky z-50 flex lg:flex-col px-8 sm:px-8 py-6 lg:py-12 items-center justify-between gap-10 border-b bg-white ">
       <Link href="/" className="w-16 md:w-20">
         <Image src={TTFLogo} alt="Logo de The House Of Art" width={100} height={100} className="w-auto"/>
       </Link>

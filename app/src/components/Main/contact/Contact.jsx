@@ -58,12 +58,12 @@ export default function Contact() {
   const isValid = regex.test(formData.email);
 
   return (
-    <div className="py-8 px-4 flex flex-col items-center m-auto gap-8">
-      <h1 className="text-xl font-bold">Contactez-nous !</h1>
+    <div className=" flex flex-col items-center m-auto gap-8 py-6">
+      <h1 className="text-xl text-center font-bold p-4 mb-8">Contactez-nous !</h1>
       {responseMessage ? <p className="py-2 px-4 bg-solid text-contrast-1 rounded-xl">{responseMessage}</p> : null}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6"
+        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6"
       >
         <div className="flex flex-col gap-4">
           <p>Si votre demande concerne une inscription, nous vous demandons, afin de traiter au mieux votre demande, de bien vouloir <span className="font-bold">ajouter les informations suivantes</span> :</p>

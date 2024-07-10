@@ -38,7 +38,12 @@ export default function inscriptionPage() {
     { name: "Questionnaire de Santé pour personne Mineur *", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
   ];
 
+  const trainingStartDate = [
+    {name: "adultes", date: "lundi 2 septembre 2024"},
+    {name: "jeunes", date: "mercredi 11 septembre 2024"}
+  ]
+
   return (
-   <Inscription times={times} prices={prices} documents={documents}></Inscription>
+   <Inscription times={times} prices={prices} documents={documents} trainingStartDate={trainingStartDate}></Inscription>
   );
 }

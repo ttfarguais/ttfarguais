@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  const announce = "Les entraînements reprennent le 1er septembre 2024, on vous attend nombreux !";
+  const announce = "Les entraînements reprennent en septembre 2024, on vous attend nombreux !";
   const link = "/inscription";
 
   return (

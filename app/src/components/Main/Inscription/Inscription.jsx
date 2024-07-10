@@ -1,5 +1,5 @@
 import Maps from "../Maps"
-export default function Inscription({times, prices, documents}) {
+export default function Inscription({times, prices, documents, trainingStartDate}) {
   return (
     <>
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
@@ -22,6 +22,12 @@ export default function Inscription({times, prices, documents}) {
             </p>
           ))}
         </div>
+      </div>
+
+      <div className="flex flex-col gap-2 mb-6">
+        {trainingStartDate.map((age, index) => (
+          <p key={index} className="text-xl font-bold text-solid  px-4 py-2 bg-contrast-2 rounded-xl">Reprise des entrainement {age.name} le {age.date}</p>
+        ))}
       </div>
 
       <section className="flex flex-col gap-4 mb-8 ">
@@ -56,7 +62,7 @@ export default function Inscription({times, prices, documents}) {
           </h2>
           <ul className="flex flex-col gap-6">
             {documents.map((document, index) => (
-              <li key={index} className="flex items-center justify-between hover:bg-contrast-2">
+              <li key={index} className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
                 <p className="text-sm mr-4">{document.name}:</p>
                 <div>
                   <a

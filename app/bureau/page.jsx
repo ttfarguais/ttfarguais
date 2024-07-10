@@ -10,8 +10,10 @@ export default function BureauPage(){
 
   const membres = [
     {firstname:"Jeremy", lastname:"THEVENET", job:"Président", img:"/imgClub/istockphoto-1464243593-1024x1024.jpg", alt: "Photo de Jeremy Thevenet"},
+    {firstname:"Hugues", lastname:"CHAN-NG-YOK", job:"Vice-Président", img:"/imgClub/istockphoto-1464243593-1024x1024.jpg", alt: "Photo de Jeremy Thevenet"},
     {firstname:"Patrick", lastname:"MARTINEAU", job:"Trésorier", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Patrick Martineau"},
     {firstname:"Stéphane", lastname:"AIMEE", job:"Secrétaire", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Stéphane Aimee"},
+    {firstname:"José", lastname:"DUARTE", job:"Secrétaire-adjoint", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Stéphane Aimee"},
     {firstname:"Maxime", lastname:"TOURNEAUX", job:"Entaineur", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Maxime Tourneaux"},
     {firstname:"Emmanuel", lastname:"BOS", job:"Media", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Emmanuel Bos"},
   ]
