@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import FSH from "../../../../public/FSH.jpg";
 import Gironde from "../../../../public/Gironde.jpg";
 export default function Footer() {
   return (
     <>
       <div className="flex flex-col bg-solid text-contrast-1 px-8 pb-6 pt-10 ">
-        <div className="flex flex-col md:flex-row justify-center items-center mb-10 w-full">
+        <div className="flex flex-col lg:flex-row justify-center items-center mb-10 w-full">
           
-        <div className="flex flex-row-reverse justify-center items-center gap-16 mb-10 md:flex-row md:mb-0 w-full">
+        <div className="flex flex-row-reverse justify-center items-center gap-16 mb-10 lg:flex-row lg:mb-0 w-full">
           <div className="flex flex-col gap-2 text-xs sm:text-sm ">
             <div>
               <p>Carré des Forges</p>
@@ -40,7 +41,8 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="hidden md:flex">
+
+          <div className="hidden lg:flex gap-6">
             <Image
               src={Gironde}
               width={150}
@@ -48,18 +50,34 @@ export default function Footer() {
               className="w-auto"
               alt="Logo Gironde, le département"
             ></Image>
-          </div>
-        </div>
-        <div className="md:hidden">
             <Image
-              src={Gironde}
+              src={FSH}
               width={150}
               height={150}
               className="w-auto"
-              alt="Logo Gironde, le département"
+              alt="Logo Fargues saint hilaire, la commune"
             ></Image>
           </div>
 
+        </div>
+
+        <div className="flex gap-6 lg:hidden">
+            <Image
+              src={Gironde}
+              width={150}
+              height={150}
+              className="w-auto"
+              alt="Logo Gironde, le département"
+            ></Image>
+            <Image
+              src={FSH}
+              width={150}
+              height={150}
+              className="w-auto"
+              alt="Logo Fargues saint hilaire, la commune"
+            ></Image>
+          </div>
+  
         </div>
 
         <div className="flex flex-col items-center gap-2 text-xs sm:text-sm">
