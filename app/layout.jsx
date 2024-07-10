@@ -2,7 +2,6 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
 import AnnouceBar from "./src/components/Header/AnnouceBar";
-// import Navbar from "./src/components/Header/MobileNav";
 import Nav from './src/components/Header/Nav';
 const inter = Roboto({ 
   subsets: ["latin"],
@@ -16,13 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  const announce = "Rejoignez-nous pour les championnats régionaux ce samedi !";
+  const announce = "Les entraînements reprennent le 1er septembre 2024, on vous attend nombreux !";
+  const link = "/inscription";
 
   return (
     <html lang="fr">
       <body className={`${inter.className}`}>
         <header>
-          <AnnouceBar text={announce} />
+          <AnnouceBar text={announce} link={link}/>
           <Nav />
         </header>
         <main>

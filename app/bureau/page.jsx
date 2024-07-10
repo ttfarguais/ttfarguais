@@ -6,7 +6,7 @@ export const metadata = {
     "Découvrez les membres du bureau du club de tennis de table de Fargues Saint Hilaire.",
 }
 
-export default function Bureau(){
+export default function BureauPage(){
 
   const membres = [
     {firstname:"Jeremy", lastname:"THEVENET", job:"Président", img:"/imgClub/istockphoto-1464243593-1024x1024.jpg", alt: "Photo de Jeremy Thevenet"},

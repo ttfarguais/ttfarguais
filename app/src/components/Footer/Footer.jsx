@@ -64,15 +64,15 @@ export default function Footer() {
         <div className="flex gap-6 lg:hidden">
             <Image
               src={Gironde}
-              width={150}
-              height={150}
+              width={80}
+              height={80}
               className="w-auto"
               alt="Logo Gironde, le département"
             ></Image>
             <Image
               src={FSH}
-              width={150}
-              height={150}
+              width={80}
+              height={80}
               className="w-auto"
               alt="Logo Fargues saint hilaire, la commune"
             ></Image>

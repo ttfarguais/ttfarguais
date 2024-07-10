@@ -16,7 +16,10 @@ export default function Nav() {
       ],
     },
     { title: "Inscription", url: "/inscription" },
-    { title: "Compétition", url: "/competition"  },
+    { title: "Compétition", url: "/competition",
+      subLinks: [
+      { title: "Classement", url: "/classement" }
+    ],  },
     { title: "Contact", url: "/contact" },
   ];
 
