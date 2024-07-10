@@ -5,7 +5,7 @@ export async function POST(request) {
   console.log({nom, prenom, email, message, tel, objet})
   const mailOptions = {
     from: email,
-    to: `${process.env.USER_EMAIL1}, ${process.env.USER_EMAIL}`, 
+    to: `${process.env.USER_EMAIL_SEND}`, 
     subject: `Nouveau message de contact TTF`,
     text: `
       Nom: ${nom}
