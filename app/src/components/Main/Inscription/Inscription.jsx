@@ -24,15 +24,15 @@ export default function Inscription({times, prices, documents, trainingStartDate
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 mb-6">
+      <div className="flex flex-col gap-2 mb-10">
         {trainingStartDate.map((age, index) => (
           <p key={index} className="text-xl font-bold text-solid  px-4 py-2 bg-contrast-2 rounded-xl">Reprise des entrainement {age.name} le {age.date}</p>
         ))}
       </div>
 
       <section className="flex flex-col gap-4 mb-8 ">
-        <h3 className="font-bold mb-2">Adhésions pour la saison 2024/2025</h3>
-        <ul className="">
+        <h3 className="font-bold mb-2 text-lg">Adhésions pour la saison 2024/2025</h3>
+        <ul>
           {prices.map((price, index) => (
             <li key={index}>
               <p>
