@@ -1,4 +1,4 @@
-import Contact from "../src/components/Main/Contact/Contact";
+import Contact from "../src/components/Main/contact/Contact";
 
 export const metadata = {
   title: "T.T.Farguais - Contact",
