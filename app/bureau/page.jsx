@@ -12,7 +12,7 @@ export default function Bureau(){
     {firstname:"Jeremy", lastname:"THEVENET", job:"Président", img:"/imgClub/istockphoto-1464243593-1024x1024.jpg", alt: "Photo de Jeremy Thevenet"},
     {firstname:"Patrick", lastname:"MARTINEAU", job:"Trésorier", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Patrick Martineau"},
     {firstname:"Stéphane", lastname:"AIMEE", job:"Secrétaire", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Stéphane Aimee"},
-    {firstname:"Mathis", lastname:"HUMBERT", job:"Entaineur", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Mathis Humbert"},
+    {firstname:"Maxime", lastname:"TOURNEAUX", job:"Entaineur", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Maxime Tourneaux"},
     {firstname:"Emmanuel", lastname:"BOS", job:"Media", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Emmanuel Bos"},
   ]
 
