@@ -1,7 +1,7 @@
 import Classement from "../src/components/Main/Classement/Classement";
 
 export const metadata = {
-  title: "T.T.Farguais - Classement et progression",
+  title: "T.T. Farguais - Classement et progression",
   description: "Retrouvez les classements et progressions des joueurs du club de tennis de table de Fargues Saint Hilaire.",
 }
 

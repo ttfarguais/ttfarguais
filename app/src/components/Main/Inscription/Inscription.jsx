@@ -48,13 +48,12 @@ export default function Inscription({times, prices, documents, trainingStartDate
         <p className="font-bold text-solid">
           L&apos;adhésion comprend la cotisation au TT Farguais et la licence F.F.T.T. pour toute la saison.
         </p>
-        <p className="font-bold text-solid">Réduction de 10€ à partir de la 2e licence dans la même famille</p>
+        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2e licence dans la même famille</p>
       </section>
       <section className="flex flex-col gap-4 mb-8 ">
         <p className="font-bold">
-          - Certificat médical obligatoire (si daté de plus de 3 ans) pour les adultes.
+          - Certificat médical obligatoire (si daté de plus de 3 ans) pour les adultes et jeunes.
         </p>
-        <p  className="font-bold mb-4">- Certificat médical fortement conseillé pour les jeunes.</p>
 
         <div>
           <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
@@ -63,7 +62,7 @@ export default function Inscription({times, prices, documents, trainingStartDate
           <ul className="flex flex-col gap-6">
             {documents.map((document, index) => (
               <li key={index} className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
-                <p className="text-sm mr-4">{document.name}:</p>
+                <p className="text-sm mr-4">{document.name} : {document.important ? <span className="text-red-600">*</span> : null}</p>
                 <div>
                   <a
                     href={document.pdf}

@@ -18,7 +18,8 @@ export default function Nav() {
     { title: "Inscription", url: "/inscription" },
     { title: "Compétition", url: "/competition",
       subLinks: [
-      { title: "Classement", url: "/classement" }
+      { title: "Classement", url: "/classement" },
+      { title: "Trophées", url: "/trophees" }
     ],  },
     { title: "Contact", url: "/contact" },
   ];

@@ -2,7 +2,7 @@
 import CompComponent from "../src/components/Main/Competition/CompComponent";
 
 export const metadata = {
-  title: "T.T.Farguais - Compétition",
+  title: "T.T. Farguais - Compétition",
   description:
     "Retrouvez toutes les informations relatives aux compétitions du club de tennis de table de Fargues Saint Hilaire.",
 };
@@ -16,21 +16,6 @@ export default function competitionPage (){
   const CRIT = "/competition/CRIT.jpg";
 
   const classements = [
-    {
-      name: "Départemental",
-      class: {
-        D4: {
-          name: "Départemental 4",
-          image: D4,
-          alt: "fiche de compétition départemental 4",
-        },
-        D2: {
-          name: "Départemental 2",
-          image: D2,
-          alt: "fiche de compétition départemental 2",
-        },
-      },
-    },
     {
       name: "Régional",
       class: {
@@ -48,6 +33,21 @@ export default function competitionPage (){
           name: "Pré-Régional",
           image: PR ,
           alt: "fiche de compétition pré-régional",
+        },
+      },
+    },
+    {
+      name: "Départemental",
+      class: {
+        D4: {
+          name: "Départemental 4",
+          image: D4,
+          alt: "fiche de compétition départemental 4",
+        },
+        D2: {
+          name: "Départemental 2",
+          image: D2,
+          alt: "fiche de compétition départemental 2",
         },
       },
     },
