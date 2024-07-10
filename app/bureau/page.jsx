@@ -1,7 +1,7 @@
 import MemberCard from "../src/components/Main/Bureau/MemberCard";
 
 export const metadata = {
-  title: "TTFarguais - Bureau",
+  title: "T.T.Farguais - Le bureau",
   description:
     "Découvrez les membres du bureau du club de tennis de table de Fargues Saint Hilaire.",
 }

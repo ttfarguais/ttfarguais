@@ -1,7 +1,7 @@
 import Inscription from "../src/components/Main/Inscription/Inscription";
 
 export const metadata = {
-  title: "TTFarguais - Inscription",
+  title: "T.T.Farguais - Inscription",
   description:
     "Rejoignez le club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives à l'inscription.",
 };

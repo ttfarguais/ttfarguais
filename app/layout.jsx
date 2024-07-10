@@ -10,8 +10,8 @@ const inter = Roboto({
 });
 
 export const metadata = {
-  title: "TTFarguais - Accueil",
-  description: "Bienvenue à l'U.S.F. tennis de table de Farguais. Retrouvez toutes les informations relatives au club. Venez nous rejoindre !",
+  title: "T.T.Farguais - Accueil",
+  description: "Bienvenue sur le site du T.T.Farguais. Retrouvez toutes les informations relatives au club. Venez nous rejoindre !",
 };
 
 export default function RootLayout({ children }) {

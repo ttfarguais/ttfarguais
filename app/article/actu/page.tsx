@@ -4,9 +4,9 @@ import TTFLogoContour from "../../../public/TTFargues-logo-Contour.svg";
 import TTFLogoPlein from "../../../public/TTFargues-logo-Plein.svg";
 
 export const metadata = {
-  title: "TTFarguais - Actualités",
+  title: "T.T.Farguais - Actualités",
   description:
-    "Les TT Farguais plus beaux que jamais ! Découvrez notre nouvelle identité visuelle et notre nouveau site web pour la rentrée 2025.",
+    "Les T.T.Farguais plus beaux que jamais ! Découvrez notre nouvelle identité visuelle et notre nouveau site web pour la rentrée 2025.",
 };
 
 export default function ArticlePage({}) {
