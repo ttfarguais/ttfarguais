@@ -1,7 +1,7 @@
-import Training from "../src/components/Main/training/Traning";
+import Training from "../src/components/Main/Training/Training";
 
 export const metadata = {
-  title: "TTFarguais - Entrainements",
+  title: "T.T.Farguais - Entrainements",
   description:
     "Rejoignez le club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives aux entrainements.",
 };

@@ -1,4 +1,10 @@
-import ButtonGreen from './src/components/Main/ButtonGreen'
+import ButtonGreen from './src/components/Main/ButtonGreen';
+
+export const metadata = {
+  title: "T.T.Farguais - 404",
+  description: "Oups, la page que vous cherchez n'existe pas. Retournez à l'accueil ou regardez un best-of des meilleurs points de tennis de table.",
+};
+
 export default function notFound() {
   return (
     <section className="flex flex-col items-center justify-center gap-8 p-10 min-h-lvh">

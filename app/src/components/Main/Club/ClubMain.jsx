@@ -1,15 +1,14 @@
-import MemberCard from "../Club/MemberCard"
 
-export default function ClubMain({membres}) {
+export default function ClubMain() {
 
   return (
     <>
-    <section className="flex flex-col lg:flex-row gap-10 sm:gap-2 p-6 text-center lg:text-left">
+    <section className="p-6 md:w-4/6 2xl:w-3/6 mb-10 m-auto">
 
-    <article className="flex flex-col lg:flex-1 gap-4 items-center mt-8">
-    <h1 className="text-xl font-bold">Tennis de Table Farguais : Une Aventure Sportive et Communautaire</h1>
+    <article className="flex flex-col items-center mt-8 w-full">
+    <h1 className="text-xl text-center font-bold p-4 mb-8">Tennis de Table Farguais : Une Aventure Sportive et Communautaire</h1>
 
-    <div className="gap-4 sm:p-10 text-justify lg:w-4/6 m-auto">
+    <div className="gap-4 text-justify m-auto">
 
    
     <p className="mb-4">
@@ -39,15 +38,6 @@ export default function ClubMain({membres}) {
     </article>
 
 
-    </section>
-
-    <section className="bg-contrast-2 px-4 py-10">
-      <h1 className="text-center text-lg font-bold uppercase mb-10">Membres du bureau</h1>
-      <div className="flex gap-6 md:gap-16  justify-center flex-wrap">
-      {membres.map((membre, index) =>(
-      <MemberCard membre={membre} key={index}></MemberCard>
-      ))}
-      </div>
     </section>
   </>
   )
