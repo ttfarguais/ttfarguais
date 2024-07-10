@@ -25,7 +25,7 @@ export default function Inscription({times, prices, documents}) {
       </div>
 
       <section className="flex flex-col gap-4 mb-8 ">
-        <h3 className="font-bold mb-2">Adhésion pour la saison 2024/2025</h3>
+        <h3 className="font-bold mb-2">Adhésions pour la saison 2024/2025</h3>
         <ul className="">
           {prices.map((price, index) => (
             <li key={index}>
@@ -36,6 +36,9 @@ export default function Inscription({times, prices, documents}) {
             </li>
           ))}
         </ul>
+        <p className="font-bold text-solid">
+        3 séances d’essai avant finalisation de l’inscription.
+        </p>
         <p className="font-bold text-solid">
           L&apos;adhésion comprend la cotisation au TT Farguais et la licence F.F.T.T. pour toute la saison.
         </p>

@@ -10,19 +10,21 @@ export const metadata = {
 export default function inscriptionPage() {
 
   const prices = [
-    { price: 120, category: "Adultes - Compétiteurs" },
-    { price: 80, category: "Adultes - Loisirs" },
+    { price: 135, category: "Adultes - Compétiteurs" },
+    { price: 135, category: "Adultes - Compétiteurs + entrainements" },
+    { price: 95, category: "Adultes - Loisirs" },
+    { price: 115, category: "Adultes - Loisirs + entrainements" },
     {
-      price: 160,
+      price: 175,
       category: "Jeunes - Compétiteurs",
-      time: "2h/semaine - 50h/saison",
+      time: "2h/semaine - 34 semaines",
     },
-    { price: 145, category: "Jeunes - Loisirs", time: "2h/semaine - 50h/saison" },
+    { price: 160, category: "Jeunes - Loisirs", time: "1h30 ou 2h00/semaine - 34 semaines" },
   ];
   
   const times = [
     {day: "Lundi", time: "18h00 - 20h00"},
-    {day: "Mercredi", time: "15h00 - 20h30"},
+    {day: "Mercredi", time: "14h00 - 20h30"},
   ]
   
   const documents = [

@@ -5,16 +5,16 @@ export default function Training() {
     {
       name: "Adultes",
       schedules: [
-        { day: "Lundi", time: "18h00 - 20h00", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
-        { day: "Mercredi", time: "19h00 - 20h30", who: "Loisirs et compétiteurs débutants", trainingType: "Entraînement libre" },
+        { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
+        { day: "Mercredi", time: "19h30 - 20h30", who: "Loisirs et compétiteurs débutants", trainingType: "Entraînement libre" },
       ]
     },
     {
       name: "Jeunes",
       schedules: [
-        { day: "Lundi", time: "18h00 - 20h00", who: "Compétiteurs 'Élite jeunes' avec adultes compétiteurs", trainingType: "Entraînement libre" },
-        { day: "Mercredi", time: "15h00 - 17h00", who: "Jeunes des écoles primaires *", trainingType: "Entraînement dirigé - Initiation" },
-        { day: "Mercredi", time: "17h00 - 19h00", who: "Jeunes des collèges/lycées *", trainingType: "Entraînement dirigé" },
+        { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1er groupe *", trainingType: "Entraînement dirigé - Initiation" },
+        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges- 2ème groupe *", trainingType: "Entraînement dirigé - Débutant" },
+        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des lycées- 3ème groupe *", trainingType: "Entraînement dirigé" },
       ]
     }
   ];
