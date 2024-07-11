@@ -19,7 +19,7 @@ export default function Nav() {
     { title: "Compétition", url: "/competition",
       subLinks: [
       { title: "Classement", url: "/classement" },
-      { title: "Trophées", url: "/trophees" }
+      { title: "Palmarès", url: "/palmares" }
     ],  },
     { title: "Contact", url: "/contact" },
   ];
