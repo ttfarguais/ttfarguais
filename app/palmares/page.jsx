@@ -1,11 +1,11 @@
 import Awards from '../src/components/Main/Palmares/Awards';
 export const metadata = {
-  title: "T.T. Farguais - Entrainements",
+  title: "T.T. Farguais - Palmarès",
   description:
-    "Rejoignez le club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives aux entrainements.",
+    "Retrouvez ici le palmarès du T.T. Farguais. Les titres remportés par les joueurs du club de tennis de table de Fargues-Saint-Hilaire.",
 };
 
-export default function TropheesPage() {
+export default function AwardsPage() {
 
   const awards = [
     {date: 1993, title: "Champion de Gironde Seniors Messieurs Division 3."},
