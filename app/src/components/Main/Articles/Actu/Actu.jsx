@@ -10,7 +10,7 @@ export default function Actu() {
     <section className="mb-16 md:w-4/6 m-auto 2xl:w-3/6">
       <div className="p-6">
         <h1 className="text-xl text-center font-bold p-4 mb-8">
-          Les TT Farguais plus beaux que jamais !
+          Les T.T. Farguais plus beaux que jamais !
         </h1>
 
         <div className="flex flex-col justify-between mb-8 gap-6 text-justify">
@@ -56,11 +56,11 @@ export default function Actu() {
           <p>
             Un grand merci à tous ceux qui ont contribué à ce projet. Votre
             dévouement et votre passion pour le club sont la clé de notre succès
-            continu. Continuons à faire de TT Farguais un endroit où le sport et
+            continu. Continuons à faire de <strong>T.T. Farguais</strong> un endroit où le sport et
             l&apos;amitié se rencontrent.
           </p>
           <p className="text-solid font-bold">
-            Rendez-vous en septembre 2025 pour découvrir toutes ces nouveautés
+            Rendez-vous en septembre 2024 pour découvrir toutes ces nouveautés
             et célébrer ensemble cette nouvelle étape de notre histoire !
           </p>
         </div>

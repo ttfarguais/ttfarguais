@@ -5,16 +5,16 @@ export default function Training() {
     {
       name: "Adultes",
       schedules: [
-        { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
-        { day: "Mercredi", time: "19h30 - 20h30", who: "Loisirs et compétiteurs débutants", trainingType: "Entraînement libre" },
+        { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement dirigé", coach: "AIMÉE Stéphane" },
+        { day: "Mercredi", time: "19h30 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
       ]
     },
     {
       name: "Jeunes",
       schedules: [
-        { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1er groupe *", trainingType: "Entraînement dirigé - Initiation" },
-        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges- 2ème groupe *", trainingType: "Entraînement dirigé - Débutant" },
-        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des lycées- 3ème groupe *", trainingType: "Entraînement dirigé" },
+        { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1er groupe *", trainingType: "Entraînement dirigé - Initiation", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges-Lycées 2ème groupe *", trainingType: "Entraînement dirigé - Débutant", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des collèges-lycées 3ème groupe *", trainingType: "Entraînement dirigé", coach: "TOURNEAUX Maxime" },
       ]
     }
   ];
@@ -29,13 +29,14 @@ export default function Training() {
       <ul>
         {categories.map((category, index) => (
           <li key={index} className="mb-6">
-            <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">Horraires d&apos;entraînement {category.name}</h2>
+            <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">Horaires d&apos;entraînements {category.name}</h2>
             <ul className="flex flex-col w-full gap-6">
               {category.schedules.map((schedule, index) => (
                 <li key={index}>
                   <p className="font-bold text-lg mb-2">{schedule.who}</p>
-                  <p className="">{schedule.day} : {schedule.time}</p>
-                  <p className=""><span className="font-bold">Type:</span> {schedule.trainingType}</p>
+                  <p><span className='font-bold'>{schedule.day}</span> : {schedule.time}</p>
+                  <p><span className="font-bold">Type :</span> {schedule.trainingType}</p>
+                  {schedule.coach && <p><span className="font-bold">Entraîneur :</span> {schedule.coach}</p>}
                 </li>
               ))}
             </ul  >

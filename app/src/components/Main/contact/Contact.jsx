@@ -1,19 +1,32 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 
 export default function Contact() {
+  const typesPlayers = [
+    { title: "Adultes - Compétiteurs"},
+    { title: "Adultes - Compétiteurs + entrainements"},
+    { title: "Adultes - Loisirs"},
+    { title: "Adultes - Loisirs + entrainements"},
+    { title: "Jeunes - Compétiteurs"},
+    { title: "Jeunes - Loisirs"},
+  ];
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
     email: "",
     message: "",
     tel: "",
-    objet: ""
+    birthdate: "",
+    municipality: "",
+    typePlayer: "",
+    objet: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isValidStatus, setIsValidStatus] = useState(null); // Update state for isValidStatus
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const handleChange = (e) => {
@@ -29,7 +42,7 @@ export default function Contact() {
     setIsSubmitted(true);
 
     if (!regex.test(formData.email)) {
-      return; // Empêche la soumission si l'email est invalide
+      return; // Prevent submission if email is invalid
     }
 
     try {
@@ -46,11 +59,21 @@ export default function Contact() {
       }
 
       const data = await res.json();
+      setIsValidStatus(res.ok);
+      // console.log(isValidStatus)
       setResponseMessage(data.message);
-      setFormData({ nom: "", prenom: "", email: "", message: "", tel: "", objet: "" }); // Reset du formulaire
+      setFormData({
+        nom: "",
+        prenom: "",
+        email: "",
+        message: "",
+        tel: "",
+        objet: "",
+      }); // Reset form
       setIsSubmitted(false);
     } catch (error) {
       console.error("Erreur:", error);
+      setIsValidStatus(false); // Set isValidStatus to false in case of error
       setResponseMessage("Erreur lors de la soumission du formulaire");
     }
   };
@@ -58,26 +81,28 @@ export default function Contact() {
   const isValid = regex.test(formData.email);
 
   return (
-    <div className=" flex flex-col items-center m-auto gap-8 py-6">
-      <h1 className="text-xl text-center font-bold p-4 mb-8">Contactez-nous !</h1>
-      {responseMessage ? <p className="py-2 px-4 bg-solid text-contrast-1 rounded-xl">{responseMessage}</p> : null}
+    <div className="flex flex-col items-center m-auto py-6">
+      <h1 className="text-xl text-center font-bold p-4 mb-8">
+        Contactez-nous !
+      </h1>
+
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6"
+        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
         <div className="flex flex-col gap-4">
-          <p>Si votre demande concerne une inscription, nous vous demandons, afin de traiter au mieux votre demande, de bien vouloir <span className="font-bold">ajouter les informations suivantes</span> :</p>
-          <ul>
-            <li>- Date de naissance ?</li>
-            <li>- Type de Joueur (débutant, loisir ou compétition) ?</li>
-            <li>- Votre commune ?</li>
-            <li>- Comment avez-vous connu le club ?</li>
-          </ul>
+          <p className="md:text-lg">Si vous avez besoin de renseignements particuliers, veuillez contacter <span className="font-bold">AIMÉE Stéphane</span>, secrétaire du T.T Farguais au <span className="underline font-bold">06 82 94 09 10</span>.</p>
+          <p className="md:text-lg">
+            Aidez-nous à nous améliorer en nous disant comment vous nous avez
+            connus. Votre avis compte pour nous !
+          </p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg">Nom : <span className="text-red-600">*</span></label>
+            <label className="text-md md:text-lg">
+              Nom : <span className="text-red-600">*</span>
+            </label>
             <input
               type="text"
               name="nom"
@@ -91,7 +116,9 @@ export default function Contact() {
           </div>
 
           <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg">Prénom : <span className="text-red-600">*</span></label>
+            <label className="text-md md:text-lg">
+              Prénom : <span className="text-red-600">*</span>
+            </label>
             <input
               type="text"
               name="prenom"
@@ -107,7 +134,9 @@ export default function Contact() {
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg">Email : <span className="text-red-600">*</span></label>
+            <label className="text-md md:text-lg">
+              Email : <span className="text-red-600">*</span>
+            </label>
             <input
               type="email"
               name="email"
@@ -119,12 +148,17 @@ export default function Contact() {
               placeholder="ping.pong@gmail.com"
             />
             {isSubmitted && !isValid && (
-              <p className="text-red-600 text-sm">Veuillez entrer une adresse email valide (ex: mon.adresse@gmail.com) *</p>
+              <p className="text-red-600 text-sm">
+                Veuillez entrer une adresse email valide (ex:
+                mon.adresse@gmail.com) *
+              </p>
             )}
           </div>
 
           <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg">Tel : <span className="text-gray-500">(recommandé)</span></label>
+            <label className="text-md md:text-lg">
+              Tel : <span className="text-gray-500">(recommandé)</span>
+            </label>
             <input
               type="tel"
               name="tel"
@@ -135,22 +169,72 @@ export default function Contact() {
             />
           </div>
         </div>
-        <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg">Objet : <span className="text-red-600">*</span></label>
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="flex-col flex gap-2">
+            <label className="text-md md:text-lg">Date de naissance :</label>
             <input
-              type="text"
-              name="objet"
-              id="objet"
-              value={formData.objet}
+              type="date"
+              name="birthdate"
+              id="birthdate"
+              value={formData.birthdate}
               onChange={handleChange}
-              required
               className="border-2 px-4 py-2 bg-contrast-2"
-              placeholder="Inscription, demande d'informations..."
             />
           </div>
 
+          <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg">Commune de résidence :</label>
+            <input
+              type="text"
+              name="municipality"
+              id="municipality"
+              value={formData.municipality}
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
+          <div className="flex-col flex gap-2 w-full">
+
+          <label className="text-md md:text-lg">
+            Objet : <span className="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            name="objet"
+            id="objet"
+            value={formData.objet}
+            onChange={handleChange}
+            required
+            className="border-2 px-4 py-2 bg-contrast-2"
+            placeholder="Inscription, demande d'informations..."
+          />
+          </div>
+          <div className="flex-col flex gap-2">
+            <label className="text-md md:text-lg">Type de joueur :</label>
+            <select
+              type="select"
+              name="typePlayer"
+              id="typePlayer"
+              value={formData.typesPlayer}
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+            >
+              <option value=""></option>
+              {typesPlayers.map((type, index) => (
+                <option key={index} value={type.title}>
+                  {type.title}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
         <div className="flex-col flex gap-2">
-          <label className="text-md md:text-lg">Votre message : <span className="text-red-600">*</span></label>
+          <label className="text-md md:text-lg">
+            Votre message : <span className="text-red-600">*</span>
+          </label>
           <textarea
             name="message"
             id="message"
@@ -158,9 +242,18 @@ export default function Contact() {
             onChange={handleChange}
             className="border-2 px-4 py-2 bg-contrast-2 h-40"
             required
-            placeholder="Joueur débutant, née le 11/10/2014..."
+            placeholder="Je voudrais savoir si..."
           ></textarea>
         </div>
+        {responseMessage ? (
+          <p
+            className={`py-2 px-4 ${
+              isValidStatus === true ? "bg-solid" : "bg-red-600"
+            } text-center text-contrast-1 rounded-xl`}
+          >
+            {responseMessage}
+          </p>
+        ) : null}
 
         <button
           type="submit"

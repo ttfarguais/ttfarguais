@@ -1,7 +1,7 @@
 import Inscription from "../src/components/Main/Inscription/Inscription";
 
 export const metadata = {
-  title: "T.T.Farguais - Inscription",
+  title: "T.T. Farguais - Inscription",
   description:
     "Rejoignez le club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives à l'inscription.",
 };
@@ -10,10 +10,10 @@ export const metadata = {
 export default function inscriptionPage() {
 
   const prices = [
-    { price: 135, category: "Adultes - Compétiteurs" },
-    { price: 135, category: "Adultes - Compétiteurs + entrainements" },
-    { price: 95, category: "Adultes - Loisirs" },
-    { price: 115, category: "Adultes - Loisirs + entrainements" },
+    { price: 135, category: "Adultes - Compétiteurs + entrainement libres" },
+    { price: 135, category: "Adultes - Compétiteurs + entrainement dirigés" },
+    { price: 95, category: "Adultes - Loisir + entrainement libres" },
+    { price: 115, category: "Adultes - Loisirs + entrainement dirigés" },
     {
       price: 175,
       category: "Jeunes - Compétiteurs",
@@ -28,14 +28,15 @@ export default function inscriptionPage() {
   ]
   
   const documents = [
-    { name: "Bordereau de demande de licence", pdf: "/pdf/licence.pdf" },
-    { name: "Fiche de renseignement jeune *", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
+    { name: "Bordereau de demande de licence", important: true, pdf: "/pdf/licence.pdf" },
+    { name: "Fiche de renseignement jeune",important: true, pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
     {
-      name: "Certificat pour médical pour la pratique du tennis de table",
+      name: "Certificat pour médical pour la pratique du tennis de table (si plus de 3 ans)",
+      important: false,
       pdf: "/pdf/certificat-medical.pdf",
     },
-    { name: "Questionnaire de Santé pour personne Majeur *", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
-    { name: "Questionnaire de Santé pour personne Mineur *", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
+    { name: "Questionnaire de Santé pour personne Majeur (2 années consécutive sur 3)", important: true, pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
+    { name: "Questionnaire de Santé pour personne Mineur (2 années consécutive sur 3)", important: true, pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
   ];
 
   const trainingStartDate = [
