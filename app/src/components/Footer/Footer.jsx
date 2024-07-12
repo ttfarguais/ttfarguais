@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2 text-xs sm:text-sm ">
             <div>
               <p>Carré des Forges</p>
-              <p>3. av. de la Laurence</p>
+              <p>3 av. de la Laurence</p>
               <p>
                 33370 <span className="uppercase">Fargues Saint Hilaire</span>
               </p>

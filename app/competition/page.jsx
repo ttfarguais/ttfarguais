@@ -13,50 +13,46 @@ export default function competitionPage (){
   const D4 = "/competition/D4.jpg";
   const R3 = "/competition/R3.jpg";
   const PR = "/competition/PR.jpg";
-  const CRIT = "/competition/CRIT.jpg";
+  const CritGironde = "/competition/CRIT.jpg";
 
   const classements = [
     {
-      name: "Régional",
+      name: "Régionale",
       class: {
         R3: {
-          name: "Régional 3",
+          name: "Régionale 3",
           image: R3,
-          alt: "fiche de compétition régional 3",
+          alt: "fiche de compétition régionale 3",
         },
       },
     },
+  
     {
-      name: "Pré-Régional",
+      name: "Départementale",
       class: {
         PR: {
-          name: "Pré-Régional",
+          name: "Pré-Régionale",
           image: PR ,
-          alt: "fiche de compétition pré-régional",
-        },
-      },
-    },
-    {
-      name: "Départemental",
-      class: {
-        D4: {
-          name: "Départemental 4",
-          image: D4,
-          alt: "fiche de compétition départemental 4",
+          alt: "fiche de compétition pré-régionale",
         },
         D2: {
-          name: "Départemental 2",
+          name: "Départementale 2",
           image: D2,
-          alt: "fiche de compétition départemental 2",
+          alt: "fiche de compétition départementale 2",
+        },
+        D4: {
+          name: "Départementale 4",
+          image: D4,
+          alt: "fiche de compétition départementale 4",
         },
       },
     },
     {
-      name: "Critérium",
+      name: "Critérium de Gironde",
       class: {
         CRIT: {
-          name: "Critérium 1",
-          image: CRIT,
+          name: "Critérium de Gironde",
+          image: CritGironde,
           alt: "fiche de compétition critérium",
         },
       },

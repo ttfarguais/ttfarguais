@@ -12,14 +12,14 @@ export default function Nav() {
       title: "Le club",
       url: "/leclub",
       subLinks: [{ title: "Entrainements", url: "/entrainements" },
-        { title: "Le bureau", url: "/bureau" }
+        { title: "Le bureau", url: "/bureau" },
+        { title: "Palmarès", url: "/palmares" },
       ],
     },
     { title: "Inscription", url: "/inscription" },
     { title: "Compétition", url: "/competition",
       subLinks: [
       { title: "Classement", url: "/classement" },
-      { title: "Palmarès", url: "/palmares" }
     ],  },
     { title: "Contact", url: "/contact" },
   ];

@@ -81,17 +81,18 @@ export default function Contact() {
   const isValid = regex.test(formData.email);
 
   return (
-    <div className="flex flex-col items-center m-auto gap-8 py-6">
+    <div className="flex flex-col items-center m-auto py-6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
       </h1>
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6"
+        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
         <div className="flex flex-col gap-4">
-          <p className="text-lg">
+          <p className="md:text-lg">Si vous avez besoin de renseignements particuliers, veuillez contacter <span className="font-bold">AIMÉE Stéphane</span>, secrétaire du T.T Farguais au <span className="underline font-bold">06 82 94 09 10</span>.</p>
+          <p className="md:text-lg">
             Aidez-nous à nous améliorer en nous disant comment vous nous avez
             connus. Votre avis compte pour nous !
           </p>
@@ -241,7 +242,7 @@ export default function Contact() {
             onChange={handleChange}
             className="border-2 px-4 py-2 bg-contrast-2 h-40"
             required
-            placeholder="Joueur débutant, née le 11/10/2014..."
+            placeholder="Je voudrais savoir si..."
           ></textarea>
         </div>
         {responseMessage ? (

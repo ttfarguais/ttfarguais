@@ -9,10 +9,10 @@ export default function Inscription({times, prices, documents, trainingStartDate
       <div className="flex flex-col md:flex-row justify-between mb-8 ">
         <div className="mb-4 md:mb-0">
         <p>
-          <strong>TT Farguais</strong>
+          <strong>T.T. Farguais</strong>
         </p>
         <p>Carré des Forges</p>
-        <p>3. av. de la Laurence</p>
+        <p>3 av. de la Laurence</p>
         <p>33370 <span className="uppercase">Fargues Saint Hilaire</span></p>
         </div>
         <div>
