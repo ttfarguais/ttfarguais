@@ -17,7 +17,7 @@ export default function competitionPage (){
 
   const classements = [
     {
-      name: "Régionale",
+      name: "Régional",
       class: {
         R3: {
           name: "Régionale 3",
@@ -28,7 +28,7 @@ export default function competitionPage (){
     },
   
     {
-      name: "Départementale",
+      name: "Départemental",
       class: {
         PR: {
           name: "Pré-Régionale",
@@ -51,7 +51,7 @@ export default function competitionPage (){
       name: "Critérium de Gironde",
       class: {
         CRIT: {
-          name: "Critérium de Gironde",
+          name: "Honneur",
           image: CritGironde,
           alt: "fiche de compétition critérium",
         },

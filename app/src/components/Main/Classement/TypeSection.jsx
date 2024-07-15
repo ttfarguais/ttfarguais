@@ -1,9 +1,9 @@
 import Image from "next/image"
-export default function TypeSection({type, sectionTitle, modification}){
+export default function TypeSection({type, sectionTitle}){
   return (
     <section className='flex flex-col gap-3 border-b mb-10'>
         <h2 className="font-bold text-lg mb-4 underline underline-offset-8">{sectionTitle} :</h2>
-        <p>{modification}</p>
+        {/* <p>{modification}</p> */}
         <div className="flex gap-4 flex-wrap justify-around">
 
         {type.map((obj, index) => (

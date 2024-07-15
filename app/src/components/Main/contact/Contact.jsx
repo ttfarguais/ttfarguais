@@ -4,12 +4,10 @@ import { useState } from "react";
 
 export default function Contact() {
   const typesPlayers = [
-    { title: "Adultes - Compétiteurs"},
-    { title: "Adultes - Compétiteurs + entrainements"},
-    { title: "Adultes - Loisirs"},
-    { title: "Adultes - Loisirs + entrainements"},
-    { title: "Jeunes - Compétiteurs"},
-    { title: "Jeunes - Loisirs"},
+    { title: "Débutant"},
+    { title: "Loisir"},
+    { title: "Confirmé"},
+    { title: "Compétiteur"},
   ];
 
   const [formData, setFormData] = useState({
@@ -21,6 +19,7 @@ export default function Contact() {
     birthdate: "",
     municipality: "",
     typePlayer: "",
+    description: "",
     objet: "",
   });
 
@@ -68,6 +67,10 @@ export default function Contact() {
         email: "",
         message: "",
         tel: "",
+        birthdate: "",
+        municipality: "",
+        typePlayer: "",
+        description: "",
         objet: "",
       }); // Reset form
       setIsSubmitted(false);
@@ -91,7 +94,7 @@ export default function Contact() {
         className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
         <div className="flex flex-col gap-4">
-          <p className="md:text-lg">Si vous avez besoin de renseignements particuliers, veuillez contacter <span className="font-bold">AIMÉE Stéphane</span>, secrétaire du T.T Farguais au <span className="underline font-bold">06 82 94 09 10</span>.</p>
+          {/* <p className="md:text-lg">Si vous avez besoin de renseignements particuliers, veuillez contacter <span className="font-bold">AIMÉE Stéphane</span>, secrétaire du T.T Farguais au <span className="underline font-bold">06 82 94 09 10</span>.</p> */}
           <p className="md:text-lg">
             Aidez-nous à nous améliorer en nous disant comment vous nous avez
             connus. Votre avis compte pour nous !
@@ -157,7 +160,7 @@ export default function Contact() {
 
           <div className="flex-col flex gap-2">
             <label className="text-md md:text-lg">
-              Tel : <span className="text-gray-500">(recommandé)</span>
+              Tél. : <span className="text-gray-500"></span>
             </label>
             <input
               type="tel"
@@ -233,7 +236,20 @@ export default function Contact() {
 
         <div className="flex-col flex gap-2">
           <label className="text-md md:text-lg">
-            Votre message : <span className="text-red-600">*</span>
+            Comment avez-vous connu le club ? :
+          </label>
+          <textarea
+            name="description"
+            id="description"
+            value={formData.description}
+            onChange={handleChange}
+            className="border-2 px-4 py-2 bg-contrast-2 h-40"
+            placeholder="J'ai connu le club grâce à..."
+          ></textarea>
+        </div>
+        <div className="flex-col flex gap-2">
+          <label className="text-md md:text-lg">
+            Votre demande : <span className="text-red-600">*</span>
           </label>
           <textarea
             name="message"
@@ -254,6 +270,10 @@ export default function Contact() {
             {responseMessage}
           </p>
         ) : null}
+
+         <p className="md:text-lg">
+            <span className="text-red-600">*</span> Champs obligatoires
+          </p>
 
         <button
           type="submit"

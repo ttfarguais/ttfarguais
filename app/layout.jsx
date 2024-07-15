@@ -1,12 +1,16 @@
-import { Roboto } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
 import AnnouceBar from "./src/components/Header/AnnouceBar";
 import Nav from './src/components/Header/Nav';
-const inter = Roboto({ 
+
+const exo2 = Exo_2({ 
   subsets: ["latin"],
-  weight:'400',
+  weight: '400',
 });
+
+
+
 
 export const metadata = {
   title: "T.T.Farguais - Accueil",
@@ -15,12 +19,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-  const announce = "Les entraînements reprennent en septembre 2024, on vous attend nombreux !";
+  const announce = "Les entraînements reprennent en septembre, on vous attend nombreux !";
   const link = "/inscription";
 
   return (
     <html lang="fr">
-      <body className={`${inter.className}`}>
+      <body className={`${exo2.className}`}>
         <header>
           <AnnouceBar text={announce} link={link}/>
           <Nav />

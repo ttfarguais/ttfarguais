@@ -5,6 +5,7 @@ import { useState } from "react";
 import { IoArrowDown, IoArrowForward, IoClose, IoMenu } from "react-icons/io5";
 import TTFLogo from "../../../../public/TTFargues-logo-Plein.svg";
 
+
 export default function Nav() {
   const navLinks = [
     { title: "Accueil", url: "/" },
@@ -19,8 +20,9 @@ export default function Nav() {
     { title: "Inscription", url: "/inscription" },
     { title: "Compétition", url: "/competition",
       subLinks: [
-      { title: "Classement", url: "/classement" },
+      { title: "Joueurs", url: "/classement" },
     ],  },
+    { title: "Tournois", url: "/tournois" },
     { title: "Contact", url: "/contact" },
   ];
 

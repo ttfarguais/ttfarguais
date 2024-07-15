@@ -14,7 +14,7 @@ export default function BureauPage(){
     {firstname:"Patrick", lastname:"MARTINEAU", job:"Trésorier", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Patrick Martineau"},
     {firstname:"Stéphane", lastname:"AIMEE", job:"Secrétaire", img:"/membres/Stephane.jpg", alt: "Photo de Stéphane Aimee"},
     {firstname:"Agostinho José", lastname:"DUARTE", job:"Secrétaire-adjoint", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Stéphane Aimee"},
-    {firstname:"Maxime", lastname:"TOURNEAUX", job:"Entaineur", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Maxime Tourneaux"},
+    {firstname:"Maxime", lastname:"TOURNEAUX", job:"Entaîneur", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Maxime Tourneaux"},
     {firstname:"Emmanuel", lastname:"BOS", job:"Media", img:"/imgClub/adult-1851571_640.jpg", alt: "Photo de Emmanuel Bos"},
   ]
 

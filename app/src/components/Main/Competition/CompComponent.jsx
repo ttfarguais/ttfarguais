@@ -2,8 +2,8 @@ import Image from "next/image";
 export default function compComponent({ classements }) {
   return (
       <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
-        <h1 className="text-xl text-center font-bold p-4 mb-8 ">Résultats Compétitions</h1>
-
+        <h1 className="text-xl text-center font-bold p-4 mb-8 ">Résultats Compétitions par équipes</h1>
+        {/* <h2 className="text-lg font-bold text-center mb-8">Championnat de France</h2> */}
         {classements.map((classement, index) => (
           <section key={index} className="flex flex-col gap-3 border-b mb-10">
             <h2 className="font-bold text-lg mb-4 underline underline-offset-8">{classement.name}</h2>
@@ -11,7 +11,7 @@ export default function compComponent({ classements }) {
 
             {Object.keys(classement.class).map((poule, index) => (
               <div key={index} className="flex flex-col mb-6 max-w-60 ">
-                <h3 className="mb-2 font-bold">Fiche {classement.class[poule].name} :</h3>
+                <h3 className="mb-2 font-bold">{classement.class[poule].name} :</h3>
                 <div className="flex gap-5 m-auto justify-center">
                   <a
                     href={classement.class[poule].image}

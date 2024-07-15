@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import transporter from "../../src/lib/transporter";
 export async function POST(request) {
-  const { nom, prenom, email, message, tel, objet, birthdate, municipality, typePlayer } = await request.json();
+  const { nom, prenom, email, message, tel, objet, birthdate, municipality, typePlayer, description } = await request.json();
   const mailOptions = {
     from: email,
-    to: `${process.env.USER_EMAIL_SEND1}, ${process.env.USER_EMAIL_SEND2}, ${process.env.USER_EMAIL_SEND3}`,  
+    to: `${process.env.USER_EMAIL_SEND1}, ${process.env.USER_EMAIL_SEND2}, ${process.env.USER_EMAIL_SEND3}`,
     subject: `Nouveau message de contact TTF`,
     text: `
       Nom: ${nom}
@@ -15,6 +15,7 @@ export async function POST(request) {
       Ville: ${municipality}
       Type de joueur: ${typePlayer}
       objet: ${objet}
+      Comment avez-vous connu le club: ${description}
       Message: ${message} `,
     html:`<p><strong>Nom</strong> : ${nom}</p>
     <p><strong>Prénom</strong> : ${prenom}</p>
@@ -24,6 +25,7 @@ export async function POST(request) {
     <p><strong>Ville</strong> : ${municipality}</p>
     <p><strong>Type de joueur</strong> : ${typePlayer}</p>
     <p><strong>Objet</strong> : ${objet}</p>
+    <p><strong>Comment avez-vous connu le club</strong> : ${description}</p>
     <p><strong>Message</strong> : ${message}</p>`
   };
 

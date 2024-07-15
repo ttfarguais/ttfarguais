@@ -10,11 +10,11 @@ export default function History() {
           passion pour le tennis de table.
         </p>
         <p>
-          Avec une ambiance chaleureuse et des valeurs de respect et de
+          Avec une ambiance chaleureuse, des valeurs de respect et de
           camaraderie, nous offrons un environnement accueillant pour tous les
           joueurs, des débutants aux plus expérimentés. Rejoignez-nous pour
           vivre des moments uniques et partager votre amour pour ce sport
-          excitant !
+          palpitant !
         </p>
       </article>
     </section>

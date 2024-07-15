@@ -10,10 +10,10 @@ export const metadata = {
 export default function inscriptionPage() {
 
   const prices = [
-    { price: 135, category: "Adultes - Compétiteurs + entrainement libres" },
-    { price: 135, category: "Adultes - Compétiteurs + entrainement dirigés" },
-    { price: 95, category: "Adultes - Loisir + entrainement libres" },
-    { price: 115, category: "Adultes - Loisirs + entrainement dirigés" },
+    { price: 135, category: "Adultes - Compétiteurs + entrainements libres" },
+    { price: 155, category: "Adultes - Compétiteurs + entrainements dirigés" },
+    { price: 95, category: "Adultes - Loisir + entrainements libres" },
+    { price: 115, category: "Adultes - Loisirs + entrainements dirigés" },
     {
       price: 175,
       category: "Jeunes - Compétiteurs",
@@ -23,24 +23,24 @@ export default function inscriptionPage() {
   ];
   
   const times = [
-    {day: "Lundi", time: "18h00 - 20h00"},
+    {day: "Lundi", time: "18h00 - 20h30"},
     {day: "Mercredi", time: "14h00 - 20h30"},
   ]
   
   const documents = [
-    { name: "Bordereau de demande de licence", important: true, pdf: "/pdf/licence.pdf" },
-    { name: "Fiche de renseignement jeune",important: true, pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
+    { name: "Bordereau de demande de licence", pdf: "/pdf/licence.pdf" },
+    { name: "Fiche de renseignement jeune", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
     {
       name: "Certificat pour médical pour la pratique du tennis de table (si plus de 3 ans)",
       important: false,
       pdf: "/pdf/certificat-medical.pdf",
     },
-    { name: "Questionnaire de Santé pour personne Majeur (2 années consécutive sur 3)", important: true, pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
-    { name: "Questionnaire de Santé pour personne Mineur (2 années consécutive sur 3)", important: true, pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
+    { name: "Questionnaire de Santé pour personne Majeure (2 années consécutives sur 3)", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
+    { name: "Questionnaire de Santé pour personne Mineure (2 années consécutives sur 3)", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
   ];
 
   const trainingStartDate = [
-    {name: "adultes", date: "lundi 2 septembre 2024"},
+    {name: "adultes", date: "lundi 2 septembre 2024"},//Nom a modifier remove adultes.
     {name: "jeunes", date: "mercredi 11 septembre 2024"}
   ]
 
