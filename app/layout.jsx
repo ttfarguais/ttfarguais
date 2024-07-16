@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
 import AnnouceBar from "./src/components/Header/AnnouceBar";
 import Nav from './src/components/Header/Nav';
+import ArrowUp from './src/components/Main/ArrowUp';
 
 const exo2 = Exo_2({ 
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           <Nav />
         </header>
         <main>
+          <ArrowUp />
         {children}
         </main>
         <footer>

@@ -12,9 +12,9 @@ export default function Training() {
     {
       name: "Jeunes",
       schedules: [
-        { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1er groupe *", trainingType: "Entraînement dirigé - Initiation", coach: "TOURNEAUX Maxime" },
-        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges-Lycées 2ème groupe *", trainingType: "Entraînement dirigé - Débutant", coach: "TOURNEAUX Maxime" },
-        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des collèges-lycées 3ème groupe *", trainingType: "Entraînement dirigé", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1ᵉʳ groupe *", trainingType: "Entraînement dirigé - Initiation", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges-Lycées 2ᵉᵐᵉ groupe *", trainingType: "Entraînement dirigé - Débutant", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des collèges-lycées 3ᵉᵐᵉ groupe *", trainingType: "Entraînement dirigé", coach: "TOURNEAUX Maxime" },
       ]
     }
   ];

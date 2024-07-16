@@ -1,6 +1,6 @@
-import Image from "next/image";
 import GroupPicture from "../../../../../../../public/imgClub/birthday.jpg";
 import GroupPicture2 from "../../../../../../../public/imgClub/birthday2.jpg";
+import ImageAndClick from "../../../ImageAndClick";
 export default function Birthday() {
   return (
     <section className="mb-16 md:w-4/6 m-auto 2xl:w-3/6">
@@ -11,7 +11,7 @@ export default function Birthday() {
 
         <div className="flex flex-col justify-between mb-8 gap-6 text-justify">
           <p>
-            Le <strong>T.T. Farguais</strong>, notre cher club de tennis de
+            Le <strong className="inline-block">T.T. Farguais</strong>, notre cher club de tennis de
             table de
             <strong> Fargues Saint-Hilaire</strong>, a récemment célébré son
             30ème anniversaire et quel événement mémorable ce fut ! Cette
@@ -21,13 +21,12 @@ export default function Birthday() {
           </p>
 
           <div className="flex justify-around ">
-            <Image
-              src={GroupPicture2}
-              width={500}
-              height={500}
-              alt="Photo de groupe des membres du club de tennis de table de Fargues Saint Hilaire"
-              className="w-full"
-            ></Image>
+          <ImageAndClick
+            src={GroupPicture2}
+            alt="Photo de groupe du T.T. Farguais"
+            href={GroupPicture2.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
+            actionTitle={"Afficher l'image en grand"}
+          />
           </div>
 
           <h2 className="font-bold text-lg">Un repas convivial</h2>
@@ -38,7 +37,7 @@ export default function Birthday() {
             festive et nostalgique. Anciens et actuels membres du club, familles
             et amis se sont réunis pour échanger des souvenirs, raconter des
             anecdotes et célébrer ensemble l&lsquo;histoire riche et vibrante du
-            <strong> T.T. Farguais</strong>. Les éclats de rires, les
+            <strong className="inline-block"> T.T. Farguais</strong>. Les éclats de rires, les
             discussions animées et les sourires étaient omniprésents.
           </p>
           <h2 className="font-bold text-lg">Des affrontements endiablés</h2>
@@ -60,34 +59,22 @@ export default function Birthday() {
             franche rigolade. L&lsquo;esprit de camaraderie et de bonne humeur
             qui fait la force de notre club était palpable. Cette célébration
             des 30 ans du
-            <strong> T.T. Farguais </strong> a été un véritable succès. Elle
+            <strong className="inline-block"> T.T. Farguais </strong> a été un véritable succès. Elle
             nous a permis de renforcer nos liens, de célébrer notre histoire et
             de regarder vers l&lsquo;avenir avec optimisme et enthousiasme.
             Merci à tous ceux qui ont participé à cet événement inoubliable.
             Nous avons hâte de continuer à écrire ensemble les prochaines pages
-            de l&lsquo;histoire du <strong>T.T. Farguais</strong>.
+            de l&lsquo;histoire du <strong className="inline-block">T.T. Farguais</strong>.
           </p>
         </div>
         <div className="flex justify-around ">
         
-        <a
-                    href={GroupPicture}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shadow-2xl relative w-full"
-                  >
-                    <Image
-                      src={GroupPicture}
-                      width={500}
-                      height={500}
-                      alt="Photo de groupe des membres du club de tennis de table de Fargues Saint Hilaire"
-                      className="w-full"
-                    ></Image>
-
-                    <div className="absolute flex items-center justify-center bg-black top-0 left-0 z-10 h-full w-full uppercase font-bold text-contrast-1 bg-opacity-80 opacity-0 hover:opacity-80 transition-all">
-                      Voir la fiche
-                    </div>
-                  </a>
+        <ImageAndClick
+            src={GroupPicture}
+            alt="Photo de groupe du T.T. Farguais"
+            href={GroupPicture.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
+            actionTitle={"Afficher l'image en grand"}
+          />
         </div>
       </div>
     </section>

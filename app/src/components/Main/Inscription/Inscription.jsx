@@ -26,7 +26,7 @@ export default function Inscription({times, prices, documents, trainingStartDate
 
       <div className="flex flex-col gap-2 mb-10">
         {trainingStartDate.map((age, index) => (
-          <p key={index} className="text-xl font-bold text-solid  px-4 py-2 bg-contrast-2 rounded-xl">Reprise des entrainements {age.name} le {age.date}</p>
+          <p key={index} className="text-xl font-bold text-solid  px-4 py-2 bg-contrast-2 rounded-xl">Reprise des entrainements {age.name && (age.name)} le {age.date}</p>
         ))}
       </div>
 
@@ -48,7 +48,7 @@ export default function Inscription({times, prices, documents, trainingStartDate
         <p className="font-bold text-solid">
           L&apos;adhésion comprend la cotisation au <strong>T.T. Farguais</strong> et la licence F.F.T.T. pour toute la saison.
         </p>
-        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2e licence dans la même famille.</p>
+        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2ᵉᵐᵉ licence dans la même famille.</p>
       </section>
       <section className="flex flex-col gap-4 mb-8 ">
         <p className="font-bold">
