@@ -27,8 +27,7 @@ export async function POST(request) {
 
   const mailOptions = {
     from: email,
-    // to: `${process.env.USER_EMAIL_SEND1}, ${process.env.USER_EMAIL_SEND2}, ${process.env.USER_EMAIL_SEND3}`,
-    to: "romshdz1@gmail.com",
+    to: `${process.env.USER_EMAIL_SEND1}, ${process.env.USER_EMAIL_SEND2}, ${process.env.USER_EMAIL_SEND3}`,
     subject: `Nouveau message de contact TTF`,
     text: `
       Nom: ${lastName}
