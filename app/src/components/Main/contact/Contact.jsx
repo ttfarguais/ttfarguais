@@ -4,15 +4,15 @@ import { useState } from "react";
 
 export default function Contact() {
   const typesPlayers = [
-    { title: "Débutant"},
-    { title: "Loisir"},
-    { title: "Confirmé"},
-    { title: "Compétiteur"},
+    { title: "Débutant" },
+    { title: "Loisir" },
+    { title: "Confirmé" },
+    { title: "Compétiteur" },
   ];
 
   const [formData, setFormData] = useState({
-    nom: "",
-    prenom: "",
+    lastName: "",
+    firstName: "",
     email: "",
     message: "",
     tel: "",
@@ -20,13 +20,15 @@ export default function Contact() {
     municipality: "",
     typePlayer: "",
     description: "",
-    objet: "",
+    object: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isValidStatus, setIsValidStatus] = useState(null); // Update state for isValidStatus
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const [isValidStatus, setIsValidStatus] = useState(null);
+
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const regexPhoneNumber = /^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,8 +42,11 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitted(true);
 
-    if (!regex.test(formData.email)) {
-      return; // Prevent submission if email is invalid
+    const isValidEmail = regexEmail.test(formData.email);
+    const isValidPhoneNumber = !formData.tel || regexPhoneNumber.test(formData.tel);
+
+    if (!isValidEmail || !isValidPhoneNumber) {
+      return;
     }
 
     try {
@@ -58,12 +63,11 @@ export default function Contact() {
       }
 
       const data = await res.json();
-      setIsValidStatus(res.ok);
-      // console.log(isValidStatus)
+      setIsValidStatus(true);
       setResponseMessage(data.message);
       setFormData({
-        nom: "",
-        prenom: "",
+        lastName: "",
+        firstName: "",
         email: "",
         message: "",
         tel: "",
@@ -71,17 +75,18 @@ export default function Contact() {
         municipality: "",
         typePlayer: "",
         description: "",
-        objet: "",
-      }); // Reset form
+        object: "",
+      });
       setIsSubmitted(false);
     } catch (error) {
       console.error("Erreur:", error);
-      setIsValidStatus(false); // Set isValidStatus to false in case of error
+      setIsValidStatus(false);
       setResponseMessage("Erreur lors de la soumission du formulaire");
     }
   };
 
-  const isValid = regex.test(formData.email);
+  const isValidEmail = regexEmail.test(formData.email);
+  const isValidPhoneNumber = !formData.tel || regexPhoneNumber.test(formData.tel);
 
   return (
     <div className="flex flex-col items-center m-auto py-6">
@@ -94,7 +99,6 @@ export default function Contact() {
         className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
         <div className="flex flex-col gap-4">
-          {/* <p className="md:text-lg">Si vous avez besoin de renseignements particuliers, veuillez contacter <span className="font-bold">AIMÉE Stéphane</span>, secrétaire du T.T Farguais au <span className="underline font-bold">06 82 94 09 10</span>.</p> */}
           <p className="md:text-lg">
             Aidez-nous à nous améliorer en nous disant comment vous nous avez
             connus. Votre avis compte pour nous !
@@ -103,14 +107,14 @@ export default function Contact() {
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg">
+            <label className="text-md md:text-lg" htmlFor="lastName">
               Nom : <span className="text-red-600">*</span>
             </label>
             <input
               type="text"
-              name="nom"
-              id="nom"
-              value={formData.nom}
+              name="lastName"
+              id="lastName"
+              value={formData.lastName}
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
               required
@@ -119,14 +123,14 @@ export default function Contact() {
           </div>
 
           <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg">
+            <label className="text-md md:text-lg" htmlFor="firstName">
               Prénom : <span className="text-red-600">*</span>
             </label>
             <input
               type="text"
-              name="prenom"
-              id="prenom"
-              value={formData.prenom}
+              name="firstName"
+              id="firstName"
+              value={formData.firstName}
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
               required
@@ -137,7 +141,7 @@ export default function Contact() {
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg">
+            <label className="text-md md:text-lg" htmlFor="email">
               Email : <span className="text-red-600">*</span>
             </label>
             <input
@@ -150,7 +154,7 @@ export default function Contact() {
               required
               placeholder="ping.pong@gmail.com"
             />
-            {isSubmitted && !isValid && (
+            {isSubmitted && !isValidEmail && (
               <p className="text-red-600 text-sm">
                 Veuillez entrer une adresse email valide (ex:
                 mon.adresse@gmail.com) *
@@ -159,7 +163,7 @@ export default function Contact() {
           </div>
 
           <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg">
+            <label className="text-md md:text-lg" htmlFor="tel">
               Tél. : <span className="text-gray-500"></span>
             </label>
             <input
@@ -170,11 +174,20 @@ export default function Contact() {
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
             />
+            {isSubmitted && !isValidPhoneNumber && formData.tel && (
+              <p className="text-red-600 text-sm">
+                Veuillez entrer un numéro de téléphone valide (ex:
+                06 69 45 ** **) *
+              </p>
+            )}
           </div>
         </div>
+
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg">Date de naissance :</label>
+            <label className="text-md md:text-lg" htmlFor="birthdate">
+              Date de naissance :
+            </label>
             <input
               type="date"
               name="birthdate"
@@ -186,7 +199,9 @@ export default function Contact() {
           </div>
 
           <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg">Commune de résidence :</label>
+            <label className="text-md md:text-lg" htmlFor="municipality">
+              Commune de résidence :
+            </label>
             <input
               type="text"
               name="municipality"
@@ -197,30 +212,32 @@ export default function Contact() {
             />
           </div>
         </div>
+
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
           <div className="flex-col flex gap-2 w-full">
-
-          <label className="text-md md:text-lg">
-            Objet : <span className="text-red-600">*</span>
-          </label>
-          <input
-            type="text"
-            name="objet"
-            id="objet"
-            value={formData.objet}
-            onChange={handleChange}
-            required
-            className="border-2 px-4 py-2 bg-contrast-2"
-            placeholder="Inscription, demande d'informations..."
-          />
+            <label className="text-md md:text-lg" htmlFor="object">
+              Objet : <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="text"
+              name="object"
+              id="object"
+              value={formData.object}
+              onChange={handleChange}
+              required
+              className="border-2 px-4 py-2 bg-contrast-2"
+              placeholder="Inscription, demande d'informations..."
+            />
           </div>
+
           <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg">Type de joueur :</label>
+            <label className="text-md md:text-lg" htmlFor="typePlayer">
+              Type de joueur :
+            </label>
             <select
-              type="select"
               name="typePlayer"
               id="typePlayer"
-              value={formData.typesPlayer}
+              value={formData.typePlayer}
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
             >
@@ -235,7 +252,7 @@ export default function Contact() {
         </div>
 
         <div className="flex-col flex gap-2">
-          <label className="text-md md:text-lg">
+          <label className="text-md md:text-lg" htmlFor="description">
             Comment avez-vous connu le club ? :
           </label>
           <textarea
@@ -247,8 +264,9 @@ export default function Contact() {
             placeholder="J'ai connu le club grâce à..."
           ></textarea>
         </div>
+
         <div className="flex-col flex gap-2">
-          <label className="text-md md:text-lg">
+          <label className="text-md md:text-lg" htmlFor="message">
             Votre demande : <span className="text-red-600">*</span>
           </label>
           <textarea
@@ -261,19 +279,20 @@ export default function Contact() {
             placeholder="Je voudrais savoir si..."
           ></textarea>
         </div>
+
         {responseMessage ? (
           <p
             className={`py-2 px-4 ${
-              isValidStatus === true ? "bg-solid" : "bg-red-600"
+              isValidStatus ? "bg-solid" : "bg-red-600"
             } text-center text-contrast-1 rounded-xl`}
           >
             {responseMessage}
           </p>
         ) : null}
 
-         <p className="md:text-lg">
-            <span className="text-red-600">*</span> Champs obligatoires
-          </p>
+        <p className="md:text-lg">
+          <span className="text-red-600">*</span> Champs obligatoires
+        </p>
 
         <button
           type="submit"
