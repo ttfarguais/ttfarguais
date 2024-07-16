@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export default function ImageAndClick({ src, alt, url, actionTitle }) {
+export default function ImageAndClick({ src, alt, href, actionTitle }) {
   return (
     <a
-      href={url}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="cursor-pointer relative w-full"

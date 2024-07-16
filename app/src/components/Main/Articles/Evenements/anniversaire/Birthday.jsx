@@ -24,7 +24,7 @@ export default function Birthday() {
           <ImageAndClick
             src={GroupPicture2}
             alt="Photo de groupe du T.T. Farguais"
-            url={GroupPicture2.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
+            href={GroupPicture2.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
             actionTitle={"Afficher l'image en grand"}
           />
           </div>
@@ -72,7 +72,7 @@ export default function Birthday() {
         <ImageAndClick
             src={GroupPicture}
             alt="Photo de groupe du T.T. Farguais"
-            url={GroupPicture.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
+            href={GroupPicture.src} // L'URL de l'image pour l'ouvrir dans un nouvel onglet
             actionTitle={"Afficher l'image en grand"}
           />
         </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageAndClick from "../ImageAndClick";
 export default function compComponent({ classements }) {
   return (
       <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
@@ -13,7 +13,8 @@ export default function compComponent({ classements }) {
               <div key={index} className="flex flex-col mb-6 max-w-60 ">
                 <h3 className="mb-2 font-bold">{classement.class[poule].name} :</h3>
                 <div className="flex gap-5 m-auto justify-center">
-                  <a
+                  <ImageAndClick src={classement.class[poule].image} href={classement.class[poule].image} alt={classement.class[poule].image} actionTitle="Voir la fiche"></ImageAndClick>
+                  {/* <a
                     href={classement.class[poule].image}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -30,7 +31,7 @@ export default function compComponent({ classements }) {
                     <div className="absolute flex items-center justify-center bg-black top-0 left-0 z-10 h-full w-full uppercase font-bold text-contrast-1 bg-opacity-80 opacity-0 hover:opacity-80 transition-all">
                       Voir la fiche
                     </div>
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}
