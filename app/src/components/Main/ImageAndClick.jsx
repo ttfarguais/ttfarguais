@@ -14,7 +14,7 @@ export default function ImageAndClick({ src, alt, href, actionTitle }) {
           width={500}
           height={500}
           alt={alt}
-          className="w-full"
+          className="object-contain w-full"
         />
         <div className="absolute top-0 left-0 z-10 w-full h-full bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
           <p className="text-white text-lg">{actionTitle}</p>
