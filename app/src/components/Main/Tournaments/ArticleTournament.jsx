@@ -7,7 +7,7 @@ export default function AticleTournaments({ trophy }) {
           src={trophy.image}
           href={trophy.image}
           alt={trophy.alt}
-          actionTitle={"Afficher le trophé"}
+          actionTitle={"Afficher le trophée"}
         ></ImageAndClick>
         <h2 className="font-bold text-lg text-center">{trophy.titleTrophy}</h2>
       </div>
@@ -23,10 +23,10 @@ export default function AticleTournaments({ trophy }) {
 
             <div class="flex-auto">
               <p class="text-lg md:text-xl">{winner.year}</p>
-              <div className="flex flex-col md:flex-row justify-between">
-                <p class="font-bold md:text-lg">Vainceur : {winner.name}</p>
+              <div className="flex flex-col md:flex-row justify-between gap-4">
+                <p class="font-bold md:text-lg">Vainqueur : <span className="inline-block">{winner.name}</span></p>
                 {winner.vs && (
-                  <p class="font-bold md:text-lg">Adversaire : {winner.vs}</p>
+                  <p class="font-bold md:text-lg">Adversaire : <span className="inline-block">{winner.vs}</span></p>
                 )}
               </div>
             </div>

@@ -2,7 +2,7 @@ export default function History() {
   return (
     <section className="p-2 flex flex-col gap-4 mb-16 items-center">
       <h2 className="text-center font-bold uppercase text-xl">Quelques mots</h2>
-      <article className="text-center flex flex-col gap-2 p-2 sm:w-4/6 xl:w-2/6">
+      <article className="text-justify md:text-center flex flex-col gap-2 p-2 sm:w-4/6 xl:w-2/6">
         <p>
           Découvrez l&apos;histoire captivante du Club de <strong>Tennis de Table </strong> 
           &quot;<strong className="inline-block">T.T. FARGUAIS</strong>&quot;, fondé en 1992 par <span className="font-bold">Alain MOTILLON</span>. Depuis ses
