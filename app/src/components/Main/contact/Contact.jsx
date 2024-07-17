@@ -230,7 +230,7 @@ export default function Contact() {
             />
           </div>
 
-          <div className="flex-col flex gap-2">
+          <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="typePlayer">
               Type de joueur :
             </label>
