@@ -14,7 +14,7 @@ export default function Birthday() {
             Le <strong className="inline-block">T.T. Farguais</strong>, notre cher club de tennis de
             table de
             <strong> Fargues Saint-Hilaire</strong>, a récemment célébré son
-            30ème anniversaire et quel événement mémorable ce fut ! Cette
+            30ᵉ anniversaire et quel événement mémorable ce fut ! Cette
             journée spéciale restera gravée dans les mémoires de tous les
             participants, tant par les moments de convivialité que par les
             affrontements sportifs passionnés.

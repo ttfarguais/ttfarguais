@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
           <Nav />
         </header>
         <main>
-          <ArrowUp />
         {children}
+          <ArrowUp />
         </main>
         <footer>
           <Footer />

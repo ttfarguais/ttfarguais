@@ -17,7 +17,7 @@ export default function competitionPage (){
 
   const classements = [
     {
-      name: "Régional",
+      name: "Championnat de France régional",
       class: {
         R3: {
           name: "Régionale 3",
@@ -28,7 +28,7 @@ export default function competitionPage (){
     },
   
     {
-      name: "Départemental",
+      name: "Championnat de France départemental",
       class: {
         PR: {
           name: "Pré-Régionale",
