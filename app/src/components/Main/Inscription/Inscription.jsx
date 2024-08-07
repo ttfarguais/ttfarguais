@@ -43,7 +43,7 @@ export default function Inscription({times, prices, documents, trainingStartDate
           ))}
         </ul>
         <p className="font-bold text-solid">
-        Séances d’essai avant finalisation de l’inscription.
+        Séances d’essai possibles avant finalisation de l’inscription.
         </p>
         <p className="font-bold text-solid">
           L&apos;adhésion comprend la cotisation au <strong>T.T. Farguais</strong> et la licence F.F.T.T. pour toute la saison.

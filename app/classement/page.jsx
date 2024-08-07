@@ -36,7 +36,7 @@ export default function ClassementPage() {
 
   const SeasonProgression = [
     {
-      name: "Saison 2024",
+      name: "Saison 2024/25",
       image: seasonProgressionFile[2024],
       alt: "fiche de progression mensuelle du mois de mai",
     },

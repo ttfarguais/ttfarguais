@@ -26,7 +26,7 @@ export default function AticleTournaments({ trophy }) {
               <div className="flex flex-col md:flex-row justify-between gap-4">
                 <p class="font-bold md:text-lg">Vainqueur : <span className="inline-block">{winner.name}</span></p>
                 {winner.vs && (
-                  <p class="font-bold md:text-lg">Adversaire : <span className="inline-block">{winner.vs}</span></p>
+                  <p class="font-bold md:text-lg">Finaliste : <span className="inline-block">{winner.vs}</span></p>
                 )}
               </div>
             </div>
