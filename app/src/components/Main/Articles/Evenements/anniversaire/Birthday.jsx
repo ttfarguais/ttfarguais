@@ -54,7 +54,7 @@ export default function Birthday() {
           <p>
             En plus des matchs, de nombreuses activités et surprises ont rythmé
             cette journée. Des jeux, des défis et des démonstrations ont apporté
-            une touche de fun supplémentaire à l&lsquo;événement. Petits et
+            une touche de fun supplémentaire à l&lsquo;événement en partie grâce à la présence de Didier MOMMESSIN (numéroté Français). Petits et
             grands ont pu participer, s&lsquo;amuser et partager des moments de
             franche rigolade. L&lsquo;esprit de camaraderie et de bonne humeur
             qui fait la force de notre club était palpable. Cette célébration

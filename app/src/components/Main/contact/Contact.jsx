@@ -210,7 +210,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="object">
-              Objet : <span className="text-red-600">*</span>
+              Objet :
             </label>
             <input
               type="text"
@@ -218,7 +218,7 @@ export default function Contact() {
               id="object"
               value={formData.object}
               onChange={handleChange}
-              required
+              
               className="border-2 px-4 py-2 bg-contrast-2"
               placeholder="Inscription, demande d'informations..."
             />

@@ -26,8 +26,8 @@ export default function TournoisPage() {
     {
       bio: [
         { year: 2012, name: "DUARTE A.J." },
-        { year: 2011, name: "DARRACK L." },
-        { year: 2010, name: "DARRACK L." },
+        { year: 2011, name: "DARRACQ L." },
+        { year: 2010, name: "DARRACQ L." },
         { year: 2009, name: "LEJARD J.C." },
         { year: 2008, name: "GUIGNER Y." },
         { year: 2007, name: "PIRES M." },
@@ -36,7 +36,7 @@ export default function TournoisPage() {
         { year: 2004, name: "GOUIN S." },
         { year: 2003, name: "DEFLANDRE S." },
         { year: 2002, name: "DEFLANDRE S." },
-        { year: 2001, name: "AIMEE S." },
+        { year: 2001, name: "AIMÉE S." },
         { year: 2000, name: "BAILLY T." },
         { year: 1999, name: "DEFLANDRE S." },
         { year: 1998, name: "HAUTIER J.P." },
