@@ -1,9 +1,9 @@
 import TypeSection from './TypeSection';
 export default function Classement({ stageClassements, monthlyProgression, SeasonProgression }) {
 
-  const stageClassementsTitle = "Phase";
-  const monthlyProgressionTitle = "Mensuelle";
-  const seasonProgressionTitle = "Saison";
+  const stageClassementsTitle = "Phases";
+  const monthlyProgressionTitle = "Mensuelles";
+  const seasonProgressionTitle = "Saisons";
 
   // const stageClassementsModificationDate = "Les fiches de classements des joueurs sont supprimées a chaque début de saison.";
   // const monthlyProgressionModificationDate = "Chaque mois, une fiche de progression mensuelle est ajoutée jusqu'à la fin de la saison, puis elles sont toutes supprimées avant de recommencer.";

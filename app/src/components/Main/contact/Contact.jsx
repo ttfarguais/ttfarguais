@@ -98,12 +98,6 @@ export default function Contact() {
         onSubmit={handleSubmit}
         className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
-        <div className="flex flex-col gap-4">
-          <p className="md:text-lg">
-            Aidez-nous à nous améliorer en nous disant comment vous nous avez
-            connus. Votre avis compte pour nous !
-          </p>
-        </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex w-full gap-2">
@@ -216,7 +210,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="object">
-              Objet : <span className="text-red-600">*</span>
+              Objet :
             </label>
             <input
               type="text"
@@ -224,7 +218,7 @@ export default function Contact() {
               id="object"
               value={formData.object}
               onChange={handleChange}
-              required
+              
               className="border-2 px-4 py-2 bg-contrast-2"
               placeholder="Inscription, demande d'informations..."
             />

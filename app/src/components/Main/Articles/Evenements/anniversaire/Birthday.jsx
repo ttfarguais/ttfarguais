@@ -14,7 +14,7 @@ export default function Birthday() {
             Le <strong className="inline-block">T.T. Farguais</strong>, notre cher club de tennis de
             table de
             <strong> Fargues Saint-Hilaire</strong>, a récemment célébré son
-            30ème anniversaire et quel événement mémorable ce fut ! Cette
+            30ᵉ anniversaire et quel événement mémorable ce fut ! Cette
             journée spéciale restera gravée dans les mémoires de tous les
             participants, tant par les moments de convivialité que par les
             affrontements sportifs passionnés.
@@ -36,8 +36,8 @@ export default function Birthday() {
             garnies de délicieux plats et l&lsquo;atmosphère était à la fois
             festive et nostalgique. Anciens et actuels membres du club, familles
             et amis se sont réunis pour échanger des souvenirs, raconter des
-            anecdotes et célébrer ensemble l&lsquo;histoire riche et vibrante du
-            <strong className="inline-block"> T.T. Farguais</strong>. Les éclats de rires, les
+            anecdotes et célébrer ensemble l&lsquo;histoire riche et vibrante du{" "}
+            <strong className="inline-block">T.T. Farguais</strong>. Les éclats de rires, les
             discussions animées et les sourires étaient omniprésents.
           </p>
           <h2 className="font-bold text-lg">Des affrontements endiablés</h2>
@@ -54,13 +54,13 @@ export default function Birthday() {
           <p>
             En plus des matchs, de nombreuses activités et surprises ont rythmé
             cette journée. Des jeux, des défis et des démonstrations ont apporté
-            une touche de fun supplémentaire à l&lsquo;événement. Petits et
+            une touche de fun supplémentaire à l&lsquo;événement en partie grâce à la présence de Didier MOMMESSIN (numéroté Français). Petits et
             grands ont pu participer, s&lsquo;amuser et partager des moments de
             franche rigolade. L&lsquo;esprit de camaraderie et de bonne humeur
             qui fait la force de notre club était palpable. Cette célébration
-            des 30 ans du
-            <strong className="inline-block"> T.T. Farguais </strong> a été un véritable succès. Elle
-            nous a permis de renforcer nos liens, de célébrer notre histoire et
+            des 30 ans du {" "}
+            <strong className="inline-block">T.T. Farguais</strong> a été un véritable succès. Elle
+            nous a permis de renforcer les liens, de célébrer notre histoire et
             de regarder vers l&lsquo;avenir avec optimisme et enthousiasme.
             Merci à tous ceux qui ont participé à cet événement inoubliable.
             Nous avons hâte de continuer à écrire ensemble les prochaines pages

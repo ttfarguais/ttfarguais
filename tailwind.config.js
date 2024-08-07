@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'ttfarguais': 'url("/imgClub/club.jpg")',
+        'ttfarguais': 'url("/imgClub/birthday.jpg")',
         'ttfCreate': 'url("/imgClub/Create.jpg")',
       },
       colors:{

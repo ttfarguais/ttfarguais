@@ -5,7 +5,7 @@ export default function Training() {
     {
       name: "Adultes",
       schedules: [
-        { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement dirigé", coach: "AIMÉE Stéphane" },
+        { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre et dirigé", coach: "AIMÉE Stéphane" },
         { day: "Mercredi", time: "19h30 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
       ]
     },
@@ -13,8 +13,8 @@ export default function Training() {
       name: "Jeunes",
       schedules: [
         { day: "Mercredi", time: "14h00 - 15h30", who: "Initiation jeunes des écoles primaires-1ᵉʳ groupe *", trainingType: "Entraînement dirigé - Initiation", coach: "TOURNEAUX Maxime" },
-        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges-Lycées 2ᵉᵐᵉ groupe *", trainingType: "Entraînement dirigé - Débutant", coach: "TOURNEAUX Maxime" },
-        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des collèges-lycées 3ᵉᵐᵉ groupe *", trainingType: "Entraînement dirigé", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "15h30 - 17h30", who: "Initiation jeunes des collèges-Lycées 2ᵉ groupe *", trainingType: "Entraînement dirigé - Débutant", coach: "TOURNEAUX Maxime" },
+        { day: "Mercredi", time: "17h30 - 19h30", who: "Initiation jeunes des collèges-lycées 3ᵉ groupe *", trainingType: "Entraînement dirigé", coach: "TOURNEAUX Maxime" },
       ]
     }
   ];
@@ -23,7 +23,7 @@ export default function Training() {
   return (
     <>
    <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
-    <h1 className="text-xl text-center font-bold p-4 mb-8">Entraînement</h1>
+    <h1 className="text-xl text-center font-bold p-4 mb-8">Entraînements</h1>
 
     <div className="flex flex-col justify-between mb-8 gap-6">
       <ul>
@@ -45,7 +45,7 @@ export default function Training() {
       </ul>
 
       <p>* Les groupes sont définis en fonction des effectifs dans chaque catégorie</p>
-      <p className="font-bold text-solid">Les entraînements dirigés sont encadrés par un entraineur du Comité de Gironde, éducateur diplômé d’état.</p>
+      <p className="font-bold text-solid">Les entraînements dirigés sont encadrés par un entraineur du Comité de Gironde.</p>
 
     </div>
    </section>

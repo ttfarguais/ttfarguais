@@ -43,12 +43,12 @@ export default function Inscription({times, prices, documents, trainingStartDate
           ))}
         </ul>
         <p className="font-bold text-solid">
-        Séances d’essai avant finalisation de l’inscription.
+        Séances d’essai possibles avant finalisation de l’inscription.
         </p>
         <p className="font-bold text-solid">
           L&apos;adhésion comprend la cotisation au <strong>T.T. Farguais</strong> et la licence F.F.T.T. pour toute la saison.
         </p>
-        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2ᵉᵐᵉ licence dans la même famille.</p>
+        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2ᵉ licence dans la même famille.</p>
       </section>
       <section className="flex flex-col gap-4 mb-8 ">
         <p className="font-bold">

@@ -3,12 +3,14 @@ export default function Inscription({ trophys }) {
   return (
     <section className="p-6 md:w-4/6 m-auto 2xl:w-4/6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
-        Les tournois interne
+        Les tournois internes
       </h1>
 
-      <p className="text-justify mb-10">
+      <p className="text-justify mb-2">
         Hommage aux Vainqueurs du Tournoi Interne du Club de <strong>tennis de table</strong>{" "}
-        <strong className="inline-block">T.T. Farguais</strong>. Depuis sa
+        <strong className="inline-block">T.T. Farguais</strong>.
+      </p>
+      <p className="text-justify mb-10">Depuis sa
         fondation, notre club de <strong>tennis de table</strong>{" "}
         <strong className="inline-block">T.T. Farguais</strong> a toujours été
         un lieu où la passion, la compétition et l&apos;amitié se rencontrent.
