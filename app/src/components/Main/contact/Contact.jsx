@@ -20,7 +20,6 @@ export default function Contact() {
     municipality: "",
     typePlayer: "",
     description: "",
-    object: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
@@ -75,7 +74,6 @@ export default function Contact() {
         municipality: "",
         typePlayer: "",
         description: "",
-        object: "",
       });
       setIsSubmitted(false);
     } catch (error) {
@@ -178,19 +176,7 @@ export default function Contact() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg" htmlFor="birthdate">
-              Date de naissance :
-            </label>
-            <input
-              type="date"
-              name="birthdate"
-              id="birthdate"
-              value={formData.birthdate}
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-            />
-          </div>
+          
 
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="municipality">
@@ -208,19 +194,18 @@ export default function Contact() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
-          <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg" htmlFor="object">
-              Objet :
+        
+        <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg" htmlFor="birthdate">
+              Date de naissance :
             </label>
             <input
-              type="text"
-              name="object"
-              id="object"
-              value={formData.object}
+              type="date"
+              name="birthdate"
+              id="birthdate"
+              value={formData.birthdate}
               onChange={handleChange}
-              
               className="border-2 px-4 py-2 bg-contrast-2"
-              placeholder="Inscription, demande d'informations..."
             />
           </div>
 

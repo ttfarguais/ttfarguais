@@ -7,7 +7,6 @@ export async function POST(request) {
     email,
     message,
     tel,
-    object,
     birthdate,
     municipality,
     typePlayer,
@@ -38,18 +37,16 @@ export async function POST(request) {
       Age: ${age}
       Ville: ${municipality}
       Type de joueur: ${typePlayer}
-      objet: ${object}
       Comment avez-vous connu le club: ${description}
       Message: ${message} `,
     html: `<p><strong>Nom</strong> : ${lastName}</p>
     <p><strong>Prénom</strong> : ${firstName}</p>
-    <p><strong>Téléphone</strong> : ${tel}</p>
+    ${tel ? `<p><strong>Téléphone</strong> : ${tel}</p>` : ""}
     <p><strong>Email</strong> : ${email}</p>
-    <p><strong>Date de naissance</strong> : ${birthdateFR}. <strong>Age</strong> : ${age} ans</p>
-    <p><strong>Ville</strong> : ${municipality}</p>
-    <p><strong>Type de joueur</strong> : ${typePlayer}</p>
-    <p><strong>Objet</strong> : ${object}</p>
-    <p><strong>Comment avez-vous connu le club</strong> : ${description}</p>
+    ${birthdate ? `<p><strong>Date de naissance</strong> : ${birthdateFR}. <strong>Age</strong> : ${age} ans</p>` : ""}
+    ${municipality ? `<p><strong>Ville</strong> : ${municipality}</p>` : ""}
+    ${typePlayer ? `<p><strong>Type de joueur</strong> : ${typePlayer}</p>` : ""}
+    ${description ? `<p><strong>Comment avez-vous connu le club</strong> : ${description}</p>` : ""}
     <p><strong>Message</strong> : ${message}</p>`,
   };
 
