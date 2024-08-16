@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.ttfarguais.fr
+
+# Sitemaps
+Sitemap: https://www.ttfarguais.fr/sitemap.xml
