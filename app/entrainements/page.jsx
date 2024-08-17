@@ -9,6 +9,11 @@ export const metadata = {
 export default function TrainingPage() {
 
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/entrainements" />
+    </head>
    <Training></Training>
+    </>
   );
 }

@@ -45,6 +45,11 @@ export default function inscriptionPage() {
   ]
 
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/inscription" />
+    </head>
    <Inscription times={times} prices={prices} documents={documents} trainingStartDate={trainingStartDate}></Inscription>
+    </>
   );
 }

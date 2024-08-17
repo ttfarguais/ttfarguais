@@ -53,6 +53,11 @@ export default function TournoisPage() {
   ];
 
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/tournois" />
+    </head>
    <Tournaments trophys={trophys}></Tournaments>
+    </>
   )
 }

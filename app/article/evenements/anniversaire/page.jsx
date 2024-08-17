@@ -7,6 +7,11 @@ export const metadata = {
 
 export default function BirthdayPage() {
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/article/evenements/anniversaire" />
+    </head>
     <Birthday></Birthday>
+    </>
   );
 }
