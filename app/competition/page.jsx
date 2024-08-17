@@ -61,6 +61,9 @@ export default function competitionPage (){
 
   return (
     <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/competition" />
+    </head>
     <CompComponent classements={classements}></CompComponent>
     </>
   )

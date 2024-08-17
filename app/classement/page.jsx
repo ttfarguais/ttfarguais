@@ -43,10 +43,15 @@ export default function ClassementPage() {
   ];
 
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/classement" />
+    </head>
     <Classement
       stageClassements={stageClassements}
       monthlyProgression={monthlyProgression}
       SeasonProgression={SeasonProgression}
     ></Classement>
+    </>
   );
 }

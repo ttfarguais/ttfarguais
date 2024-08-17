@@ -11,6 +11,9 @@ export default function leClubPage (){
  
   return (
     <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/leclub" />
+    </head>
     <Cover />
     <ClubMain></ClubMain>
     </>

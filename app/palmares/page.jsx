@@ -30,6 +30,11 @@ export default function AwardsPage() {
   ]
 
   return (
+    <>
+    <head>
+    <link rel="canonical" href="https://www.ttfarguais.fr/palmares" />
+    </head>
    <Awards awards={awards}></Awards>
+    </>
   );
 }
