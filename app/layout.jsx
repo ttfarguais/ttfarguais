@@ -14,7 +14,7 @@ const exo2 = Exo_2({
 
 
 export const metadata = {
-  title: "T.T.Farguais - Accueil",
+  title: "T.T. Farguais - Accueil",
   description: "Bienvenue sur le site du T.T.Farguais. Retrouvez toutes les informations relatives au club. Venez nous rejoindre !",
 };
 
