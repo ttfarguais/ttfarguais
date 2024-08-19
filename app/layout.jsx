@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <head>
       <meta name="google-site-verification" content="Pk4o8AF5fkwB0KfjHtSMkAs0b_37p4QRD9u61_cPLxc" />
+      <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, viewport-fit=cover" />
       </head>
       <body className={`${exo2.className}`}>
         <header>
