@@ -13,7 +13,9 @@ export default function competitionPage (){
   const D4 = "/competition/D4.jpg";
   const R3 = "/competition/R3.jpg";
   const PR = "/competition/PR.jpg";
-  const CritGironde = "/competition/CRIT.jpg";
+  // const CritPoule1 = "/competition/CRIT.jpg";
+  const CritPoule2 = "/competition/CRIT.jpg";
+  // const CritPoule3 = "/competition/CRIT.jpg";
 
   const classements = [
     {
@@ -49,12 +51,23 @@ export default function competitionPage (){
     },
     {
       name: "Critérium de Gironde",
+      // class: {
+      //   Poule1: {
+      //     name: "Poule 1",
+      //     image: CritPoule1,
+      //     alt: "fiche de compétition critérium",
+      //   },
       class: {
-        CRIT: {
-          name: "Honneur",
-          image: CritGironde,
+        Poule1: {
+          name: "Poule 2",
+          image: CritPoule2,
           alt: "fiche de compétition critérium",
         },
+        // Poule3: {
+        //   name: "Poule 3",
+        //   image: CritPoule3,
+        //   alt: "fiche de compétition critérium",
+        // },
       },
     },
   ];
