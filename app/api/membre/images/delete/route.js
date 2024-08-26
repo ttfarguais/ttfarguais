@@ -1,23 +1,3 @@
-// app/api/membre/images/list/route.js
-// import fs from 'fs';
-// import path from 'path';
-
-// export async function deleteFile(request) {
-//   console.log("test")
-//   try {
-//     // const image = request.url.split('/').pop();
-//     const image = 'D4.jpg'
-//   const pathFile = path.join(process.cwd(), 'public', 'competition', 'planning', 'regionale', `${image}`);
-   
-//     fs.unlink(pathFile);
-//   } catch (error) {
-//     return new Response(JSON.stringify({ error: 'Erreur lors de la lecture du dossier' }), {
-//       status: 500,
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-//   }
-// }
-
 import fs from 'fs';
 import path from 'path';
 

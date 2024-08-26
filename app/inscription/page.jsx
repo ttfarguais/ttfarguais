@@ -40,7 +40,7 @@ export default function inscriptionPage() {
   ];
 
   const trainingStartDate = [
-    {date: "lundi 2 septembre 2024"},//Nom a modifier remove adultes.
+    {date: "lundi 2 septembre 2024"},
     {name: "jeunes", date: "mercredi 11 septembre 2024"}
   ]
 

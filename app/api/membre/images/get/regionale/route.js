@@ -1,8 +1,7 @@
-// app/api/membre/images/list/route.js
 import fs from 'fs';
 import path from 'path';
 
-const imagesDirectory = path.join(process.cwd(), 'public','competition', 'planning', 'honneur');
+const imagesDirectory = path.join(process.cwd(), 'public','competition', 'planning', 'regionale');
 
 export async function GET(request) {
   try {
