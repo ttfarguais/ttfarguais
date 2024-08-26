@@ -1,6 +1,7 @@
-"use client";
+"use client"
 import { useEffect, useState } from 'react';
 import FileSection from './FileSection';
+
 export default function AdminPanelComponent() {
   const [files, setFiles] = useState({
     honneur: [],
@@ -46,56 +47,43 @@ export default function AdminPanelComponent() {
     }
   };
 
-  // const handleAddFile = async (image, category) => {
-  //   try {
-  //     const response = await fetch(`/api/membre/images/add/`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ image, category }),
-  //     });
-
-  //     if (!response.ok) throw new Error("Erreur lors de la suppression de l'image");
-
-  //     fetchImages(category);
-  //   } catch (error) {
-  //     console.error("Erreur:", error);
-  //   }
-  // };
+  // Fonction de rappel pour mettre à jour les fichiers après l'ajout
+  const handleSuccess = (category) => {
+    fetchImages(category);
+  };
 
   return (
     <div className="flex flex-col w-full">
-    <h1 className="text-3xl m-auto p-10">Espace bureau</h1>
+      <h1 className="text-3xl m-auto p-10">Espace bureau</h1>
 
-    <div className="flex flex-col p-4">
-      <h2 className="text-2xl m-auto mb-8">
-        Fiches &quot;Résultats compétitions par équipes&quot;.
-      </h2>
-      <ul className="flex flex-col gap-10">
-        <FileSection
-          title="Championnat de France régional"
-          files={files.regionale}
-          category="regionale"
-          onDelete={handleDelete}
-          // onSubmit={handleAddFile}
-        />
-        <FileSection
-          title="Championnat de France départemental"
-          files={files.departementale}
-          category="departementale"
-          onDelete={handleDelete}
-          // onSubmit={handleAddFile}
-        />
-        <FileSection
-          title="Critérium de Gironde"
-          files={files.honneur}
-          category="honneur"
-          onDelete={handleDelete}
-          // onSubmit={handleAddFile}
-        />
-      </ul>
+      <div className="flex flex-col p-4">
+        <h2 className="text-2xl m-auto mb-8">
+          Fiches &quot;Résultats compétitions par équipes&quot;.
+        </h2>
+        <ul className="flex flex-col gap-10">
+          <FileSection
+            title="Championnat de France régional"
+            files={files.regionale}
+            category="regionale"
+            onDelete={handleDelete}
+            onSuccess={() => handleSuccess("regionale")}
+          />
+          <FileSection
+            title="Championnat de France départemental"
+            files={files.departementale}
+            category="departementale"
+            onDelete={handleDelete}
+            onSuccess={() => handleSuccess("departementale")}
+          />
+          <FileSection
+            title="Critérium de Gironde"
+            files={files.honneur}
+            category="honneur"
+            onDelete={handleDelete}
+            onSuccess={() => handleSuccess("honneur")}
+          />
+        </ul>
+      </div>
     </div>
-  </div>
   );
 }

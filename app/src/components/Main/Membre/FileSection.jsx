@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { MdDeleteForever } from "react-icons/md";
 
-export default function FileSection({ title, files, category, onDelete }) {
+export default function FileSection({ title, files, category, onDelete, onSuccess }) {
   const fileInput = useRef(null);
 
   async function uploadFile(e) {
@@ -26,10 +26,11 @@ export default function FileSection({ title, files, category, onDelete }) {
       const result = await response.json();
       if (response.ok) {
         alert("Fichier téléchargé avec succès !");
+        if (onSuccess) onSuccess(); // Appeler la fonction de rappel après un ajout réussi
       } else {
         throw new Error(result.error || 'Erreur lors du téléchargement du fichier.');
       }
-      console.log(result);
+      
     } catch (error) {
       console.error("Erreur:", error);
       alert("Erreur lors du téléchargement du fichier.");
