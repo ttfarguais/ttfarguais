@@ -1,6 +1,6 @@
-"use client"
-import { useEffect, useState } from 'react';
-import FileSection from './FileSection';
+"use client";
+import { useEffect, useState } from "react";
+import FileSection from "./FileSection";
 
 export default function AdminPanelComponent() {
   const [files, setFiles] = useState({
@@ -13,7 +13,8 @@ export default function AdminPanelComponent() {
   const fetchImages = async (type) => {
     try {
       const response = await fetch(`/api/membre/images/get/${type}`);
-      if (!response.ok) throw new Error(`Erreur lors de la récupération des images ${type}`);
+      if (!response.ok)
+        throw new Error(`Erreur lors de la récupération des images ${type}`);
       const data = await response.json();
       setFiles((prevFiles) => ({ ...prevFiles, [type]: data }));
     } catch (error) {
@@ -38,7 +39,8 @@ export default function AdminPanelComponent() {
         body: JSON.stringify({ image, category }),
       });
 
-      if (!response.ok) throw new Error("Erreur lors de la suppression de l'image");
+      if (!response.ok)
+        throw new Error("Erreur lors de la suppression de l'image");
 
       // Recharger les fichiers après suppression
       fetchImages(category);
