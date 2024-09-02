@@ -13,7 +13,8 @@ export default function competitionPage (){
   const D4 = "/competition/D4.jpg";
   const R3 = "/competition/R3.jpg";
   const PR = "/competition/PR.jpg";
-  const CritGironde = "/competition/CRIT.jpg";
+  const Crit1 = "/competition/CRIT1.jpg";
+  const Crit2 = "/competition/CRIT2.jpg";
 
   const classements = [
     {
@@ -50,9 +51,14 @@ export default function competitionPage (){
     {
       name: "Critérium de Gironde",
       class: {
-        CRIT: {
-          name: "Honneur",
-          image: CritGironde,
+        CRIT1: {
+          name: "Equipe 1",
+          image: Crit1,
+          alt: "fiche de compétition critérium",
+        },
+        CRIT2: {
+          name: "Equipe 2",
+          image: Crit2,
           alt: "fiche de compétition critérium",
         },
       },
@@ -64,7 +70,10 @@ export default function competitionPage (){
     <head>
     <link rel="canonical" href="https://www.ttfarguais.fr/competition" />
     </head>
+    <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
     <CompComponent classements={classements}></CompComponent>
+    
+    </section>
     </>
   )
 }
