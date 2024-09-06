@@ -1,4 +1,4 @@
-import Contact from "../src/components/Main/contact/Contact";
+import ContactContainer from "../src/components/Main/contact/Contact-Container";
 
 export const metadata = {
   title: "T.T. Farguais - Contact",
@@ -13,7 +13,7 @@ export default function ContactPage() {
     <head>
     <link rel="canonical" href="https://www.ttfarguais.fr/contact" />
     </head>
-    <Contact></Contact>
+    <ContactContainer></ContactContainer>
     </>
   );
 }

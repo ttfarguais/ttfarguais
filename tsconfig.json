@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/src/components/Main/Home/Announcement/Announcement.jsx", "app/src/components/Main/Inscription/Inscription.jsx", "app/src/components/Main/contact/Contact.jsx"  ],
+, "app/src/components/Main/Home/Announcement/Announcement.jsx", "app/src/components/Main/Inscription/Inscription.jsx", "app/src/components/Main/contact/Contact.jsx", "app/article/actu/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

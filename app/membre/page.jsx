@@ -1,9 +1,8 @@
-import AdminPanel from "../src/components/Main/Membre/AdminPanel";
+import Login from "../src/components/Main/Membre/Login";
 export default function MembrePage() {
- 
-
   return (
- <AdminPanel></AdminPanel>
+    <>
+      <Login></Login>
+    </>
   );
 }
-

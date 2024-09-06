@@ -1,5 +1,5 @@
 
-import CompComponent from "../src/components/Main/Competition/CompComponent";
+import CompComponent from "../src/components/Main/Competition/ClassementList-Container";
 export const metadata = {
   title: "T.T. Farguais - Compétition",
   description:

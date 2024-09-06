@@ -1,5 +1,5 @@
-import ClubMain from "../src/components/Main/Club/ClubMain";
-import Cover from "../src/components/Main/Club/Cover";
+import ClubBanner from "../src/components/Main/Club/ClubBanner";
+import ClubStory from "../src/components/Main/Club/ClubStory";
 
 export const metadata = {
   title: "T.T. Farguais - Le Club",
@@ -14,8 +14,8 @@ export default function leClubPage (){
     <head>
     <link rel="canonical" href="https://www.ttfarguais.fr/leclub" />
     </head>
-    <Cover />
-    <ClubMain></ClubMain>
+    <ClubBanner />
+    <ClubStory />
     </>
   )
 }

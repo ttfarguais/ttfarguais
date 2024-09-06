@@ -56,12 +56,13 @@ export default function Actu() {
           <p>
             Un grand merci à tous ceux qui ont contribué à ce projet. Votre
             dévouement et votre passion pour le club sont la clé de notre succès
-            continu. Continuons à faire de <strong className="inline-block">T.T. Farguais</strong> un endroit où le sport et
-            l&apos;amitié se rencontrent.
+            continu. Continuons à faire de{" "}
+            <strong className="inline-block">T.T. Farguais</strong> un endroit
+            où le sport et l&apos;amitié se rencontrent.
           </p>
           <p className="text-solid font-bold">
-            Rendez-vous en 2024 pour découvrir toutes ces nouveautés
-            et célébrer ensemble cette nouvelle étape de notre histoire !
+            Rendez-vous en 2024 pour découvrir toutes ces nouveautés et célébrer
+            ensemble cette nouvelle étape de notre histoire !
           </p>
         </div>
       </div>

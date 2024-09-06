@@ -2,7 +2,7 @@ import { Exo_2 } from "next/font/google";
 import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
 import AnnouceBar from "./src/components/Header/AnnouceBar";
-import Nav from './src/components/Header/Nav';
+import Nav from './src/components/Header/Navigation/Nav';
 import ArrowUp from './src/components/Main/ArrowUp';
 
 const exo2 = Exo_2({ 

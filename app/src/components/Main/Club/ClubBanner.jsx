@@ -1,6 +1,6 @@
 export default function Cover() {
   return (
-    <section>
+ 
       <section>
         <div
           className={`relative flex w-full h-56 sm:h-68 md:h-72 lg:h-96  bg-ttfCreate bg-cover bg-center items-center justify-center px-8 py-6 `}
@@ -17,6 +17,6 @@ export default function Cover() {
           </div>
         </div>
       </section>
-    </section>
+    
   );
 }
