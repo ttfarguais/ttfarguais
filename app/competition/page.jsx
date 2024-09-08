@@ -9,6 +9,7 @@ export const metadata = {
 
 export default function competitionPage (){
 
+  const D1 = "/competition/D1.jpg";
   const D2 = "/competition/D2.jpg";
   const D4 = "/competition/D4.jpg";
   const R3 = "/competition/R3.jpg";
@@ -35,6 +36,11 @@ export default function competitionPage (){
           name: "Pré-Régionale",
           image: PR ,
           alt: "fiche de compétition pré-régionale",
+        },
+        D1: {
+          name: "Départementale 1",
+          image: D1,
+          alt: "fiche de compétition départementale 1",
         },
         D2: {
           name: "Départementale 2",
