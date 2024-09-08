@@ -5,24 +5,26 @@ import { useState } from "react";
 import { IoArrowDown, IoArrowForward, IoClose, IoMenu } from "react-icons/io5";
 import TTFLogo from "../../../../public/TTFargues-logo-Plein.svg";
 
-
 export default function Nav() {
   const navLinks = [
     { title: "Accueil", url: "/" },
     {
       title: "Le club",
       url: "/leclub",
-      subLinks: [{ title: "Entrainements", url: "/entrainements" },
+      subLinks: [
         { title: "Le bureau", url: "/bureau" },
+        { title: "Tournois", url: "/tournois" },
         { title: "Palmarès", url: "/palmares" },
       ],
     },
+    { title: "Entrainements", url: "/entrainements" },
     { title: "Inscription", url: "/inscription" },
-    { title: "Compétition", url: "/competition",
-      subLinks: [
-      { title: "Joueurs", url: "/classement" },
-    ],  },
-    { title: "Tournois", url: "/tournois" },
+    {
+      title: "Compétition",
+      url: "/competition",
+      subLinks: [{ title: "Joueurs", url: "/classement" }],
+    },
+    ,
     { title: "Contact", url: "/contact" },
   ];
 
@@ -32,7 +34,13 @@ export default function Nav() {
   return (
     <nav className="sticky z-50 flex lg:flex-col px-8 sm:px-8 py-6 lg:py-12 items-center justify-between gap-10 border-b bg-white ">
       <Link href="/" className="w-16 md:w-20">
-        <Image src={TTFLogo} alt="Logo de The House Of Art" width={100} height={100} className="w-auto"/>
+        <Image
+          src={TTFLogo}
+          alt="Logo de The House Of Art"
+          width={100}
+          height={100}
+          className="w-auto"
+        />
       </Link>
       <button
         onClick={() => setMenuOpen(!menuOpen)}

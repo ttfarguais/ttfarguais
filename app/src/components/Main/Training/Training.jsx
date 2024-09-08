@@ -6,7 +6,7 @@ export default function Training() {
       name: "Adultes",
       schedules: [
         { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre et dirigé", coach: "AIMÉE Stéphane" },
-        { day: "Mercredi", time: "19h30 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
+        { day: "Mercredi", time: "19h00 - 20h30", who: "Loisirs et tous compétiteurs", trainingType: "Entraînement libre" },
       ]
     },
     {

@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function competitionPage (){
 
-  const D1 = "/competition/D1.jpg";
-  const D2 = "/competition/D2.jpg";
-  const D4 = "/competition/D4.jpg";
-  const R3 = "/competition/R3.jpg";
-  const PR = "/competition/PR.jpg";
-  const Crit1 = "/competition/CRIT1.jpg";
-  const Crit2 = "/competition/CRIT2.jpg";
+  const D1E1 = "/competition/D1_EQUIP1.jpg";
+  const D2E1 = "/competition/D2_EQUIP1.jpg";
+  const D4E1 = "/competition/D4_EQUIP1.jpg";
+  const R3E1 = "/competition/R3_EQUIP1.jpg";
+  const PRE1 = "/competition/PR_EQUIP1.jpg";
+  const CritE1 = "/competition/CRIT_EQUIP1.jpg";
+  const CritE2 = "/competition/CRIT_EQUIP2.jpg";
 
   const classements = [
     {
@@ -23,7 +23,7 @@ export default function competitionPage (){
       class: {
         R3: {
           name: "Régionale 3",
-          image: R3,
+          image: R3E1,
           alt: "fiche de compétition régionale 3",
         },
       },
@@ -34,22 +34,22 @@ export default function competitionPage (){
       class: {
         PR: {
           name: "Pré-Régionale",
-          image: PR ,
+          image: PRE1 ,
           alt: "fiche de compétition pré-régionale",
         },
         D1: {
           name: "Départementale 1",
-          image: D1,
+          image: D1E1,
           alt: "fiche de compétition départementale 1",
         },
         D2: {
           name: "Départementale 2",
-          image: D2,
+          image: D2E1,
           alt: "fiche de compétition départementale 2",
         },
         D4: {
           name: "Départementale 4",
-          image: D4,
+          image: D4E1,
           alt: "fiche de compétition départementale 4",
         },
       },
@@ -59,12 +59,12 @@ export default function competitionPage (){
       class: {
         CRIT1: {
           name: "Equipe 1",
-          image: Crit1,
+          image: CritE1,
           alt: "fiche de compétition critérium",
         },
         CRIT2: {
           name: "Equipe 2",
-          image: Crit2,
+          image: CritE2,
           alt: "fiche de compétition critérium",
         },
       },

@@ -7,7 +7,8 @@ export const metadata = {
 
 export default function ClassementPage() {
   const stageFile = {
-    stage2: "/competition/classementJoueurs/classement.jpg",
+    stage1: "/competition/progressionPhase/CLASST_P1.jpg",
+    // stage2: "/competition/classementJoueurs/classement.jpg",
   };
 
   const monthlyProgressionFile = {
@@ -20,10 +21,15 @@ export default function ClassementPage() {
 
   const stageClassements = [
     {
-      name: "Phase 2",
-      image: stageFile.stage2,
+      name: "Phase 1",
+      image: stageFile.stage1,
       alt: "fiche de classement phase 1",
     },
+    // {
+    //   name: "Phase 2",
+    //   image: stageFile.stage2,
+    //   alt: "fiche de classement phase 2",
+    // },
   ];
 
   const monthlyProgression = [
