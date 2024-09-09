@@ -7,21 +7,31 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
-  // Charger les variables d'environnement
-  const adminLogin = process.env.NEXT_PUBLIC_ADMINLOGIN;
-  const adminPassword = process.env.NEXT_PUBLIC_ADMINPASSWORD;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Comparer avec les variables d'environnement chargées
-    if (login !== adminLogin || password !== adminPassword) {
-      setMessage("Mauvais couple identifiant/mot de passe");
-      setSuccess(false); // S'assure que AdminPanel ne s'affiche pas
-      console.log(login, adminLogin, password, adminPassword);
-    } else {
-      setSuccess(true);
-      setMessage(""); // Effacer le message d'erreur si connexion réussie
+    try {
+      const res = await fetch('/api/membre/log', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ login, password }),
+      });
+
+      const data = await res.json();
+
+      if (!data.success) {
+        setMessage("Mauvais couple identifiant/mot de passe");
+        setSuccess(false); // S'assure que AdminPanel ne s'affiche pas
+      } else {
+        setSuccess(true);
+        setMessage(""); // Effacer le message d'erreur si connexion réussie
+      }
+    } catch (error) {
+      setMessage("Erreur serveur, réessayez plus tard");
+      console.error("Erreur lors de la soumission :", error);
     }
   };
 
