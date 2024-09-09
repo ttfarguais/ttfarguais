@@ -13,7 +13,7 @@ export default function BureauPage(){
     {firstname:"Patrick", lastname:"MARTINEAU", job:"Trésorier", alt: "Photo de Patrick Martineau"},
     {firstname:"Stéphane", lastname:"AIMEE", job:"Secrétaire", img:"/membres/Stephane.jpg", alt: "Photo de Stéphane Aimee"},
     {firstname:"Agostinho José", lastname:"DUARTE", job:"Secrétaire-adjoint",img:"/membres/Agostinho.jpg", alt: "Photo de Jose Duarte"},
-    {firstname:"Maxime", lastname:"TOURNEAUX", job:"Entaîneur", alt: "Photo de Maxime Tournaux"},
+    {firstname:"Maxime", lastname:"TOURNAUX", job:"Entaîneur", alt: "Photo de Maxime Tournaux"},
     {firstname:"Emmanuel", lastname:"BOS", job:"Media",img:"/membres/Manu.JPG", alt: "Photo de Emmanuel Bos"},
   ]
 
