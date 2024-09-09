@@ -8,6 +8,7 @@ export async function POST(req) {
     // Récupérer les variables d'environnement côté serveur
     const adminLogin = process.env.ADMINLOGIN;
     const adminPass = process.env.ADMINPASS;
+
     // Vérifier les identifiants
     if (login === adminLogin && password === adminPass) {
       return NextResponse.json({ success: true });
