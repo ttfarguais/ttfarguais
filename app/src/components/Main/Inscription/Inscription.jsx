@@ -1,11 +1,6 @@
-import Maps from "../Maps";
-export default function Inscription({
-  times,
-  prices,
-  documents,
-  trainingStartDate,
-  infoRentree,
-}) {
+import Maps from "../../UI/Maps";
+import InscriptionFilesList from "./Inscription-filesList";
+export default function Inscription({ times, documents, inscriptionFile }) {
   return (
     <>
       <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
@@ -33,93 +28,38 @@ export default function Inscription({
           </div>
         </div>
 
-        {/* <div className="flex flex-col gap-2 mb-10">
-          {trainingStartDate.map((age, index) => (
-            <p
-              key={index}
-              className="text-xl font-bold text-solid  px-4 py-2 bg-contrast-2 rounded-xl"
-            >
-              Reprise des entrainements {age.name && age.name} le {age.date}
-            </p>
-          ))}
-        </div> */}
-
         <section className="flex flex-col mb-8 ">
-          {/* <h3 className="font-bold mb-2 text-lg">Adhésions pour la saison 2024/2025</h3>
-        <ul>
-          {prices.map((price, index) => (
-            <li key={index}>
-              <p>
-                <span className="font-bold">- {price.price} € </span> : {price.category}
-                {price.time ? `(${price.time})` : null}.
-              </p>
-            </li>
-          ))}
-        </ul>
-        <p className="font-bold text-solid">
-        Séances d’essai possibles avant finalisation de l’inscription.
-        </p>
-        <p className="font-bold text-solid">
-          L&apos;adhésion comprend la cotisation au <strong>T.T. Farguais</strong> et la licence F.F.T.T. pour toute la saison.
-        </p>
-        <p className="font-bold text-solid">Réduction de 15€ à partir de la 2ᵉ licence dans la même famille.</p> */}
+          <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
+            Informations tarifs et horraires :
+          </h2>
+          <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
+            <p className="mr-4">{inscriptionFile.name} :</p>
 
-<h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-              Information tarifs et horaires :
-            </h2>
-          <div
-            
-            className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl"
-          >
-            
-            <p className="mr-4">{infoRentree.name} :</p>
-        
-              <a
-                href={infoRentree.pdf}
-                download={`${infoRentree.pdf}.pdf`}
-                className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
-                aria-label={`Télécharger ${infoRentree.name}`}
-              >
-                Télécharger
-              </a>
-          
+            <a
+              href={inscriptionFile.pdf}
+              download={`${inscriptionFile.pdf}.pdf`}
+              className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
+              aria-label={`Télécharger ${inscriptionFile.name}`}
+            >
+              Télécharger
+            </a>
           </div>
         </section>
         <section className="flex flex-col gap-4 mb-8 ">
-
           <div>
             <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
               Documents à fournir obligatoirement :
             </h2>
             <ul className="flex flex-col gap-6">
-          {/* <p className="font-bold">
-            - Certificat médical obligatoire pour les adultes et les jeunes si
-            daté de plus de 3 ans.
-          </p> */}
               {documents.map((document, index) => (
-                <li
-                  key={index}
-                  className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl"
-                >
-                  <p className="mr-4">{document.name} :</p>
-                  <div>
-                    <a
-                      href={document.pdf}
-                      download={`${document.pdf}.pdf`}
-                      className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
-                      aria-label={`Télécharger ${document.name}`}
-                    >
-                      Télécharger
-                    </a>
-                  </div>
-                </li>
+                <InscriptionFilesList key={index} document={document} />
               ))}
             </ul>
           </div>
         </section>
       </section>
       <section className="w-full">
-        <Maps></Maps>
+        <Maps />
       </section>
     </>
   );

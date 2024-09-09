@@ -1,4 +1,4 @@
-import ImageAndClick from "../ImageAndClick";
+import ImageAndClick from "../../UI/ImageAndClick";
 export default function AticleTournaments({ trophy }) {
   return (
   <section className="flex flex-col">
