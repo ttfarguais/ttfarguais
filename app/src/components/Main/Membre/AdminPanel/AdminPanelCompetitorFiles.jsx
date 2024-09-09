@@ -19,7 +19,7 @@ export default function AdminPanelCompetitorFiles() {
         <div className="mb-10">
           <p className="font-bold text-red-500 mb-2">
             Merci de supprimer le fichier déjà présent avant d&apos;ajouter le
-            nouveau
+            nouveau.
           </p>
           <p className="font-bold text-red-500 mb-2">
             Merci de faire correspondre les fichiers comme suit :
@@ -28,12 +28,12 @@ export default function AdminPanelCompetitorFiles() {
             <li>Phase = PHASE1.jpg / PHASE2.jpg</li>
             <li>
               Mensuelles = JANVIER.jpg / FEVRIER.jpg / etc{" "}
-              <span className="text-red-500">(Ne pas mettre d'accents.)</span>
+              <span className="text-red-500">(Ne pas mettre d&apos;accents.)</span>
             </li>
             <li>
               Saison = 2024.jpg / 2025.jpg / 2026.jpg{" "}
               <span className="text-red-500">
-                (Mettre seulement la date du début de l'année.)
+                (Mettre seulement la date du début de l&apos;année.)
               </span>
             </li>
           </ul>

@@ -19,7 +19,7 @@ export default function AdminPanelCompetitionFiles() {
 
         <div className="mb-10">
           <p className="font-bold text-red-500 mb-2">
-            Merci de supprimer le fichier déjà présent avant d'ajouter le
+            Merci de supprimer le fichier déjà présent avant d&apos;ajouter le
             nouveau.
           </p>
           <p className="font-bold text-red-500 mb-2">
@@ -27,7 +27,8 @@ export default function AdminPanelCompetitionFiles() {
           </p>
           <p className="font-bold mb-2">
             La(es) première(s) lettre(s) correspond(ent) à la division de
-            l&apos;équipe et le reste du nom du fichier correspond à l'équipe.
+            l&apos;équipe et le reste du nom du fichier correspond à
+            l&apos;équipe.
           </p>
           <ul>
             <li>Régionale 3 = R3_EQUIP1.jpg / R3_EQUIP2.jpg / etc</li>
