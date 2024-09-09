@@ -1,4 +1,4 @@
-import Maps from "../Maps";
+import Maps from "../../UI/Maps";
 import InscriptionFilesList from "./Inscription-filesList";
 export default function Inscription({ times, documents, inscriptionFile }) {
   return (
@@ -59,7 +59,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
         </section>
       </section>
       <section className="w-full">
-        <Maps></Maps>
+        <Maps />
       </section>
     </>
   );

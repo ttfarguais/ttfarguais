@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "./src/components/Footer/Footer";
 import AnnouceBar from "./src/components/Header/AnnouceBar";
 import Nav from './src/components/Header/Navigation/Nav';
-import ArrowUp from './src/components/Main/ArrowUp';
+import ArrowUp from './src/components/UI/ArrowUp';
 
 const exo2 = Exo_2({ 
   subsets: ["latin"],

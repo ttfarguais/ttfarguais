@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import TTFLogo from "../../../../../public/TTFargues-logo-Plein.svg";
-import siteLinks from "../../../utils/site";
+import siteLinks from "../../../data/site";
 import NavListDesktop from "./Nav-ListDesktop";
 import NavListMobile from "./Nav-ListMobile";
 export default function Nav() {

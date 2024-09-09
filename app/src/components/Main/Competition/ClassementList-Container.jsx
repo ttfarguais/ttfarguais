@@ -55,8 +55,8 @@ const CompContainer = () => {
       title: "Critérium de Gironde / Honneur",
       category: files.honneurFiles.map((file) => {
         let name = "Equipe";
-        if (file.includes("CRIT1")) name += " 1";
-        else if (file.includes("CRIT2")) name += " 2";
+        if (file.includes("EQUIP1")) name += " 1";
+        else if (file.includes("EQUIP2")) name += " 2";
         return { name, file: `/competition/planning/honneur/${file}` };
       }),
     },

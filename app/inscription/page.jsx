@@ -1,5 +1,5 @@
 import Inscription from "../src/components/Main/Inscription/Inscription";
-import { documents, inscriptionFile, times } from "../src/utils/inscriptionFile";
+import { documents, inscriptionFile, times } from "../src/data/inscriptionFile";
 export const metadata = {
   title: "T.T. Farguais - Inscription",
   description:

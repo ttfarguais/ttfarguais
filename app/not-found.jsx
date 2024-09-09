@@ -1,4 +1,4 @@
-import ButtonGreen from './src/components/Main/ButtonGreen';
+import ButtonGreen from './src/components/UI/ButtonGreen';
 
 export const metadata = {
   title: "T.T.Farguais - 404",

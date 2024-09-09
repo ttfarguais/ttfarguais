@@ -61,7 +61,15 @@ const CompContainer = () => {
       title: "Saisons :",
       category: files.seasonFiles.map((file) => {
         let name = "Saison";
-        name += `${file.name} / ${file.name + 1}`;
+      
+        // Récupérer l'année dans le fichier
+        const yearMatch = file.match(/\b\d{4}\b/); // Recherche une année dans le fichier
+      
+        if (yearMatch) {
+          const year = parseInt(yearMatch[0], 10); // Convertir l'année en nombre
+          name += ` ${year} / ${year + 1}`; // Ajouter l'année et l'année suivante
+        }
+      
         return { name, file: `/competition/progress/seasonProgress/${file}` };
       }),
     },

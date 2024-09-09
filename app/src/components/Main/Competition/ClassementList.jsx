@@ -1,4 +1,4 @@
-import ImageAndClick from "../ImageAndClick";
+import ImageAndClick from "../../UI/ImageAndClick";
 
 const ClassementList = ({ classementType }) => {
   return (

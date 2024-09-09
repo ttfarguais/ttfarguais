@@ -1,5 +1,5 @@
 "use client";
-import playerType from "../../../utils/playerType";
+import playerType from "../../../data/playerType";
 export default function Contact({
   handleChange,
   handleSubmit,

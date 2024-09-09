@@ -5,7 +5,7 @@ export const metadata = {
     "Découvrez les membres du bureau du club de tennis de table de Fargues Saint Hilaire.",
 }
 
-import membres from "../src/utils/membres";
+import membres from "../src/data/membres";
 export default function BureauPage(){
 
   return (

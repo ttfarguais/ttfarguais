@@ -1,5 +1,5 @@
-import trainingTimes from '../../../utils/trainingTimes';
-import Maps from '../Maps';
+import trainingTimes from '../../../data/trainingTimes';
+import Maps from '../../UI/Maps';
 import TrainingList from './Training-list';
 export default function Training() {
   

@@ -1,4 +1,4 @@
-import ButtonCover from "../ButtonCover"
+import ButtonCover from "../../UI/ButtonCover"
 export default function Cover(){
   return (
    <section>
