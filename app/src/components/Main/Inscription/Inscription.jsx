@@ -65,7 +65,7 @@ export default function Inscription({
         <p className="font-bold text-solid">Réduction de 15€ à partir de la 2ᵉ licence dans la même famille.</p> */}
 
 <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-              Information tarifs et horraires :
+              Information tarifs et horaires :
             </h2>
           <div
             
