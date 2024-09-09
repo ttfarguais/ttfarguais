@@ -19,38 +19,38 @@ export default function competitionPage (){
 
   const classements = [
     {
-      name: "Championnat de France régional",
+      name: "Championnat de France Régional",
       class: {
         R3: {
           name: "Régionale 3",
           image: R3E1,
-          alt: "fiche de compétition régionale 3",
+          alt: "fiche de compétition Régionale 3",
         },
       },
     },
   
     {
-      name: "Championnat de France départemental",
+      name: "Championnat de France Départemental",
       class: {
         PR: {
           name: "Pré-Régionale",
           image: PRE1 ,
-          alt: "fiche de compétition pré-régionale",
+          alt: "fiche de compétition Pré-régionale",
         },
         D1: {
           name: "Départementale 1",
           image: D1E1,
-          alt: "fiche de compétition départementale 1",
+          alt: "fiche de compétition Départementale 1",
         },
         D2: {
           name: "Départementale 2",
           image: D2E1,
-          alt: "fiche de compétition départementale 2",
+          alt: "fiche de compétition Départementale 2",
         },
         D4: {
           name: "Départementale 4",
           image: D4E1,
-          alt: "fiche de compétition départementale 4",
+          alt: "fiche de compétition Départementale 4",
         },
       },
     },
@@ -60,12 +60,12 @@ export default function competitionPage (){
         CRIT1: {
           name: "Equipe 1",
           image: CritE1,
-          alt: "fiche de compétition critérium",
+          alt: "fiche de compétition Critérium",
         },
         CRIT2: {
           name: "Equipe 2",
           image: CritE2,
-          alt: "fiche de compétition critérium",
+          alt: "fiche de compétition Critérium",
         },
       },
     },

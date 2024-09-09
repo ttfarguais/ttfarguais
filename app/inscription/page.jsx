@@ -39,6 +39,11 @@ export default function inscriptionPage() {
     { name: "Questionnaire de Santé pour personne Mineure (2 années consécutives sur 3)", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
   ];
 
+  const infoRentree = {
+    name : "Fiche inscription 2024/2025",
+    pdf: "/pdf/infos-rentree.pdf"
+  }
+
   const trainingStartDate = [
     {date: "lundi 2 septembre 2024"},//Nom a modifier remove adultes.
     {name: "jeunes", date: "mercredi 11 septembre 2024"}
@@ -49,7 +54,7 @@ export default function inscriptionPage() {
     <head>
     <link rel="canonical" href="https://www.ttfarguais.fr/inscription" />
     </head>
-   <Inscription times={times} prices={prices} documents={documents} trainingStartDate={trainingStartDate}></Inscription>
+   <Inscription times={times} prices={prices} documents={documents} infoRentree={infoRentree} trainingStartDate={trainingStartDate}></Inscription>
     </>
   );
 }
