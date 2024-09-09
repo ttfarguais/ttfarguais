@@ -38,7 +38,7 @@ export default function Login() {
       {success ? (
         <AdminPanel />
       ) : (
-        <div className="sm:w-2/4">
+        <div className="sm:w-2/4 m-auto flex flex-col p-8">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-2">
             <label htmlFor="login">Identifiant :</label>
             <input

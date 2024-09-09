@@ -3,12 +3,16 @@ import useCompetitionFiles from "../../../../utils/useCompetitionFiles";
 import AdminPanelFileSection from "./AdminPanel-FileSection";
 
 export default function AdminPanelCompetitionFiles() {
-
-  const {competitionFiles, competitionHandleDelete, competitionHandleSuccess, subjectFile} = useCompetitionFiles();
+  const {
+    competitionFiles,
+    competitionHandleDelete,
+    competitionHandleSuccess,
+    subjectFile,
+  } = useCompetitionFiles();
 
   return (
     <div className="flex flex-col w-full items-center gap-20">
-          <div className="flex flex-col p-4 w-[80%]">
+      <div className="flex flex-col p-4 w-[80%]">
         <h2 className="text-2xl m-auto mb-8">
           Fiches &quot;Résultats compétitions par équipes&quot;.
         </h2>
@@ -22,14 +26,14 @@ export default function AdminPanelCompetitionFiles() {
             Merci de faire correspondre les fichiers comme suit:
           </p>
           <p className="font-bold mb-2">
-          La(es) première(s) lettre(s) correspond(ent) à la division de l'équipe et le reste du nom du fichier correspond à l'équipe.
+            La(es) première(s) lettre(s) correspond(ent) à la division de
+            l'équipe et le reste du nom du fichier correspond à l'équipe.
           </p>
           <ul>
             <li>Régionale 3 = R3_EQUIP1.jpg / R3_EQUIP2.jpg / etc</li>
             <li>Pré-régionale 1 = PR_EQUIP1.jpg / PR_EQUIP2.jpg / etc</li>
             <li>départementale 2 = D2_EQUIP1.jpg / D2_EQUIP2.jpg / etc</li>
             <li>Critérium = CRIT_EQUIP1.jpg / CRIT_EQUIP2.jpg / etc</li>
-         
           </ul>
         </div>
 

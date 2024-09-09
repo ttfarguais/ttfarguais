@@ -6,13 +6,9 @@ import AdminPanelCompetitorFiles from "./AdminPanel-CompetitorFiles";
 export default function AdminPanelComponent() {
   const [typeFile, setTypeFile] = useState("");
 
-  
-
   const handleChange = (e) => {
     setTypeFile(e.target.value);
   };
-
-  console.log(typeFile);
 
   return (
     <div className="flex flex-col w-full items-center gap-10">
@@ -21,9 +17,10 @@ export default function AdminPanelComponent() {
       <form
         action=""
         className="text-lg flex items-center gap-4 p-4 bg-green-100 rounded-xl"
-       
       >
-        <label htmlFor="selectTypeFile">Choisir le type de fichier à modifier :</label>
+        <label htmlFor="selectTypeFile">
+          Choisir le type de fichier à modifier :
+        </label>
         <select
           className="text-center p-2"
           name="selectTypeFile"
@@ -32,9 +29,10 @@ export default function AdminPanelComponent() {
         >
           <option value="">-- Choisir un type de fichier --</option>
           <option value="competition">Résultats Compétition par équipes</option>
-          <option value="competitor">Classement et progression des joueurs</option>
+          <option value="competitor">
+            Classement et progression des joueurs
+          </option>
         </select>
-      
       </form>
 
       {typeFile === "competition" && <AdminPanelCompetitionFiles />}
