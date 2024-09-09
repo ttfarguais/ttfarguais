@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
+export const subjectFile = "competitionResults";
+
 export default function useCompetitionFiles() {
   const [competitionFiles, setCompetitionFiles] = useState({
     honneur: [],
@@ -11,7 +13,7 @@ export default function useCompetitionFiles() {
   // Fonction générique pour récupérer les images
   const fetchImages = async (type) => {
     try {
-      const response = await fetch(`/api/membre/files/competitionResults/get/${type}`);
+      const response = await fetch(`/api/membre/files/${subjectFile}/get/${type}`);
       if (!response.ok) throw new Error(`Erreur lors de la récupération des images ${type}`);
       const data = await response.json();
       setCompetitionFiles((prevFiles) => ({ ...prevFiles, [type]: data }));
@@ -29,7 +31,7 @@ export default function useCompetitionFiles() {
   // Fonction pour gérer la suppression des images
   const competitionHandleDelete = async (image, category) => {
     try {
-      const response = await fetch(`/api/membre/files/competitionResults/delete/`, {
+      const response = await fetch(`/api/membre/files/${subjectFile}/delete/`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -51,5 +53,5 @@ export default function useCompetitionFiles() {
     fetchImages(category);
   };
 
- return { competitionFiles, competitionHandleDelete, competitionHandleSuccess };
+ return { competitionFiles, competitionHandleDelete, competitionHandleSuccess, subjectFile };
 }

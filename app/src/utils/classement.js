@@ -1,7 +1,7 @@
 const stageClassements = [
   {
     name: "Phase 2",
-    image: "/competition/classementJoueurs/classement.jpg",
+    image: "/competition/progress/stageProgress/PHASE1.jpg",
     alt: "fiche de classement phase 1",
   },
 ];
@@ -9,7 +9,7 @@ const stageClassements = [
 const monthlyProgression = [
   {
     name: "Mai",
-    image: "/competition/progressionMensuelle/progressionMensuelle.jpg",
+    image: "/competition/progress/monthlyProgress/MAI.jpg",
     alt: "fiche de progression mensuelle du mois de mai",
   },
 ];
@@ -17,8 +17,8 @@ const monthlyProgression = [
 const SeasonProgression = [
   {
     name: "Saison 2024/25",
-    image:"/competition/progressionSaison/progressionSaison.jpg",
-    alt: "fiche de progression mensuelle du mois de mai",
+    image:"/competition/progress/seasonProgress/2024.jpg",
+    alt: "fiche de progression annuelle de la saison 2024/25",
   },
 ];
 

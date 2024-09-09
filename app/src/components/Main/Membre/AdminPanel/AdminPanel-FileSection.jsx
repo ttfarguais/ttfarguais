@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { MdDeleteForever } from "react-icons/md";
 
-export default function FileSection({ title, files, category, onDelete, onSuccess }) {
+export default function FileSection({ title, files, category, onDelete, onSuccess, subjectFile }) {
   const fileInput = useRef(null);
 
   async function uploadFile(e) {
@@ -18,7 +18,7 @@ export default function FileSection({ title, files, category, onDelete, onSucces
     formData.append("category", category); // Ajouter la catégorie pour le backend
 
     try {
-      const response = await fetch("/api/membre/files/competitionResults/add", {
+      const response = await fetch(`/api/membre/files/${subjectFile}/add`, {
         method: "POST",
         body: formData,
       });

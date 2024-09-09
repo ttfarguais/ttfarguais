@@ -11,7 +11,7 @@ const CompContainer = () => {
 
   const fetchImages = async (type) => {
     try {
-      const response = await fetch(`/api/membre/images/get/${type}`);
+      const response = await fetch(`/api/membre/files/competitionResults/get/${type}`);
       if (!response.ok)
         throw new Error(`Erreur lors de la récupération des images de ${type}`);
       const data = await response.json();

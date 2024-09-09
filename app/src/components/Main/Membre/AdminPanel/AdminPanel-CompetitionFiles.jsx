@@ -1,10 +1,10 @@
 "use client";
 import useCompetitionFiles from "../../../../utils/useCompetitionFiles";
-import FileSection from "./FileSection";
+import AdminPanelFileSection from "./AdminPanel-FileSection";
 
 export default function AdminPanelCompetitionFiles() {
 
-  const {competitionFiles, competitionHandleDelete, competitionHandleSuccess} = useCompetitionFiles();
+  const {competitionFiles, competitionHandleDelete, competitionHandleSuccess, subjectFile} = useCompetitionFiles();
 
   return (
     <div className="flex flex-col w-full items-center gap-20">
@@ -13,26 +13,29 @@ export default function AdminPanelCompetitionFiles() {
           Fiches &quot;Résultats compétitions par équipes&quot;.
         </h2>
         <ul className="flex flex-col gap-10">
-          <FileSection
+          <AdminPanelFileSection
             title="Championnat de France régional"
             files={competitionFiles.regionale}
             category="regionale"
             onDelete={competitionHandleDelete}
             onSuccess={() => competitionHandleSuccess("regionale")}
+            subjectFile={subjectFile}
           />
-          <FileSection
+          <AdminPanelFileSection
             title="Championnat de France départemental"
             files={competitionFiles.departementale}
             category="departementale"
             onDelete={competitionHandleDelete}
             onSuccess={() => competitionHandleSuccess("departementale")}
+            subjectFile={subjectFile}
           />
-          <FileSection
+          <AdminPanelFileSection
             title="Critérium de Gironde"
             files={competitionFiles.honneur}
             category="honneur"
             onDelete={competitionHandleDelete}
             onSuccess={() => competitionHandleSuccess("honneur")}
+            subjectFile={subjectFile}
           />
         </ul>
       </div>
