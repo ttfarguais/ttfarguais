@@ -29,7 +29,7 @@ const CompContainer = () => {
 
   const classementType = [
     {
-      title: "Championnat de France régional",
+      title: "Championnat de France Régional",
       category: files.regionaleFiles.map((file) => {
         let name = "Régionale";
         if (file.includes("R4")) name += " 4";
@@ -40,7 +40,7 @@ const CompContainer = () => {
       }),
     },
     {
-      title: "Championnat de France départemental",
+      title: "Championnat de France Départemental",
       category: files.departementaleFiles.map((file) => {
         let name = "Départementale";
         if (file.includes("PR")) name = "Pré-Régionale";
@@ -52,9 +52,9 @@ const CompContainer = () => {
       }),
     },
     {
-      title: "Critérium de Gironde",
+      title: "Critérium de Gironde / Honneur",
       category: files.honneurFiles.map((file) => {
-        let name = "Honneur";
+        let name = "Equipe";
         if (file.includes("CRIT1")) name += " 1";
         else if (file.includes("CRIT2")) name += " 2";
         return { name, file: `/competition/planning/honneur/${file}` };

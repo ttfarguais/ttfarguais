@@ -4,18 +4,19 @@ const siteLinks = [
     title: "Le club",
     url: "/leclub",
     subLinks: [
-      { title: "Entrainements", url: "/entrainements" },
+      
       { title: "Le bureau", url: "/bureau" },
+      { title: "Tournois", url: "/tournois" },
       { title: "Palmarès", url: "/palmares" },
     ],
   },
+  { title: "Entrainements", url: "/entrainements" },
   { title: "Inscription", url: "/inscription" },
   {
     title: "Compétition",
     url: "/competition",
-    subLinks: [{ title: "Joueurs", url: "/classement" }],
+    subLinks: [{ title: "Compétiteurs", url: "/competiteurs" }],
   },
-  { title: "Tournois", url: "/tournois" },
   { title: "Contact", url: "/contact" },
 ];
 

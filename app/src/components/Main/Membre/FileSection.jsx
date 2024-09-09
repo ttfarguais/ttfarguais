@@ -59,7 +59,7 @@ export default function FileSection({ title, files, category, onDelete, onSucces
       <form className="p-2 border text-bold" onSubmit={uploadFile}>
         <p className="text-sm font-bold text-red-500 mb-2">
           Le nom des fichiers doit correspondre au type de fiche renseignée (ex:
-          Départementale 4 = D4.jpg). Merci de contacter Romain si vous avez un
+          Départementale 4 équipe 1 = D4_EQUIP1.jpg). Merci de contacter Romain si vous avez un
           doute.
         </p>
         <div className="p-4">
