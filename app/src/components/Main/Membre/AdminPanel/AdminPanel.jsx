@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import AdminPanelCompetitionFiles from "./AdminPanel-CompetitionFiles";
-import AdminPanelCompetitorFiles from "./AdminPanel-CompetitorFiles";
+import AdminPanelCompetitionFiles from "./AdminPanelCompetitionFiles";
+import AdminPanelCompetitorFiles from "./AdminPanelCompetitorFiles";
 
 export default function AdminPanelComponent() {
   const [typeFile, setTypeFile] = useState("");
@@ -16,7 +16,7 @@ export default function AdminPanelComponent() {
 
       <form
         action=""
-        className="text-lg flex items-center gap-4 p-4 bg-green-100 rounded-xl"
+        className="text-lg flex items-center gap-4 p-4 bg-green-100 rounded-xl mb-10"
       >
         <label htmlFor="selectTypeFile">
           Choisir le type de fichier à modifier :

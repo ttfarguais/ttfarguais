@@ -1,6 +1,6 @@
 "use client";
 import useCompetitorFiles from "../../../../utils/useCompetitorFiles";
-import AdminPanelFileSection from "./AdminPanel-FileSection";
+import AdminPanelFileSection from "./AdminPanelFileSection";
 export default function AdminPanelCompetitorFiles() {
   const {
     competitorFiles,
