@@ -128,7 +128,6 @@ export default function Contact({
               value={formData.birthdate}
               required
               onChange={handleChange}
-              required
               className="border-2 px-4 py-2 bg-contrast-2"
             />
           </div>
@@ -143,7 +142,6 @@ export default function Contact({
               value={formData.typePlayer}
               required
               onChange={handleChange}
-              required
               className="border-2 px-4 py-2 bg-contrast-2"
             >
               <option value=""></option>
@@ -166,7 +164,6 @@ export default function Contact({
             required
             value={formData.description}
             onChange={handleChange}
-            required
             className="border-2 px-4 py-2 bg-contrast-2 h-40"
             placeholder="J'ai connu le club grâce à..."
           ></textarea>
