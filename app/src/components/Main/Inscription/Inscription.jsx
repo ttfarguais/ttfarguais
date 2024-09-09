@@ -11,7 +11,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
         <div className="flex flex-col md:flex-row justify-between mb-8 ">
           <div className="mb-4 md:mb-0">
             <p>
-              <strong>T.T. Farguais</strong>
+              <strong>T.T. FARGUAIS</strong>
             </p>
             <p>Carré des Forges</p>
             <p>3, av. de La Laurence</p>

@@ -18,7 +18,7 @@ export default function FileSection({ title, files, category, onDelete, onSucces
     formData.append("category", category); // Ajouter la catégorie pour le backend
 
     try {
-      const response = await fetch("/api/membre/images/add", {
+      const response = await fetch("/api/membre/files/competitionResults/add", {
         method: "POST",
         body: formData,
       });
@@ -39,7 +39,7 @@ export default function FileSection({ title, files, category, onDelete, onSucces
 
   return (
     <li className="p-4 border">
-      <h3 className="text-xl mb-6">{title}</h3>
+      <h3 className="text-xl mb-6">Fiches du {title}</h3>
       <ul className="flex flex-col gap-4 mb-6">
         {files && files.length > 0 ? (
           files.map((image, index) => (
