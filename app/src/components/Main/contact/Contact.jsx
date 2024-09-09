@@ -25,7 +25,7 @@ export default function Contact({
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex w-full gap-2">
             <label className="text-md md:text-lg" htmlFor="lastName">
-              Nom : <span className="text-red-600">*</span>
+              Nom :
             </label>
             <input
               type="text"
@@ -41,7 +41,7 @@ export default function Contact({
 
           <div className="flex-col flex w-full gap-2">
             <label className="text-md md:text-lg" htmlFor="firstName">
-              Prénom : <span className="text-red-600">*</span>
+              Prénom :
             </label>
             <input
               type="text"
@@ -59,7 +59,7 @@ export default function Contact({
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="email">
-              Email : <span className="text-red-600">*</span>
+              Email :
             </label>
             <input
               type="email"
@@ -88,6 +88,7 @@ export default function Contact({
               id="tel"
               value={formData.tel}
               onChange={handleChange}
+              required
               className="border-2 px-4 py-2 bg-contrast-2"
             />
             {isSubmitted && !validatePhone() && formData.tel && (
@@ -108,6 +109,7 @@ export default function Contact({
               name="municipality"
               id="municipality"
               value={formData.municipality}
+              required
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
             />
@@ -124,6 +126,7 @@ export default function Contact({
               name="birthdate"
               id="birthdate"
               value={formData.birthdate}
+              required
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
             />
@@ -137,6 +140,7 @@ export default function Contact({
               name="typePlayer"
               id="typePlayer"
               value={formData.typePlayer}
+              required
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"
             >
@@ -159,6 +163,7 @@ export default function Contact({
             id="description"
             value={formData.description}
             onChange={handleChange}
+            required
             className="border-2 px-4 py-2 bg-contrast-2 h-40"
             placeholder="J'ai connu le club grâce à..."
           ></textarea>
@@ -166,7 +171,7 @@ export default function Contact({
 
         <div className="flex-col flex gap-2">
           <label className="text-md md:text-lg" htmlFor="message">
-            Votre demande : <span className="text-red-600">*</span>
+            Votre demande :
           </label>
           <textarea
             name="message"
@@ -190,7 +195,7 @@ export default function Contact({
         )}
 
         <p className="md:text-lg">
-          <span className="text-red-600">*</span> Champs obligatoires
+          <span className="text-red-600">*</span> Tous les champs sont obligatoires.
         </p>
 
         <button
