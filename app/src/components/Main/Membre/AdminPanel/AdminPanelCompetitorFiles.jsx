@@ -18,7 +18,7 @@ export default function AdminPanelCompetitorFiles() {
 
         <div className="mb-10">
           <p className="font-bold text-red-500 mb-2">
-            Merci de supprimer le fichier déjà présent avant d'ajouter le
+            Merci de supprimer le fichier déjà présent avant d&apos;ajouter le
             nouveau
           </p>
           <p className="font-bold text-red-500 mb-2">
