@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'ttfarguais': 'url("/imgClub/birthday.jpg")',
-        'ttfCreate': 'url("/imgClub/Create.jpg")',
+        'ttfCreate': 'url("/imgClub/Create.png")',
       },
       colors:{
         'solid': '#0F5E35',

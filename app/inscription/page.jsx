@@ -15,6 +15,7 @@ export default function inscriptionPage() {
     <link rel="canonical" href="https://www.ttfarguais.fr/inscription" />
     </head>
    <Inscription times={times} documents={documents} inscriptionFile={inscriptionFile}></Inscription>
+
     </>
   );
 }
