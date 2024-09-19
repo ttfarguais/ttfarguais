@@ -119,13 +119,13 @@ export default function Contact({
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="birthdate">
-              Date de naissance :
+              Âge du joueur:
             </label>
             <input
-              type="date"
-              name="birthdate"
-              id="birthdate"
-              value={formData.birthdate}
+              type="text"
+              name="age"
+              id="age"
+              value={formData.age}
               required
               onChange={handleChange}
               className="border-2 px-4 py-2 bg-contrast-2"

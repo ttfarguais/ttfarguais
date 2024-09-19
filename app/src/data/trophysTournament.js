@@ -2,7 +2,7 @@ const trophys = [
   {
     bio: [
       { year: 2022, name: "SOETAERT P.", vs: "DUARTE A.J." },
-      { year: 2019, name: "VANBAUCE F.", vs: "THEVENET J." },
+      { year: 2019, name: "VANBAUCE P.", vs: "THEVENET J." },
       { year: 2018, name: "TAUZIA D.", vs: "SOETAERT P." },
       { year: 2017, name: "TAUZIA D.", vs: "SOETAERT P." },
       { year: 2016, name: "JAMBON J.", vs: "LEYRAT V." },

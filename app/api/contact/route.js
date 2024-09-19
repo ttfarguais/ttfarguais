@@ -7,22 +7,22 @@ export async function POST(request) {
     email,
     message,
     tel,
-    birthdate,
+    age,
     municipality,
     typePlayer,
     description,
   } = await request.json();
   
-  const birthdateFR = birthdate.split("-").reverse().join("/");
+  // const birthdateFR = birthdate.split("-").reverse().join("/");
 
-  let birthday = new Date(birthdate);
-  let todayDate = new Date();
+  // let birthday = new Date(birthdate);
+  // let todayDate = new Date();
 
-  let age = todayDate.getFullYear() - birthday.getFullYear();
-  let month = todayDate.getMonth() - birthday.getMonth();
-  if (month < 0 || (month === 0 && todayDate.getDate() < birthday.getDate())) {
-    age--;
-  }
+  // let age = todayDate.getFullYear() - birthday.getFullYear();
+  // let month = todayDate.getMonth() - birthday.getMonth();
+  // if (month < 0 || (month === 0 && todayDate.getDate() < birthday.getDate())) {
+  //   age--;
+  // }
 
   const mailOptions = {
     from: email,
@@ -33,7 +33,7 @@ export async function POST(request) {
       Prénom: ${firstName}
       Email: ${email}
       Téléphone: ${tel}
-      Aniversaire: ${birthdateFR}
+      
       Age: ${age}
       Ville: ${municipality}
       Type de joueur: ${typePlayer}
@@ -43,7 +43,7 @@ export async function POST(request) {
     <p><strong>Prénom</strong> : ${firstName}</p>
     ${tel ? `<p><strong>Téléphone</strong> : ${tel}</p>` : ""}
     <p><strong>Email</strong> : ${email}</p>
-    ${birthdate ? `<p><strong>Date de naissance</strong> : ${birthdateFR}. <strong>Age</strong> : ${age} ans</p>` : ""}
+    <p><strong>Age</strong> : ${age}</p>
     ${municipality ? `<p><strong>Ville</strong> : ${municipality}</p>` : ""}
     ${typePlayer ? `<p><strong>Type de joueur</strong> : ${typePlayer}</p>` : ""}
     ${description ? `<p><strong>Comment avez-vous connu le club</strong> : ${description}</p>` : ""}

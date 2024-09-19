@@ -16,7 +16,7 @@ export default function Training() {
       </ul>
 
       <p>* Les groupes sont définis en fonction des effectifs dans chaque catégorie</p>
-      <p className="font-bold text-solid">Les entraînements dirigés sont encadrés par un entraineur du Comité de Gironde.</p>
+      <p className="font-bold text-solid">Les entraînements dirigés sont encadrés par un entraîneur du Comité de Gironde.</p>
 
     </div>
    </section>
