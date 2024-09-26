@@ -1,53 +1,81 @@
-import { useRef } from 'react';
+"use client";
+import { useRef, useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function FileSection({ title, files, category, onDelete, onSuccess, subjectFile }) {
-  const fileInput = useRef(null);
+const AdminPanelFileSection = ({ title, files, category, onDelete }) => {
+  const inputFileRef = useRef(null);
+  const [blob, setBlob] = useState(null);
 
-  async function uploadFile(e) {
-    e.preventDefault(); // Prévenir le comportement par défaut du formulaire
+  // Fonction pour gérer l'upload des fichiers
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const file = fileInput.current.files[0]; // Obtenir le fichier sélectionné
-    if (!file) {
-      alert("Veuillez sélectionner un fichier.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("category", category); // Ajouter la catégorie pour le backend
+    const file = inputFileRef.current.files[0];
+    if (!file) return;
 
     try {
-      const response = await fetch(`/api/membre/files/${subjectFile}/add`, {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `/api/competition/files/upload?filename=${file.name}`,
+        {
+          method: "POST",
+          body: file,
+        }
+      );
 
-      const result = await response.json();
       if (response.ok) {
-        alert("Fichier téléchargé avec succès !");
-        if (onSuccess) onSuccess(); // Appeler la fonction de rappel après un ajout réussi
+        const newBlob = await response.json();
+        setBlob(newBlob); // Mise à jour du blob
+        alert("Fichier uploadé avec succès");
       } else {
-        throw new Error(result.error || 'Erreur lors du téléchargement du fichier.');
+        throw new Error("Erreur lors de l'upload du fichier");
       }
-      
     } catch (error) {
       console.error("Erreur:", error);
-      alert("Erreur lors du téléchargement du fichier.");
+      alert("Erreur lors de l'upload du fichier.");
     }
-  }
+  };
+
+  // Fonction pour gérer la suppression des fichiers
+  const handleDelete = async (file) => {
+    const confirmDelete = confirm(`Voulez-vous vraiment supprimer ${file.name} ?`);
+    if (!confirmDelete) return;
+
+    try {
+        const response = await fetch(`/api/competition/files/delete`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ url: file.url }), // Assurez-vous que l'URL est correcte
+        });
+
+        if (response.ok) {
+            onDelete(file, category); // Appel à la fonction de suppression dans le parent
+            alert("Fichier supprimé avec succès");
+        } else {
+            throw new Error("Erreur lors de la suppression du fichier");
+        }
+    } catch (error) {
+        console.error("Erreur:", error);
+        alert("Erreur lors de la suppression du fichier.");
+    }
+};
+
 
   return (
     <li className="p-4 border">
       <h3 className="text-xl mb-6">Fiches du {title}</h3>
+
+      {/* Affichage des fichiers */}
       <ul className="flex flex-col gap-4 mb-6">
         {files && files.length > 0 ? (
           files.map((image, index) => (
             <li key={index} className="flex gap-4">
               <p className="p-2 border bg-slate-200 w-full">
-                Nom du fichier : <span className="font-extrabold">{image}</span>
+                Nom du fichier :{" "}
+                <span className="font-extrabold">{image.name}</span>
               </p>
-              <button onClick={() => onDelete(image, category)}>
+              <button onClick={() => handleDelete(image)}>
                 <MdDeleteForever color="red" size={30} />
               </button>
             </li>
@@ -56,8 +84,9 @@ export default function FileSection({ title, files, category, onDelete, onSucces
           <p>Aucune fiche n&apos;est répertoriée</p>
         )}
       </ul>
-      <form className="p-2 border text-bold" onSubmit={uploadFile}>
-       
+
+      {/* Formulaire pour uploader un nouveau fichier */}
+      <form className="p-2 border text-bold" onSubmit={handleSubmit}>
         <div className="p-4">
           <label htmlFor={`fileUpload-${category}`}>
             Ajouter une nouvelle fiche :{" "}
@@ -68,7 +97,8 @@ export default function FileSection({ title, files, category, onDelete, onSucces
             id={`fileUpload-${category}`}
             accept=".jpg"
             className="mb-4 sm:mb-0"
-            ref={fileInput}
+            ref={inputFileRef}
+            required
           />
           <button
             type="submit"
@@ -80,4 +110,6 @@ export default function FileSection({ title, files, category, onDelete, onSucces
       </form>
     </li>
   );
-}
+};
+
+export default AdminPanelFileSection;

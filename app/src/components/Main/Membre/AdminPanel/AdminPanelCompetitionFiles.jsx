@@ -1,15 +1,59 @@
 "use client";
-import useCompetitionFiles from "../../../../utils/useCompetitionFiles";
+// import useCompetitionFiles from "../../../../utils/useCompetitionFiles";
+import { useEffect, useState } from "react";
+import classementType from "../../../../utils/filesNames";
 import AdminPanelFileSection from "./AdminPanelFileSection";
-
 export default function AdminPanelCompetitionFiles() {
-  const {
-    competitionFiles,
-    competitionHandleDelete,
-    competitionHandleSuccess,
-    subjectFile,
-  } = useCompetitionFiles();
+  const [files, setFiles] = useState([]);
+  const [classement, setClassement] = useState([]); // State pour stocker les types de classements
+  const [regionaleFiles, setRegionaleFiles] = useState([]);
+  const [departementaleFiles, setDepartementaleFiles] = useState([]);
+  const [honneurFiles, setHonneurFiles] = useState([]);
+  const fetchFiles = async () => {
+    try {
+      const response = await fetch(`/api/competition/files/get`);
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des fichiers");
+      }
+      const data = await response.json();
+      setFiles(data); // Met à jour les fichiers dans le state
+    } catch (error) {
+      console.error("Erreur:", error);
+    }
+  };
 
+  useEffect(() => {
+    fetchFiles();
+  }, []);
+
+  useEffect(() => {
+    if (files.length > 0) {
+      const classementData = classementType(files); // Générer les types de classements avec les fichiers
+      setClassement(classementData); // Mettre à jour le classement avec les types classés
+    }
+  }, [files]);
+
+  useEffect(() => {
+    if (classement.length > 0) {
+      classement.forEach((classementItem) => {
+        if (classementItem.title === "Championnat de France Régional") {
+          setRegionaleFiles(classementItem.category);
+        } else if (classementItem.title === "Championnat de France Départemental") {
+          setDepartementaleFiles(classementItem.category);
+        } else if (classementItem.title === "Critérium de Gironde / Honneur") {
+          setHonneurFiles(classementItem.category);
+        }
+      });
+    }
+  }, [classement]);
+
+
+  const competitionHandleDelete = (fileToDelete) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file.url !== fileToDelete.url));
+   
+  };
+
+  
   return (
     <div className="flex flex-col w-full items-center gap-20">
       <div className="flex flex-col p-4 w-[80%]">
@@ -41,27 +85,24 @@ export default function AdminPanelCompetitionFiles() {
         <ul className="flex flex-col gap-10">
           <AdminPanelFileSection
             title="Championnat de France régional"
-            files={competitionFiles.regionale}
+            files={regionaleFiles}
             category="regionale"
             onDelete={competitionHandleDelete}
-            onSuccess={() => competitionHandleSuccess("regionale")}
-            subjectFile={subjectFile}
+        
           />
           <AdminPanelFileSection
             title="Championnat de France départemental"
-            files={competitionFiles.departementale}
+            files={departementaleFiles}
             category="departementale"
             onDelete={competitionHandleDelete}
-            onSuccess={() => competitionHandleSuccess("departementale")}
-            subjectFile={subjectFile}
+  
           />
           <AdminPanelFileSection
             title="Critérium de Gironde"
-            files={competitionFiles.honneur}
+            files={honneurFiles}
             category="honneur"
             onDelete={competitionHandleDelete}
-            onSuccess={() => competitionHandleSuccess("honneur")}
-            subjectFile={subjectFile}
+          
           />
         </ul>
       </div>

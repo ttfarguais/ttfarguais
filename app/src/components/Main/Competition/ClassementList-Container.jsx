@@ -1,68 +1,37 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
+import classementType from "../../../utils/filesNames";
 import ClassementList from "./ClassementList";
 
 const CompContainer = () => {
-  const [files, setFiles] = useState({
-    regionaleFiles: [],
-    departementaleFiles: [],
-    honneurFiles: [],
-  });
+  const [files, setFiles] = useState([]);
+  const [classement, setClassement] = useState([]); // State pour stocker les types de classements
 
-  const fetchImages = async (type) => {
+  const fetchFiles = async () => {
     try {
-      const response = await fetch(`/api/membre/files/competitionResults/get/${type}`);
-      if (!response.ok)
-        throw new Error(`Erreur lors de la récupération des images de ${type}`);
+      const response = await fetch(`/api/competition/files/get`);
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des fichiers");
+      }
       const data = await response.json();
-      setFiles((prevFiles) => ({ ...prevFiles, [`${type}Files`]: data }));
+      setFiles(data); // Met à jour les fichiers dans le state
     } catch (error) {
       console.error("Erreur:", error);
     }
   };
 
   useEffect(() => {
-    fetchImages("regionale");
-    fetchImages("departementale");
-    fetchImages("honneur");
+    fetchFiles();
   }, []);
 
-  const classementType = [
-    {
-      title: "Championnat de France Régional",
-      category: files.regionaleFiles.map((file) => {
-        let name = "Régionale";
-        if (file.includes("R4")) name += " 4";
-        else if (file.includes("R3")) name += " 3";
-        else if (file.includes("R2")) name += " 2";
-        else if (file.includes("R1")) name += " 1";
-        return { name, file: `/competition/planning/regionale/${file}` };
-      }),
-    },
-    {
-      title: "Championnat de France Départemental",
-      category: files.departementaleFiles.map((file) => {
-        let name = "Départementale";
-        if (file.includes("PR")) name = "Pré-Régionale";
-        else if (file.includes("D1")) name += " 1";
-        else if (file.includes("D2")) name += " 2";
-        else if (file.includes("D3")) name += " 3";
-        else if (file.includes("D4")) name += " 4";
-        return { name, file: `/competition/planning/departementale/${file}` };
-      }),
-    },
-    {
-      title: "Critérium de Gironde / Honneur",
-      category: files.honneurFiles.map((file) => {
-        let name = "Equipe";
-        if (file.includes("EQUIP1")) name += " 1";
-        else if (file.includes("EQUIP2")) name += " 2";
-        return { name, file: `/competition/planning/honneur/${file}` };
-      }),
-    },
-  ];
+  useEffect(() => {
+    if (files.length > 0) {
+      const classementData = classementType(files); // Générer les types de classements avec les fichiers
+      setClassement(classementData); // Mettre à jour le classement avec les types classés
+    }
+  }, [files]); // Met à jour dès que les fichiers sont chargés
 
-  return <ClassementList classementType={classementType} />;
+  return <ClassementList classementType={classement} />; // Passer les données classées à ClassementList
 };
 
 export default CompContainer;
