@@ -9,6 +9,7 @@ export async function POST(req) {
     const adminLogin = process.env.ADMINLOGIN;
     const adminPass = process.env.ADMINPASSWORD;
     // Vérifier les identifiants
+    console.log(adminLogin, adminPass);
     if (login === adminLogin && password === adminPass) {
       return NextResponse.json({ success: true });
     } else {
