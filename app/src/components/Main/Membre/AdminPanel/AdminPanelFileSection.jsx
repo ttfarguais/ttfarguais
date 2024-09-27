@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 
-const AdminPanelFileSection = ({ title, files, category, onDelete }) => {
+const AdminPanelFileSection = ({ title, files, category, onDelete, type }) => {
   const inputFileRef = useRef(null);
   const [blob, setBlob] = useState(null);
 
@@ -15,7 +15,7 @@ const AdminPanelFileSection = ({ title, files, category, onDelete }) => {
 
     try {
       const response = await fetch(
-        `/api/competition/files/upload?filename=${file.name}`,
+        `/api/${type}/files/upload?filename=${file.name}&folder=${category}`,
         {
           method: "POST",
           body: file,
@@ -41,7 +41,7 @@ const AdminPanelFileSection = ({ title, files, category, onDelete }) => {
     if (!confirmDelete) return;
 
     try {
-        const response = await fetch(`/api/competition/files/delete`, {
+        const response = await fetch(`/api/${type}/files/delete`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -71,6 +71,7 @@ const AdminPanelFileSection = ({ title, files, category, onDelete }) => {
         {files && files.length > 0 ? (
           files.map((image, index) => (
             <li key={index} className="flex gap-4">
+              {/* {console.log(image)} */}
               <p className="p-2 border bg-slate-200 w-full">
                 Nom du fichier :{" "}
                 <span className="font-extrabold">{image.name}</span>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import AdminPanelCompetitionFiles from "./AdminPanelCompetitionFiles";
-import AdminPanelCompetitorFiles from "./AdminPanelCompetitorFiles";
+import AdminPanelProgressCompetitorFiles from "./AdminPanelProgressCompetitorFiles";
+import AdminPanelResultsTeamFiles from "./AdminPanelResultsTeamFiles";
 
 export default function AdminPanelComponent() {
   const [typeFile, setTypeFile] = useState("");
@@ -35,8 +35,8 @@ export default function AdminPanelComponent() {
         </select>
       </form>
 
-      {typeFile === "competition" && <AdminPanelCompetitionFiles />}
-      {typeFile === "competitor" && <AdminPanelCompetitorFiles />}
+      {typeFile === "competition" && <AdminPanelResultsTeamFiles />}
+      {typeFile === "competitor" && <AdminPanelProgressCompetitorFiles />}
     </div>
   );
 }

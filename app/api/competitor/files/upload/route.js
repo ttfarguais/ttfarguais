@@ -7,7 +7,7 @@ export async function POST(request) {
   const folder = searchParams.get('folder'); // Récupération du paramètre dossier
   
   // Si le dossier est fourni, ajoutez-le au nom du fichier
-  const fullPath = folder ? `Competition/${folder}/${filename}` : `Competition/${filename}`;
+  const fullPath = folder ? `Competitor/${folder}/${filename}` : `Competitor/${filename}`;
   console.log(fullPath)
   // On doit lire le contenu du body, notamment si c'est un fichier
   const content = await request.arrayBuffer(); // Ou utilisez request.blob() si vous travaillez avec un fichier binaire
