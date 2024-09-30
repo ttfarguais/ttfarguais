@@ -1,4 +1,4 @@
-import ClassementList from "../src/components/Main/Classement/ClassementList-Container";
+import CompetitorProgressList from "../src/components/Main/CompetitorProgress/ProgressList-Container";
 
 export const metadata = {
   title: "T.T. Farguais - Classement et progression",
@@ -12,7 +12,7 @@ export default function ClassementPage() {
       <head>
         <link rel="canonical" href="https://www.ttfarguais.fr/classement" />
       </head>
-      <ClassementList />
+      <CompetitorProgressList />
     </>
   );
 }

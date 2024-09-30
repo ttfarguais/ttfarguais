@@ -1,4 +1,4 @@
-import CompComponent from "../src/components/Main/Competition/ClassementList-Container";
+import TeamResultsList from "../src/components/Main/CompetitionTeam/TeamResultsList-Container";
 export const metadata = {
   title: "T.T. Farguais - Compétition",
   description:
@@ -12,7 +12,7 @@ export default function competitionPage() {
         <link rel="canonical" href="https://www.ttfarguais.fr/competition" />
       </head>
 
-      <CompComponent />
+      <TeamResultsList />
     </>
   );
 }
