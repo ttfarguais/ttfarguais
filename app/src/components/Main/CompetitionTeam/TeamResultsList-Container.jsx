@@ -46,7 +46,6 @@ const TeamResultsListContainer = () => {
       setResultsFiles(resultsFilesData); // Update the progression data
     }
   }, [files]);
-
   return <TeamResultList resultsFiles={resultsFiles} />; // Passer les données classées à ClassementList
 };
 
