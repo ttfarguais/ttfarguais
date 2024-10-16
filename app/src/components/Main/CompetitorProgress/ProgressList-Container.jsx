@@ -29,7 +29,7 @@ const ProgressListContainer = () => {
       const [monthlyFiles, seasonFiles, stageFiles] = await Promise.all([
         fetchFiles("monthly"),
         fetchFiles("season"),
-        fetchFiles("stage")
+        fetchFiles("stage"),
       ]);
 
       // Mettre à jour l'état `files` en une seule fois
