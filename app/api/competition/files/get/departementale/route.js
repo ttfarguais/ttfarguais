@@ -8,6 +8,6 @@ export async function GET(request) {
       blob.pathname.includes("Competition/Departementale/") &&
       blob.pathname.endsWith("jpg")
   );
-
+  console.log(files);
   return Response.json(files);
 }
