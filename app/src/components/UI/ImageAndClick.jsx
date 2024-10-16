@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ImageAndClick({ src, alt, href, actionTitle }) {
   return (
-    <a
+    <Link
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -20,6 +21,6 @@ export default function ImageAndClick({ src, alt, href, actionTitle }) {
           <p className="text-white text-lg">{actionTitle}</p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
