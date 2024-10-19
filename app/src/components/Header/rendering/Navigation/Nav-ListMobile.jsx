@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { IoArrowForward, IoClose } from "react-icons/io5";
+import { IoArrowForward } from "react-icons/io5";
+import { CloseButton } from "../../../UI/Icons";
 export default function NavListMobile({
   siteLinks,
   activeIndex,
@@ -13,32 +14,30 @@ export default function NavListMobile({
         menuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <button
-        className="fixed top-8 right-8"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <IoClose className="h-10 w-10 text-white" />
-      </button>
+      <CloseButton
+        setMenuOpen={setMenuOpen}
+        menuOpen={!menuOpen}
+        size={40}
+        color={"white"}
+      />
 
       {siteLinks.map((link, index) => (
-        <li
-          key={index}
-          className="relative flex flex-col w-full"
-          onClick={() => setActiveIndex(index)}
-        >
+        <li key={index} className="relative flex flex-col w-full">
           <div className="flex items-center gap-5 mb-4 sm:mb-6">
             <Link
               href={link.url}
               className="flex items-center hover:bg-solid transition hover:text-white rounded-xl  gap-6 uppercase"
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => setMenuOpen(!menuOpen)} // for leave the menu open after click
             >
               {link.title}
             </Link>
-            {link.subLinks ? (
-              <a>
-                <IoArrowForward className="text-xl" />
-              </a>
-            ) : null}
+            {link.subLinks && (
+              <button onClick={() => setActiveIndex(index)}>
+                <IoArrowForward // for open the sublinks
+                  className="text-xl"
+                />
+              </button>
+            )}
           </div>
 
           {link.subLinks && activeIndex === index && (

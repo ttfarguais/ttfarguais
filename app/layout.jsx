@@ -1,8 +1,7 @@
 import { Exo_2 } from "next/font/google";
 import "./globals.css";
-import Footer from "./src/components/Footer/Footer";
-import AnnouceBar from "./src/components/Header/AnnouceBar";
-import Nav from './src/components/Header/Navigation/Nav';
+import Footer from "./src/components/Footer/Index";
+import Nav from './src/components/Header/rendering/Navigation/Index';
 import ArrowUp from './src/components/UI/ArrowUp';
 
 const exo2 = Exo_2({ 
@@ -30,7 +29,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${exo2.className}`}>
         <header>
-          <AnnouceBar text={announce} link={link}/>
+          {/* <AnnouceBar text={announce} link={link}/> */}
           <Nav />
         </header>
         <main>

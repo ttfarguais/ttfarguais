@@ -58,7 +58,7 @@ const progressFiles = (files) => {
           return yearMatch !== null;
         })
         .map((file) => {
-          let name = "Saison";
+          let name = "";
 
           const yearMatch = file.pathname.match(/\b\d{4}\b/); // get the year from the file
 
