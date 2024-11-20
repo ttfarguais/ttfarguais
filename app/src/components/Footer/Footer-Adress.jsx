@@ -4,8 +4,9 @@ export default function FooterAdress() {
       <p>Carré des Forges</p>
       <p>3, av. de La Laurence</p>
       <p>
-        33370 <span className="uppercase">Fargues Saint-Hilaire</span>
+      33370
       </p>
+         <p className="uppercase">Fargues Saint-Hilaire</p>
     </div>
   );
 }
