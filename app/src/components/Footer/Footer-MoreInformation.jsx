@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 export default function FooterMoreInformation() {
   return (
@@ -8,21 +8,21 @@ export default function FooterMoreInformation() {
       </p>
       <p>
         Site réalisé par{" "}
-        <a
+        <Link
           href="https://romain-hernandez.com/"
           className="italic"
           target="_blank"
         >
           Roms
-        </a>{" "}
+        </Link>{" "}
         &{" "}
-        <a
+        <Link
           href="https://www.linkedin.com/in/ugo-matassa/"
           target="_blank"
           className="italic"
         >
           Barenko
-        </a>
+        </Link>
       </p>
     </div>
   );

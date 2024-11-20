@@ -58,13 +58,13 @@ const progressFiles = (files) => {
           return yearMatch !== null;
         })
         .map((file) => {
-          let name = "Saison";
+          let name = "";
 
           const yearMatch = file.pathname.match(/\b\d{4}\b/); // get the year from the file
 
           if (yearMatch) {
             const year = parseInt(yearMatch[0], 10); // convert the year to an integer
-            name += ` ${year} / ${year + 1}`; // asign to the name the year and the next year
+            name += `${year - 1} / ${year}`; // asign to the name the year and the next year
           } else {
             console.warn(
               "Aucune année trouvée dans le fichier :",

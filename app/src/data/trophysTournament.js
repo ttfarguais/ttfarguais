@@ -1,6 +1,8 @@
 const trophys = [
   {
     bio: [
+      { year: 2024, name: "THEVENET J.", vs: "SOETAERT P." },
+      { year: 2023, name: "VANBAUCE P.", vs: "BOS E." },
       { year: 2022, name: "SOETAERT P.", vs: "DUARTE A.J." },
       { year: 2019, name: "VANBAUCE P.", vs: "THEVENET J." },
       { year: 2018, name: "TAUZIA D.", vs: "SOETAERT P." },
