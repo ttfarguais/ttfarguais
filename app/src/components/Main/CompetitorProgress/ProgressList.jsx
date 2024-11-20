@@ -1,9 +1,10 @@
+import cacheBustingUrl from "../../../utils/cacheBustingUrl";
 import ImageAndClick from "../../UI/ImageAndClick";
 const ProgressList = ({ progressFiles }) => {
   return (
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
-      Classement et progression des compétiteurs
+        Classement et progression des compétiteurs
       </h1>
       {progressFiles.map(
         (file, index) =>
@@ -19,8 +20,8 @@ const ProgressList = ({ progressFiles }) => {
                     <div className="flex gap-5 m-auto justify-center">
                       {item.url && (
                         <ImageAndClick
-                          src={item.url}
-                          href={item.url}
+                          src={cacheBustingUrl(item.url)}
+                          href={cacheBustingUrl(item.url)}
                           alt={item.name}
                           actionTitle="Voir la fiche"
                         />

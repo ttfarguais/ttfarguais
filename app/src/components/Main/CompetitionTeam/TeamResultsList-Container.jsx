@@ -4,6 +4,7 @@ import filterResultsFiles from "../../../utils/filterResultsFiles";
 import TeamResultList from "./TeamResultsList";
 
 const TeamResultsListContainer = () => {
+
     const [files, setFiles] = useState({
         regionaleResultsFiles: [],
         departementaleResultsFiles: [],
@@ -64,6 +65,7 @@ const TeamResultsListContainer = () => {
     }, [files]); // Exécuter cet effet lorsque l'état des fichiers change
 
     return <TeamResultList resultsFiles={resultsFiles} />; // Passer les résultats filtrés au composant enfant
+
 };
 
 export default TeamResultsListContainer;

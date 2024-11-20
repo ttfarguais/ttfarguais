@@ -4,6 +4,7 @@ import filterProgressFiles from "../../../utils/filterProgressFiles";
 import ProgressList from "./ProgressList";
 
 const ProgressListContainer = () => {
+
     const [files, setFiles] = useState({
         monthlyProgressFiles: [],
         seasonProgressFiles: [],
@@ -35,6 +36,7 @@ const ProgressListContainer = () => {
         } catch (error) {
             console.error("Erreur:", error);
         }
+
     };
     useEffect(() => {
         const fetchAllFiles = async () => {
@@ -59,8 +61,10 @@ const ProgressListContainer = () => {
         }
     }, [files]);
 
+
     // console.log(progression)
     return <ProgressList progressFiles={progressFiles} />;
+
 };
 
 export default ProgressListContainer;
