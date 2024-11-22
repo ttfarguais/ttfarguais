@@ -11,19 +11,12 @@ const ProgressListContainer = () => {
         stageProgressFiles: [],
     });
     const [progressFiles, setProgressFiles] = useState([]);
-    // const [loading, setLoading] = useState(true); // Added loading state
 
     const fetchFiles = async (type) => {
         try {
-            const response = await fetch(`/api/competitor/files/get/${type}`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Cache-Control":
-                        "no-store, no-cache, must-revalidate, proxy-revalidate",
-                    Pragma: "no-cache",
-                    Expires: "0",
-                },
-            });
+            const response = await fetch(`/api/competitor/files/get/${type}`
+              
+            );
             if (!response.ok) {
                 throw new Error("Erreur lors de la récupération des fichiers");
             }
@@ -62,7 +55,6 @@ const ProgressListContainer = () => {
     }, [files]);
 
 
-    // console.log(progression)
     return <ProgressList progressFiles={progressFiles} />;
 
 };
