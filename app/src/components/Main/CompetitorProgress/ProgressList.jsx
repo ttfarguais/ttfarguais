@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import cacheBustingUrl from "../../../utils/cacheBustingUrl";
 const ProgressList = ({ progressFiles }) => {
   return (
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
@@ -28,7 +28,7 @@ const ProgressList = ({ progressFiles }) => {
                         />
                       )}
                     </div> */}
-                    <Link className="p-4 rounded-lg  bg-green-100 hover:bg-solid  hover:text-contrast-1" href={item.url} target="_blank" alt={`liens vers la ficher ${item.name}`}>
+                    <Link className="p-4 rounded-lg  bg-green-100 hover:bg-solid  hover:text-contrast-1" href={cacheBustingUrl(item.url)} target="_blank" alt={`liens vers la ficher ${item.name}`}>
                       {item.name}
                     </Link>
                   </div>
