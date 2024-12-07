@@ -25,7 +25,7 @@ const TeamResultsListContainer = () => {
 
             setFiles((prevFiles) => ({
                 ...prevFiles,
-                [`${type}ResultsFiles`]: data, // Mettez à jour la catégorie spécifique (crit, regionale, etc.)
+                [`${type}ResultsFiles`]: data, 
             }));
         } catch (error) {
             console.error("Erreur:", error);
@@ -42,7 +42,7 @@ const TeamResultsListContainer = () => {
         };
 
         fetchAllFiles();
-    }, []); // L'effet ne s'exécute qu'une fois, lors du premier rendu du composant
+    }, []);
 
     useEffect(() => {
         if (
@@ -50,12 +50,12 @@ const TeamResultsListContainer = () => {
             files.departementaleResultsFiles.length > 0 ||
             files.regionaleResultsFiles.length > 0
         ) {
-            const resultsFilesData = filterResultsFiles(files); // Appliquer le filtrage
-            setResultsFiles(resultsFilesData); // Mettre à jour les résultats filtrés
+            const resultsFilesData = filterResultsFiles(files); 
+            setResultsFiles(resultsFilesData); 
         }
-    }, [files]); // Exécuter cet effet lorsque l'état des fichiers change
+    }, [files]);
 
-    return <TeamResultList resultsFiles={resultsFiles} />; // Passer les résultats filtrés au composant enfant
+    return <TeamResultList resultsFiles={resultsFiles} />; 
 };
 
 export default TeamResultsListContainer;

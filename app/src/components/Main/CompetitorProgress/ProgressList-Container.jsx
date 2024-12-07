@@ -54,7 +54,6 @@ const ProgressListContainer = () => {
         }
     }, [files]);
 
-
     return <ProgressList progressFiles={progressFiles} />;
 
 };
