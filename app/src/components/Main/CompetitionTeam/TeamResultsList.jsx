@@ -29,7 +29,8 @@ const TeamResultList = ({ resultsFiles }) => {
                         />
                       )}
                     </div> */}
-                      <Link className="p-4 rounded-lg  bg-green-100 hover:bg-solid  hover:text-contrast-1"  href={cacheBustingUrl(item.url)} target="_blank" alt={`liens vers la ficher ${item.name}`}>
+
+                      <Link className="p-4 rounded-lg  bg-green-100 hover:bg-solid  hover:text-contrast-1" href={cacheBustingUrl(item.url)} target="_blank" alt={`liens vers la ficher ${item.name}`}>
                       {item.name}
                     </Link>
                   </div>
