@@ -15,19 +15,8 @@ const ProgressList = ({ progressFiles }) => {
               </h2>
               <div className="flex gap-4 flex-wrap">
                 {file.category.map((item, index) => (
-                  // <div key={index} className="flex flex-col mb-6 max-w-60 rounded-lg p-2 bg-green-100">
                   <div key={index} className={`flex flex-col mb-6 max-w-60 `}>
-                    {/* <h3 className="mb-2 font-bold">{item.name} :</h3>
-                    <div className="flex gap-5 m-auto justify-center">
-                      {item.url && (
-                        <ImageAndClick
-                          src={cacheBustingUrl(item.url)}
-                          href={cacheBustingUrl(item.url)}
-                          alt={item.name}
-                          actionTitle="Voir la fiche"
-                        />
-                      )}
-                    </div> */}
+       
                     <Link className="p-4 rounded-lg  bg-green-100 hover:bg-solid  hover:text-contrast-1" href={cacheBustingUrl(item.url)} target="_blank" alt={`liens vers la ficher ${item.name}`}>
                       {item.name}
                     </Link>

@@ -44,17 +44,22 @@ const TeamResultsListContainer = () => {
         fetchAllFiles();
     }, []);
 
+    // useEffect(() => {
+    //     if (
+    //         files.critResultsFiles.length > 0 ||
+    //         files.departementaleResultsFiles.length > 0 ||
+    //         files.regionaleResultsFiles.length > 0
+    //     ) {
+    //         const resultsFilesData = filterResultsFiles(files); 
+    //         setResultsFiles(resultsFilesData); 
+    //     }
+    // }, [files]);
     useEffect(() => {
-        if (
-            files.critResultsFiles.length > 0 ||
-            files.departementaleResultsFiles.length > 0 ||
-            files.regionaleResultsFiles.length > 0
-        ) {
-            const resultsFilesData = filterResultsFiles(files); 
-            setResultsFiles(resultsFilesData); 
-        }
+        const resultsFilesData = filterResultsFiles(files); 
+        setResultsFiles(resultsFilesData); 
+        
+      
     }, [files]);
-
     return <TeamResultList resultsFiles={resultsFiles} />; 
 };
 

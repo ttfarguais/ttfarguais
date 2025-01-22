@@ -31,6 +31,7 @@ const ProgressListContainer = () => {
         }
 
     };
+
     useEffect(() => {
         const fetchAllFiles = async () => {
             await Promise.all([
@@ -38,24 +39,27 @@ const ProgressListContainer = () => {
                 fetchFiles("season"),
                 fetchFiles("stage"),
             ]);
-            // setLoading(false); // Files have been fetched
         };
 
         fetchAllFiles();
     }, []);
+    console.log
     useEffect(() => {
-        if (
-            files.monthlyProgressFiles.length > 0 ||
-            files.seasonProgressFiles.length > 0 ||
-            files.stageProgressFiles.length > 0
-        ) {
+       
             const progressDataFiles = filterProgressFiles(files);
             setProgressFiles(progressDataFiles); // Update the progression data
-        }
     }, [files]);
-
-    return <ProgressList progressFiles={progressFiles} />;
-
+    // useEffect(() => {
+    //     if (
+    //         files.monthlyProgressFiles.length > 0 ||
+    //         files.seasonProgressFiles.length > 0 ||
+    //         files.stageProgressFiles.length > 0
+    //     ) {
+    //         const progressDataFiles = filterProgressFiles(files);
+    //         setProgressFiles(progressDataFiles); // Update the progression data
+    //     }
+    // }, [files]);
+    return <ProgressList progressFiles={progressFiles} />
 };
 
 export default ProgressListContainer;
