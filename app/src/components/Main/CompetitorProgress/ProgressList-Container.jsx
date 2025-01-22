@@ -1,65 +1,41 @@
 "use client";
 import { useEffect, useState } from "react";
-import filterProgressFiles from "../../../utils/filterProgressFiles";
 import ProgressList from "./ProgressList";
 
 const ProgressListContainer = () => {
+  const [files, setFiles] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const [files, setFiles] = useState({
-        monthlyProgressFiles: [],
-        seasonProgressFiles: [],
-        stageProgressFiles: [],
-    });
-    const [progressFiles, setProgressFiles] = useState([]);
+  const fetchFiles = async () => {
+    try {
+      const response = await fetch(`/api/files`);
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des fichiers");
+      }
+      const data = await response.json();
+      setFiles(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setError(error.message);
+      setIsLoading(false);
+    }
+  };
 
-    const fetchFiles = async (type) => {
-        try {
-            const response = await fetch(`/api/competitor/files/get/${type}`
-              
-            );
-            if (!response.ok) {
-                throw new Error("Erreur lors de la récupération des fichiers");
-            }
-            const data = await response.json();
-            // Set the files in the right category
-            setFiles((prevFiles) => ({
-                ...prevFiles,
-                [`${type}ProgressFiles`]: data,
-            }));
-        } catch (error) {
-            console.error("Erreur:", error);
-        }
+  useEffect(() => {
+    fetchFiles();
+  }, []);
 
-    };
+  if (isLoading) {
+    return <div>Chargement des fichiers...</div>;
+  }
 
-    useEffect(() => {
-        const fetchAllFiles = async () => {
-            await Promise.all([
-                fetchFiles("monthly"),
-                fetchFiles("season"),
-                fetchFiles("stage"),
-            ]);
-        };
+  if (error) {
+    return <div>Erreur : {error}</div>;
+  }
 
-        fetchAllFiles();
-    }, []);
-    console.log
-    useEffect(() => {
-       
-            const progressDataFiles = filterProgressFiles(files);
-            setProgressFiles(progressDataFiles); // Update the progression data
-    }, [files]);
-    // useEffect(() => {
-    //     if (
-    //         files.monthlyProgressFiles.length > 0 ||
-    //         files.seasonProgressFiles.length > 0 ||
-    //         files.stageProgressFiles.length > 0
-    //     ) {
-    //         const progressDataFiles = filterProgressFiles(files);
-    //         setProgressFiles(progressDataFiles); // Update the progression data
-    //     }
-    // }, [files]);
-    return <ProgressList progressFiles={progressFiles} />
+  return <ProgressList progressFiles={files} />;
 };
 
 export default ProgressListContainer;

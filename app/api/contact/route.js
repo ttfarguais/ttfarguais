@@ -12,17 +12,6 @@ export async function POST(request) {
     typePlayer,
     description,
   } = await request.json();
-  
-  // const birthdateFR = birthdate.split("-").reverse().join("/");
-
-  // let birthday = new Date(birthdate);
-  // let todayDate = new Date();
-
-  // let age = todayDate.getFullYear() - birthday.getFullYear();
-  // let month = todayDate.getMonth() - birthday.getMonth();
-  // if (month < 0 || (month === 0 && todayDate.getDate() < birthday.getDate())) {
-  //   age--;
-  // }
 
   const mailOptions = {
     from: email,
