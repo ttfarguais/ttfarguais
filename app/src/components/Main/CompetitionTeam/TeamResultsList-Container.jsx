@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import TeamResultList from "./TeamResultsList";
+import ProgressList from "./TeamResultsList";
 
-const TeamResultsListContainer = () => {
+const ProgressListContainer = () => {
   const [files, setFiles] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -34,7 +34,8 @@ const TeamResultsListContainer = () => {
   if (error) {
     return <div>Erreur : {error}</div>;
   }
-  return <TeamResultList resultsFiles={files} />;
+
+  return <ProgressList progressFiles={files} />;
 };
 
-export default TeamResultsListContainer;
+export default ProgressListContainer;
