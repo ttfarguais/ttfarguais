@@ -33,7 +33,7 @@ export async function GET(request) {
     files.pathname.includes("Regionale")
   );
 
-  return Response.json({
+  const responseData = {
     competitionFiles: [
       { name: "Championnat de France Régional", files: regionaleCompetition },
       {
@@ -47,5 +47,16 @@ export async function GET(request) {
       { name: "Mensuelles", files: monthlyProgressFiles },
       { name: "Saison", files: seasonProgressFiles },
     ],
+  };
+
+  // Ajouter les en-têtes à la réponse
+  const response = new Response(JSON.stringify(responseData), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json", // Déclare le type de contenu en JSON
+      "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
+    },
   });
+
+  return response;
 }
