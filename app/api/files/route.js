@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { list } from "@vercel/blob";
 
 export async function GET(request) {
@@ -33,30 +35,47 @@ export async function GET(request) {
     files.pathname.includes("Regionale")
   );
 
-  const responseData = {
-    competitionFiles: [
-      { name: "Championnat de France Régional", files: regionaleCompetition },
-      {
-        name: "Championnat de France Départemental",
-        files: departementaleCompetition,
-      },
-      { name: "Critérium de Gironde / Honneur", files: critCompetiton },
-    ],
-    competitorFiles: [
-      { name: "Phase", files: stageProgressFiles },
-      { name: "Mensuelles", files: monthlyProgressFiles },
-      { name: "Saison", files: seasonProgressFiles },
-    ],
-  };
+//   return Response.json({
+//     competitionFiles: [
+//       { name: "Championnat de France Régional", files: regionaleCompetition },
+//       {
+//         name: "Championnat de France Départemental",
+//         files: departementaleCompetition,
+//       },
+//       { name: "Critérium de Gironde / Honneur", files: critCompetiton },
+//     ],
+//     competitorFiles: [
+//       { name: "Phase", files: stageProgressFiles },
+//       { name: "Mensuelles", files: monthlyProgressFiles },
+//       { name: "Saison", files: seasonProgressFiles },
+//     ],
+//   });
+// }
 
-  // Ajouter les en-têtes à la réponse
-  const response = new Response(JSON.stringify(responseData), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json", // Déclare le type de contenu en JSON
-      "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
+const responseData = {
+  competitionFiles: [
+    { name: "Championnat de France Régional", files: regionaleCompetition },
+    {
+      name: "Championnat de France Départemental",
+      files: departementaleCompetition,
     },
-  });
+    { name: "Critérium de Gironde / Honneur", files: critCompetiton },
+  ],
+  competitorFiles: [
+    { name: "Phase", files: stageProgressFiles },
+    { name: "Mensuelles", files: monthlyProgressFiles },
+    { name: "Saison", files: seasonProgressFiles },
+  ],
+};
 
-  return response;
+// Ajouter les en-têtes à la réponse
+const response = new Response(JSON.stringify(responseData), {
+  status: 200,
+  headers: {
+    "Content-Type": "application/json", // Déclare le type de contenu en JSON
+    "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
+  },
+});
+
+return response;
 }

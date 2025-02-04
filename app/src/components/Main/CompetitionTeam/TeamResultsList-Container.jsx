@@ -9,7 +9,7 @@ const ProgressListContainer = () => {
 
   const fetchFiles = async () => {
     try {
-      const response = await fetch(`/api/files`);
+      const response = await fetch(`/api/files`,  { cache: "no-store" });
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des fichiers");
       }
