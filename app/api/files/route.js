@@ -8,49 +8,32 @@ export async function GET(request) {
   // Filtrer les blobs pour exclure les dossiers
   const competitorFiles = blobs.filter(
     (blob) =>
-      blob.pathname.includes("Competitor/") && blob.pathname.endsWith("jpg")
+      blob.pathname.includes("competiteur/") && blob.pathname.endsWith("jpg")
   );
   const competitionFiles = blobs.filter(
     (blob) =>
-      blob.pathname.includes("Competition/") && blob.pathname.endsWith("jpg")
+      blob.pathname.includes("competition/") && blob.pathname.endsWith("jpg")
   );
 
   const monthlyProgressFiles = competitorFiles.filter((files) =>
-    files.pathname.includes("Mounthly")
+    files.pathname.includes("mensuelle")
   );
   const seasonProgressFiles = competitorFiles.filter((files) =>
-    files.pathname.includes("Season")
+    files.pathname.includes("saison")
   );
   const stageProgressFiles = competitorFiles.filter((files) =>
-    files.pathname.includes("Stage")
+    files.pathname.includes("phase")
   );
 
   const critCompetiton = competitionFiles.filter((files) =>
-    files.pathname.includes("Crit")
+    files.pathname.includes("criterium")
   );
   const departementaleCompetition = competitionFiles.filter((files) =>
-    files.pathname.includes("Departementale")
+    files.pathname.includes("departementale")
   );
   const regionaleCompetition = competitionFiles.filter((files) =>
-    files.pathname.includes("Regionale")
+    files.pathname.includes("regionale")
   );
-
-//   return Response.json({
-//     competitionFiles: [
-//       { name: "Championnat de France Régional", files: regionaleCompetition },
-//       {
-//         name: "Championnat de France Départemental",
-//         files: departementaleCompetition,
-//       },
-//       { name: "Critérium de Gironde / Honneur", files: critCompetiton },
-//     ],
-//     competitorFiles: [
-//       { name: "Phase", files: stageProgressFiles },
-//       { name: "Mensuelles", files: monthlyProgressFiles },
-//       { name: "Saison", files: seasonProgressFiles },
-//     ],
-//   });
-// }
 
 const responseData = {
   competitionFiles: [

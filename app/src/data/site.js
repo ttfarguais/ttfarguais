@@ -8,6 +8,7 @@ const siteLinks = [
       { title: "Le bureau", url: "/bureau" },
       { title: "Tournois", url: "/tournois" },
       { title: "Palmarès", url: "/palmares" },
+      { title: "Galerie", url: "/galerie" },
     ],
   },
   { title: "Entrainements", url: "/entrainements" },
