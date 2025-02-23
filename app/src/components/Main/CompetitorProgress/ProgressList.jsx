@@ -1,7 +1,9 @@
 
 
 import Link from "next/link";
+
 import cacheBustingUrl from "../../../utils/cacheBustingUrl";
+import separatorUnderscoreString from "../../../utils/separatorUnderscoreString";
 
 const TeamResultList = ({ resultsFiles }) => {
   return (
@@ -27,18 +29,14 @@ const TeamResultList = ({ resultsFiles }) => {
           </h2>
           <div className="flex gap-4 flex-wrap">
             {files.files?.map((file, i) => (
-              <div key={i} className={`flex flex-col mb-6 max-w-60 `}>
+              <div key={i} className="flex flex-col mb-6 max-w-60">
                 <Link
                   href={cacheBustingUrl(file.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-lg bg-green-100 hover:bg-solid hover:text-contrast-1"
                 >
-                  {file.pathname
-                    .split("/")
-                    .pop()
-                    .replace(/_/g, " ")
-                    .slice(0, -4)}
+                  {separatorUnderscoreString(file.pathname)}
                 </Link>
               </div>
             ))}
