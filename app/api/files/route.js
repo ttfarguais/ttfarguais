@@ -8,11 +8,11 @@ export async function GET(request) {
   // Filtrer les blobs pour exclure les dossiers
   const competitorFiles = blobs.filter(
     (blob) =>
-      blob.pathname.includes("competiteur/")
+      blob.pathname.includes("competiteur/") && /\.[a-zA-Z0-9]+$/.test(blob.pathname)
   );
   const competitionFiles = blobs.filter(
     (blob) =>
-      blob.pathname.includes("competition/")
+      blob.pathname.includes("competition/") && /\.[a-zA-Z0-9]+$/.test(blob.pathname)
   );
 
   const monthlyProgressFiles = competitorFiles.filter((files) =>
