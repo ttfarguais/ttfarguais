@@ -5,7 +5,7 @@ export async function GET(request) {
     const files = blobs.filter((blob) =>
         blob.pathname.startsWith("actualite/")
     );
-
+    console.log(files)
     const filesWithoutFirst = files.slice(1);
 
     const response = new Response(JSON.stringify(filesWithoutFirst), {
