@@ -13,8 +13,6 @@ export async function GET(request) {
         headers: {
             "Content-Type": "application/json", // Déclare le type de contenu en JSON
             "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
-            "Pragma": "no-cache",
-            "Expires": "0",
         },
     });
 
