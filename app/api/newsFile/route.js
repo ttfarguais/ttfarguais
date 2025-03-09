@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { list } from "@vercel/blob";
 
 export async function GET(request) {
