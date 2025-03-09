@@ -55,8 +55,8 @@ const responseData = {
 const response = new Response(JSON.stringify(responseData), {
   status: 200,
   headers: {
-    "Content-Type": "application/json", // Déclare le type de contenu en JSON
-    "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
+    "Content-Type": "application/json",
+    "Cache-Control": "no-store, no-cache, must-revalidate",
   },
 });
 return response;
