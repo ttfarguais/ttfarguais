@@ -10,7 +10,7 @@ const TeamResultsListContainer = () => {
 
   const fetchFiles = async () => {
     try {
-      const response = await fetch(`/api/files`, { cache: "no-store" });
+      const response = await fetch(`/api/files`);
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des fichiers");
       }
