@@ -14,7 +14,7 @@ export default function Cover() {
     useEffect(() => {
         fetchNews();
     }, []);
-
+    // console.log(newsFile)
     return (
         <section>
             <section className="mb-16">
