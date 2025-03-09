@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import {cacheBustingUrl} from "../../../utils/cacheBustingUrl"
 
 export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
@@ -37,7 +38,7 @@ export default function Cover() {
                         {newsFile?.url && (
                             <button disabled={newsFile?.url ? false : true}>
                                 <a
-                                    href={newsFile?.url}
+                                    href={cacheBustingUrl(newsFile?.url)}
                                     target="_blank"
                                     className={` py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all ${
                                         newsFile?.url
