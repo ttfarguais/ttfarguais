@@ -9,6 +9,7 @@ export default function Cover() {
     const fetchNews = async () => {
         try {
             const response = await fetch("/api/newsFile", { cache: "no-store" });
+            console.log("response :", response)
             if (!response.ok) {
                 console.error("Erreur lors du fetching : ", response.statusText);
                 return;
