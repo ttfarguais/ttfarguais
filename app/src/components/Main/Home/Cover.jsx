@@ -7,15 +7,28 @@ export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
 
     const fetchNews = async () => {
-        const response = await fetch("/api/newsFile", { cache: "no-store" });
-        const data = await response.json();
-        setNewsFile(data[0]);
+        try {
+            const response = await fetch("/api/newsFile", { cache: "no-store" });
+            if (!response.ok) {
+                console.error("Erreur lors du fetching : ", response.statusText);
+                return;
+            }
+            const data = await response.json();
+            console.log(data)
+            if (data.length > 0) {
+                setNewsFile(data[0]?.url);
+            } else {
+                console.warn("Aucun fichier d'actualités disponible.");
+            }
+        } catch (error) {
+            console.error("Erreur lors du fetching des actualités : ", error);
+        }
     };
 
     useEffect(() => {
         fetchNews();
     }, []);
-    console.log(newsFile)
+
     return (
         <section>
             <section className="mb-16">
@@ -34,14 +47,13 @@ export default function Cover() {
                             {" "}
                             Plaisir, Passion et Champions !
                         </p>
-                        {/* <ButtonCover url='/leclub' title='En savoir plus'></ButtonCover> */}
-                        {newsFile?.url && (
-                            <button disabled={newsFile?.url ? false : true}>
+                        {newsFile && (
+                            <button disabled={newsFile ? false : true}>
                                 <a
-                                    href={cacheBustingUrl(newsFile?.url)}
+                                    href={cacheBustingUrl(newsFile)}
                                     target="_blank"
                                     className={` py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all ${
-                                        newsFile?.url
+                                        newsFile
                                             ? "text-white border-white"
                                             : "border-gray-400 text-gray-400"
                                     }`}

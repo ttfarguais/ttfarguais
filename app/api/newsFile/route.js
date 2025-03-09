@@ -15,8 +15,5 @@ export async function GET(request) {
             "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
         },
     });
-
     return response;
 }
-// return Response.json(filesWithoutFirst);
-// }

@@ -59,6 +59,5 @@ const response = new Response(JSON.stringify(responseData), {
     "Cache-Control": "no-store, no-cache, must-revalidate", // Pas de cache
   },
 });
-
 return response;
 }
