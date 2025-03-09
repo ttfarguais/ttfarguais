@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {cacheBustingUrl} from "../../../utils/cacheBustingUrl"
+import cacheBustingUrl from "../../../utils/cacheBustingUrl";
 
 export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
