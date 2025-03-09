@@ -6,7 +6,7 @@ export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
 
     const fetchNews = async () => {
-        const response = await fetch("/api/newsFile");
+        const response = await fetch("/api/newsFile", { cache: "no-store" });
         const data = await response.json();
         setNewsFile(data[0]);
     };
