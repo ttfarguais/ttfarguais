@@ -11,9 +11,9 @@ export default function Birthday() {
 
         <div className="flex flex-col justify-between mb-8 gap-6 text-justify">
           <p>
-            Le <strong className="inline-block">T.T. Farguais</strong>, notre cher club de tennis de
+            2022, le <strong className="inline-block">T.T. Farguais</strong>, notre cher club de tennis de
             table de
-            <strong> Fargues Saint-Hilaire</strong>, a récemment célébré son
+            <strong> Fargues Saint-Hilaire</strong>, célèbre son
             30ᵉ anniversaire et quel événement mémorable ce fut ! Cette
             journée spéciale restera gravée dans les mémoires de tous les
             participants, tant par les moments de convivialité que par les
