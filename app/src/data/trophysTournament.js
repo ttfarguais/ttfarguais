@@ -14,7 +14,7 @@ const trophys = [
     ],
     image: "/tournaments/tournament_trophy_2013.jpg",
     alt: "Trophée du tournoi interne de 2013 à 2022",
-    titleTrophy: "Trophée du tournoi interne de 2013 à 2022",
+    titleTrophy: "Trophée du tournoi interne de 2013 à 2024",
   },
   {
     bio: [
