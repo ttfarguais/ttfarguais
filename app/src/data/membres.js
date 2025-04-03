@@ -6,7 +6,7 @@ const clubMembres = [
   {firstname:"Stéphane", lastname:"AIMÉE", job:"Secrétaire", img:"/membres/Stephane.jpg", alt: "Photo de Stéphane Aimee"},
   {firstname:"Agostinho José", lastname:"DUARTE", job:"Secrétaire adjoint", img:"/membres/Jose.jpg", alt: "Photo de José Duarte"},
   {firstname:"Maxime", lastname:"TOURNAUX", job:"Entaîneur", img:"/membres/MAX.jpg", alt: "Photo de Maxime Tournaux"},
-  {firstname:"Emmanuel", lastname:"BOS", job:"Media", img:"/membres/Manu.jpg", alt: "Photo de Emmanuel Bos"},
+  {firstname:"Emmanuel", lastname:"BOS", job:"Réseaux sociaux", img:"/membres/Manu.jpg", alt: "Photo de Emmanuel Bos"},
 ]
 
 export default clubMembres;
