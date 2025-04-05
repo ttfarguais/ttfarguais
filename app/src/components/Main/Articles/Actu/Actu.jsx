@@ -27,7 +27,7 @@ export default function Actu() {
             >
               Romain Hernandez
             </Link>
-            , membre investi de notre club de <strong>tennis de table</strong>,
+            , membre investi de notre club,
             de retravailler notre identité visuelle avec{" "}
             <Link href={barenko} className="font-bold text-solid underline">
               Barenko
@@ -45,18 +45,18 @@ export default function Actu() {
             inclut également une amélioration de nos communications et de notre
             présence en ligne. Notre objectif est de refléter l&apos;énergie et
             l&apos;enthousiasme de notre communauté tout en attirant de nouveaux
-            membres.
+            adhérents.
           </p>
           <p>
             Nous invitons tous nos membres à visiter le nouveau site web et à
             découvrir ses nouvelles fonctionnalités. Vous y trouverez des
-            informations détaillées sur nos événements à venir, les horaires
-            d&apos;entraînement, et bien plus encore.
+            informations détaillées sur nos évènements à venir, les horaires
+            d&apos;entraînements et bien plus encore.
           </p>
           <p>
             Un grand merci à tous ceux qui ont contribué à ce projet. Votre
             dévouement et votre passion pour le club sont la clé de notre succès
-            continu. Continuons à faire de{" "}
+            continu. Continuons à faire du{" "}
             <strong className="inline-block">T.T. Farguais</strong> un endroit
             où le sport et l&apos;amitié se rencontrent.
           </p>
