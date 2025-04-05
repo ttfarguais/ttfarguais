@@ -42,9 +42,8 @@ export default function Birthday() {
           </p>
           <h2 className="font-bold text-lg">Des affrontements endiablés</h2>
           <p>
-            Après le repas, les choses sérieuses ont commencé avec des matchs de
-            tennis de table endiablés. Les tables étaient en permanence occupées
-            par des joueurs, allant des jeunes talents prometteurs aux vétérans
+            Après le repas, les choses sérieuses ont commencé avec des matchs endiablés. Les tables étaient en permanence occupées
+            par des joueurs allant des jeunes talents prometteurs aux vétérans
             du club. Chaque match était une démonstration d&lsquo;adresse, de
             stratégie et surtout de passion pour ce sport. Les applaudissements,
             les encouragements et les acclamations ont résonné tout au long de
