@@ -3,7 +3,7 @@ import { documents, inscriptionFile, times } from "../src/data/inscriptionFile";
 export const metadata = {
   title: "T.T. Farguais - Inscription",
   description:
-    "Rejoignez le club de tennis de table de Fargues Saint Hilaire. Retrouvez toutes les informations relatives à l'inscription.",
+    "Rejoignez le club de tennis de table de Fargues Saint-Hilaire. Retrouvez toutes les informations relatives à l'inscription.",
 };
 
 
