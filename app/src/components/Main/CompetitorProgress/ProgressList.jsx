@@ -34,7 +34,7 @@ const TeamResultList = ({ resultsFiles }) => {
                   href={cacheBustingUrl(file.url)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-lg bg-red-100 hover:bg-solid hover:text-contrast-1"
+                  className="p-4 rounded-lg bg-green-100 hover:bg-solid hover:text-contrast-1"
                 >
                   {separatorUnderscoreString(file.pathname)}
                 </Link>
