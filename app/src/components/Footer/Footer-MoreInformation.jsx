@@ -4,7 +4,7 @@ export default function FooterMoreInformation() {
   return (
     <div className="flex flex-col items-center gap-2 text-xs sm:text-sm">
       <p>
-        &copy; 2024 <strong>T.T. Farguais</strong>
+        &copy; 2024 <strong>T.T. FARGUAIS</strong>
       </p>
       <p>
         Site réalisé par{" "}
