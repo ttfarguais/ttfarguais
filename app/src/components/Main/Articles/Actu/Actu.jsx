@@ -55,8 +55,7 @@ export default function Actu() {
           </p>
           <p>
             Un grand merci à tous ceux qui ont contribué à ce projet. Votre
-            dévouement et votre passion pour le club sont la clé de notre succès
-            continu. Continuons à faire du{" "}
+            dévouement et votre passion pour le club sont la clé de notre succès. Continuons à faire du{" "}
             <strong className="inline-block">T.T. Farguais</strong> un endroit
             où le sport et l&apos;amitié se rencontrent.
           </p>
