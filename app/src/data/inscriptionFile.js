@@ -1,6 +1,6 @@
 const times = [
   {day: "Lundi", time: "18h00 - 20h30"},
-  {day: "Mercredi", time: "14h00 - 21h00"},
+  {day: "Mercredi", time: "19h00 - 21h00"},
 ]
 
 const documents = [
@@ -16,7 +16,7 @@ const documents = [
 ];
 
 const inscriptionFile = {
-  name: "Fiche inscription 2024/2025",
+  name: "Fiche inscription",
   pdf: "/pdf/infos-rentree.pdf",
 }
 
