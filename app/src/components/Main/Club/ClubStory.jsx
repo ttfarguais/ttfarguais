@@ -13,13 +13,13 @@ export default function ClubMain() {
               <span className="font-bold">Alain MOTILLON</span> au cours de
               l’automne 1991, le <strong>TENNIS DE TABLE FARGUAIS</strong>{" "}
               obtient l’accord de la municipalité de{" "}
-              <strong>FARGUES-St-HILAIRE</strong> afin d’utiliser la salle des
+              <strong>FARGUES-ST-HILAIRE</strong> afin d’utiliser la salle des
               fêtes pour ses entraînements et ses compétitions, puis dépose ses
               statuts en avril 1992, s’affilie à la F.F.T.T. et engage ainsi ses
               premières équipes en compétition pour la saison 1992/1993.
             </p>
             <p className="mb-4">
-              Les résultats ne se sont pas faits attendre puisque fort d’un
+              Les résultats ne se sont pas fait attendre puisque fort d’un
               recrutement de joueurs déjà aguerris, le premier titre de Champion
               de Gironde est acquis dès la première saison.
             </p>
@@ -42,15 +42,15 @@ export default function ClubMain() {
             <p className="mb-4">
               Notre éducateur organise des stages sportifs pendant les vacances
               scolaires ainsi que des initiations au sein de l’école primaire de
-              FARGUES-St-HILAIRE et intervient plus récemment sur les TAPS
+              FARGUES-ST-HILAIRE et intervient plus récemment sur les TAPS
               (Temps d’Aménagement Péri-Scolaires) tous les vendredis après-midi
               depuis la rentrée 2014.
             </p>
             <p className="mb-4">
               A son apogée, à la fin des années 90, le club a atteint la
               centaine d’adhérents et continua à recruter pour faire monter
-              l’équipe 1 en première division régionale. Il entra dans le « Top
-              10 » des clubs aquitains, obtenant ainsi le Label Régional de la
+              l’équipe 1 en première division régionale. Il entra dans le «Top
+              10» des clubs aquitains, obtenant ainsi le Label Régional de la
               Ligue d’Aquitaine. Depuis 2008, la nouvelle équipe municipale a
               accueilli de nouvelles associations entraînant des restrictions de
               créneaux d’entraînements pour le Tennis de Table. Nous nous
