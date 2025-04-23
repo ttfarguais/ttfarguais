@@ -119,7 +119,7 @@ export default function Contact({
         <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
           <div className="flex-col flex gap-2 w-full">
             <label className="text-md md:text-lg" htmlFor="birthdate">
-              Âge du joueur:
+              Âge du joueur :
             </label>
             <input
               type="text"
