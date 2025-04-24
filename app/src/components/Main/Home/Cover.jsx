@@ -54,7 +54,7 @@ export default function Cover() {
                                     className={` py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all ${
                                         newsFile
                                             ? "text-white border-white"
-                                            : "border-gray-400 text-gray-400"
+                                            : "border-green-400 text-green-400"
                                     }`}
                                     aria-label={`Télécharger le fichier des actualités`}
                                 >
