@@ -51,9 +51,9 @@ export default function Cover() {
                                 <a
                                     href={cacheBustingUrl(newsFile)}
                                     target="_blank"
-                                    className={` py-2 px-4 border rounded-xl hover:bg-green hover:text-black text-sm transition-all ${
+                                    className={` py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all ${
                                         newsFile
-                                            ? "text-white border-white"
+                                            ? "text-red border-red"
                                             : "border-gray-400 text-gray-400"
                                     }`}
                                     aria-label={`Télécharger le fichier des actualités`}
