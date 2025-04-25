@@ -10,7 +10,7 @@ export default function Inscription({ trophys }) {
         Hommage aux Vainqueurs du Tournoi Interne du Club.
       </p>
       <p className="text-justify mb-10">Depuis sa
-        fondation, le</strong>{" "}
+        fondation, le 
         <strong className="inline-block">T.T. Farguais</strong> a toujours été
         un lieu où la passion, la compétition et l&apos;amitié se rencontrent.
         Chaque année, notre tournoi interne est l&apos;occasion de célébrer non
