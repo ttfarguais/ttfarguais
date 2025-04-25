@@ -7,7 +7,7 @@ export default function Inscription({ trophys }) {
       </h1>
 
       <p className="text-justify mb-2">
-        Hommage aux Vainqueurs du Tournoi Interne du Club.
+        Hommage aux Vainqueurs du Tournoi Interne de notre Club.
       </p>
       <p className="text-justify mb-10">Depuis sa
         fondation, le 
