@@ -7,11 +7,10 @@ export default function Inscription({ trophys }) {
       </h1>
 
       <p className="text-justify mb-2">
-        Hommage aux Vainqueurs du Tournoi Interne du Club de <strong>tennis de table</strong>{" "}
-        <strong className="inline-block">T.T. Farguais</strong>.
+        Hommage aux Vainqueurs du Tournoi Interne du Club.
       </p>
       <p className="text-justify mb-10">Depuis sa
-        fondation, notre club de <strong>tennis de table</strong>{" "}
+        fondation, le</strong>{" "}
         <strong className="inline-block">T.T. Farguais</strong> a toujours été
         un lieu où la passion, la compétition et l&apos;amitié se rencontrent.
         Chaque année, notre tournoi interne est l&apos;occasion de célébrer non
