@@ -42,7 +42,7 @@ const responseData = {
       name: "Championnat de France Départemental",
       files: departementaleCompetition,
     },
-    { name: "Critérium de Gironde Excellence & Honneur", files: critCompetiton },
+    { name: "Critérium de Gironde", files: critCompetiton },
   ],
   competitorFiles: [
     { name: "Phase", files: stageProgressFiles },
