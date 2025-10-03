@@ -3,7 +3,7 @@ const trainingTimes = [
     name: "Adultes",
     schedules: [
       { day: "Lundi", time: "18h00 - 20h30", who: "Loisirs et compétiteurs", trainingType: "Entraînement libre" },
-      { day: "Mercredi", time: "19h30 - 21h00", trainingType: "Entraînement libre et dirigé", coach: "Stéphane AIMÉE" },
+      { day: "Mercredi", time: "19h00 - 21h00", trainingType: "Entraînement libre et dirigé", coach: "Stéphane AIMÉE" },
     ]
   },
   {
