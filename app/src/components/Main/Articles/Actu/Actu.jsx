@@ -19,7 +19,7 @@ export default function Actu() {
             refonte graphique et une nouvelle identité visuelle.
           </p>
           <p>
-            La généreuse proposition de{" "}
+            La proposition de{" "}
             <Link
               href={roms}
               target="_blank"
@@ -32,8 +32,7 @@ export default function Actu() {
             <Link href={barenko} className="font-bold text-solid underline">
               Barenko
             </Link>{" "}
-            (un ami de Romain) a été saisie à la suite de nombreuses réunions au
-            sein du bureau. Nous avons donc pris la décision de lui faire
+            (un ami de Romain) a été saisie de lui faire
             confiance.
           </p>
           <p>
@@ -49,8 +48,8 @@ export default function Actu() {
           </p>
           <p>
             Nous invitons tous nos membres à visiter le nouveau site web et à
-            découvrir ses nouvelles fonctionnalités. Vous y trouverez des
-            informations détaillées sur nos évènements à venir, les horaires
+            découvrir ses fonctionnalités. Vous y trouverez des
+            informations sur nos évènements à venir, les horaires
             d&apos;entraînements et bien plus encore.
           </p>
           <p>
