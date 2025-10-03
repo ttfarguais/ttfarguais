@@ -14,8 +14,7 @@ export default function Inscription({ trophys }) {
         un lieu où la passion, la compétition et l&apos;amitié se rencontrent.
         Chaque année, notre tournoi interne est l&apos;occasion de célébrer non
         seulement les talents individuels, mais aussi l&apos;esprit sportif et
-        la camaraderie qui animent notre club. Nous souhaitons aujourd&apos;hui
-        rendre hommage à tous ceux qui ont marqué l&apos;histoire de ce tournoi
+        la camaraderie qui animent notre club. Rendons hommage à tous ceux qui ont marqué l&apos;histoire de ce Tournoi
         par leurs victoires mémorables.
       </p>
      
