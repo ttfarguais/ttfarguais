@@ -12,7 +12,7 @@ export default function Inscription({ trophys }) {
       <p className="text-justify mb-10">Depuis sa
         fondation, le <strong className="inline-block">T.T. Farguais</strong> a toujours été
         un lieu où la passion, la compétition et l&apos;amitié se rencontrent.
-        Chaque année, notre tournoi interne est l&apos;occasion de célébrer non
+        Chaque année, notre Tournoi interne est l&apos;occasion de célébrer non
         seulement les talents individuels, mais aussi l&apos;esprit sportif et
         la camaraderie qui animent notre club. Rendons hommage à tous ceux qui ont marqué l&apos;histoire de ce Tournoi
         par leurs victoires mémorables.
