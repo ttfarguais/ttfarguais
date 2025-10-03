@@ -3,7 +3,7 @@ export default function Inscription({ trophys }) {
   return (
     <section className="p-6 md:w-4/6 m-auto 2xl:w-4/6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
-        Les tournois internes
+        Le Tournoi interne
       </h1>
 
       <p className="text-justify mb-10">Depuis sa
