@@ -1,6 +1,7 @@
 const trophys = [
   {
-    bio: [
+    bio: [      
+      { year: 2025, name: "DOS SANTOS T.", vs: "TAUZIA D." },
       { year: 2024, name: "THEVENET J.", vs: "SOETAERT P." },
       { year: 2023, name: "VANBAUCE P. - 2e titre", vs: "BOS E." },
       { year: 2022, name: "SOETAERT P.", vs: "DUARTE A.J." },
