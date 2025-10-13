@@ -17,7 +17,7 @@ const awards = [
   {date: 2012, title: "Champion de Gironde Poussins Garçons. Vice-Champion de Gironde Poussins Garçons."},
   {date: 2014, title: "Champion de Gironde Division Elite Benjamins Garçons."},
   {date: 2015, title: "Champion de Gironde Division Honneur Minimes Garçons."},
-  {date: 2024, title: "Thomas BOS vainqueur de la Coupe du tournoi du Conseil Général."},
+  {date: 2024, title: "Thomas BOS : vainqueur de la Coupe du tournoi du Conseil Général."},
 ]
 
 export default awards;
