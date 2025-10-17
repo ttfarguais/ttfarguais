@@ -16,7 +16,7 @@ const documents = [
 ];
 
 const inscriptionFile = {
-  name: "Infos Rentrée",
+  name: "Contacts - Horaires - Tarifs",
   pdf: "/pdf/infos-rentree.pdf",
 }
 
