@@ -30,7 +30,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
 
         <section className="flex flex-col mb-8 ">
           <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-            Informations de début de Saison :
+            Informations de début de saison :
           </h2>
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
             <p className="mr-4">{inscriptionFile.name} :</p>
