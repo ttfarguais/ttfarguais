@@ -1,6 +1,6 @@
 const times = [
   {day: "Lundi", time: "18h00 - 20h30"},
-  {day: "Mercredi", time: "19h00 - 21h00"},
+  {day: "Mercredi", time: "19h30 - 21h00"},
 ]
 
 const documents = [
