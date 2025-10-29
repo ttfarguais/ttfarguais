@@ -28,11 +28,11 @@ export default function Actu() {
               Romain Hernandez
             </Link>
             , membre de notre club,
-            de retravailler notre identité visuelle avec{" "}
+            de retravailler notre identité visuelle avec son ami{" "}
             <Link href={barenko} className="font-bold text-solid underline">
               Barenko
             </Link>{" "}
-            (un ami de Romain) a été saisie de lui faire
+             a été saisie de lui faire
             confiance.
           </p>
           <p>
