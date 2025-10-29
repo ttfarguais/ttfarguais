@@ -27,7 +27,7 @@ export default function Actu() {
             >
               Romain Hernandez
             </Link>
-            , membre investi de notre club,
+            , membre de notre club,
             de retravailler notre identité visuelle avec{" "}
             <Link href={barenko} className="font-bold text-solid underline">
               Barenko
@@ -36,19 +36,17 @@ export default function Actu() {
             confiance.
           </p>
           <p>
-            Un nouveau logo ainsi qu&apos;un nouveau site web voient ainsi le
+            Un nouveau logo ainsi qu&apos;un nouveau site web ont ainsi vu le
             jour pour la rentrée 2025.
           </p>
           <p>
-            Cette refonte ne se limite pas seulement à l&apos;apparence, mais
-            inclut également une amélioration de nos communications et de notre
+            Cette refonte inclut une amélioration de nos communications et de notre
             présence en ligne. Notre objectif est de refléter l&apos;énergie et
             l&apos;enthousiasme de notre communauté tout en attirant de nouveaux
             adhérents.
           </p>
           <p>
-            Nous invitons tous nos membres à visiter le nouveau site web et à
-            découvrir ses fonctionnalités. Vous y trouverez des
+            Vous y trouverez des
             informations sur nos évènements à venir, les horaires
             d&apos;entraînements et bien plus encore.
           </p>
@@ -59,7 +57,7 @@ export default function Actu() {
             où le sport et l&apos;amitié se rencontrent.
           </p>
           <p className="text-solid font-bold">
-            Rendez-vous en 2024 pour découvrir toutes ces nouveautés et célébrer
+            Rendez-vous fin 2024 pour découvrir toutes ces nouveautés et célébrer
             ensemble cette nouvelle étape de notre histoire !
           </p>
         </div>
