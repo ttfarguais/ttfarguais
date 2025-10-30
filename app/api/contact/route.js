@@ -50,5 +50,5 @@ export async function POST(request) {
       { message: "Erreur lors de l'envoi de l'email." },
       { status: 500 }
     );
-   }
   }
+}
