@@ -44,12 +44,11 @@ export async function POST(request) {
       { message: "Formulaire soumis avec succès" },
       { status: 200 }
     );
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Erreur lors de l'envoi de l'email:", error);
     return NextResponse.json(
       { message: "Erreur lors de l'envoi de l'email." },
       { status: 500 }
     );
-  }
+   }
   }
