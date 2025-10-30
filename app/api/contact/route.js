@@ -39,7 +39,8 @@ export async function POST(request) {
     <p><strong>Message</strong> : ${message}</p>`,
   };
 
-  await transporter.sendMail(mailOptions);
+  try {
+    await transporter.sendMail(mailOptions);
     return NextResponse.json(
       { message: "Formulaire soumis avec succès" },
       { status: 200 }
