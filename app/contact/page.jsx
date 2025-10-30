@@ -17,12 +17,3 @@ export default function ContactPage() {
     </>
   );
 }
-<button
-  onClick={async () => {
-    const res = await fetch("/api/contact", { method: "POST" });
-    const data = await res.json();
-    alert(data.message || "Mail envoyé !");
-  }}
->
-  Envoyer mail test
-</button>
