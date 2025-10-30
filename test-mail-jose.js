@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import "dotenv/config"; // pour charger ton .env.local
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", // change selon ton service
+  host: "smtp.yahoo.com", // change selon ton service
   port: 587,
   secure: false,
   auth: {
