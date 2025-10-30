@@ -52,4 +52,9 @@ export async function POST(request) {
       { status: 500 }
     );
   }
-}
+}await transporter.sendMail({
+  from: process.env.USER_EMAIL,
+  to: process.env.USER_EMAIL, // juste pour tester
+  subject: "Test Yahoo Nodemailer",
+  text: "Ceci est un test",
+});
