@@ -57,7 +57,7 @@ export default function ContactContainer() {
       });
 
       if (!res.ok) {
-        throw new Error("Erreur lors de la soumission du formulaire");
+        throw new Error("Erreur lors de la soumission du formulaire Api Contact");
       }
 
       const data = await res.json();
@@ -77,7 +77,7 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Erreur lors de la soumission du formulaire");
+      setResponseMessage("Erreur lors de la soumission du formulaire Reponse Mess");
     } finally {
       setIsSubmitted(false);
     }
