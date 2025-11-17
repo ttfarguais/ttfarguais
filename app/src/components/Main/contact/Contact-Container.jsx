@@ -77,7 +77,7 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Erreur lors de la soumission du formulaire Reponse Mess");
+      setResponseMessage("Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à ttfarguais@yahoo.fr, Merci");
     } finally {
       setIsSubmitted(false);
     }
