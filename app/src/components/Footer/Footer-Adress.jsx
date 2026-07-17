@@ -5,7 +5,7 @@ export default function FooterAdress() {
       <p>Derrière la Mairie</p>
       <p>3, av. de La Laurence</p>
       <p>
-      33370 FARGUES ST-HILAIRE</p>
+      33370 FARGUES SAINT-HILAIRE</p>
     </div>
   );
 }
