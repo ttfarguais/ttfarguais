@@ -22,7 +22,7 @@ export default function FooterMoreInformation() {
           className="italic"
         >
           Barenko
-        </Link><p>maintenu par className="italic" Agostinho</p>
+        </Link></p><p>maintenu par className="italic" Agostinho</p>
       </p>
     </div>
   );
