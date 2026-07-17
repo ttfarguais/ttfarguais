@@ -65,10 +65,10 @@ export default function ClubMain() {
               disponibilité le permet.
             </p>
             <p className="mb-4">
-              2025, nous obtenons l’autorisation de nous entrainer pendant les vacances scolaires d’hiver.
+              2025, nous obtenons l’autorisation de nous entraîner pendant les vacances scolaires d’hiver.
             </p>          
             <p className="mb-4">
-              2026, nouvelle municipalité, nous collaborons avec CAP33 pour une animation matinale en semaine, nous obtenons l’autorisation de nous entrainer pendant les vacances d’été.
+              2026, nouvelle municipalité, nous collaborons avec CAP33 pour une animation matinale hebdomadaire en juillet - août, nous obtenons l’autorisation de nous entraîner 1 jour par semaine pendant les vacances d’été.
             </p>
           </div>
         </article>
