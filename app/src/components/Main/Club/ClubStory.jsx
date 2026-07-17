@@ -69,7 +69,8 @@ export default function ClubMain() {
             </p>          
             <p className="mb-4">
               2026, nouvelle municipalité, nous collaborons avec CAP33 pour une animation matinale en semaine, nous obtenons l'autorisation de nous entrainer pendant les vacances d'été.
-            </p>           </div>
+            </p>
+          </div>
         </article>
       </section>
     </>
