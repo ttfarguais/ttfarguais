@@ -21,8 +21,8 @@ export default function FooterMoreInformation() {
           target="_blank"
           className="italic"
         >
-          Barenko
-        </Link> maintenu par Agostinho
+          Barenko, 
+        </Link> maintenu par José
       </p>
     </div>
   );
