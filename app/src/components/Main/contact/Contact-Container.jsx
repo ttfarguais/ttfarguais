@@ -77,7 +77,7 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à ttfarguais@yahoo.com, Merci");
+      setResponseMessage("Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à jeanpaul.vergote@neuf.fr, Merci");
     } finally {
       setIsSubmitted(false);
     }
