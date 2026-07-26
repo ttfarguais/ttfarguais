@@ -14,6 +14,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
               <strong>T.T. FARGUAIS</strong>
             </p>
             <p>Carré des Forges</p>
+            <p>Derrière la Mairie</p>
             <p>3, av. de La Laurence</p>
             <p>
               33370 <span className="uppercase">Fargues Saint-Hilaire</span>
