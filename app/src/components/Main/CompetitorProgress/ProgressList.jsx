@@ -16,7 +16,7 @@ const TeamResultList = ({ resultsFiles }) => {
           <h2 className="font-bold text-lg mb-4 underline underline-offset-8">
             {(() => {
               switch (files.name) {
-                case "Phases":
+                case "Phase":
                   return "Phases";
                 case "Mensuelles":
                   return "Progressions Mensuelles";
