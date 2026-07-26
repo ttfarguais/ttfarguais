@@ -57,8 +57,7 @@ export default function Actu() {
             où le sport et l&apos;amitié se rencontrent.
           </p>
           <p className="text-solid font-bold">
-            Rendez-vous fin 2024 pour découvrir toutes ces nouveautés et célébrer
-            ensemble cette nouvelle étape de notre histoire !
+            Fin 2024 découvrons ces nouveautés !
           </p>
         </div>
       </div>
