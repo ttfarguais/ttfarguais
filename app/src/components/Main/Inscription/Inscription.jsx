@@ -49,8 +49,10 @@ export default function Inscription({ times, documents, inscriptionFile }) {
         <section className="flex flex-col gap-4 mb-8 ">
           <div>
             <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-              Documents à fournir obligatoirement : Parcours de Prévention Santé (PPS) : https://malicence.fftt.com
-            </h2>
+              Documents à fournir obligatoirement :
+              </h2>
+            Parcours de Prévention Santé (PPS) : https://malicence.fftt.com
+            
             <ul className="flex flex-col gap-6">
               {documents.map((document, index) => (
                 <InscriptionFilesList key={index} document={document} />
