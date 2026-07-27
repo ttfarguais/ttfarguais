@@ -4,7 +4,6 @@ const times = [
 ]
 
 const documents = [
-  { name: "Bordereau de Licence" },
   { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
   {
