@@ -8,7 +8,7 @@ const documents = [
   { name: "Bordereau de demande de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
   {
-    name: "Certificat Médical pour la pratique du Tennis de Table",
+    name: "Certificat Médical",
     important: false,
     pdf: "/pdf/certificat-medical.pdf",
   },
