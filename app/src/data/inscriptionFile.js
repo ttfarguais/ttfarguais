@@ -4,15 +4,16 @@ const times = [
 ]
 
 const documents = [
-  { name: "Bordereau de demande de Licence", pdf: "/pdf/licence.pdf" },
+  { name: "Bordereau de Licence" },
+  { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
   {
     name: "Certificat Médical",
     important: false,
     pdf: "/pdf/certificat-medical.pdf",
   },
-  { name: "Questionnaire de Santé pour personne Majeure", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
-  { name: "Questionnaire de Santé pour personne Mineure", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
+  { name: "Questionnaire de Santé pour Majeur", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
+  { name: "Questionnaire de Santé pour Mineur", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
 ];
 
 const inscriptionFile = {
