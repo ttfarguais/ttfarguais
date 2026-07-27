@@ -11,7 +11,7 @@ const siteLinks = [
       { title: "Galerie", url: "/galerie" },
     ],
   },
-  { title: "Entrainements", url: "/entrainements" },
+  { title: "Entraînements", url: "/entrainements" },
   { title: "Inscription", url: "/inscription" },
   {
     title: "Compétition",
