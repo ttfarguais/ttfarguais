@@ -19,14 +19,14 @@ export default function Contact({
       </h1>
      <style>                                                      
  .text-red {
-        color: green;
+        color: green;   }     
+</style> 
 
         <div>Désolé, le formulaire est temporairement inactif.</span></div>
         <div>Veuillez envoyer votre demande par mail à :</div>
         <div>jeanpaul.vergote@neuf.fr</div>
         <div>Merci et à bientôt.</div>
-           }     
-</style> 
+        
 
       <form
         onSubmit={handleSubmit}
