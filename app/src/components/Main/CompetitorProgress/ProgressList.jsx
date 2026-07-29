@@ -17,7 +17,7 @@ const TeamResultList = ({ resultsFiles }) => {
             {(() => {
               switch (files.name) {
                 case "Phase":
-                  return "Classements par Phases";
+                  return "Par Phases";
                 case "Mensuelles":
                   return "Progressions Mensuelles";
                 case "Saison":
