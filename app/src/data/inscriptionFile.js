@@ -4,7 +4,7 @@ const times = [
 ]
 
 const documents = [
-  { name: "Parcours de Prévention Santé <b>(PPS)</b>", pdf: "https://malicence.fftt.com" },  
+  { name: "Parcours de Prévention Santé <strong>(PPS)</strong>", pdf: "https://malicence.fftt.com" },  
   { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
   {
