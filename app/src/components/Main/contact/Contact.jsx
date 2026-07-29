@@ -19,7 +19,10 @@ export default function Contact({
       </h1>
         <div>Désolé, le formulaire est temporairement inactif.</div>
         <div>Veuillez envoyer votre demande par mail à :</div>
-        <div><h1>jeanpaul.vergote@neuf.fr</div></h1>
+        <div className="flex flex-col items-center m-auto py-6">
+      <h1 className="text-xl text-center font-bold p-4 mb-8">
+        jeanpaul.vergote@neuf.fr
+      </h1></div>
         <div>Merci et à bientôt.</div>
         
 
