@@ -17,12 +17,12 @@ export default function Contact({
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
       </h1>
-      <span style="color: green;">
-        <div>Désolé, le formulaire est temporairement inactif.</div>
+      
+        <div><span style="color: green;">Désolé, le formulaire est temporairement inactif.</span></div>
         <div>Veuillez envoyer votre demande par mail à :</div>
         <div>jeanpaul.vergote@neuf.fr</div>
         <div>Merci et à bientôt.</div>
-      </span>
+      
 
       <form
         onSubmit={handleSubmit}
