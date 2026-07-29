@@ -55,7 +55,6 @@ export default function Inscription({ times, documents, inscriptionFile }) {
           href="https://malicence.fftt.com/"
           className="italic"
           target="_blank"
-        >
           malicence.fftt.com
         </Link>{" "}
             
