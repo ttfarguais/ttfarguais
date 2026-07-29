@@ -15,7 +15,7 @@ export default function FooterMoreInformation() {
         >
           Roms
         </Link>{" "}
-        &{" "}
+        <i>&</i>{" "}
         <Link
           href="https://www.linkedin.com/in/ugo-matassa/"
           target="_blank"
