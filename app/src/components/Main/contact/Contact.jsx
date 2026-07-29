@@ -16,7 +16,7 @@ export default function Contact({
     <div className="flex flex-col items-center m-auto py-6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
-        Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à jeanpaul.vergote@neuf.fr, Merci
+        <div>Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à jeanpaul.vergote@neuf.fr, Merci</div>
       </h1>
 
       <form
