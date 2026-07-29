@@ -50,7 +50,6 @@ export default function Inscription({ times, documents, inscriptionFile }) {
           <div>
             <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
               Documents à fournir : </h2>
-                Parcours de Prévention Santé (PPS) : https://malicence.fftt.com
       
             <ul className="flex flex-col gap-6">
               {documents.map((document, index) => (
