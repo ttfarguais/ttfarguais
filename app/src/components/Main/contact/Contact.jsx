@@ -18,7 +18,7 @@ export default function Contact({
         Contactez-nous !
       </h1>
       
-        <div><span style="color: green;">Désolé, le formulaire est temporairement inactif.</span></div>
+        <div><span style="#FF0000">Désolé, le formulaire est temporairement inactif.</span></div>
         <div>Veuillez envoyer votre demande par mail à :</div>
         <div>jeanpaul.vergote@neuf.fr</div>
         <div>Merci et à bientôt.</div>
