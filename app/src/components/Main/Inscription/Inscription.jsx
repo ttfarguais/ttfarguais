@@ -40,9 +40,9 @@ export default function Inscription({ times, documents, inscriptionFile }) {
               href={inscriptionFile.pdf}
               download={`${inscriptionFile.pdf}.pdf`}
               className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
-              aria-label={`Ouvrir ${inscriptionFile.name}`}
+              aria-label={`Télécharger ${inscriptionFile.name}`}
             >
-              Ouvrir
+              Télécharger
             </a>
           </div>
         </section>
