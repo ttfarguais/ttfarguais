@@ -36,7 +36,19 @@ export default function Inscription({ times, documents, inscriptionFile }) {
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
             <p className="mr-4">{inscriptionFile.name} :</p>
 
-            <a
+           <a
+              href={inscriptionFile.pdf}
+              download={`${inscriptionFile.pdf}.pdf`}
+              className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
+              aria-label={`Ouvrir ${inscriptionFile.name}`}
+            >
+              Ouvrir
+            </a>
+          </div>
+        </section>
+            
+            
+/*           <a
               href={inscriptionFile.pdf}
               download={`${inscriptionFile.pdf}.pdf`}
               className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
@@ -46,6 +58,9 @@ export default function Inscription({ times, documents, inscriptionFile }) {
             </a>
           </div>
         </section>
+
+*/
+        
         <section className="flex flex-col gap-4 mb-8 ">
           <div>
             <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
