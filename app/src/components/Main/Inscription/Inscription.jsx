@@ -36,15 +36,15 @@ export default function Inscription({ times, documents, inscriptionFile }) {
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
             <p className="mr-4">{inscriptionFile.name} :</p>
 
-          <a
-          href={inscriptionFile.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
-          aria-label={`Ouvrir ${inscriptionFile.name}`}
-        >
-          Ouvrir
-        </a>
+ <a
+  href={inscriptionFile.pdf}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
+  aria-label={`Ouvrir ${inscriptionFile.name}`}
+>
+  Ouvrir
+</a>
             
           </div>
         </section>
