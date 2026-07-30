@@ -4,7 +4,7 @@ const times = [
 ]
 
 const site = [
-  { name: "Parcours de Prévention Santé (PPS)", pdf:window.open("https://malicence.fftt.com", "_blank")  },
+  { name: "Parcours de Prévention Santé (PPS)", window.open("https://malicence.fftt.com", "_blank")  },
 ];
 
 const documents = [
