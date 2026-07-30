@@ -47,19 +47,6 @@ export default function Inscription({ times, documents, inscriptionFile }) {
           </div>
         </section>
             
-            
-/*           <a
-              href={inscriptionFile.pdf}
-              download={`${inscriptionFile.pdf}.pdf`}
-              className="text-solid py-1 px-4 border border-solid rounded-xl hover:text-contrast-1 hover:bg-solid text-sm transition-all"
-              aria-label={`Télécharger ${inscriptionFile.name}`}
-            >
-              Télécharger
-            </a>
-          </div>
-        </section>
-
-*/
         
         <section className="flex flex-col gap-4 mb-8 ">
           <div>
