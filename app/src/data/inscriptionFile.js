@@ -3,11 +3,8 @@ const times = [
   {day: "Mercredi", time: "14h00 - 21h00"},
 ]
 
-const site = [
-  { name: "Parcours de Prévention Santé (PPS)", window.open("https://malicence.fftt.com", "_blank")  },
-];
-
 const documents = [
+  { name: "Parcours de Prévention Santé (PPS)", window.open("https://malicence.fftt.com", "_blank")},
   { name: "Parcours de Prévention Santé (PPS)", pdf: "https://malicence.fftt.com" },  
   { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
