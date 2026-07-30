@@ -4,8 +4,7 @@ export default function InscriptionilesList({document}) {
     <li className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
     <p className="mr-4">{document.name} :</p>
     <div>
-
-
+      
         <a
           href={document.pdf}
           target="_blank"
@@ -16,7 +15,6 @@ export default function InscriptionilesList({document}) {
           Ouvrir
         </a>
 
-      
     </div>
   </li>
   )
