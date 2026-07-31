@@ -3,6 +3,7 @@ import FooterMobile from "./mobile/Footer-mobile";
 export default function Index() {
   return (
     <>
+      <FooterDesktop />
       <FooterMobile />
     </>
   );
