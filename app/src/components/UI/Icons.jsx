@@ -100,5 +100,5 @@ const TTFLogo = ({width, height}) => {
   </Link>
   )
 }
-export { superuLogo, BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
+export { superuSponsor, BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
 
