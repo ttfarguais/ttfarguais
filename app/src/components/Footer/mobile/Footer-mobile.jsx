@@ -11,7 +11,7 @@ export default function FooterMobile() {
 
         <FooterSocialLinks />
       </div>
-  {/* <FooterSponsorMobile /> */}
+      <FooterSponsorMobile />
       <FooterMoreInformation />
     </div>
   );
