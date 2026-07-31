@@ -11,7 +11,7 @@ export default function NavListMobile({
   return (
     <ul
       className={`lg:hidden fixed z-10 flex flex-col justify-center gap-8 h-lvh top-0 right-0 w-4/6 sm:w-3/6 text-white bg-solid p-6 sm:p-20 sm:text-lg transition-all  ${
-        menuOpen ? "translate-x-0" : "translate-x-full"
+        menuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
       }`}
     >
       <CloseButton
