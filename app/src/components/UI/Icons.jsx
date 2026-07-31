@@ -5,7 +5,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import FSHLogo from "../../../../public/FSH.jpg";
 import GirondeLogo from "../../../../public/Gironde.jpg";
 import TtfLogo from "../../../../public/TTFargues-logo-Plein.svg";
-import superuLogo from "../../../../public/superu.jpg";
+import SuperuLogo from "../../../../public/superu.jpg";
 const FshSponsor = ({ width, height }) => {
   return (
     <Image
@@ -33,7 +33,7 @@ const GirondeSponsor = ({ width, height }) => {
 const SuperuSponsor = ({ width, height }) => {
   return (
     <Image
-      src={superuLogo}
+      src={SuperuLogo}
       width={width}
       height={height}
       className="w-auto"
@@ -100,5 +100,5 @@ const TTFLogo = ({width, height}) => {
   </Link>
   )
 }
-export { superuSponsor, BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
+export { SuperuSponsor, BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
 
