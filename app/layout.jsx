@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <head>
       <meta name="google-site-verification" content="Pk4o8AF5fkwB0KfjHtSMkAs0b_37p4QRD9u61_cPLxc" />
       </head>
-      <body className={`${exo2.className}`}>
+      <body className={`${exo2.className} overflow-x-hidden`}>
         <header>
           {/* <AnnouceBar text={announce} link={link}/> */}
           <Nav />
