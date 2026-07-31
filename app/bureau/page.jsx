@@ -14,7 +14,7 @@ export default function BureauPage(){
     <link rel="canonical" href="https://www.ttfarguais.fr/bureau" />
     </head>
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 mb-10">
-      <h1 className="text-xl text-center font-bold p-4 mb-8">Membres du bureau</h1>
+      <h1 className="text-xl text-center font-bold p-4 mb-8">Membres du Bureau</h1>
       <div className="flex gap-6 md:gap-10 justify-center flex-wrap">
       {membres.map((membre, index) =>(
       <MemberCard membre={membre} key={index}></MemberCard>
