@@ -1,6 +1,6 @@
 const clubMembres = [
   {firstname:"VERGOTE", lastname:"Jean-Paul", job:"Président", img:"/membres/JeanPaul.png", alt: "Photo de Jean-Paul Vergote"},
-  {firstname:"AIMÉE", lastname:"Mélanie", job:"Trésorière", img:"/membres/ANNSO.jpg", alt: "Photo"},
+  {firstname:"AIMÉE", lastname:"Mélanie", job:"Trésorière", img:"/membres/melanie.jpg", alt: "Photo"},
   {firstname:"AIMÉE", lastname:"Stéphane", job:"Secrétaire", img:"/membres/Stephane.jpg", alt: "Photo de Stéphane Aimee"},
   {firstname:"TOURNAUX", lastname:"Maxime", job:"Entaîneur Comité de Gironde", img:"/membres/MAX.jpg", alt: "Photo de Maxime Tournaux"},
   {firstname:"MARÉCHAL", lastname:"Bernadette", job:"Membre du Comité directeur", img:"/membres/ANNSO.jpg", alt: "Photo"},
