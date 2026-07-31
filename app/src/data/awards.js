@@ -19,7 +19,7 @@ const awards = [
   {date: 2015, title: "Champion de Gironde Division Honneur Minimes Garçons."},
   {date: 2024, title: "Thomas BOS : vainqueur de la Coupe du tournoi du Conseil Général."},
   {date: 2025, title: "Raphaël DUBOUSSET, Elyes AIDARA et Alexandre MARTIN : Vice-Champions de Gironde division Honneur."},
-  {date: 2026, title: "Jean-Paul VERGOTE, Président : Médaille d'Argent du Mérite Régional, sur proposition du Comité de Gironde et après analyse par la Commission des Mérites de la Ligue de Nouvelle Aquitaine."},
+  {date: 2026, title: "Jean-Paul VERGOTE, Président : Médaille d'Argent du Mérite Régional, sur proposition du Comité de Gironde et après analyse par la Commission des Mérites de la Ligue de Nouvelle-Aquitaine."},
 ]
 
 export default awards;
