@@ -5,6 +5,7 @@ export default function FooterSponsor() {
     <div className="flex gap-6">
     <FshSponsor width={150} height={150}/>
     <GirondeSponsor width={150} height={150}/>
+      <GirondeSponsor width={150} height={150}/>
     </div>
   );
 }
