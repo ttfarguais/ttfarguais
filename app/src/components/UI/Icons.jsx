@@ -5,6 +5,7 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import FSHLogo from "../../../../public/FSH.jpg";
 import GirondeLogo from "../../../../public/Gironde.jpg";
 import TtfLogo from "../../../../public/TTFargues-logo-Plein.svg";
+import superuLogo from "../../../../public/superu.jpg";
 const FshSponsor = ({ width, height }) => {
   return (
     <Image
@@ -25,6 +26,18 @@ const GirondeSponsor = ({ width, height }) => {
       height={height}
       className="w-auto"
       alt="Logo de la Gironde, le département"
+    />
+  );
+};
+
+const superuSponsor = ({ width, height }) => {
+  return (
+    <Image
+      src={superuLogo}
+      width={width}
+      height={height}
+      className="w-auto"
+      alt="Logo du SUPERU de la commune de Fargues st hilaire"
     />
   );
 };
@@ -87,5 +100,5 @@ const TTFLogo = ({width, height}) => {
   </Link>
   )
 }
-export { BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
+export { superuLogo, BurgerMenu, CloseButton, FacebookLink, FshSponsor, GirondeSponsor, InstagramLink, TTFLogo };
 
