@@ -4,7 +4,7 @@ export default function FooterSponsor() {
   return (
     <div className="flex w-full justify-center items-center gap-2">
      <FshSponsor width={80} height={80}/>
-     <GirondeSponsor width={70} height={70}/>
+     <GirondeSponsor width={60} height={60}/>
      <SuperuSponsor width={80} height={80}/>
     </div>
   );
