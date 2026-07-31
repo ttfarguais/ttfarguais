@@ -1,4 +1,4 @@
-import { FshSponsor, GirondeSponsor } from "../../UI/Icons";
+import { FshSponsor, GirondeSponsor, superuSponsor } from "../../UI/Icons";
 
 export default function FooterSponsor() {
   return (
