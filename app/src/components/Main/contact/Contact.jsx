@@ -24,8 +24,8 @@ export default function Contact({
         jeanpaul.vergote@neuf.fr
       </h1></div>
         <div>À très vite.</div>
-        
-
+    </div>  
+);
       <form
         onSubmit={handleSubmit}
         className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
