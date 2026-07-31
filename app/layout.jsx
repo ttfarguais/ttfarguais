@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <ArrowUp />
         </main>
      <footer>
-  {/* <Footer /> */}
+  <Footer />
 </footer>
         </body>
     </html>
