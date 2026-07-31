@@ -30,7 +30,7 @@ const GirondeSponsor = ({ width, height }) => {
   );
 };
 
-const superuSponsor = ({ width, height }) => {
+const SuperuSponsor = ({ width, height }) => {
   return (
     <Image
       src={superuLogo}
