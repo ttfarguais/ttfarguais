@@ -11,7 +11,7 @@ export default function Nav() {
 
   return (
     <nav className="sticky z-50 flex lg:flex-col px-8 sm:px-8 py-6 lg:py-12 items-center justify-between gap-10 border-b bg-white ">
-      <TTFLogo width={100} heigth={100} />
+      <TTFLogo width={100} height={100} />
 
       <BurgerMenu
         size={40}
