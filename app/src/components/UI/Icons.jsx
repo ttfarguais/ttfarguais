@@ -12,7 +12,7 @@ const FshSponsor = ({ width, height }) => {
       src={FSHLogo}
       width={width}
       height={height}
-         className="w-auto"
+      className="w-full h-full object-contain"
       alt="Logo de la commune de Fargues st hilaire"
     />
   );
