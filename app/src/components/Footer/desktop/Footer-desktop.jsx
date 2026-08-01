@@ -9,12 +9,10 @@ export default function FooterDesktop() {
       <div className="flex justify-center items-center gap-16 w-full">
 
         <FooterAdress />
-
         <FooterSocialLinks />
-
         <FooterSponsorDesktop />
+        
       </div>
-
       <FooterMoreInformation />
     </div>
   );
