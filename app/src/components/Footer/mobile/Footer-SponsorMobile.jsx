@@ -13,7 +13,8 @@ export default function FooterSponsor() {
 
       <div className="w-20 h-20">
         <SuperuSponsor width={80} height={80} />
-
+      </div>
+      
       {/* futur 4e logo ici */}
     </div>
   );
