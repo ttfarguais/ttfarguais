@@ -29,7 +29,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${exo2.className} overflow-x-hidden`}>
         <header>
-          <AnnouceBar text={announce} link={link}/>
+  <Nav />
+  {/* <AnnouceBar text={announce} link={link}/> */}
+</header>
           
         </header>
         <main>
