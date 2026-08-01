@@ -31,7 +31,6 @@ export default function RootLayout({ children }) {
         <header>
   <Nav />
   {/* <AnnouceBar text={announce} link={link}/> */}
-</header>
           
         </header>
         <main>
