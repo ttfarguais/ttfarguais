@@ -24,7 +24,7 @@ const GirondeSponsor = ({ width, height }) => {
       src={GirondeLogo}
       width={width}
       height={height}
-         className="w-auto"
+         className="w-full h-full object-contain"
       alt="Logo de la Gironde, le département"
     />
   );
@@ -36,7 +36,7 @@ const SuperuSponsor = ({ width, height }) => {
       src={SuperuLogo}
       width={width}
       height={height}
-         className="w-auto"
+         className="w-full h-full object-contain"
       alt="Logo du SUPERU de la commune de Fargues st hilaire"
     />
   );
