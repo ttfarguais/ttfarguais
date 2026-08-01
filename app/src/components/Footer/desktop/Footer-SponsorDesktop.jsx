@@ -2,11 +2,10 @@ import { FshSponsor, GirondeSponsor, SuperuSponsor } from "../../UI/Icons";
 
 export default function FooterSponsor() {
   return (
-    <div className="flex gap-6">
-    <FshSponsor width={80} height={80}/>
-    <SuperuSponsor width={80} height={80}/>
-    <GirondeSponsor width={80} height={80}/>
-
+  <div className="flex w-full flex-wrap justify-center items-center gap-x-4 gap-y-4">
+      <FshSponsor width={120} height={120} />
+      <GirondeSponsor width={120} height={120} />
+      <SuperuSponsor width={120} height={120} />
     </div>
   );
 }
