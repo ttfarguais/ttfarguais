@@ -19,7 +19,7 @@ export default function Contact({
     {/* Titre */}
     <div className="text-center mb-10 max-w-2xl">
       <h1 className="text-4xl font-bold text-solid mb-4">
-        Une question ? 🏓
+        Une questi🏓n ?
       </h1>
 
       <p className="text-gray-600">
@@ -68,7 +68,7 @@ export default function Contact({
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Votre adresse e-mail"
+            placeholder="Votre e-m@il"
             required
             className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
           />
@@ -119,7 +119,7 @@ export default function Contact({
         required
         className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       >
-        <option value="">Je suis...</option>
+        <option value="">Je suis un joueur...</option>
 
         {playerType.map((type, index) => (
           <option key={index} value={type.title}>
@@ -128,12 +128,23 @@ export default function Contact({
         ))}
       </select>
 
+       {/* Source */}
+      <input
+        type="text"
+        name="municipality"
+        value={formData.municipality}
+        onChange={handleChange}
+        placeholder="Comment nous avez vous connus ?"
+        required
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+      />
+
       {/* Message */}
       <textarea
         name="message"
         value={formData.message}
         onChange={handleChange}
-        placeholder="Votre message..."
+        placeholder="Votre demande..."
         rows={6}
         required
         className="w-full rounded-xl border border-gray-300 px-4 py-3 resize-none focus:outline-none focus:ring-4 focus:ring-green-100"
