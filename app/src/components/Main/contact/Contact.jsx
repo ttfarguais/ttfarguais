@@ -27,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-6"
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-6 space-y-6"
     >
 
       {/* Nom / Prénom */}
@@ -135,10 +135,10 @@ export default function Contact({
        {/* Source */}
       <input
         type="text"
-        name="municipality"
-        value={formData.municipality}
+        name="source"
+        value={formData.source}
         onChange={handleChange}
-        placeholder="Comment nous avez vous connus ?"
+        placeholder="Comment avez vous connu le club ?"
         required
         className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       />
