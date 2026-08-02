@@ -17,8 +17,8 @@ export default function Contact({
   <div className="flex flex-col items-center py-10 px-4">
 
     {/* Titre */}
-    <div className="text-center mb-10 max-w-2xl">
-      <h1 className="text-2xl font-bold text-solid mb-2">
+    <div className="text-center mb-5 max-w-2xl">
+      <h1 className="text-lg font-bold text-solid mb-4">
         Envie de nous rej🏓indre ?
       </h1>
 
@@ -168,7 +168,7 @@ export default function Contact({
         type="submit"
         className="mx-auto block rounded-full bg-solid text-white px-10 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
       >
-        Envoyer mon message 🏓
+        Envoyer m🏓n message
       </button>
 
     </form>
