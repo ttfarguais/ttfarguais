@@ -103,8 +103,6 @@ export default function Contact({
           )}
         </div>
 
-      </div>
-
       {/* Commune */}
       <input
         type="text"
