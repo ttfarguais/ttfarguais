@@ -27,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-2"
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-3"
     >
 
       {/* Nom / Prénom */}
@@ -64,7 +64,7 @@ export default function Contact({
     required
     className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
   />
-
+<div>
     <input
       type="email"
       name="email"
@@ -81,7 +81,8 @@ export default function Contact({
       </p>
     )}
 
-
+</div>
+<div>
     <input
       type="tel"
       name="tel"
@@ -98,7 +99,7 @@ export default function Contact({
       </p>
     )}
   </div>
-
+</div>
   <div>    
       {/* Commune */}
       <input
