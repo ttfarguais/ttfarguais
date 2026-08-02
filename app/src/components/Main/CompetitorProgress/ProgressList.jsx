@@ -9,7 +9,7 @@ const TeamResultList = ({ resultsFiles }) => {
   return (
     <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6 flex flex-col gap-4">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
-        Classements et Progressions des Compétiteurs
+        Classements et Progressions <br/>des Compétiteurs
       </h1>
       {resultsFiles.competitorFiles.map((files, index) => (
         <div key={index} className="flex flex-col gap-3 border-b mb-10">
