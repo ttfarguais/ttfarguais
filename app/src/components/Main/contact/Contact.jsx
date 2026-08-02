@@ -27,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-4 space-y-6"
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-6"
     >
 
       {/* Nom / Prénom */}
@@ -120,7 +120,7 @@ export default function Contact({
   value={formData.typePlayer}
   onChange={handleChange}
   required
-  className={`w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100 ${
+  className={`w-full rounded-xl border border-gray-300 px-4 py-3 bg-white appearance-none focus:outline-none focus:ring-4 focus:ring-green-100 ${
     formData.typePlayer ? "text-gray-900" : "text-gray-400"
   }`}
 >
