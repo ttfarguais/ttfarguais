@@ -13,7 +13,7 @@ export default function Contact({
 }) {
 
 
-  return (return (
+  return (
   <div className="flex flex-col items-center py-10 px-4">
 
     {/* Titre */}
