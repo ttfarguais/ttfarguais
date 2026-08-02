@@ -16,7 +16,7 @@ export default function Actu() {
         <div className="flex flex-col justify-between mb-8 gap-6 text-justify">
           <p>
             Après plus de 30 ans d&apos;existence, le club s&apos;octroie une
-            refonte graphique et une nouvelle identité visuelle.
+            refonte graphique.
           </p>
           <p>
             La proposition de{" "}
@@ -40,8 +40,8 @@ export default function Actu() {
             jour pour la rentrée 2025.
           </p>
           <p>
-            Cette refonte inclut une amélioration de nos communications et de notre
-            présence en ligne. Notre objectif est de refléter l&apos;énergie et
+            Cette refonte modernise notre
+            présence en ligne et a pour objectif de refléter l&apos;énergie et
             l&apos;enthousiasme de notre communauté tout en attirant de nouveaux
             adhérents.
           </p>
