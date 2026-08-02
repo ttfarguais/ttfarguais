@@ -15,7 +15,7 @@ export default function Contact({
 
   return (
 
-    /*
+    {/*
     <div className="flex flex-col items-center m-auto py-6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
@@ -223,7 +223,7 @@ export default function Contact({
     
       );
       }
-*/
+*/}
 
 <div className="text-center mb-10">
   <h1 className="text-4xl font-bold text-solid">
@@ -285,3 +285,5 @@ export default function Contact({
 </button>
     </form>
 </div>
+      );
+      }
