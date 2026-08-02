@@ -27,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-4"
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-2"
     >
 
       {/* Nom / Prénom */}
@@ -167,6 +167,8 @@ export default function Contact({
         </p>
       )}
 
+ </div>
+   
       <button
         type="submit"
         className="mx-auto block rounded-full bg-solid text-white px-10 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
