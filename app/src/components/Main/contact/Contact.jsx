@@ -27,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-6 space-y-6"
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-4 space-y-6"
     >
 
       {/* Nom / Prénom */}
