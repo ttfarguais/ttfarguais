@@ -23,7 +23,7 @@ export default function Contact({
     <p className="text-xl font-bold select-all">
   jeanpaul.vergote@neuf.fr
 </p></div>
-        <div>À très vite à la table !</div>
+        <div>À très vite à la table !<br/><br/></div>
       </div>
 
 /*    
