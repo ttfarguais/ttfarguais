@@ -281,4 +281,4 @@ export default function Contact({
 >
   Envoyer mon message 🏓
 </button>
-    </from>
+    </form>
