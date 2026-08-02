@@ -12,11 +12,6 @@ export default function Contact({
   isValidStatus
 }) {
 
-  const inputClass = (value) =>
-  `w-full rounded-xl border px-4 py-3 bg-white outline-none transition
-  focus:ring-4 focus:ring-green-100 ${
-    value ? "border-green-500" : "border-gray-300"
-  }`;
 
   return (
   <div className="flex flex-col items-center py-10 px-4">
@@ -32,7 +27,7 @@ export default function Contact({
     {/* Formulaire */}
     <form
       onSubmit={handleSubmit}
-      className={inputClass(formData.lastName)}
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-6"
     >
 
       {/* Nom / Prénom */}
@@ -45,7 +40,7 @@ export default function Contact({
           onChange={handleChange}
           placeholder="Votre nom"
           required
-          className={inputClass(formData.lastName)}
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
         />
 
         <input
@@ -55,7 +50,7 @@ export default function Contact({
           onChange={handleChange}
           placeholder="Votre prénom"
           required
-          className={inputClass(formData.lastName)}
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
         />
 
       </div>
@@ -71,7 +66,7 @@ export default function Contact({
           onChange={handleChange}
           placeholder="Votre âge"
           required
-          className={inputClass(formData.lastName)}
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
         />
           
           <input
@@ -81,7 +76,7 @@ export default function Contact({
             onChange={handleChange}
             placeholder="Votre m@il"
             required
-            className={inputClass(formData.lastName)}
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
           />
 
           {isSubmitted && !validateEmail() && (
@@ -98,7 +93,7 @@ export default function Contact({
             onChange={handleChange}
             placeholder="Votre téléphone"
             required
-            className={inputClass(formData.lastName)}
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
           />
 
           {isSubmitted && !validatePhone() && formData.tel && (
@@ -116,7 +111,7 @@ export default function Contact({
         onChange={handleChange}
         placeholder="Votre commune"
         required
-        className={inputClass(formData.lastName)}
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       />
 
       {/* Type de joueur */}
@@ -145,7 +140,7 @@ export default function Contact({
         onChange={handleChange}
         placeholder="Comment avez vous connu le club ?"
         required
-        className={inputClass(formData.lastName)}
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       />
 
       {/* Message */}
