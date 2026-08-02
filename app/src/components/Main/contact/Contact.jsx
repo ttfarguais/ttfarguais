@@ -26,7 +26,7 @@ export default function Contact({
         <div>À très vite à la table !</div>
       </div>
 
-{/*    
+/*    
       <div>  
       <form
         onSubmit={handleSubmit}
@@ -216,7 +216,7 @@ export default function Contact({
         </button>
       </form>
     </div>
-    */}
+    */
       );
       }
 
