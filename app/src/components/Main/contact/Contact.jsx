@@ -81,7 +81,6 @@ export default function Contact({
         Adresse e-mail invalide.
       </p>
     )}
-  </div>
 
 
   <div>
