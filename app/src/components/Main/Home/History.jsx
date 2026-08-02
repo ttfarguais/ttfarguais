@@ -4,14 +4,13 @@ export default function History() {
       <h2 className="text-center font-bold uppercase text-xl">Quelques mots</h2>
       <article className="text-justify md:text-center flex flex-col gap-2 p-2 sm:w-4/6 xl:w-2/6">
         <p>
-          Découvrez l&apos;histoire du &quot;<strong className="inline-block">T.T. FARGUAIS</strong>&quot; fondé en 1992 par <span className="font-bold">Alain MOTILLON</span>. Depuis ses
-          débuts modestes, notre club incarne l&apos;esprit familial et la
+          Le <strong className="inline-block">T.T. FARGUAIS</strong>&quot; fondé en 1992 par <span className="font-bold">Alain MOTILLON</span> incarne l&apos;esprit familial et la
           passion pour le tennis de table.
         </p>
         <p>
           Avec une ambiance chaleureuse, des valeurs de respect et de
           camaraderie, nous offrons un environnement accueillant pour tous les
-          joueurs, des débutants aux plus expérimentés. Rejoignez-nous pour
+          joueurs, des débutants aux compétiteurs. Rejoignez-nous pour
           vivre des moments uniques et partager votre amour pour ce sport
           palpitant !
         </p>
