@@ -25,7 +25,7 @@ export default function Contact({
   jeanpaul.vergote@neuf.fr
 </p></div>
         <div>À très vite à la table !<br/><br/></div>
-      </div>
+
 
    
     
