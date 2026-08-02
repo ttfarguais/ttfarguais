@@ -56,13 +56,13 @@ export default function Contact({
       </div>
 
       {/* Age / Email / Téléphone */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
 
         <div>
         <input
           type="text"
-          name="lastName"
-          value={formData.lastName}
+          name="age"
+          value={formData.age}
           onChange={handleChange}
           placeholder="Votre âge"
           required
@@ -84,7 +84,6 @@ export default function Contact({
               Adresse e-mail invalide.
             </p>
           )}
-        </div>
 
         <div>
           <input
