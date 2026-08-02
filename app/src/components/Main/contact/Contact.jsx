@@ -58,7 +58,7 @@ export default function Contact({
       {/* Age / Email / Téléphone */}
       <div className="grid md:grid-cols-3 gap-6">
 
-        <div>
+    
         <input
           type="text"
           name="age"
@@ -85,7 +85,7 @@ export default function Contact({
             </p>
           )}
 
-        <div>
+        
           <input
             type="tel"
             name="tel"
