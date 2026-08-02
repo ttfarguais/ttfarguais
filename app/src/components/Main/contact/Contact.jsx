@@ -1,3 +1,4 @@
+/*
 "use client";
 import playerType from "../../../data/playerType";
 export default function Contact({
@@ -220,4 +221,63 @@ export default function Contact({
     
       );
       }
+*/
 
+<div className="text-center mb-10">
+  <h1 className="text-4xl font-bold text-solid">
+    Une question ? 🏓
+  </h1>
+
+  <p className="mt-3 text-gray-600 max-w-xl mx-auto">
+    Vous souhaitez essayer le tennis de table, inscrire votre enfant ou simplement
+    obtenir un renseignement ? Laissez-nous un message, nous vous répondrons rapidement.
+  </p>
+</div>
+<form
+  onSubmit={handleSubmit}
+  className="bg-white rounded-3xl shadow-xl p-8 md:p-10 w-full md:w-5/6 xl:w-3/5 space-y-8"
+>
+    <input
+  type="text"
+  name="lastName"
+  value={formData.lastName}
+  onChange={handleChange}
+  placeholder="Nom"
+  className="
+    w-full
+    rounded-xl
+    border
+    border-gray-300
+    px-4
+    py-3
+    bg-white
+    outline-none
+    transition
+    focus:border-solid
+    focus:ring-4
+    focus:ring-green-100
+  "
+/>
+<button
+  type="submit"
+  className="
+    w-full
+    md:w-auto
+    mx-auto
+    block
+    rounded-full
+    bg-solid
+    text-white
+    px-10
+    py-4
+    font-semibold
+    text-lg
+    shadow-lg
+    hover:scale-105
+    hover:shadow-xl
+    transition-all
+    duration-200
+  "
+>
+  Envoyer mon message 🏓
+</button>
