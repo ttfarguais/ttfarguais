@@ -55,10 +55,20 @@ export default function Contact({
 
       </div>
 
-      {/* Email / Téléphone */}
+      {/* Age / Email / Téléphone */}
       <div className="grid md:grid-cols-2 gap-6">
 
         <div>
+        <input
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          placeholder="Votre âge"
+          required
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+        />
+          
           <input
             type="email"
             name="email"
