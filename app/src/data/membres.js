@@ -8,6 +8,7 @@ const clubMembres = [
   {firstname:"DUARTE", lastname:"José", job:"Site Internet", img:"/membres/Jose.jpg", alt: "Photo de José Duarte"},
   {firstname:"THEVENET", lastname:"Jérémy", job:"Membre du Comité directeur", img:"/membres/Jeremy.jpg", alt: "PHOTO"},
   {firstname:"PIKACHU", lastname:"", job:"Mutation en cours", img:"/membres/PIKA.jpg", alt: "PHOTO"},
+  {firstname:"CARAPUCE", lastname:"", job:"En formation Combat !", img:"/membres/CARAPUCE.jpg", alt: "PHOTO"},
 
 ]
 
