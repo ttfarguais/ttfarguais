@@ -18,7 +18,7 @@ export default function Contact({
 
     {/* Titre */}
     <div className="text-center mb-10 max-w-2xl">
-      <h1 className="text-2xl font-bold text-solid mb-4">
+      <h1 className="text-1xl font-bold text-solid mb-2">
         Envie de nous rej🏓indre ?
       </h1>
 
@@ -115,22 +115,23 @@ export default function Contact({
       />
 
       {/* Type de joueur */}
-      <select
-        name="typePlayer"
-        value={formData.typePlayer}
-        onChange={handleChange}
-        required
-        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
-      >
-        <option value="">Je suis un joueur...</option>
+     <select
+  name="typePlayer"
+  value={formData.typePlayer}
+  onChange={handleChange}
+  required
+  className={`w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100 ${
+    formData.typePlayer ? "text-gray-900" : "text-gray-400"
+  }`}
+>
+  <option value="">Vous êtes un joueur...</option>
 
-        {playerType.map((type, index) => (
-          <option key={index} value={type.title}>
-            {type.title}
-          </option>
-        ))}
-      </select>
-
+  {playerType.map((type, index) => (
+    <option key={index} value={type.title}>
+      {type.title}
+    </option>
+  ))}
+</select>
        {/* Source */}
       <input
         type="text"
