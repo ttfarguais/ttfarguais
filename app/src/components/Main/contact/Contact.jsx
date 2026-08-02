@@ -100,7 +100,7 @@ export default function Contact({
     )}
   </div>
 </div>
-  <div>    
+  
       {/* Commune */}
       <input
         type="text"
@@ -111,8 +111,7 @@ export default function Contact({
         required
         className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       />
-</div>
-<div>
+      
       {/* Type de joueur */}
      <select
   name="typePlayer"
@@ -132,8 +131,7 @@ export default function Contact({
   ))}
 </select>
 
-</div>
-<div>  
+
        {/* Source */}
       <input
         type="text"
@@ -145,8 +143,7 @@ export default function Contact({
         className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
       />
 
- </div>
- <div> 
+
   {/* Message */}
       <textarea
         name="message"
@@ -168,7 +165,6 @@ export default function Contact({
         </p>
       )}
 
- </div>
    
       <button
         type="submit"
