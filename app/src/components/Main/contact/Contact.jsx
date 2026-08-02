@@ -1,4 +1,4 @@
-/*
+
 "use client";
 import playerType from "../../../data/playerType";
 export default function Contact({
@@ -14,6 +14,8 @@ export default function Contact({
 
 
   return (
+
+    /*
     <div className="flex flex-col items-center m-auto py-6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
