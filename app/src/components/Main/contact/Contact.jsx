@@ -13,277 +13,152 @@ export default function Contact({
 }) {
 
 
-  return (
+  return (return (
+  <div className="flex flex-col items-center py-10 px-4">
 
-    {/*
-    <div className="flex flex-col items-center m-auto py-6">
-      <h1 className="text-xl text-center font-bold p-4 mb-8">
-        Contactez-nous !
+    {/* Titre */}
+    <div className="text-center mb-10 max-w-2xl">
+      <h1 className="text-4xl font-bold text-solid mb-4">
+        Une question ? 🏓
       </h1>
-      
-      <div>Désolé, le formulaire est temporairement inactif.</div>
-      <div>Merci d&apos;envoyer votre demande par mail à notre Président :</div>
-        <div className="flex flex-col items-center m-auto py-1">
-    <p className="text-xl font-bold select-all">
-  jeanpaul.vergote@neuf.fr
-</p></div>
-        <div>À très vite à la table !<br/><br/></div>
 
-
-   
-    
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
-      >
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg" htmlFor="lastName">
-              Nom :
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-              required
-              placeholder="Ping"
-            />
-          </div>
-
-          <div className="flex-col flex w-full gap-2">
-            <label className="text-md md:text-lg" htmlFor="firstName">
-              Prénom :
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-              required
-              placeholder="Pong"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg" htmlFor="email">
-              Email :
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-              required
-              placeholder="ping.pong@gmail.com"
-            />
-            {isSubmitted && !validateEmail() && (
-              <p className="text-red-600 text-sm">
-                Veuillez entrer une adresse email valide (ex: mon.adresse@gmail.com) *
-              </p>
-            )}
-          </div>
-
-          <div className="flex-col flex gap-2">
-            <label className="text-md md:text-lg" htmlFor="tel">
-              Tél. :
-            </label>
-            <input
-              type="tel"
-              name="tel"
-              id="tel"
-              value={formData.tel}
-              onChange={handleChange}
-              required
-              className="border-2 px-4 py-2 bg-contrast-2"
-            />
-            {isSubmitted && !validatePhone() && formData.tel && (
-              <p className="text-red-600 text-sm">
-                Veuillez entrer un numéro de téléphone valide (ex: 06 69 45 ** **)
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg" htmlFor="municipality">
-              Commune de résidence :
-            </label>
-            <input
-              type="text"
-              name="municipality"
-              id="municipality"
-              value={formData.municipality}
-              required
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
-          <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg" htmlFor="birthdate">
-              Âge du joueur :
-            </label>
-            <input
-              type="text"
-              name="age"
-              id="age"
-              value={formData.age}
-              required
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-            />
-          </div>
-
-          <div className="flex-col flex gap-2 w-full">
-            <label className="text-md md:text-lg" htmlFor="typePlayer">
-              Type de joueur :
-            </label>
-            <select
-              name="typePlayer"
-              id="typePlayer"
-              value={formData.typePlayer}
-              required
-              onChange={handleChange}
-              className="border-2 px-4 py-2 bg-contrast-2"
-            >
-              <option value=""></option>
-              {playerType.map((type, index) => (
-                <option key={index} value={type.title}>
-                  {type.title}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        <div className="flex-col flex gap-2">
-          <label className="text-md md:text-lg" htmlFor="description">
-            Comment avez-vous connu le club ? :
-          </label>
-          <textarea
-            name="description"
-            id="description"
-            required
-            value={formData.description}
-            onChange={handleChange}
-            className="border-2 px-4 py-2 bg-contrast-2 h-40"
-            placeholder="J'ai connu le club grâce à..."
-          ></textarea>
-        </div>
-
-        <div className="flex-col flex gap-2">
-          <label className="text-md md:text-lg" htmlFor="message">
-            Votre demande :
-          </label>
-          <textarea
-            name="message"
-            id="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="border-2 px-4 py-2 bg-contrast-2 h-40"
-            required
-            placeholder="Je voudrais savoir si..."
-          ></textarea>
-        </div>
-
-        {responseMessage && (
-          <p
-            className={`py-2 px-4 ${
-              isValidStatus ? "bg-solid" : "bg-red-600"
-            } text-center text-contrast-1 rounded-xl`}
-          >
-            {responseMessage}
-          </p>
-        )}
-
-        <p className="md:text-lg">
-          <span className="text-red-600">*</span> Tous les champs sont obligatoires.
-        </p>
-
-        <button
-          type="submit"
-          className="text-contrast-3 py-1 px-4 rounded-xl border border-contrast-3 text-sm hover:bg-solid border-solid hover:text-contrast-1 transition-all w-2/4 m-auto"
-        >
-          Envoyer
-        </button>
-      </form>
+      <p className="text-gray-600">
+        Vous souhaitez découvrir le tennis de table, inscrire votre enfant ou simplement
+        obtenir un renseignement ? Écrivez-nous, nous vous répondrons avec plaisir.
+      </p>
     </div>
-    
-      );
-      }
-*/}
 
-<div className="text-center mb-10">
-  <h1 className="text-4xl font-bold text-solid">
-    Une question ? 🏓
-  </h1>
+    {/* Formulaire */}
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-6"
+    >
 
-  <p className="mt-3 text-gray-600 max-w-xl mx-auto">
-    Vous souhaitez essayer le tennis de table, inscrire votre enfant ou simplement
-    obtenir un renseignement ? Laissez-nous un message, nous vous répondrons rapidement.
-  </p>
+      {/* Nom / Prénom */}
+      <div className="grid md:grid-cols-2 gap-6">
 
-<form
-  onSubmit={handleSubmit}
-  className="bg-white rounded-3xl shadow-xl p-8 md:p-10 w-full md:w-5/6 xl:w-3/5 space-y-8"
->
-    <input
-  type="text"
-  name="lastName"
-  value={formData.lastName}
-  onChange={handleChange}
-  placeholder="Nom"
-  className="
-    w-full
-    rounded-xl
-    border
-    border-gray-300
-    px-4
-    py-3
-    bg-white
-    outline-none
-    transition
-    focus:border-solid
-    focus:ring-4
-    focus:ring-green-100
-  "
-/>
-<button
-  type="submit"
-  className="
-    w-full
-    md:w-auto
-    mx-auto
-    block
-    rounded-full
-    bg-solid
-    text-white
-    px-10
-    py-4
-    font-semibold
-    text-lg
-    shadow-lg
-    hover:scale-105
-    hover:shadow-xl
-    transition-all
-    duration-200
-  "
->
-  Envoyer mon message 🏓
-</button>
+        <input
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          placeholder="Votre nom"
+          required
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+        />
+
+        <input
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="Votre prénom"
+          required
+          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+        />
+
+      </div>
+
+      {/* Email / Téléphone */}
+      <div className="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Votre adresse e-mail"
+            required
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+          />
+
+          {isSubmitted && !validateEmail() && (
+            <p className="text-red-600 text-sm mt-2">
+              Adresse e-mail invalide.
+            </p>
+          )}
+        </div>
+
+        <div>
+          <input
+            type="tel"
+            name="tel"
+            value={formData.tel}
+            onChange={handleChange}
+            placeholder="Votre téléphone"
+            required
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+          />
+
+          {isSubmitted && !validatePhone() && formData.tel && (
+            <p className="text-red-600 text-sm mt-2">
+              Numéro de téléphone invalide.
+            </p>
+          )}
+        </div>
+
+      </div>
+
+      {/* Commune */}
+      <input
+        type="text"
+        name="municipality"
+        value={formData.municipality}
+        onChange={handleChange}
+        placeholder="Votre commune"
+        required
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+      />
+
+      {/* Type de joueur */}
+      <select
+        name="typePlayer"
+        value={formData.typePlayer}
+        onChange={handleChange}
+        required
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+      >
+        <option value="">Je suis...</option>
+
+        {playerType.map((type, index) => (
+          <option key={index} value={type.title}>
+            {type.title}
+          </option>
+        ))}
+      </select>
+
+      {/* Message */}
+      <textarea
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        placeholder="Votre message..."
+        rows={6}
+        required
+        className="w-full rounded-xl border border-gray-300 px-4 py-3 resize-none focus:outline-none focus:ring-4 focus:ring-green-100"
+      />
+
+      {responseMessage && (
+        <p
+          className={`rounded-xl p-4 text-white text-center ${
+            isValidStatus ? "bg-solid" : "bg-red-600"
+          }`}
+        >
+          {responseMessage}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        className="mx-auto block rounded-full bg-solid text-white px-10 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      >
+        Envoyer mon message 🏓
+      </button>
+
     </form>
-</div>
+
+  </div>
+);
       );
       }
