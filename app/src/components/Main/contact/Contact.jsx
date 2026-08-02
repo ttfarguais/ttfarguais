@@ -18,12 +18,12 @@ export default function Contact({
         Contactez-nous !
       </h1>
         <div>Désolé, le formulaire est temporairement inactif.</div>
-        <div>Merci d&apos;envoyer votre demande par mail à :</div>
+        <div>Merci d&apos;envoyer votre demande par mail à notre Président :</div>
         <div className="flex flex-col items-center m-auto py-1">
     <p className="text-xl font-bold select-all">
   jeanpaul.vergote@neuf.fr
 </p></div>
-        <div>À très vite !</div>
+        <div>À très vite à la table !</div>
         
 
       <form
