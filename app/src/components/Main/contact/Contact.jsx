@@ -18,7 +18,7 @@ export default function Contact({
 
     {/* Titre */}
     <div className="text-center mb-10 max-w-2xl">
-      <h1 className="text-1xl font-bold text-solid mb-2">
+      <h1 className="text-2xl font-bold text-solid mb-2">
         Envie de nous rej🏓indre ?
       </h1>
 
@@ -74,7 +74,7 @@ export default function Contact({
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Votre e-m@il"
+            placeholder="Votre m@il"
             required
             className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
           />
