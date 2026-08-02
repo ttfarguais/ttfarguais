@@ -5,7 +5,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
     <>
       <section className="p-6 md:w-4/6 m-auto 2xl:w-3/6">
         <h1 className="text-xl text-center font-bold p-4 mb-8">
-          Inscriptions possibles tout au long de la saison
+          Inscriptions possibles tout au long de la Saison
         </h1>
 
         <div className="flex flex-col md:flex-row justify-between mb-8 ">
@@ -31,7 +31,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
 
         <section className="flex flex-col mb-8 ">
           <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-            Informations de début de saison :
+            Informations utiles :
           </h2>
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
             <p className="mr-4">{inscriptionFile.name} :</p>
