@@ -232,7 +232,7 @@ export default function Contact({
     Vous souhaitez essayer le tennis de table, inscrire votre enfant ou simplement
     obtenir un renseignement ? Laissez-nous un message, nous vous répondrons rapidement.
   </p>
-</div>
+
 <form
   onSubmit={handleSubmit}
   className="bg-white rounded-3xl shadow-xl p-8 md:p-10 w-full md:w-5/6 xl:w-3/5 space-y-8"
@@ -282,3 +282,4 @@ export default function Contact({
   Envoyer mon message 🏓
 </button>
     </form>
+</div>
