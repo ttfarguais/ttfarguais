@@ -53,55 +53,56 @@ export default function Contact({
           className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
         />
 
-      </div>
-
-      {/* Age / Email / Téléphone */}
       <div className="grid md:grid-cols-3 gap-6">
 
-    
-        <input
-          type="text"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-          placeholder="Votre âge"
-          required
-          className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
-        />
-          
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Votre m@il"
-            required
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
-          />
+  <input
+    type="text"
+    name="age"
+    value={formData.age}
+    onChange={handleChange}
+    placeholder="Votre âge"
+    required
+    className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+  />
 
-          {isSubmitted && !validateEmail() && (
-            <p className="text-red-600 text-sm mt-2">
-              Adresse e-mail invalide.
-            </p>
-          )}
+  <div>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Votre m@il"
+      required
+      className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+    />
 
-        
-          <input
-            type="tel"
-            name="tel"
-            value={formData.tel}
-            onChange={handleChange}
-            placeholder="Votre téléphone"
-            required
-            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
-          />
+    {isSubmitted && !validateEmail() && (
+      <p className="text-red-600 text-sm mt-2">
+        Adresse e-mail invalide.
+      </p>
+    )}
+  </div>
 
-          {isSubmitted && !validatePhone() && formData.tel && (
-            <p className="text-red-600 text-sm mt-2">
-              Numéro de téléphone invalide.
-            </p>
-          )}
-        </div>
+
+  <div>
+    <input
+      type="tel"
+      name="tel"
+      value={formData.tel}
+      onChange={handleChange}
+      placeholder="Votre téléphone"
+      required
+      className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-4 focus:ring-green-100"
+    />
+
+    {isSubmitted && !validatePhone() && formData.tel && (
+      <p className="text-red-600 text-sm mt-2">
+        Numéro de téléphone invalide.
+      </p>
+    )}
+  </div>
+
+</div>
 
       {/* Commune */}
       <input
