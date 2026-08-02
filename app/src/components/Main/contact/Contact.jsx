@@ -19,13 +19,9 @@ export default function Contact({
     {/* Titre */}
     <div className="text-center mb-10 max-w-2xl">
       <h1 className="text-4xl font-bold text-solid mb-4">
-        Une questi🏓n ?
+        Envie de nous rej🏓indre ?
       </h1>
 
-      <p className="text-gray-600">
-        Vous souhaitez découvrir le tennis de table, inscrire votre enfant ou simplement
-        obtenir un renseignement ? Écrivez-nous, nous vous répondrons avec plaisir.
-      </p>
     </div>
 
     {/* Formulaire */}
