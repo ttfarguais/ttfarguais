@@ -36,7 +36,7 @@ export default function Contact({
       >
 
         {/* Nom / Prénom */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
 
           <input
             type="text"
