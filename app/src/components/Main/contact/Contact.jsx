@@ -360,5 +360,6 @@ const IconInput = ({ icon, value, onChange, ...props }) => (
 
 */
     </div>
+    </div>
   );
 }
