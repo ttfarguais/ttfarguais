@@ -1,5 +1,18 @@
 "use client";
+
 import playerType from "../../../data/playerType";
+
+import {
+  FaUser,
+  FaBirthdayCake,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaTableTennis,
+  FaInfoCircle,
+  FaCommentDots
+} from "react-icons/fa";
+
 
 export default function Contact({
   handleChange,
@@ -12,6 +25,7 @@ export default function Contact({
   isValidStatus
 }) {
 
+
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition 
     focus:outline-none focus:ring-4 focus:ring-green-100
@@ -21,15 +35,42 @@ export default function Contact({
         : "border-gray-300"
     }`;
 
+
+  const IconInput = ({ icon, value, ...props }) => (
+    <div className="relative">
+
+      <span
+        className={`absolute left-4 top-1/2 -translate-y-1/2 ${
+          value ? "text-green-500" : "text-gray-400"
+        }`}
+      >
+        {icon}
+      </span>
+
+      <input
+        {...props}
+        value={value}
+        className={`${inputClass(value)} pl-12`}
+      />
+
+    </div>
+  );
+
+
   return (
     <div className="flex flex-col items-center py-10 px-4">
 
+
       {/* Titre */}
       <div className="text-center mb-5 max-w-2xl">
+
         <h1 className="text-xl font-bold text-solid mb-2">
           Envie de nous rej🏓indre ?
         </h1>
+
       </div>
+
+
 
       {/* Formulaire */}
       <form
@@ -39,56 +80,66 @@ export default function Contact({
 
         <div className="flex flex-col gap-3">
 
+
           {/* Nom / Prénom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
 
-            <input
+
+            <IconInput
+              icon={<FaUser />}
               type="text"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Votre nom"
               required
-              className={inputClass(formData.lastName)}
             />
 
-            <input
+
+            <IconInput
+              icon={<FaUser />}
               type="text"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
               placeholder="Votre prénom"
               required
-              className={inputClass(formData.firstName)}
             />
+
 
           </div>
 
 
-          {/* Âge / Email / Téléphone */}
+
+
+          {/* Age / Email / Téléphone */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
 
-            <input
+
+            <IconInput
+              icon={<FaBirthdayCake />}
               type="text"
               name="age"
               value={formData.age}
               onChange={handleChange}
               placeholder="Votre âge"
               required
-              className={inputClass(formData.age)}
             />
 
 
+
             <div>
-              <input
+
+              <IconInput
+                icon={<FaEnvelope />}
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Votre m@il"
                 required
-                className={inputClass(formData.email)}
               />
+
 
               {isSubmitted && !validateEmail() && (
                 <p className="text-red-600 text-sm mt-2">
@@ -99,16 +150,20 @@ export default function Contact({
             </div>
 
 
+
+
             <div>
-              <input
+
+              <IconInput
+                icon={<FaPhone />}
                 type="tel"
                 name="tel"
                 value={formData.tel}
                 onChange={handleChange}
                 placeholder="Votre téléphone"
                 required
-                className={inputClass(formData.tel)}
               />
+
 
               {isSubmitted && !validatePhone() && formData.tel && (
                 <p className="text-red-600 text-sm mt-2">
@@ -118,81 +173,145 @@ export default function Contact({
 
             </div>
 
+
           </div>
 
 
+
+
+
           {/* Commune */}
-          <input
+          <IconInput
+            icon={<FaMapMarkerAlt />}
             type="text"
             name="municipality"
             value={formData.municipality}
             onChange={handleChange}
             placeholder="Votre commune"
             required
-            className={inputClass(formData.municipality)}
           />
 
 
+
+
+
+
           {/* Type joueur */}
-          <select
-            name="typePlayer"
-            value={formData.typePlayer}
-            onChange={handleChange}
-            required
-            className={`w-full rounded-xl border px-4 py-3 bg-white transition 
-            focus:outline-none focus:ring-4 focus:ring-green-100
-            ${
-              formData.typePlayer
-                ? "border-green-500 ring-4 ring-green-100 text-gray-900"
-                : "border-gray-300 text-gray-400"
-            }`}
-          >
-            <option value="">
-              Vous êtes un joueur...
-            </option>
+          <div className="relative">
 
-            {playerType.map((type, index) => (
-              <option key={index} value={type.title}>
-                {type.title}
+
+            <FaTableTennis
+              className={`absolute left-4 top-1/2 -translate-y-1/2 ${
+                formData.typePlayer
+                  ? "text-green-500"
+                  : "text-gray-400"
+              }`}
+            />
+
+
+            <select
+              name="typePlayer"
+              value={formData.typePlayer}
+              onChange={handleChange}
+              required
+              className={`w-full rounded-xl border px-4 py-3 pl-12 bg-white transition
+              focus:outline-none focus:ring-4 focus:ring-green-100
+              ${
+                formData.typePlayer
+                  ? "border-green-500 ring-4 ring-green-100 text-gray-900"
+                  : "border-gray-300 text-gray-400"
+              }`}
+            >
+
+              <option value="">
+                Vous êtes un joueur...
               </option>
-            ))}
 
-          </select>
+
+              {playerType.map((type,index)=>(
+                <option key={index} value={type.title}>
+                  {type.title}
+                </option>
+              ))}
+
+
+            </select>
+
+
+          </div>
+
+
+
+
+
 
 
           {/* Source */}
-          <input
+          <IconInput
+            icon={<FaInfoCircle />}
             type="text"
             name="source"
             value={formData.source}
             onChange={handleChange}
-            placeholder="Comment avez vous connu le club ?"
+            placeholder="Comment avez-vous connu le club ?"
             required
-            className={inputClass(formData.source)}
           />
+
+
+
+
+
 
 
           {/* Message */}
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Votre demande..."
-            rows={6}
-            required
-            className={`${inputClass(formData.message)} resize-none`}
-          />
+          <div className="relative">
+
+
+            <FaCommentDots
+              className={`absolute left-4 top-5 ${
+                formData.message
+                  ? "text-green-500"
+                  : "text-gray-400"
+              }`}
+            />
+
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Votre demande..."
+              rows={6}
+              required
+              className={`${inputClass(formData.message)} pl-12 resize-none`}
+            />
+
+
+          </div>
+
+
+
+
+
 
 
           {responseMessage && (
+
             <p
               className={`rounded-xl p-4 text-white text-center ${
-                isValidStatus ? "bg-solid" : "bg-red-600"
+                isValidStatus
+                  ? "bg-solid"
+                  : "bg-red-600"
               }`}
             >
               {responseMessage}
             </p>
+
           )}
+
+
+
+
 
 
           {/* Bouton */}
@@ -203,9 +322,12 @@ export default function Contact({
             Envoyer m🏓n message
           </button>
 
+
         </div>
 
+
       </form>
+
 
     </div>
   );
