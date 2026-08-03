@@ -36,25 +36,26 @@ export default function Contact({
     }`;
 
 
-  const IconInput = ({ icon, value, ...props }) => (
-    <div className="relative">
+const IconInput = ({ icon, value, onChange, ...props }) => (
+  <div className="relative">
 
-      <span
-        className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-          value ? "text-green-500" : "text-gray-400"
-        }`}
-      >
-        {icon}
-      </span>
+    <span
+      className={`absolute left-4 top-1/2 -translate-y-1/2 ${
+        value ? "text-green-500" : "text-gray-400"
+      }`}
+    >
+      {icon}
+    </span>
 
-      <input
-        {...props}
-        value={value}
-        className={`${inputClass(value)} pl-12`}
-      />
+    <input
+      {...props}
+      value={value ?? ""}
+      onChange={onChange}
+      className={`${inputClass(value)} pl-12`}
+    />
 
-    </div>
-  );
+  </div>
+);
 
 
   return (
