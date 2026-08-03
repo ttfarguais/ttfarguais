@@ -13,8 +13,10 @@ export default function Contact({
 }) {
 
   const inputClass = (value) =>
-    `w-full rounded-xl border border-gray-300 px-4 py-3 bg-white transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
-      value ? "ring-4 ring-green-100" : ""
+    `w-full rounded-xl border px-4 py-3 bg-white transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
+      value
+        ? "border-green-500 ring-4 ring-green-100"
+        : "border-gray-300 focus:border-green-500"
     }`;
 
   return (
@@ -126,8 +128,10 @@ export default function Contact({
           value={formData.typePlayer}
           onChange={handleChange}
           required
-          className={`w-full rounded-xl border border-gray-300 px-4 py-3 bg-white appearance-none transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
-            formData.typePlayer ? "ring-4 ring-green-100 text-gray-900" : "text-gray-400"
+          className={`w-full rounded-xl border px-4 py-3 bg-white appearance-none transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
+            formData.typePlayer
+              ? "border-green-500 ring-4 ring-green-100 text-gray-900"
+              : "border-gray-300 text-gray-400 focus:border-green-500"
           }`}
         >
           <option value="">Vous êtes un joueur...</option>
@@ -173,7 +177,7 @@ export default function Contact({
 
         <button
           type="submit"
-          className="mx-auto block rounded-full bg-solid text-white px-10 py-4 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+          className="mx-auto block rounded-full bg-solid text-white px-10 py-2 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
         >
           Envoyer m🏓n message
         </button>
