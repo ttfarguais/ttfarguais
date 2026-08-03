@@ -7,7 +7,6 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
 
   return (
     <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
-    {/*  <article className={`flex p-4 max-w-full ${borderClass} sm:min-h-56 md:w-4/6`}> */}
       <div className="hidden sm:block w-2/4 relative">
         <Image
           className="absolute top-0 left-0 h-full w-full object-cover"
@@ -20,8 +19,7 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
       <div className="p-4 sm:w-2/4">
         <h3 className="font-bold uppercase mb-4">{title}</h3>
         <p className="text-sm mb-4 text-justify">{description}</p>
-<a href={url}>En savoir plus</a>
-        {/*        <ButtonGreen title="En savoir plus" url={url}></ButtonGreen> */}
+<ButtonGreen title="En savoir plus" url={url}></ButtonGreen>
       </div>
     </article>
   );
