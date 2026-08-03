@@ -1,6 +1,5 @@
 "use client";
 import playerType from "../../../data/playerType";
-
 export default function Contact({
   handleChange,
   handleSubmit,
@@ -12,178 +11,212 @@ export default function Contact({
   isValidStatus
 }) {
 
-  const inputClass = (value) =>
-    `w-full rounded-xl border px-4 py-3 bg-white transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
-      value
-        ? "border-green-500 ring-4 ring-green-100"
-        : "border-gray-300 focus:border-green-500"
-    }`;
 
   return (
-    <div className="flex flex-col items-center py-10 px-4">
+    <div className="flex flex-col items-center m-auto py-6">
+      <h1 className="text-xl text-center font-bold p-4 mb-8">
+        Contactez-nous !
+      </h1>
+      
+      <div>Désolé, le formulaire est temporairement inactif.</div>
+      <div>Merci d&apos;envoyer votre demande par mail à notre Président :</div>
+        <div className="flex flex-col items-center m-auto py-1">
+    <p className="text-xl font-bold select-all">
+  jeanpaul.vergote@neuf.fr
+</p></div>
+        <div>À très vite à la table !<br/><br/></div>
 
-      {/* Titre */}
-      <div className="text-center mb-5 max-w-2xl">
-        <h1 className="text-xl font-bold text-solid mb-2">
-          Envie de nous rej🏓indre ?
-        </h1>
-      </div>
 
-      {/* Formulaire */}
+   
+    
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 space-y-3"
+        className="flex flex-col w-full md:w-4/6 gap-10 py-10 xl:w-3/6 p-6 mb-10"
       >
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="flex-col flex w-full gap-2">
+            <label className="text-md md:text-lg" htmlFor="lastName">
+              Nom :
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+              required
+              placeholder="Ping"
+            />
+          </div>
 
-        {/* Nom / Prénom */}
-        <div className="grid md:grid-cols-3 gap-6">
-
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            placeholder="Votre nom"
-            required
-            className={inputClass(formData.lastName)}
-          />
-
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            placeholder="Votre prénom"
-            required
-            className={inputClass(formData.firstName)}
-          />
-
+          <div className="flex-col flex w-full gap-2">
+            <label className="text-md md:text-lg" htmlFor="firstName">
+              Prénom :
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+              required
+              placeholder="Pong"
+            />
+          </div>
         </div>
 
-        {/* Âge / Email / Téléphone */}
-        <div className="grid md:grid-cols-3 gap-6">
-
-          <input
-            type="text"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            placeholder="Votre âge"
-            required
-            className={inputClass(formData.age)}
-          />
-
-          <div>
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg" htmlFor="email">
+              Email :
+            </label>
             <input
               type="email"
               name="email"
+              id="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Votre m@il"
+              className="border-2 px-4 py-2 bg-contrast-2"
               required
-              className={inputClass(formData.email)}
+              placeholder="ping.pong@gmail.com"
             />
-
             {isSubmitted && !validateEmail() && (
-              <p className="text-red-600 text-sm mt-2">
-                Adresse e-mail invalide.
+              <p className="text-red-600 text-sm">
+                Veuillez entrer une adresse email valide (ex: mon.adresse@gmail.com) *
               </p>
             )}
           </div>
 
-          <div>
+          <div className="flex-col flex gap-2">
+            <label className="text-md md:text-lg" htmlFor="tel">
+              Tél. :
+            </label>
             <input
               type="tel"
               name="tel"
+              id="tel"
               value={formData.tel}
               onChange={handleChange}
-              placeholder="Votre téléphone"
               required
-              className={inputClass(formData.tel)}
+              className="border-2 px-4 py-2 bg-contrast-2"
             />
-
             {isSubmitted && !validatePhone() && formData.tel && (
-              <p className="text-red-600 text-sm mt-2">
-                Numéro de téléphone invalide.
+              <p className="text-red-600 text-sm">
+                Veuillez entrer un numéro de téléphone valide (ex: 06 69 45 ** **)
               </p>
             )}
           </div>
-
         </div>
 
-        {/* Commune */}
-        <input
-          type="text"
-          name="municipality"
-          value={formData.municipality}
-          onChange={handleChange}
-          placeholder="Votre commune"
-          required
-          className={inputClass(formData.municipality)}
-        />
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg" htmlFor="municipality">
+              Commune de résidence :
+            </label>
+            <input
+              type="text"
+              name="municipality"
+              id="municipality"
+              value={formData.municipality}
+              required
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+            />
+          </div>
+        </div>
 
-        {/* Type de joueur */}
-        <select
-          name="typePlayer"
-          value={formData.typePlayer}
-          onChange={handleChange}
-          required
-          className={`w-full rounded-xl border px-4 py-3 bg-white appearance-none transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
-            formData.typePlayer
-              ? "border-green-500 ring-4 ring-green-100 text-gray-900"
-              : "border-gray-300 text-gray-400 focus:border-green-500"
-          }`}
-        >
-          <option value="">Vous êtes un joueur...</option>
+        <div className="flex flex-col md:flex-row justify-between gap-8 items-center">
+          <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg" htmlFor="birthdate">
+              Âge du joueur :
+            </label>
+            <input
+              type="text"
+              name="age"
+              id="age"
+              value={formData.age}
+              required
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+            />
+          </div>
 
-          {playerType.map((type, index) => (
-            <option key={index} value={type.title}>
-              {type.title}
-            </option>
-          ))}
-        </select>
+          <div className="flex-col flex gap-2 w-full">
+            <label className="text-md md:text-lg" htmlFor="typePlayer">
+              Type de joueur :
+            </label>
+            <select
+              name="typePlayer"
+              id="typePlayer"
+              value={formData.typePlayer}
+              required
+              onChange={handleChange}
+              className="border-2 px-4 py-2 bg-contrast-2"
+            >
+              <option value=""></option>
+              {playerType.map((type, index) => (
+                <option key={index} value={type.title}>
+                  {type.title}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-        {/* Source */}
-        <input
-          type="text"
-          name="source"
-          value={formData.source}
-          onChange={handleChange}
-          placeholder="Comment avez vous connu le club ?"
-          required
-          className={inputClass(formData.source)}
-        />
+        <div className="flex-col flex gap-2">
+          <label className="text-md md:text-lg" htmlFor="description">
+            Comment avez-vous connu le club ? :
+          </label>
+          <textarea
+            name="description"
+            id="description"
+            required
+            value={formData.description}
+            onChange={handleChange}
+            className="border-2 px-4 py-2 bg-contrast-2 h-40"
+            placeholder="J'ai connu le club grâce à..."
+          ></textarea>
+        </div>
 
-        {/* Message */}
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Votre demande..."
-          rows={6}
-          required
-          className={`${inputClass(formData.message)} resize-none`}
-        />
+        <div className="flex-col flex gap-2">
+          <label className="text-md md:text-lg" htmlFor="message">
+            Votre demande :
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="border-2 px-4 py-2 bg-contrast-2 h-40"
+            required
+            placeholder="Je voudrais savoir si..."
+          ></textarea>
+        </div>
 
         {responseMessage && (
           <p
-            className={`rounded-xl p-4 text-white text-center ${
+            className={`py-2 px-4 ${
               isValidStatus ? "bg-solid" : "bg-red-600"
-            }`}
+            } text-center text-contrast-1 rounded-xl`}
           >
             {responseMessage}
           </p>
         )}
 
+        <p className="md:text-lg">
+          <span className="text-red-600">*</span> Tous les champs sont obligatoires.
+        </p>
+
         <button
           type="submit"
-          className="mx-auto block rounded-full bg-solid text-white px-10 py-2 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+          className="text-contrast-3 py-1 px-4 rounded-xl border border-contrast-3 text-sm hover:bg-solid border-solid hover:text-contrast-1 transition-all w-2/4 m-auto"
         >
-          Envoyer m🏓n message
+          Envoyer
         </button>
-
       </form>
-
     </div>
-  );
-}
+    
+      );
+      }
