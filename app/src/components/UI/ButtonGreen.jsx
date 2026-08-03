@@ -1,8 +1,12 @@
-import Link from "next/link"
-export default function ButtonGreen({title, url}){
-  return(
-    <button className=" text-contrast-3 py-1 px-4 rounded-xl border border-contrast-3 text-sm hover:bg-solid border-solid hover:text-contrast-1 transition-all">
-    <Link href={url} className="font-bold" aria-label="lire l'article">{title}</Link>
-    </button>
-  )
+import Link from "next/link";
+
+export default function ButtonInverse({ title, url }) {
+  return (
+    <Link 
+      href={url}
+      className="px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors duration-300 rounded-md font-medium"
+    >
+      {title}
+    </Link>
+  );
 }
