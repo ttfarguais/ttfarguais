@@ -1,10 +1,11 @@
 import Link from "next/link";
 
-export default function ButtonGreen({ title, url }) {
+export default function ButtonGreen({ title, url, className = "" }) {
   return (
     <Link 
       href={url}
-      className="px-4 py-2 bg-[#15803d] text-white font-bold rounded-full transition-colors duration-300 hover:bg-white hover:text-black active:bg-white active:text-black"
+      // On fusionne les classes par défaut avec les classes optionnelles (pour les marges/alignements)
+      className={`px-4 py-2 bg-[#0E2B1A] text-white font-bold rounded-lg transition-colors duration-300 hover:bg-white hover:text-black hover:border-2 hover:border-[#0E2B1A] active:bg-white active:text-black ${className}`}
     >
       {title}
     </Link>
