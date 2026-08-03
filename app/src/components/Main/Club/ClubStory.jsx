@@ -4,7 +4,8 @@ export default function ClubMain() {
       <section className="p-6 md:w-4/6 2xl:w-3/6 mb-10 m-auto">
         <article className="flex flex-col items-center mt-8 w-full">
           <h1 className="text-xl text-center font-bold p-4 mb-8">
-            Tennis de Table Farguais : Une Aventure Sportive et Communautaire
+            Tennis de Table Farguais :
+            <br/>Une Aventure Sportive et Communautaire
           </h1>
 
           <div className="gap-4 text-justify m-auto">
