@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function ButtonInverse({ title, url }) {
+export default function ButtonGreen({ title, url }) {
   return (
     <Link 
       href={url}
-      className="px-4 py-2 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors duration-300 rounded-md font-medium"
+      className="px-4 py-2 bg-green-500 text-white font-bold rounded-md transition-colors duration-300 hover:bg-white hover:text-black border-2 border-green-500 active:bg-white active:text-black"
     >
       {title}
     </Link>
