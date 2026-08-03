@@ -9,10 +9,6 @@ export default function Contact() {
         Contactez-nous !
       </h1>
 
-      <div className="text-center">
-        Désolé, le formulaire est temporairement inactif.
-      </div>
-
       <div className="text-center mt-2">
         Merci d&apos;envoyer votre demande par mail à notre Président :
       </div>
