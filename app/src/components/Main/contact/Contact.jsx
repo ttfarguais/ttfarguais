@@ -1,18 +1,4 @@
-"use client";
-import playerType from "../../../data/playerType";
-export default function Contact({
-  handleChange,
-  handleSubmit,
-  formData = {},
-  validateEmail,
-  validatePhone,
-  responseMessage,
-  isSubmitted,
-  isValidStatus
-}) {
 
-
-  return (
     <div className="flex flex-col items-center m-auto py-6">
       <h1 className="text-xl text-center font-bold p-4 mb-8">
         Contactez-nous !
@@ -25,6 +11,10 @@ export default function Contact({
   jeanpaul.vergote@neuf.fr
 </p></div>
         <div>À très vite à la table !<br/><br/></div>
+    </div>
+  );
+}
+
 /*
 
 "use client";
@@ -339,11 +329,6 @@ const IconInput = ({ icon, value, onChange, ...props }) => (
 
           )}
 
-
-
-
-
-
           {/* Bouton */}
           <button
             type="submit"
@@ -352,14 +337,11 @@ const IconInput = ({ icon, value, onChange, ...props }) => (
             Envoyer m🏓n message
           </button>
 
-
         </div>
-
-
       </form>
 
-*/
     </div>
     </div>
   );
 }
+*/
