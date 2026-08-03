@@ -14,7 +14,9 @@ export default function Contact({
 
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
-      value ? "border-green-500" : "border-gray-300 focus:border-green-500"
+      value
+        ? "border-green-500 ring-4 ring-green-100"
+        : "border-gray-300 focus:border-green-500"
     }`;
 
   return (
@@ -128,7 +130,7 @@ export default function Contact({
           required
           className={`w-full rounded-xl border px-4 py-3 bg-white appearance-none transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
             formData.typePlayer
-              ? "border-green-500 text-gray-900"
+              ? "border-green-500 ring-4 ring-green-100 text-gray-900"
               : "border-gray-300 text-gray-400 focus:border-green-500"
           }`}
         >
