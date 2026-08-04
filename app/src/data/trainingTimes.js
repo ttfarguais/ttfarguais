@@ -6,9 +6,8 @@ const trainingTimes = [
       { day: "Mercredi", time: "19h00 - 20h00", trainingType: "Entraînement dirigé", coach: "Maxime TOURNAUX" },
       { day: "Mercredi", time: "19h00 - 21h00", trainingType: "Entraînement libre" },
     ]
-  
 }
-  <br>,
+  <br/>,
   {
     name: "Jeunes",
     schedules: [
