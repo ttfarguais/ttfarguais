@@ -20,7 +20,7 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
         <h3 className="font-bold uppercase mb-4">{title}</h3>
         <p className="text-sm mb-4 text-justify">{description}</p>
         
-<div className="mt-4">
+<div className="mt-8">
   <ButtonGreen title="En savoir plus" url={url} />
 </div>
       </div>
