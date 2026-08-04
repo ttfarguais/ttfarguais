@@ -12,7 +12,7 @@ export default function TrainingList({category}) {
 </h2>
 
       
-      {</*>   <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">Plages Horaires {category.name}</h2>   <*/>}
+
     <ul className="flex flex-col w-full gap-6">
       {category.schedules.map((schedule, index) => (
         <li key={index}>
