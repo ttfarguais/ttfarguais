@@ -10,7 +10,7 @@ export default function Contact() {
       </h1>
 
       <div className="text-center mt-2">
-        Merci d&apos;envoyer votre demande par mail à notre Président :
+        Merci d&apos;envoyer votre demande par mail<br/>à notre Président :
       </div>
 
       <div className="flex flex-col items-center py-2">
