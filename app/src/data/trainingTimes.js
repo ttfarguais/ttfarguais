@@ -8,7 +8,7 @@ const trainingTimes = [
     ]
   
 }
-  {"\n"},
+  <br>,
   {
     name: "Jeunes",
     schedules: [
