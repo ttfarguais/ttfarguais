@@ -19,9 +19,8 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="text-center mt-2">
+      <div className="flex flex-col items-center m-auto pt-4 pb-12 px-4">
         À très vite à la table !
-        <br/><br/>
       </div>
 
     </div>
