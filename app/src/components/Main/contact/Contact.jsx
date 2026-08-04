@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center m-auto py-4 px-4">
 
-      <h1 className="text-xl text-center font-bold p-4 mb-8">
+      <h1 className="text-xl text-center font-bold p-4 mb-6">
         Contactez-nous !
       </h1>
 
