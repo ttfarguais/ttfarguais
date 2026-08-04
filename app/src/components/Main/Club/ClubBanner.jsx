@@ -9,7 +9,7 @@ export default function Cover() {
             aria-hidden="true"
             className="absolute z-0 inset-0 w-full bg-black opacity-50 h-56 sm:h-68 md:h-72 lg:h-96"
           ></div>
-          <div className="relative text-contrast-1  flex flex-col justify-center items-center mt-16">
+          <div className="relative text-contrast-1  flex flex-col justify-center items-center mt-30">
             <h1 className="text-3xl md:text-5xl uppercase mb-2 font-bold">
               Notre Histoire
             </h1>
