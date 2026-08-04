@@ -7,7 +7,7 @@ const trainingTimes = [
       { day: "Mercredi", time: "19h00 - 21h00", trainingType: "Entraînement libre" },
     ]
 }
-  <br/>,
+  <br />,
   {
     name: "Jeunes",
     schedules: [
