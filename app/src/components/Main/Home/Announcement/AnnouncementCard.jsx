@@ -19,8 +19,10 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
       <div className="p-4 sm:w-2/4">
         <h3 className="font-bold uppercase mb-4">{title}</h3>
         <p className="text-sm mb-4 text-justify">{description}</p>
-        <br/>
-<ButtonGreen title="En savoir plus" url={url}></ButtonGreen>
+        
+<div className="mt-4">
+  <ButtonGreen title="En savoir plus" url={url} />
+</div>
       </div>
     </article>
   );
