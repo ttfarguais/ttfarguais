@@ -21,7 +21,7 @@ export default function Contact() {
 
       <div className="text-center mt-2">
         À très vite à la table !
-        <br/>
+        <br/><br/>
       </div>
 
     </div>
