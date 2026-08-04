@@ -1,18 +1,28 @@
 "use client";
 
 export default function Contact() {
+
   return (
-    /* La classe space-y-2 réduit l'espace entre chaque élément */
-    <div className="flex flex-col space-y-2">
-      <h1 className="text-2xl font-bold">Contactez-nous !</h1>
-      <p>Merci d'envoyer votre demande par mail à notre Président :</p>
-      
-      <a href="mailto:jeanpaul.vergote@neuf.fr" className="text-blue-600 hover:underline">
-        jeanpaul.vergote@neuf.fr
-      </a>
-      
-      {/* pt-2 ajoute juste un tout petit espace avant cette ligne si nécessaire */}
-      <p className="pt-2">À très vite à la table !</p>
+    <div className="flex flex-col items-center m-auto py-4 px-4">
+
+      <h1 className="text-xl text-center font-bold p-4 mb-8">
+        Contactez-nous !
+      </h1>
+
+      <div className="text-center mt-2">
+        Merci d&apos;envoyer votre demande par mail à notre Président :
+      </div>
+
+      <div className="flex flex-col items-center py-2">
+        <p className="text-xl font-bold select-all">
+          jeanpaul.vergote@neuf.fr
+        </p>
+      </div>
+
+      <div className="text-center mt-2">
+        À très vite à la table !
+      </div>
+
     </div>
   );
 }
