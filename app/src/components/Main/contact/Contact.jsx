@@ -125,7 +125,7 @@ export default function Contact({
                 value={formData.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre prénom"
+                placeholder="Prénom"
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
               />
@@ -182,7 +182,7 @@ export default function Contact({
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre m@il"
+                placeholder="M@il"
                 required
                 className={`${inputClass(formData.email)} pl-12`}
               />
@@ -209,7 +209,7 @@ export default function Contact({
                 value={formData.tel}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre téléphone"
+                placeholder="Téléphone"
                 required
                 className={`${inputClass(formData.tel)} pl-12`}
               />
@@ -237,7 +237,7 @@ export default function Contact({
               value={formData.municipality}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="Votre commune"
+              placeholder="Commune"
               required
               className={`${inputClass(formData.municipality)} pl-12`}
             />
