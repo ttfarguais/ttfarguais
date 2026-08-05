@@ -137,7 +137,6 @@ export default function Contact({
  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
-            </div>
 
           </div>
 
