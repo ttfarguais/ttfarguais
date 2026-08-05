@@ -84,7 +84,7 @@ export default function Contact({
               />
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
-    Votre nom est obligatoire.
+    Merci de renseigner.
   </p>)}
             </div>
 
@@ -107,7 +107,7 @@ export default function Contact({
               />
               {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
-    Votre prénom est obligatoire.
+    Merci de renseigner.
   </p>)}
             </div>
 
@@ -181,11 +181,17 @@ export default function Contact({
                 className={`${inputClass(formData.tel)} pl-12`}
               />
 
-              {touched.tel && !validatePhone() && formData.tel && (
-                <p className="text-red-600 text-sm mt-2">
-                  Numéro de téléphone invalide.
-                </p>
-              )}
+            {touched.tel && !formData.tel && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>
+)}
+
+{touched.tel && formData.tel && !validatePhone() && (
+  <p className="text-red-600 text-sm mt-2">
+    Numéro de téléphone invalide.
+  </p>
+)}
 
             </div>
 
