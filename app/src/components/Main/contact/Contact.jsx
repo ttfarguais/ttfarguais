@@ -47,30 +47,17 @@ export default function Contact({
       {/* Titre */}
 
 return (
-  <div className="flex flex-col items-center m-auto py-4 px-4">
-
-    {/* Titre */}
-    <h1 className="text-xl text-center font-bold p-4 mb-4">
-      Envie de nous rej🏓indre ?
-    </h1>
-
-    {/* Message temporaire */}
-    <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
-      <p className="font-semibold text-orange-800">
-        ⚠️ Le formulaire rencontre actuellement un problème technique.
-      </p>
-      <p className="mt-2 text-orange-700">
-        En attendant sa résolution, merci d&apos;envoyer votre demande directement par mail à notre Président :
-      </p>
-
-      <p className="mt-3 text-lg font-bold select-all">
-        jeanpaul.vergote@neuf.fr
-      </p>
-
-      <p className="mt-3 text-orange-700">
-        Merci de votre compréhension et à très vite à la table !
-      </p>
-    </div>
+  <h1 className="text-xl text-center font-bold p-4 mb-8"> Envie de nous rej🏓indre ? </h1>
+  <div className="text-center mt-2"> Merci d&apos;envoyer votre demande par mail
+    <br/>
+    à notre Président : </div> 
+  
+  <div className="flex flex-col items-center py-2"> 
+    <p className="text-xl font-bold select-all"> jeanpaul.vergote@neuf.fr </p> </div> 
+  <div className="text-center mt-2"> 
+    À très vite à la table ! 
+  </div> 
+</div> 
          ); 
 }
 
