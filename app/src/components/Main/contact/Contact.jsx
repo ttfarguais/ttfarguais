@@ -158,11 +158,11 @@ export default function Contact({
   className={`${inputClass(formData.age)} pl-12`}
 />
 
-  {(touched.age || isSubmitted) && !validateAge() && (
-    <p className="text-red-600 text-sm mt-2">
-      Merci de renseigner.
-    </p>
-  )}
+{(touched.age || isSubmitted) && !validateAge() && (
+  <p className="text-red-600 text-sm mt-2">
+    L'âge doit être compris entre 8 et 90 ans.
+  </p>
+)}
 </div>
 
             <div className="relative">
@@ -211,11 +211,10 @@ export default function Contact({
                 className={`${inputClass(formData.tel)} pl-12`}
               />
 
-              {touched.tel && !validatePhone() && formData.tel && (
-                <p className="text-red-600 text-sm mt-2">
-                  Numéro de téléphone invalide.
-                </p>
-              )}
+         {touched.tel && !formData.tel && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>)}
 
             </div>
 
