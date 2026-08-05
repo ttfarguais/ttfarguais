@@ -111,6 +111,7 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
+            </div> 
             </div>
 
             <div className="relative">
@@ -135,6 +136,7 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
+   </div>
             </div>
 
           </div>
@@ -165,9 +167,9 @@ export default function Contact({
 <div className="min-h-[20px]">
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
-    Vous devez avoir entre 8 et 90 ans !
+    Entre 8 et 90 ans ce serait bien...
   </p>
-)}
+)} </div>
 </div>
 
             <div className="relative">
@@ -194,7 +196,7 @@ export default function Contact({
     E-m@il invalide.
   </p>
 )}
-
+ </div>
             </div>
 
             <div className="relative">
@@ -221,7 +223,7 @@ export default function Contact({
     Numéro invalide.
   </p>
 )}
-
+ </div>
             </div>
 
           </div>          {/* Commune */}
@@ -248,7 +250,7 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-
+ </div>
           </div>
 
           {/* Type de joueur */}
@@ -283,7 +285,8 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-          </div>
+ </div>       
+</div>
 
           {/* Source */}
           <div className="relative">
@@ -309,7 +312,7 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-
+ </div>
           </div>
 
           {/* Message */}
@@ -336,7 +339,7 @@ export default function Contact({
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-
+ </div>
           </div>
 
           {responseMessage && (
