@@ -27,7 +27,6 @@ export default function Contact({
 }) {
 
   const [touched, setTouched] = useState({});
-  };
 
   const validatePhone = () => {
   return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel.trim());
