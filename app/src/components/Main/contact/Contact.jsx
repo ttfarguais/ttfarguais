@@ -35,6 +35,12 @@ export default function Contact({
   }));
 };
 
+  const validateAge = () => {
+  const age = Number(formData.age);
+
+  return !isNaN(age) && age >= 8 && age <= 90;
+};
+
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition
     focus:outline-none focus:ring-4 focus:ring-green-100
@@ -99,7 +105,7 @@ export default function Contact({
               />
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
-    Votre nom est obligatoire.
+    Merci de renseigner.
   </p>)}
             </div>
 
@@ -122,7 +128,7 @@ export default function Contact({
               />
               {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
-    Votre prénom est obligatoire.
+    Merci de renseigner.
   </p>)}
             </div>
 
@@ -138,17 +144,25 @@ export default function Contact({
                 }`}
               />
 
-              <input
-                type="text"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Votre âge"
-                required
-                className={`${inputClass(formData.age)} pl-12`}
-              />
-            </div>
+               <input
+    type="number"
+    name="age"
+    placeholder="Âge *"
+    value={formData.age || ""}
+    onChange={handleChange}
+    onBlur={handleBlur}
+    min="8"
+    max="90"
+    required
+    className={`${inputClass(formData.age)} pl-12`}
+  />
+
+  {(touched.age || isSubmitted) && !validateAge() && (
+    <p className="text-red-600 text-sm mt-2">
+      L&apos;âge doit être compris entre 8 et 90 ans.
+    </p>
+  )}
+</div>
 
             <div className="relative">
 
