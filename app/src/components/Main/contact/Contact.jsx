@@ -33,7 +33,7 @@ export default function Contact({
         ⚠️ Le formulaire rencontre actuellement un problème technique.
       </p>
       <p className="mt-2 text-orange-700">
-        En attendant sa résolution, merci d&apos;envoyer votre demande directement par mail à notre Président :
+        En suivant si possible les directives ci-dessous,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
       </p>
 
       <p className="mt-3 text-lg font-bold select-all">
@@ -41,7 +41,7 @@ export default function Contact({
       </p>
 
       <p className="mt-3 text-orange-700">
-        Merci de votre compréhension et à très vite à la table !
+        À très vite à la table !
       </p>
     </div>
       {/* Formulaire */}
