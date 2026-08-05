@@ -20,7 +20,6 @@ export default function Contact({
   handleSubmit,
   formData = {},
   validateEmail,
-  validatePhone,
   responseMessage,
   isSubmitted,
   isValidStatus,
