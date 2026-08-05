@@ -165,7 +165,7 @@ export default function Contact({
 />
 
 {(touched.age || isSubmitted) && !validateAge() && (
- <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Entre 8 et 90 ans ce serait bien...
   </p>
 )} 
@@ -191,7 +191,7 @@ export default function Contact({
               />
 
            {(touched.email || isSubmitted) && !validateEmail() && (
-  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+    <p className="text-red-600 text-sm mt-2">
     E-m@il invalide.
   </p>
 )}
