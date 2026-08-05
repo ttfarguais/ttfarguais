@@ -27,6 +27,10 @@ export default function Contact({
 }) {
 
   const [touched, setTouched] = useState({});
+
+  const validatePhone = () => {
+  return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel.trim());
+};
   
   const handleBlur = (e) => {
   setTouched((prev) => ({
@@ -211,10 +215,11 @@ export default function Contact({
                 className={`${inputClass(formData.tel)} pl-12`}
               />
 
-         {touched.tel && !formData.tel && (
+        {(touched.tel || isSubmitted) && !validatePhone() && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
-  </p>)}
+    Numéro de téléphone invalide.
+  </p>
+)}
 
             </div>
 
