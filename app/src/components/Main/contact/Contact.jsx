@@ -82,6 +82,10 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.lastName)} pl-12`}
               />
+              {touched.lastName && !formData.lastName && (
+  <p className="text-red-600 text-sm mt-2">
+    Votre nom est obligatoire.
+  </p>
             </div>
 
             <div className="relative">
@@ -101,6 +105,10 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
               />
+              {touched.firstName && !formData.firstName && (
+  <p className="text-red-600 text-sm mt-2">
+    Votre prénom est obligatoire.
+  </p>
             </div>
 
           </div>
@@ -200,6 +208,10 @@ export default function Contact({
               required
               className={`${inputClass(formData.municipality)} pl-12`}
             />
+            {touched.municipality && !formData.municipality && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>
 
           </div>
 
@@ -230,7 +242,10 @@ export default function Contact({
                 </option>
               ))}
             </select>
-
+{touched.typePlayer && !formData.typePlayer && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>
           </div>
 
           {/* Source */}
@@ -252,6 +267,10 @@ export default function Contact({
               required
               className={`${inputClass(formData.source)} pl-12`}
             />
+            {touched.source && !formData.source && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>
 
           </div>
 
@@ -274,6 +293,10 @@ export default function Contact({
               required
               className={`${inputClass(formData.message)} pl-12 resize-none`}
             />
+            {touched.message && !formData.message && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>
 
           </div>
 
