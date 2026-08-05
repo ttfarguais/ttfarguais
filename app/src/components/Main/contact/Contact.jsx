@@ -84,7 +84,7 @@ export default function Contact({
         className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
       >
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
 
           {/* Nom / Prénom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
