@@ -85,7 +85,7 @@ export default function Contact({
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
     Votre nom est obligatoire.
-  </p>
+  </p>)}
             </div>
 
             <div className="relative">
@@ -108,7 +108,7 @@ export default function Contact({
               {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
     Votre prénom est obligatoire.
-  </p>
+  </p>)}
             </div>
 
           </div>
@@ -211,7 +211,7 @@ export default function Contact({
             {touched.municipality && !formData.municipality && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
-  </p>
+  </p>)}
 
           </div>
 
@@ -245,7 +245,7 @@ export default function Contact({
 {touched.typePlayer && !formData.typePlayer && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
-  </p>
+  </p>)}
           </div>
 
           {/* Source */}
@@ -270,7 +270,7 @@ export default function Contact({
             {touched.source && !formData.source && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
-  </p>
+  </p>)}
 
           </div>
 
@@ -296,7 +296,7 @@ export default function Contact({
             {touched.message && !formData.message && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
-  </p>
+  </p>)}
 
           </div>
 
