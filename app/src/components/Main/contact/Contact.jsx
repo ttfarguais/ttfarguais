@@ -141,7 +141,7 @@ export default function Contact({
           </div>
 
           {/* Age / Email / Téléphone */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-6">
 
             <div className="relative">
               <FaBirthdayCake
@@ -217,7 +217,7 @@ export default function Contact({
                 className={`${inputClass(formData.tel)} pl-12`}
               />
 {(touched.tel || isSubmitted) && !validatePhone() && (
-  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+   <p className="text-red-600 text-sm mt-2">
     Numéro invalide.
   </p>
 )}
