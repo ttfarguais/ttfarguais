@@ -106,6 +106,7 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.lastName)} pl-12`}
               />
+             <div className="min-h-[20px]">
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
@@ -129,7 +130,8 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
               />
-              {touched.firstName && !formData.firstName && (
+<div className="min-h-[20px]">
+  {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
@@ -160,7 +162,7 @@ export default function Contact({
   required
   className={`${inputClass(formData.age)} pl-12`}
 />
-
+<div className="min-h-[20px]">
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
     Vous devez avoir entre 8 et 90 ans !
@@ -186,7 +188,7 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.email)} pl-12`}
               />
-
+<div className="min-h-[20px]">
            {(touched.email || isSubmitted) && !validateEmail() && (
   <p className="text-red-600 text-sm mt-2">
     E-m@il invalide.
@@ -213,7 +215,7 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.tel)} pl-12`}
               />
-
+<div className="min-h-[20px]">
         {(touched.tel || isSubmitted) && !validatePhone() && (
   <p className="text-red-600 text-sm mt-2">
     Numéro invalide.
@@ -241,6 +243,7 @@ export default function Contact({
               required
               className={`${inputClass(formData.municipality)} pl-12`}
             />
+            <div className="min-h-[20px]">
             {touched.municipality && !formData.municipality && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
@@ -275,7 +278,8 @@ export default function Contact({
                 </option>
               ))}
             </select>
-{touched.typePlayer && !formData.typePlayer && (
+<div className="min-h-[20px]">
+  {touched.typePlayer && !formData.typePlayer && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
@@ -300,7 +304,8 @@ export default function Contact({
               required
               className={`${inputClass(formData.source)} pl-12`}
             />
-            {touched.source && !formData.source && (
+  <div className="min-h-[20px]">
+    {touched.source && !formData.source && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
@@ -326,6 +331,7 @@ export default function Contact({
               required
               className={`${inputClass(formData.message)} pl-12 resize-none`}
             />
+    <div className="min-h-[20px]">
             {touched.message && !formData.message && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
