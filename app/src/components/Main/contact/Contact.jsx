@@ -107,12 +107,12 @@ export default function Contact({
                 autoFocus
                 className={`${inputClass(formData.lastName)} pl-12`}
               />
-             <div className="min-h-[20px]">
+           
               {touched.lastName && !formData.lastName && (
-  <p className="text-red-600 text-sm mt-2">
+  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
-            </div> 
+           
             </div>
 
             <div className="relative">
@@ -132,12 +132,11 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
               />
-<div className="min-h-[20px]">
+
   {touched.firstName && !formData.firstName && (
-  <p className="text-red-600 text-sm mt-2">
+ <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
-   </div>
             </div>
 
           </div>
@@ -165,12 +164,12 @@ export default function Contact({
   required
   className={`${inputClass(formData.age)} pl-12`}
 />
-<div className="min-h-[20px]">
+
 {(touched.age || isSubmitted) && !validateAge() && (
-  <p className="text-red-600 text-sm mt-2">
+ <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Entre 8 et 90 ans ce serait bien...
   </p>
-)} </div>
+)} 
 </div>
 
             <div className="relative">
@@ -191,13 +190,13 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.email)} pl-12`}
               />
-<div className="min-h-[20px]">
+
            {(touched.email || isSubmitted) && !validateEmail() && (
-  <p className="text-red-600 text-sm mt-2">
+  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     E-m@il invalide.
   </p>
 )}
- </div>
+
             </div>
 
             <div className="relative">
@@ -218,9 +217,8 @@ export default function Contact({
                 required
                 className={`${inputClass(formData.tel)} pl-12`}
               />
-<div className="min-h-[20px]">
-        {(touched.tel || isSubmitted) && !validatePhone() && (
-  <p className="text-red-600 text-sm mt-2">
+{(touched.tel || isSubmitted) && !validatePhone() && (
+  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Numéro invalide.
   </p>
 )}
@@ -246,12 +244,11 @@ export default function Contact({
               required
               className={`${inputClass(formData.municipality)} pl-12`}
             />
-            <div className="min-h-[20px]">
+          
             {touched.municipality && !formData.municipality && (
-  <p className="text-red-600 text-sm mt-2">
+  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
- </div>
           </div>
 
           {/* Type de joueur */}
@@ -281,12 +278,11 @@ export default function Contact({
                 </option>
               ))}
             </select>
-<div className="min-h-[20px]">
   {touched.typePlayer && !formData.typePlayer && (
-  <p className="text-red-600 text-sm mt-2">
+ <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
- </div>       
+    
 </div>
 
           {/* Source */}
@@ -308,12 +304,12 @@ export default function Contact({
               required
               className={`${inputClass(formData.source)} pl-12`}
             />
-  <div className="min-h-[20px]">
+
     {touched.source && !formData.source && (
-  <p className="text-red-600 text-sm mt-2">
+  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
- </div>
+
           </div>
 
           {/* Message */}
@@ -335,12 +331,11 @@ export default function Contact({
               required
               className={`${inputClass(formData.message)} pl-12 resize-none`}
             />
-    <div className="min-h-[20px]">
+  
             {touched.message && !formData.message && (
-  <p className="text-red-600 text-sm mt-2">
+   <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
     Merci de renseigner.
   </p>)}
- </div>
           </div>
 
           {responseMessage && (
