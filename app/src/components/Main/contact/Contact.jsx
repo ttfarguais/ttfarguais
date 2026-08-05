@@ -12,6 +12,14 @@ export default function Contact({
   isValidStatus
 }) {
 
+  const validateAge = () => {
+  if (!formData.age) return false;
+
+  const age = Number(formData.age);
+
+  return age >= 8 && age <= 90;
+};
+
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition focus:outline-none focus:ring-4 focus:ring-green-100 ${
       value
@@ -33,7 +41,7 @@ export default function Contact({
         ⚠️ Le formulaire rencontre actuellement un problème technique.
       </p>
       <p className="mt-2 text-orange-700">
-        En suivant si possible les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+        En suivant les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
       </p>
 
       <p className="mt-3 text-lg font-bold select-all">
@@ -78,16 +86,22 @@ export default function Contact({
         {/* Âge / Email / Téléphone */}
         <div className="grid md:grid-cols-3 gap-6">
 
-          <input
-            type="text"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            placeholder="Votre âge"
-            required
-            className={inputClass(formData.age)}
-          />
+     <input
+  type="number"
+  name="age"
+  value={formData.age || ""}
+  onChange={handleChange}
+  onBlur={handleBlur}
+  min="8"
+  max="90"
+  className={`${inputClass(validateAge())} pl-12`}
+/>
 
+          {(touched.age || isSubmitted) && !validateAge() && (
+  <p className="text-red-600 text-sm mt-2">
+    L&apos;âge doit être compris entre 8 et 90 ans.
+  </p>
+)}
           <div>
             <input
               type="email"
