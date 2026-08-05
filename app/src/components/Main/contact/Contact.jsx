@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import playerType from "../../../data/playerType";
 
 import {
@@ -23,6 +25,15 @@ export default function Contact({
   isSubmitted,
   isValidStatus,
 }) {
+
+  const [touched, setTouched] = useState({});
+  
+  const handleBlur = (e) => {
+  setTouched((prev) => ({
+    ...prev,
+    [e.target.name]: true,
+  }));
+};
 
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition
@@ -66,6 +77,7 @@ export default function Contact({
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Votre nom"
                 required
                 className={`${inputClass(formData.lastName)} pl-12`}
@@ -84,6 +96,7 @@ export default function Contact({
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Votre prénom"
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
@@ -107,6 +120,7 @@ export default function Contact({
                 name="age"
                 value={formData.age}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Votre âge"
                 required
                 className={`${inputClass(formData.age)} pl-12`}
@@ -126,6 +140,7 @@ export default function Contact({
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Votre m@il"
                 required
                 className={`${inputClass(formData.email)} pl-12`}
@@ -152,6 +167,7 @@ export default function Contact({
                 name="tel"
                 value={formData.tel}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Votre téléphone"
                 required
                 className={`${inputClass(formData.tel)} pl-12`}
@@ -179,6 +195,7 @@ export default function Contact({
               name="municipality"
               value={formData.municipality}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="Votre commune"
               required
               className={`${inputClass(formData.municipality)} pl-12`}
@@ -199,6 +216,7 @@ export default function Contact({
               name="typePlayer"
               value={formData.typePlayer}
               onChange={handleChange}
+              onBlur={handleBlur}
               required
               className={`${inputClass(formData.typePlayer)} pl-12 appearance-none ${
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
@@ -229,6 +247,7 @@ export default function Contact({
               name="source"
               value={formData.source}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="Comment avez-vous connu le club ?"
               required
               className={`${inputClass(formData.source)} pl-12`}
@@ -249,6 +268,7 @@ export default function Contact({
               name="message"
               value={formData.message}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="Votre demande..."
               rows={6}
               required
