@@ -163,7 +163,7 @@ export default function Contact({
 
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
-    L&apos;âge doit être compris entre 8 et 90 ans.
+    Vous devez avoir entre 8 et 90 ans !
   </p>
 )}
 </div>
@@ -182,14 +182,14 @@ export default function Contact({
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="M@il"
+                placeholder="E-m@il"
                 required
                 className={`${inputClass(formData.email)} pl-12`}
               />
 
            {(touched.email || isSubmitted) && !validateEmail() && (
   <p className="text-red-600 text-sm mt-2">
-    Adresse e-mail invalide.
+    E-m@il invalide.
   </p>
 )}
 
@@ -216,7 +216,7 @@ export default function Contact({
 
         {(touched.tel || isSubmitted) && !validatePhone() && (
   <p className="text-red-600 text-sm mt-2">
-    Numéro de téléphone invalide.
+    Numéro invalide.
   </p>
 )}
 
