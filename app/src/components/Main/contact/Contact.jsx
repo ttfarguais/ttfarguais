@@ -146,7 +146,7 @@ export default function Contact({
                 className={`${inputClass(formData.email)} pl-12`}
               />
 
-              {isSubmitted && !validateEmail() && (
+             {touched.email && !validateEmail() && (
                 <p className="text-red-600 text-sm mt-2">
                   Adresse e-mail invalide.
                 </p>
@@ -173,7 +173,7 @@ export default function Contact({
                 className={`${inputClass(formData.tel)} pl-12`}
               />
 
-              {isSubmitted && !validatePhone() && formData.tel && (
+              {touched.tel && !validatePhone() && formData.tel && (
                 <p className="text-red-600 text-sm mt-2">
                   Numéro de téléphone invalide.
                 </p>
