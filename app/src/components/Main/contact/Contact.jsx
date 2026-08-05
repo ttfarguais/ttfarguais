@@ -19,16 +19,31 @@ export default function Contact({
         : "border-gray-300 focus:border-green-500"
     }`;
 
-  return (
-    <div className="flex flex-col items-center py-10 px-4">
+ return (
+  <div className="flex flex-col items-center m-auto py-4 px-4">
 
-      {/* Titre */}
-      <div className="text-center mb-5 max-w-2xl">
-        <h1 className="text-xl font-bold text-solid mb-2">
-          Envie de nous rej🏓indre ?
-        </h1>
-      </div>
+    {/* Titre */}
+    <h1 className="text-xl text-center font-bold p-4 mb-4">
+      Envie de nous rej🏓indre ?
+    </h1>
 
+    {/* Message temporaire */}
+    <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
+      <p className="font-semibold text-orange-800">
+        ⚠️ Le formulaire rencontre actuellement un problème technique.
+      </p>
+      <p className="mt-2 text-orange-700">
+        En attendant sa résolution, merci d&apos;envoyer votre demande directement par mail à notre Président :
+      </p>
+
+      <p className="mt-3 text-lg font-bold select-all">
+        jeanpaul.vergote@neuf.fr
+      </p>
+
+      <p className="mt-3 text-orange-700">
+        Merci de votre compréhension et à très vite à la table !
+      </p>
+    </div>
       {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
