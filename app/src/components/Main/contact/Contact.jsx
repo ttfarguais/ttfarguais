@@ -144,22 +144,23 @@ export default function Contact({
                 }`}
               />
 
-               <input
-    type="number"
-    name="age"
-    placeholder="Âge *"
-    value={formData.age || ""}
-    onChange={handleChange}
-    onBlur={handleBlur}
-    min="8"
-    max="90"
-    required
-    className={`${inputClass(formData.age)} pl-12`}
-  />
+              <input
+  type="number"
+  name="age"
+  placeholder="Âge *"
+  value={formData.age || ""}
+  onChange={handleChange}
+  onBlur={handleBlur}
+  min="8"
+  max="90"
+  step="1"
+  required
+  className={`${inputClass(formData.age)} pl-12`}
+/>
 
   {(touched.age || isSubmitted) && !validateAge() && (
     <p className="text-red-600 text-sm mt-2">
-      L&apos;âge doit être compris entre 8 et 90 ans.
+      Merci de renseigner.
     </p>
   )}
 </div>
