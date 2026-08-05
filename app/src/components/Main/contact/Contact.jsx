@@ -150,7 +150,7 @@ export default function Contact({
               <input
   type="number"
   name="age"
-  placeholder="Âge *"
+  placeholder="Âge"
   value={formData.age || ""}
   onChange={handleChange}
   onBlur={handleBlur}
@@ -163,7 +163,7 @@ export default function Contact({
 
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
-    L'âge doit être compris entre 8 et 90 ans.
+    L&apos;âge doit être compris entre 8 et 90 ans.
   </p>
 )}
 </div>
