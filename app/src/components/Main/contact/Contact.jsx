@@ -27,8 +27,8 @@ export default function Contact({
 
   const [touched, setTouched] = useState({});
 
-  const validatePhone = () => {
-  return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel.trim());
+ const validatePhone = () => {
+  return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel?.trim() || "");
 };
   
   const handleBlur = (e) => {
@@ -187,11 +187,11 @@ export default function Contact({
                 className={`${inputClass(formData.email)} pl-12`}
               />
 
-             {touched.email && !validateEmail() && (
-                <p className="text-red-600 text-sm mt-2">
-                  Adresse e-mail invalide.
-                </p>
-              )}
+           {(touched.email || isSubmitted) && !validateEmail() && (
+  <p className="text-red-600 text-sm mt-2">
+    Adresse e-mail invalide.
+  </p>
+)}
 
             </div>
 
