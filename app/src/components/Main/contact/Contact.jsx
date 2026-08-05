@@ -33,7 +33,7 @@ export default function Contact({
         ⚠️ Le formulaire rencontre actuellement un problème technique.
       </p>
       <p className="mt-2 text-orange-700">
-        En suivant si possible les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+        En suivant les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
       </p>
 
       <p className="mt-3 text-lg font-bold select-all">
