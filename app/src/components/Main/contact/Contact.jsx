@@ -269,7 +269,7 @@ export default function Contact({
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
               }`}
             >
-              <option value="">Vous êtes un Joueur... Débutant, Loisir ou compétition ?</option>
+              <option value="">Vous êtes un Joueur... Débutant, Loisir ou Compétiteur ?</option>
 
               {playerType.map((type, index) => (
                 <option key={index} value={type.title}>
@@ -306,7 +306,7 @@ export default function Contact({
 
     {touched.source && !formData.source && (
   <p className="text-red-600 text-sm mt-2">
-    Lâchez vous !
+    Le nom de votre indic ?
   </p>)}
 
           </div>
@@ -333,7 +333,7 @@ export default function Contact({
   
             {touched.message && !formData.message && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+     Lâchez vous !
   </p>)}
           </div>
 
