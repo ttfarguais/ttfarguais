@@ -6,7 +6,7 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
   const borderClass = isLast ? "" : "border-b";
 
   return (
-    <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
+    <article className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 ${borderClass} md:w-4/6`}>
  <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0">
         <Image
 className="rounded-xl object-contain"
