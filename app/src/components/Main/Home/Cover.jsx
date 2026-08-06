@@ -47,7 +47,7 @@ export default function Cover() {
                             Plaisir, Passion, Champions !
                         </p>
                         {newsFile && (
-                            <button disabled={newsFile ? false : true}>
+                            <button className="mt-6" disabled={newsFile ? false : true}>
                                 <a
                                     href={cacheBustingUrl(newsFile)}
                                     target="_blank"
