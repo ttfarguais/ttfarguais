@@ -67,7 +67,7 @@ export default function Contact({
         ⚠️ Le formulaire rencontre ponctuellement un ptit soucis...
       </p>
       <p className="mt-2 text-orange-700">
-        En suivant les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+        En suivant les champs ci-dessous,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
       </p>
 
       <p className="mt-3 text-lg font-bold select-all">
@@ -110,7 +110,7 @@ export default function Contact({
            
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+    Agent secret ?
   </p>)}
            
             </div>
@@ -135,7 +135,7 @@ export default function Contact({
 
   {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+    Pas de pseudo !
   </p>)}
   </div>
           </div>
@@ -166,7 +166,7 @@ export default function Contact({
 
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
-    Entre 8 et 90 ans ce serait bien...
+    Entre 8 et 90 ans c'est mieux !
   </p>
 )} 
 </div>
@@ -192,7 +192,7 @@ export default function Contact({
 
            {(touched.email || isSubmitted) && !validateEmail() && (
     <p className="text-red-600 text-sm mt-2">
-    E-m@il invalide.
+    Pas celui du voisin !
   </p>
 )}
 
@@ -218,7 +218,7 @@ export default function Contact({
               />
 {(touched.tel || isSubmitted) && !validatePhone() && (
    <p className="text-red-600 text-sm mt-2">
-    Numéro invalide.
+    Celui là je l'ai déjà !
   </p>
 )}
  </div>
@@ -246,7 +246,7 @@ export default function Contact({
           
             {touched.municipality && !formData.municipality && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+    C'est en France ?
   </p>)}
           </div>
 
@@ -269,7 +269,7 @@ export default function Contact({
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
               }`}
             >
-              <option value="">Vous êtes un Joueur...</option>
+              <option value="">Vous êtes un Joueur... Débutant, Loisir ou compétition ?</option>
 
               {playerType.map((type, index) => (
                 <option key={index} value={type.title}>
@@ -279,7 +279,7 @@ export default function Contact({
             </select>
   {touched.typePlayer && !formData.typePlayer && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+    Niveau Camping ? 
   </p>)}
     
 </div>
@@ -306,7 +306,7 @@ export default function Contact({
 
     {touched.source && !formData.source && (
   <p className="text-red-600 text-sm mt-2">
-    Merci de renseigner.
+    Lâchez vous !
   </p>)}
 
           </div>
