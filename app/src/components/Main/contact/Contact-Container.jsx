@@ -79,7 +79,7 @@ export default function ContactContainer() {
       setIsValidStatus(false);
       setResponseMessage(
         <>Le formulaire a un ptit soucis... <br/>
-          Merci d'envoyer votre demande directement par mail à notre Président :<br/>
+          Merci d'envoyer votre demande directement par mail à notre Président <br/>
           jeanpaul.vergote@neuf.fr
           </>
       );
