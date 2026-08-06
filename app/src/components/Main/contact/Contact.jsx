@@ -166,7 +166,7 @@ export default function Contact({
 
 {(touched.age || isSubmitted) && !validateAge() && (
   <p className="text-red-600 text-sm mt-2">
-    Entre 8 et 90 ans c'est mieux !
+    Entre 8 et 90 ans c&apos;est mieux !
   </p>
 )} 
 </div>
@@ -218,7 +218,7 @@ export default function Contact({
               />
 {(touched.tel || isSubmitted) && !validatePhone() && (
    <p className="text-red-600 text-sm mt-2">
-    Celui là je l'ai déjà !
+    Celui là je l&apos;ai déjà !
   </p>
 )}
  </div>
@@ -246,7 +246,7 @@ export default function Contact({
           
             {touched.municipality && !formData.municipality && (
   <p className="text-red-600 text-sm mt-2">
-    C'est en France ?
+    C&apos;est en France ?
   </p>)}
           </div>
 
