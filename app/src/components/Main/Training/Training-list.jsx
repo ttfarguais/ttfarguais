@@ -8,7 +8,7 @@ export default function TrainingList({category}) {
     category.name === "Jeunes" ? "mt-12" : "mt-4"
   }`}
 >
-  Plages Horaires {category.name}
+  Séances {category.name}
 </h2>
 
       
