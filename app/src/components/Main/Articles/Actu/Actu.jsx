@@ -10,7 +10,7 @@ export default function Actu() {
     <section className="mb-16 md:w-4/6 m-auto 2xl:w-3/6">
       <div className="p-6">
         <h1 className="text-xl text-center font-bold p-4 mb-8">
-          Les T.T. Farguais plus beaux que jamais !
+          Les T.T. Farguais <br/>plus beaux que jamais !
         </h1>
 
         <div className="flex flex-col justify-between mb-8 gap-6 text-justify">
