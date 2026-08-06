@@ -339,7 +339,7 @@ export default function Contact({
 
           {responseMessage && (
             <p
-              className={`rounded-xl p-4 text-white text-center ${
+              className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
                 isValidStatus ? "bg-solid" : "bg-red-600"
               }`}
             >
