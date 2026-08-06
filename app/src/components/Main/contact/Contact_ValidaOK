@@ -20,19 +20,28 @@ export default function Contact({
   handleSubmit,
   formData = {},
   validateEmail,
-  validatePhone,
   responseMessage,
   isSubmitted,
   isValidStatus,
 }) {
 
   const [touched, setTouched] = useState({});
+
+ const validatePhone = () => {
+  return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel?.trim() || "");
+};
   
   const handleBlur = (e) => {
   setTouched((prev) => ({
     ...prev,
     [e.target.name]: true,
   }));
+};
+
+  const validateAge = () => {
+  const age = Number(formData.age);
+
+  return !isNaN(age) && age >= 8 && age <= 90;
 };
 
   const inputClass = (value) =>
@@ -45,22 +54,37 @@ export default function Contact({
     }`;
 
   return (
-    <div className="flex flex-col items-center py-10 px-4">
+   <div className="flex flex-col items-center m-auto py-4 px-4">
 
-      {/* Titre */}
-      <div className="text-center mb-5 max-w-2xl">
-        <h1 className="text-xl font-bold text-solid mb-2">
-          Envie de nous rej🏓indre ?
-        </h1>
-      </div>
+    {/* Titre */}
+    <h1 className="text-xl text-center font-bold p-4 mb-4">
+      Envie de nous rej🏓indre ?
+    </h1>
 
+    {/* Message temporaire */}
+    <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
+      <p className="font-semibold text-orange-800">
+        ⚠️ Le formulaire rencontre ponctuellement un ptit soucis...
+      </p>
+      <p className="mt-2 text-orange-700">
+        En suivant les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+      </p>
+
+      <p className="mt-3 text-lg font-bold select-all">
+        jeanpaul.vergote@neuf.fr
+      </p>
+
+      <p className="mt-3 text-orange-700">
+        À très vite à la table !
+      </p>
+    </div>
       {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
       >
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
 
           {/* Nom / Prénom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
@@ -78,14 +102,17 @@ export default function Contact({
                 value={formData.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre nom"
+                placeholder="Votre Nom"
                 required
+                autoFocus
                 className={`${inputClass(formData.lastName)} pl-12`}
               />
+           
               {touched.lastName && !formData.lastName && (
   <p className="text-red-600 text-sm mt-2">
-    Votre nom est obligatoire.
+    Merci de renseigner.
   </p>)}
+           
             </div>
 
             <div className="relative">
@@ -101,20 +128,20 @@ export default function Contact({
                 value={formData.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre prénom"
+                placeholder="Prénom"
                 required
                 className={`${inputClass(formData.firstName)} pl-12`}
               />
-              {touched.firstName && !formData.firstName && (
-  <p className="text-red-600 text-sm mt-2">
-    Votre prénom est obligatoire.
-  </p>)}
-            </div>
 
+  {touched.firstName && !formData.firstName && (
+  <p className="text-red-600 text-sm mt-2">
+    Merci de renseigner.
+  </p>)}
+  </div>
           </div>
 
           {/* Age / Email / Téléphone */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
+  <div className="grid w-full grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
 
             <div className="relative">
               <FaBirthdayCake
@@ -124,16 +151,25 @@ export default function Contact({
               />
 
               <input
-                type="text"
-                name="age"
-                value={formData.age}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="Votre âge"
-                required
-                className={`${inputClass(formData.age)} pl-12`}
-              />
-            </div>
+  type="number"
+  name="age"
+  placeholder="Âge"
+  value={formData.age || ""}
+  onChange={handleChange}
+  onBlur={handleBlur}
+  min="8"
+  max="90"
+  step="1"
+  required
+  className={`${inputClass(formData.age)} pl-12`}
+/>
+
+{(touched.age || isSubmitted) && !validateAge() && (
+  <p className="text-red-600 text-sm mt-2">
+    Entre 8 et 90 ans ce serait bien...
+  </p>
+)} 
+</div>
 
             <div className="relative">
 
@@ -149,16 +185,16 @@ export default function Contact({
                 value={formData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre m@il"
+                placeholder="E-m@il"
                 required
                 className={`${inputClass(formData.email)} pl-12`}
               />
 
-             {touched.email && !validateEmail() && (
-                <p className="text-red-600 text-sm mt-2">
-                  Adresse e-mail invalide.
-                </p>
-              )}
+           {(touched.email || isSubmitted) && !validateEmail() && (
+    <p className="text-red-600 text-sm mt-2">
+    E-m@il invalide.
+  </p>
+)}
 
             </div>
 
@@ -176,20 +212,19 @@ export default function Contact({
                 value={formData.tel}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre téléphone"
+                placeholder="Téléphone"
                 required
                 className={`${inputClass(formData.tel)} pl-12`}
               />
-
-              {touched.tel && !validatePhone() && formData.tel && (
-                <p className="text-red-600 text-sm mt-2">
-                  Numéro de téléphone invalide.
-                </p>
-              )}
-
+{(touched.tel || isSubmitted) && !validatePhone() && (
+   <p className="text-red-600 text-sm mt-2">
+    Numéro invalide.
+  </p>
+)}
+ </div>
             </div>
 
-          </div>          {/* Commune */}
+            {/* Commune */}
           <div className="relative">
 
             <FaMapMarkerAlt
@@ -204,15 +239,15 @@ export default function Contact({
               value={formData.municipality}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="Votre commune"
+              placeholder="Commune"
               required
               className={`${inputClass(formData.municipality)} pl-12`}
             />
+          
             {touched.municipality && !formData.municipality && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-
           </div>
 
           {/* Type de joueur */}
@@ -234,7 +269,7 @@ export default function Contact({
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
               }`}
             >
-              <option value="">Vous êtes un joueur...</option>
+              <option value="">Vous êtes un Joueur...</option>
 
               {playerType.map((type, index) => (
                 <option key={index} value={type.title}>
@@ -242,11 +277,12 @@ export default function Contact({
                 </option>
               ))}
             </select>
-{touched.typePlayer && !formData.typePlayer && (
+  {touched.typePlayer && !formData.typePlayer && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-          </div>
+    
+</div>
 
           {/* Source */}
           <div className="relative">
@@ -263,11 +299,12 @@ export default function Contact({
               value={formData.source}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="Comment avez-vous connu le club ?"
+              placeholder="Comment avez-vous connu le Club ?"
               required
               className={`${inputClass(formData.source)} pl-12`}
             />
-            {touched.source && !formData.source && (
+
+    {touched.source && !formData.source && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
@@ -293,11 +330,11 @@ export default function Contact({
               required
               className={`${inputClass(formData.message)} pl-12 resize-none`}
             />
+  
             {touched.message && !formData.message && (
   <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
-
           </div>
 
           {responseMessage && (
