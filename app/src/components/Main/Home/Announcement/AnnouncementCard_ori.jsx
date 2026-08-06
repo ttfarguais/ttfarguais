@@ -1,0 +1,29 @@
+import Image from "next/image";
+import ButtonGreen from "../../../UI/ButtonGreen";
+
+export default function AnnouncementCard({ src, alt, title, description, url, isLast }) {
+  // Condition pour déterminer s'il s'agit du dernier élément
+  const borderClass = isLast ? "" : "border-b";
+
+  return (
+    <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
+      <div className="hidden sm:block w-2/4 relative">
+        <Image
+          className="absolute top-0 left-0 h-full w-full object-cover rounded-xl"
+          src={src}
+          alt={alt}
+          width={500}
+          height={500}
+        />
+      </div>
+      <div className="p-4 sm:w-2/4">
+        <h3 className="font-bold uppercase mb-4">{title}</h3>
+        <p className="text-sm mb-4 text-justify">{description}</p>
+        
+<div className="mt-6">
+  <ButtonGreen title="En savoir plus" url={url} />
+</div>
+      </div>
+    </article>
+  );
+}
