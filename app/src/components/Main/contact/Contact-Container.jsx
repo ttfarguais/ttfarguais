@@ -77,18 +77,9 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("⚠️ Le formulaire rencontre ponctuellement un ptit soucis...{"\n"}                
+      setResponseMessage("⚠️ Le formulaire rencontre ponctuellement un ptit soucis... En suivant les champs ci-dessus, merci d&apos;envoyer votre demande directement par mail à notre Président : jeanpaul.vergote@neuf.fr
+        À très vite à la table !");
         
-        En suivant les champs ci-dessus,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
-     {"\n"}
-      <p className="mt-3 text-lg font-bold select-all">
-        jeanpaul.vergote@neuf.fr
-      </p>
-
-      <p className="mt-3 text-orange-700">
-        À très vite à la table !
-      </p>
-");
     } finally {
       setIsSubmitted(false);
     }
