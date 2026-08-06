@@ -102,7 +102,7 @@ export default function Contact({
                 value={formData.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Votre nom"
+                placeholder="Votre Nom"
                 required
                 autoFocus
                 className={`${inputClass(formData.lastName)} pl-12`}
@@ -224,7 +224,7 @@ export default function Contact({
  </div>
             </div>
 
-          </div>          {/* Commune */}
+            {/* Commune */}
           <div className="relative">
 
             <FaMapMarkerAlt
@@ -269,7 +269,7 @@ export default function Contact({
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
               }`}
             >
-              <option value="">Vous êtes un joueur...</option>
+              <option value="">Vous êtes un Joueur...</option>
 
               {playerType.map((type, index) => (
                 <option key={index} value={type.title}>
@@ -299,7 +299,7 @@ export default function Contact({
               value={formData.source}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="Comment avez-vous connu le club ?"
+              placeholder="Comment avez-vous connu le Club ?"
               required
               className={`${inputClass(formData.source)} pl-12`}
             />
