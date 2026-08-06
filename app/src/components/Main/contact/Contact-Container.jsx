@@ -77,7 +77,18 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Désolé, le formulaire est inactif, veuillez envoyer votre demande par mail à jeanpaul.vergote@neuf.fr, Merci");
+      setResponseMessage("⚠️ Le formulaire rencontre ponctuellement un ptit soucis...<br/>                
+        
+        En suivant les champs ci-dessus,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+     <br/>
+      <p className="mt-3 text-lg font-bold select-all">
+        jeanpaul.vergote@neuf.fr
+      </p>
+
+      <p className="mt-3 text-orange-700">
+        À très vite à la table !
+      </p>
+");
     } finally {
       setIsSubmitted(false);
     }
