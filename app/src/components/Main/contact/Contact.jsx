@@ -109,7 +109,7 @@ export default function Contact({
               />
            
               {touched.lastName && !formData.lastName && (
-  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
            
@@ -134,7 +134,7 @@ export default function Contact({
               />
 
   {touched.firstName && !formData.firstName && (
- <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
   </div>
@@ -245,7 +245,7 @@ export default function Contact({
             />
           
             {touched.municipality && !formData.municipality && (
-  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
           </div>
@@ -278,7 +278,7 @@ export default function Contact({
               ))}
             </select>
   {touched.typePlayer && !formData.typePlayer && (
- <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
     
@@ -305,7 +305,7 @@ export default function Contact({
             />
 
     {touched.source && !formData.source && (
-  <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
 
@@ -332,7 +332,7 @@ export default function Contact({
             />
   
             {touched.message && !formData.message && (
-   <p className="absolute left-0 top-full mt-1 text-red-600 text-sm">
+  <p className="text-red-600 text-sm mt-2">
     Merci de renseigner.
   </p>)}
           </div>
