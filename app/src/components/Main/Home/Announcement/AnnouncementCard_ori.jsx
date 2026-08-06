@@ -7,9 +7,9 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
 
   return (
     <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
-      <div className="hidden sm:block w-2/4 relative">
+ <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0">
         <Image
-          className="absolute top-0 left-0 h-full w-full object-cover rounded-xl"
+className="rounded-xl object-contain"
           src={src}
           alt={alt}
           width={500}
