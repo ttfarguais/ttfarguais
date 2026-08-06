@@ -2,27 +2,38 @@ import Image from "next/image";
 import ButtonGreen from "../../../UI/ButtonGreen";
 
 export default function AnnouncementCard({ src, alt, title, description, url, isLast }) {
-  // Condition pour déterminer s'il s'agit du dernier élément
   const borderClass = isLast ? "" : "border-b";
 
   return (
-    <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
-<div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0 flex justify-center">
-        <Image
-          className="rounded-xl object-contain"
-          src={src}
-          alt={alt}
-          width={500}
-          height={500}
-        />
+    <article
+      className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}
+    >
+      {/* Image */}
+      <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0 flex justify-center">
+        <div className="rounded-xl overflow-hidden">
+          <Image
+            src={src}
+            width={300}
+            height={200}
+            alt={alt}
+            className="rounded-xl object-contain"
+          />
+        </div>
       </div>
-      <div className="p-4 sm:w-2/4">
-        <h3 className="font-bold uppercase mb-4">{title}</h3>
-        <p className="text-sm mb-4 text-justify">{description}</p>
-        
-<div className="mt-6">
-  <ButtonGreen title="En savoir plus" url={url} />
-</div>
+
+      {/* Contenu */}
+      <div className="flex flex-col sm:w-2/4 sm:pl-6">
+        <h2 className="font-bold text-lg">
+          {title}
+        </h2>
+
+        <p className="mt-2">
+          {description}
+        </p>
+
+        <div className="mt-4">
+          <ButtonGreen title="Lire l'article" url={url} />
+        </div>
       </div>
     </article>
   );
