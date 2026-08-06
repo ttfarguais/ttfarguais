@@ -77,7 +77,7 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Le formulaire a un ptit soucis... merci d&apos;envoyer votre demande directement par mail à jeanpaul.vergote@neuf.fr, Merci");
+      setResponseMessage("Le formulaire a un ptit soucis... merci d'envoyer votre demande directement par mail à jeanpaul.vergote@neuf.fr");
     } finally {
       setIsSubmitted(false);
     }
