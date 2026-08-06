@@ -7,9 +7,9 @@ export default function AnnouncementCard({ src, alt, title, description, url, is
 
   return (
     <article className={`w-full max-w-full flex flex-col sm:flex-row p-4 ${borderClass} md:w-4/6`}>
- <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0">
+<div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0 flex justify-center">
         <Image
-className="rounded-xl object-contain"
+          className="rounded-xl object-contain"
           src={src}
           alt={alt}
           width={500}
