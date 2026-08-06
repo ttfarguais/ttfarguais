@@ -64,7 +64,7 @@ export default function Contact({
     {/* Message temporaire */}
     <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
       <p className="font-semibold text-orange-800">
-        ⚠️ Le formulaire rencontre actuellement un problème technique.
+        ⚠️ Le formulaire rencontre ponctuellement un ptit soucis...
       </p>
       <p className="mt-2 text-orange-700">
         En suivant les champs du formulaire,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
