@@ -104,7 +104,6 @@ export default function Contact({
                 onBlur={handleBlur}
                 placeholder="Votre Nom"
                 required
-                autoFocus
                 className={`${inputClass(formData.lastName)} pl-12`}
               />
            
