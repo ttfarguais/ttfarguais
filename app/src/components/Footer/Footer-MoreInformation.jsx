@@ -24,7 +24,7 @@ export default function FooterMoreInformation() {
           Barenko, 
         </Link> maintenu par {" "}
         <Link
-          href="https://github.com/ttfarguais/ttfarguais/blob/main/public/membres/Jose.jpg"
+          href="/membres/Jose.jpg"
           className="italic"
           target="_blank"
         >
