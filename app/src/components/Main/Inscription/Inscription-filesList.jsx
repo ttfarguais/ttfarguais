@@ -6,7 +6,7 @@ export default function InscriptionFilesList({ document }) {
       </p>
 
       <div className="flex gap-2">
-    {document.tutorial && (
+        {document.tutorial && (
           <a
             href={document.tutorial}
             target="_blank"
@@ -16,7 +16,9 @@ export default function InscriptionFilesList({ document }) {
           >
             Tuto
           </a>
-      <a
+        )}
+
+        <a
           href={document.pdf}
           target="_blank"
           rel="noopener noreferrer"
@@ -25,9 +27,6 @@ export default function InscriptionFilesList({ document }) {
         >
           Ouvrir
         </a>
-
-       
-        )}
       </div>
     </div>
   );
