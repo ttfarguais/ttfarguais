@@ -134,7 +134,7 @@ export default function Contact({
 
   {touched.firstName && !formData.firstName && (
   <p className="text-red-600 text-sm mt-2">
-    Pas de pseudo !
+    Sois pas timide...
   </p>)}
   </div>
           </div>
