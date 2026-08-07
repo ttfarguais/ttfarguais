@@ -79,7 +79,7 @@ export default function ContactContainer() {
       setIsValidStatus(false);
       setResponseMessage("Je vous avais averti !\n" +
                          "Envoyez un mail à notre Président :\n\n" +                        
-                         "jeanpaul.vergote@neuf.fr\n\n" +
+                         "jeanpaul.vergote@neuf.fr\n" +
                          " ");
         
     } finally {
