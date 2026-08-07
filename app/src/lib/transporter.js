@@ -1,20 +1,11 @@
-import nodemailer from "nodemailer";
-import "dotenv/config"; // pour charger ton .env.local
+import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.mail.yahoo.com", // change selon ton service
-  port: 465,
-  secure: false,
+  service: 'Yahoo', // Vous pouvez utiliser un autre service comme Yahoo, Outlook, etc.
   auth: {
-    user: process.env.USER_EMAIL,
-    pass: process.env.USER_PASS,
+    user: (process.env.USER_EMAIL),
+    pass: (process.env.USER_PASS),
   },
 });
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("❌ Erreur de connexion SMTP :", error);
-  } else {
-    console.log("✅ Connexion SMTP réussie !");
-  }
-});
+export default transporter;
