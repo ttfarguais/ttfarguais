@@ -4,7 +4,6 @@ const times = [
 ]
 
 const documents = [
-   { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
    { name: "Parcours de Prévention Santé (PPS)", pdf: "https://malicence.fftt.com",
       tutorial: "https://ton-lien-de-tutoriel.fr"},
 
