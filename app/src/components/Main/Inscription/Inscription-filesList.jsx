@@ -8,8 +8,7 @@ export default function InscriptionFilesList({ document }) {
       <div className="flex gap-2">
         {document.tutorial && (
           <a
-            href={https://www.youtube.com/watch?v=JuIKNZKWKG8
-}
+            href={document.tutorial}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
