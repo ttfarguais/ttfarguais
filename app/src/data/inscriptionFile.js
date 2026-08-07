@@ -5,8 +5,7 @@ const times = [
 
 const documents = [
    { name: "Parcours de Prévention Santé (PPS)", pdf: "https://malicence.fftt.com",
-      tutorial: "https://www.youtube.com/watch?v=JuIKNZKWKG8
-"},
+      tutorial: "https://www.youtube.com/watch?v=JuIKNZKWKG8"},
 
   { name: "Bordereau de Licence", pdf: "/pdf/licence.pdf" },
   { name: "Fiche de renseignements Jeunes", pdf: "/pdf/TTF-Fiche-renseignements-jeunes.pdf" },
