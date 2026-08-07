@@ -6,17 +6,7 @@ export default function InscriptionFilesList({ document }) {
       </p>
 
       <div className="flex gap-2">
-        <a
-          href={document.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
-          aria-label={`Ouvrir ${document.name}`}
-        >
-          Ouvrir
-        </a>
-
-        {document.tutorial && (
+    {document.tutorial && (
           <a
             href={document.tutorial}
             target="_blank"
@@ -26,6 +16,17 @@ export default function InscriptionFilesList({ document }) {
           >
             Tuto
           </a>
+      <a
+          href={document.pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
+          aria-label={`Ouvrir ${document.name}`}
+        >
+          Ouvrir
+        </a>
+
+       
         )}
       </div>
     </div>
