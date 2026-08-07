@@ -29,7 +29,8 @@ export default function FooterMoreInformation() {
           target="_blank"
         >
           José
-        </Link>{" "}
+        </Link>
+        depuis 2025{" "}
       </p>
     </div>
   );
