@@ -6,8 +6,7 @@ import FooterSponsorMobile from "./Footer-SponsorMobile";
 export default function FooterMobile() {
   return (
     <div className="flex lg:hidden flex-col items-center gap-10 justify-center bg-solid text-contrast-1 px-8 pb-6 pt-10">
-  <div className="flex justify-center items-center gap-16 w-full">
-       <div className="flex-[2] flex justify-center">
+   <div className="flex flex-col items-center gap-6 w-full">
          <FooterAdress />
        </div>
       <div className="flex-1 flex justify-center">
