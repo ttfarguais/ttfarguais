@@ -22,15 +22,15 @@ export default function FooterMoreInformation() {
           className="italic"
         >
           Barenko, 
-        </Link> maintenu par {" "}
+        </Link> <br/>Maintenu par {" "}
         <Link
           href="/membres/Jose.jpg"
           className="italic"
           target="_blank"
         >
           José
-        </Link>
-        depuis 2025{" "}
+        </Link>{"   "}
+        depuis 2025.
       </p>
     </div>
   );
