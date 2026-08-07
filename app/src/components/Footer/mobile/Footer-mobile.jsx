@@ -8,7 +8,7 @@ export default function FooterMobile() {
     <div className="flex lg:hidden flex-col items-center gap-10 justify-center bg-solid text-contrast-1 px-8 pb-6 pt-10">
       <div className="flex justify-center items-center gap-16 w-full">
         <FooterAdress />
-
+        <FooterSocialLinks />
        
       </div>
 
