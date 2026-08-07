@@ -77,8 +77,8 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-      setResponseMessage("Je vous avais mis en garde !\n" +
-                         "Merci d'envoyer votre demande par mail à notre Président :\n\n" +                        
+      setResponseMessage("Je vous avais averti !\n" +
+                         "Envoyez un mail à notre Président :\n\n" +                        
                          "jeanpaul.vergote@neuf.fr\n\n" +
                          " ");
         
