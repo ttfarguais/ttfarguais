@@ -13,7 +13,6 @@ export default function FooterMobile() {
       <div className="flex-1 flex justify-center">
         <FooterSocialLinks />
       </div>
-      </div>
 
       <FooterSponsorMobile />
 
