@@ -7,7 +7,7 @@ export default function FooterMoreInformation() {
         &copy; 2024 <strong>T.T. FARGUAIS</strong>
       </p>
       <p>
-        Site réalisé par{" "}
+        Réalisé par{" "}
         <Link
           href="https://romain-hernandez.com/"
           className="italic"
@@ -21,8 +21,8 @@ export default function FooterMoreInformation() {
           target="_blank"
           className="italic"
         >
-          Barenko, 
-        </Link> <br/>Maintenu par {" "}
+          Barenko. 
+        </Link> Maintenu par {" "}
         <Link
           href="/membres/Jose.jpg"
           className="italic"
