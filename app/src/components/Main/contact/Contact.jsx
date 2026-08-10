@@ -17,6 +17,10 @@ import {
   FaMobileAlt,
 } from "react-icons/fa";
 
+import {
+  MdAlternateEmail,
+} from "react-icons/md";
+
 export default function Contact({
   handleChange,
   handleSubmit,
