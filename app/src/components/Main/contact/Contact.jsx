@@ -13,6 +13,8 @@ import {
   FaMedal,
   FaQuestionCircle,
   FaCommentDots,
+  MdAlternateEmail,
+  FaMobileAlt,
 } from "react-icons/fa";
 
 export default function Contact({
@@ -172,7 +174,7 @@ export default function Contact({
 
             <div className="relative">
 
-              <FaEnvelope
+              <MdAlternateEmail
                 className={`absolute left-4 top-1/2 -translate-y-1/2 ${
                   formData.email ? "text-green-500" : "text-gray-400"
                 }`}
@@ -199,7 +201,7 @@ export default function Contact({
 
             <div className="relative">
 
-              <FaPhone
+              <FaMobileAlt
                 className={`absolute left-4 top-1/2 -translate-y-1/2 ${
                   formData.tel ? "text-green-500" : "text-gray-400"
                 }`}
