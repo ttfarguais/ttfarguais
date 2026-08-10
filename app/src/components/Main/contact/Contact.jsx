@@ -67,7 +67,7 @@ export default function Contact({
         ⚠️ Le formulaire a un p&apos;tit soucis...
       </p>
       <p className="mt-2 text-orange-700">
-        En suivant les champs ci-dessous,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
+        En vous inspirant des champs ci-dessous,<br/>Merci d&apos;envoyer votre demande directement par mail à notre Président :
       </p>
 
       <p className="mt-3 text-lg font-bold select-all">
@@ -217,7 +217,7 @@ export default function Contact({
               />
 {(touched.tel || isSubmitted) && !validatePhone() && (
    <p className="text-red-600 text-sm mt-2">
-    Celui là je l&apos;ai déjà !
+    Celui là il va pas sonner !
   </p>
 )}
  </div>
@@ -268,7 +268,7 @@ export default function Contact({
                 formData.typePlayer ? "text-gray-900" : "text-gray-400"
               }`}
             >
-              <option value="">Vous êtes un Joueur... Débutant, Loisir ou Compétiteur ?</option>
+              <option value="">Joueur... Débutant, Loisir ou Compétiteur ?</option>
 
               {playerType.map((type, index) => (
                 <option key={index} value={type.title}>
