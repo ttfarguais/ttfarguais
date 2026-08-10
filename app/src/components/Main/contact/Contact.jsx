@@ -7,13 +7,10 @@ import playerType from "../../../data/playerType";
 import {
   FaUser,
   FaBirthdayCake,
-  FaEnvelope,
-  FaPhone,
   FaMapMarkerAlt,
   FaMedal,
   FaQuestionCircle,
   FaCommentDots,
-  FaMobileAlt,
 } from "react-icons/fa";
 
 import {
