@@ -20,6 +20,11 @@ import {
   MdAlternateEmail,
 } from "react-icons/md";
 
+import {
+  LuSmartphone,
+} from "react-icons/lu";
+
+
 export default function Contact({
   handleChange,
   handleSubmit,
@@ -204,7 +209,7 @@ export default function Contact({
 
             <div className="relative">
 
-              <FaMobileAlt
+              <LuSmartphone
                 className={`absolute left-4 top-1/2 -translate-y-1/2 ${
                   formData.tel ? "text-green-500" : "text-gray-400"
                 }`}
