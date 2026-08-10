@@ -13,7 +13,6 @@ import {
   FaMedal,
   FaQuestionCircle,
   FaCommentDots,
-  MdAlternateEmail,
   FaMobileAlt,
 } from "react-icons/fa";
 
