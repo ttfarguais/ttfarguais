@@ -4,7 +4,7 @@ const trainingTimes = [
     schedules: [
       { day: "Lundi :", time: "18h00 - 20h30 -> Jeux Libre", who: "Loisirs et compétiteurs" },
       { day: "Mercredi :", time: "19h00 - 21h00 -> Jeux Libre" },
-      { day: "Mercredi :", time: "19h00 - 20h00", trainingType: "Entraînement dirigé : 12 joueurs", coach: "Maxime TOURNAUX" },
+      { day: "Mercredi :", time: "19h00 - 20h00", trainingType: "12 joueurs", coach: "Maxime TOURNAUX" },
  
     ]
 },
