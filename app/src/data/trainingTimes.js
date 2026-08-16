@@ -8,6 +8,7 @@ const trainingTimes = [
  
     ]
 },
+  {"\n"}
   {
     name: "Jeunes le Mercredi",
     schedules: [
