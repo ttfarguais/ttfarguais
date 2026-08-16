@@ -9,7 +9,7 @@ const trainingTimes = [
     ]
 },
   {
-    name: "Jeunes le Mercredi",
+    name: "Jeunes le Mercredi"{"\n"}"Maxime",
     schedules: [
 
       { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*" },
