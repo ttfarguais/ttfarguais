@@ -9,7 +9,7 @@ const trainingTimes = [
     ]
 },
   {
-    name: "Jeunes le Mercredi",
+    name: "Jeunes",
     schedules: [
 
       { day: "Entraînement dirigé :", time: "Maxime TOURNAUX", who: "Mercredi" },
