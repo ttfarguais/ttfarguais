@@ -11,9 +11,9 @@ const trainingTimes = [
     name: "Jeunes",
     schedules: [
 
-      { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*"},
-      { time: "15h30 - 17h00", who: "Débutants collèges-lycées : Groupe 2*", trainingType: "Entraînement dirigé", coach: "Maxime TOURNAUX" },
-      { time: "17h00 - 19h00", who: "Confirmés collèges-lycées : Groupe 3*", trainingType: "Entraînement dirigé", coach: "Maxime TOURNAUX" },
+      { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*", trainingType: "Entraînement dirigé" },
+      { time: "15h30 - 17h00", who: "Débutants collèges-lycées : Groupe 2*", trainingType: "Entraînement dirigé" },
+      { time: "17h00 - 19h00", who: "Confirmés collèges-lycées : Groupe 3*", trainingType: "Entraînement dirigé" },
     ]
   }
 ];
