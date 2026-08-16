@@ -8,7 +8,7 @@ const trainingTimes = [
     ]
 },
   {
-    name: "Jeunes",
+    name: "Jeunes le Mercredi",
     schedules: [
 
       { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*", trainingType: "Entraînement dirigé" },
