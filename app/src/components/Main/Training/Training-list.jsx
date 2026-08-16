@@ -5,7 +5,7 @@ export default function TrainingList({category}) {
       
       <h2
   className={`mb-8 text-xl font-extrabold text-solid ${
-    category.name === "Jeunes" ? "mt-8" : "mt-4"
+    category.name === "Jeunes" ? "mt-4" : "mt-4"
   }`}
 >
   Créneaux {category.name}
