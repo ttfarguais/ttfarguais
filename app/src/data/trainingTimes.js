@@ -10,9 +10,10 @@ const trainingTimes = [
 },
   {
     name: "Jeunes le Mercredi",
-    name: "Entraînement dirigé : Maxime TOURNAUX"
+    name: "Entraînement dirigé : Maxime TOURNAUX",
     schedules: [
 
+      { day: "Entraînement dirigé :", time: "Maxime TOURNAUX" },
       { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*" },
       { time: "15h30 - 17h00", who: "Débutants collèges-lycées : Groupe 2*" },
       { time: "17h00 - 19h00", who: "Confirmés collèges-lycées : Groupe 3*" },
