@@ -9,7 +9,8 @@ const trainingTimes = [
     ]
 },
   {
-    name: "Jeunes le Mercredi {"\n"} Maxime",
+    name: "Jeunes le Mercredi",
+    name: "Entraînement dirigé : Maxime TOURNAUX"
     schedules: [
 
       { time: "14h00 - 15h30", who: "Initiation écoles primaires : Groupe 1*" },
