@@ -2,7 +2,7 @@ const trainingTimes = [
   {
     name: "Adultes",
     schedules: [
-      { day: "Lundi :", time: "18h00 - 20h30", who: "Loisirs et compétiteurs", trainingType: "Jeux libre" },
+      { day: "Lundi :", time: "18h00 - 20h30 -> Jeux Libre", who: "Loisirs et compétiteurs", trainingType: "Jeux libre" },
       { day: "Mercredi :", time: "19h00 - 21h00", trainingType: "Jeux libre" },
       { day: "Mercredi :", time: "19h00 - 20h00", trainingType: "Entraînement dirigé : 10 joueurs", coach: "Maxime TOURNAUX" },
  
