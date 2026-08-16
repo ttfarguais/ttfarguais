@@ -17,8 +17,8 @@ export default function TrainingList({category}) {
       {category.schedules.map((schedule, index) => (
         <li key={index}>
           <p className="font-bold text-lg mb-2">{schedule.who}</p>
-          {  /*      <p><span className='font-bold'>{schedule.day}</span> {schedule.time}</p>
-          <p><span className="font-bold">Type :</span> {schedule.trainingType}</p>  /*}
+            /*      <p><span className='font-bold'>{schedule.day}</span> {schedule.time}</p>
+          <p><span className="font-bold">Type :</span> {schedule.trainingType}</p>  /*
           {schedule.coach && <p><span className="font-bold">Entraîneur :</span> {schedule.coach}</p>}
         </li>
       ))}
