@@ -10,7 +10,7 @@ export default function FooterMoreInformation() {
         Site réalisé par{" "}
         <Link
           href="https://romain-hernandez.com/"
-          className="italic mr-2"
+          className="italic mr-1"
           target="_blank"
         >
           Roms
@@ -25,7 +25,7 @@ export default function FooterMoreInformation() {
         </Link> <br/>Maintenu par {" "}
         <Link
           href="/membres/Jose.jpg"
-          className="italic mr-2"
+          className="italic mr-1"
           target="_blank"
         >
           José
