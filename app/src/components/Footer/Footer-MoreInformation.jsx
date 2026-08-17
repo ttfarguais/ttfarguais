@@ -14,7 +14,7 @@ export default function FooterMoreInformation() {
           target="_blank"
         >
           Roms
-        </Link>{" "}
+        </Link>
         &{" "}
         <Link
           href="https://www.linkedin.com/in/ugo-matassa/"
@@ -29,7 +29,7 @@ export default function FooterMoreInformation() {
           target="_blank"
         >
           José
-        </Link>{" "}
+        </Link>
         depuis 2025.
       </p>
     </div>
