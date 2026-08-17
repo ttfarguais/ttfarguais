@@ -10,11 +10,11 @@ export default function FooterMoreInformation() {
         Site réalisé par{" "}
         <Link
           href="https://romain-hernandez.com/"
-          className="italic"
+          className="italic mr-2"
           target="_blank"
         >
           Roms
-        </Link>{"    "}
+        </Link>{" "}
         &{" "}
         <Link
           href="https://www.linkedin.com/in/ugo-matassa/"
@@ -25,11 +25,11 @@ export default function FooterMoreInformation() {
         </Link> <br/>Maintenu par {" "}
         <Link
           href="/membres/Jose.jpg"
-          className="italic"
+          className="italic mr-2"
           target="_blank"
         >
           José
-        </Link>{"    "}
+        </Link>{" "}
         depuis 2025.
       </p>
     </div>
