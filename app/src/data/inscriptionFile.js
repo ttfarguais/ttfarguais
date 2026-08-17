@@ -14,8 +14,8 @@ const documents = [
     important: false,
     pdf: "/pdf/certificat-medical.pdf",
   },
-  { name: "Questionnaire de Santé <br className="sm:hidden" />pour Majeur", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
-  { name: "Questionnaire de Santé <br className="sm:hidden" />pour Mineur", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
+  { name: "Questionnaire de Santé pour Majeur", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
+  { name: "Questionnaire de Santé pour Mineur", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
 ];
 
 const inscriptionFile = {
