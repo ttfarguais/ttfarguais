@@ -69,7 +69,7 @@ export default function Contact({
     </h1>
 
     {/* Message temporaire */}
-    <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
+    {/* <div className="w-full max-w-3xl mb-6 rounded-xl border border-orange-300 bg-orange-50 p-4 text-center">
       <p className="font-semibold text-orange-800">
         ⚠️ Le formulaire a un p&apos;tit soucis...
       </p>
@@ -84,7 +84,7 @@ export default function Contact({
       <p className="mt-3 text-orange-700">
         À très vite à la table !
       </p>
-    </div>
+    </div>*/}
       {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
