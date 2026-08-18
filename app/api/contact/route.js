@@ -24,7 +24,7 @@ export async function POST(request) {
       Téléphone: ${tel}
       
       Age: ${age}
-      Ville: ${municipality}
+      Commune: ${municipality}
       Type de joueur: ${typePlayer}
       Comment avez-vous connu le club: ${description}
       Message: ${message} `,
@@ -33,9 +33,9 @@ export async function POST(request) {
     ${tel ? `<p><strong>Téléphone</strong> : ${tel}</p>` : ""}
     <p><strong>Email</strong> : ${email}</p>
     <p><strong>Age</strong> : ${age}</p>
-    ${municipality ? `<p><strong>Ville</strong> : ${municipality}</p>` : ""}
+    ${municipality ? `<p><strong>Commune</strong> : ${municipality}</p>` : ""}
     ${typePlayer ? `<p><strong>Type de joueur</strong> : ${typePlayer}</p>` : ""}
-    ${description ? `<p><strong>Comment avez-vous connu le club</strong> : ${description}</p>` : ""}
+    ${description ? `<p><strong>Comment avez-vous connu le club ?</strong> : ${description}</p>` : ""}
     <p><strong>Message</strong> : ${message}</p>`,
   };
 
