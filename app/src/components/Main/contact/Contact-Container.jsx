@@ -100,6 +100,7 @@ export default function ContactContainer() {
       responseMessage={responseMessage}
       isSubmitted={isSubmitted}
       isValidStatus={isValidStatus}
+      isFormVisible={isFormVisible}
     />
   );
 }
