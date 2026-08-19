@@ -277,7 +277,6 @@ export default function Contact({
               onBlur={handleBlur}
               required
               className={`${inputClass(formData.typePlayer)} pl-12 appearance-none text-gray-900`}
-              }`}
             >
               <option value="">Joueur... Débutant, Loisir ou Compétiteur ?</option>
 
