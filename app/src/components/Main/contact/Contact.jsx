@@ -87,7 +87,7 @@ export default function Contact({
     </div>*/}
      
       {/* Formulaire */}
-   {isSubmitted ? (
+  {isSubmitted ? (
   <div className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 text-center">
     <p className="text-green-600 font-bold text-lg">
       {responseMessage}
@@ -360,7 +360,7 @@ export default function Contact({
             </p>
           )}
 
-         <button
+          <button
         type="submit"
         className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
       >
@@ -369,5 +369,4 @@ export default function Contact({
 
     </div>
   </form>
-  );
-}
+)}
