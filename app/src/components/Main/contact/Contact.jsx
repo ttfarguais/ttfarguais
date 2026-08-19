@@ -349,22 +349,23 @@ export default function Contact({
 
         
 
-          <button
+                   <button
             type="submit"
             className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
             Envoyer m🏓n message
           </button>
+
         </div>
- </form>
-    ):(
-     responseMessage && (
-    <p
-      className={`w-full max-w-3xl whitespace-pre-line rounded-xl p-4 text-white text-center ${
-        isValidStatus ? "bg-solid" : "bg-red-600"
-      }`}
-    >
-      {responseMessage}
-    </p>
-  )
-)}
+      </form>
+    ) : (
+      responseMessage && (
+        <p
+          className={`w-full max-w-3xl whitespace-pre-line rounded-xl p-4 text-white text-center ${
+            isValidStatus ? "bg-solid" : "bg-red-600"
+          }`}
+        >
+          {responseMessage}
+        </p>
+      )
+    )}
