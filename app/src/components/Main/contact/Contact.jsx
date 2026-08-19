@@ -56,6 +56,17 @@ export default function Contact({
         : "border-gray-300 focus:border-green-500"
     }`;
 
+ const isFormValid =
+  formData.lastName &&
+  formData.firstName &&
+  validateAge() &&
+  validateEmail() &&
+  validatePhone() &&
+  formData.municipality &&
+  formData.typePlayer &&
+  formData.source &&
+  formData.message;
+  
   return (
     <div className="flex flex-col items-center m-auto py-4 px-4">
       {/* Titre */}
@@ -320,13 +331,17 @@ export default function Contact({
           </div>
 
           {/* Bouton */}
-          <button
-            type="submit"
-            disabled={isSending}
-            className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {isSending ? "Envoi en cours..." : "Envoyer m🏓n message"}
-          </button>
+         <button
+  type="submit"
+  disabled={!isFormValid}
+  className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+    isFormValid
+      ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+  }`}
+>
+  Envoyer m🏓n message
+</button>
         </div>
       </form>
 
