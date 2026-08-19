@@ -85,12 +85,21 @@ export default function Contact({
         À très vite à la table !
       </p>
     </div>*/}
+
+     
       {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
       >
 
+        {isSubmitted ? (
+  <div className="text-center py-8">
+    <p className="text-green-600 font-bold text-lg">
+      {responseMessage}
+    </p>
+  </div>
+) : (
         <div className="flex flex-col gap-5">
 
           {/* Nom / Prénom */}
@@ -343,16 +352,6 @@ export default function Contact({
   </p>)}
           </div>
 
-          {responseMessage && (
-            <p
-              className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
-                isValidStatus ? "bg-solid" : "bg-red-600"
-              }`}
-            >
-              {responseMessage}
-            </p>
-          )}
-
           <button
             type="submit"
             className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -361,6 +360,7 @@ export default function Contact({
           </button>
 
         </div>
+      )}
 
       </form>
 
