@@ -276,8 +276,7 @@ export default function Contact({
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              className={`${inputClass(formData.typePlayer)} pl-12 appearance-none ${
-                formData.typePlayer ? "text-gray-900" : "text-gray-400"
+              className={`${inputClass(formData.typePlayer)} pl-12 appearance-none text-gray-900`}
               }`}
             >
               <option value="">Joueur... Débutant, Loisir ou Compétiteur ?</option>
