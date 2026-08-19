@@ -17,14 +17,13 @@ export default function ContactContainer() {
     age: "",
     municipality: "",
     typePlayer: "",
-    description: "",
+    source: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidStatus, setIsValidStatus] = useState(null);
   const [isFormVisible, setIsFormVisible] = useState(true);
-  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +38,6 @@ export default function ContactContainer() {
     e.preventDefault();
 
     setIsSubmitted(true);
-    setIsSending(true);
 
     const emailValid = isValidEmail(formData.email);
     const phoneValid = isValidPhoneNumber(formData.tel);
@@ -47,14 +45,12 @@ export default function ContactContainer() {
     if (!emailValid) {
       setIsValidStatus(false);
       setResponseMessage("Veuillez entrer une adresse email valide");
-      setIsSending(false);
       return;
     }
 
     if (!phoneValid) {
       setIsValidStatus(false);
       setResponseMessage("Veuillez entrer un numéro de téléphone valide");
-      setIsSending(false);
       return;
     }
 
@@ -88,7 +84,7 @@ export default function ContactContainer() {
         age: "",
         municipality: "",
         typePlayer: "",
-        description: "",
+        source: "",
       });
     } catch (error) {
       console.error("Erreur:", error);
@@ -101,7 +97,6 @@ export default function ContactContainer() {
       );
     } finally {
       setIsSubmitted(false);
-      setIsSending(false);
     }
   };
 
@@ -116,7 +111,6 @@ export default function ContactContainer() {
       isSubmitted={isSubmitted}
       isValidStatus={isValidStatus}
       isFormVisible={isFormVisible}
-      isSending={isSending}
     />
   );
 }
