@@ -64,6 +64,8 @@ export default function ContactContainer() {
       const data = await res.json();
       setIsValidStatus(true);
       setResponseMessage(data.message);
+      setIsFormVisible(false);
+      
       setFormData({
         lastName: "",
         firstName: "",
