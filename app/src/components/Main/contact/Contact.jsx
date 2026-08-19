@@ -355,7 +355,7 @@ export default function Contact({
           >
             Envoyer m🏓n message
           </button>
-
+        </div>
  </form>
     ):(
      responseMessage && (
