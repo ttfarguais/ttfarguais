@@ -348,8 +348,7 @@ export default function Contact({
           </div>
 
         
-
-                   <button
+          <button
             type="submit"
             className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
           >
@@ -369,3 +368,7 @@ export default function Contact({
         </p>
       )
     )}
+
+  </div>
+  );
+}
