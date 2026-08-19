@@ -30,6 +30,7 @@ export default function Contact({
   responseMessage,
   isSubmitted,
   isValidStatus,
+  isFormVisible,
 }) {
 
   const [touched, setTouched] = useState({});
@@ -85,7 +86,10 @@ export default function Contact({
         À très vite à la table !
       </p>
     </div>*/}
+     
       {/* Formulaire */}
+
+     {isFormVisible && (
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
@@ -363,7 +367,7 @@ export default function Contact({
         </div>
 
       </form>
-
+)}
     </div>
   );
 }
