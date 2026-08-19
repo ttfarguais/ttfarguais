@@ -347,15 +347,7 @@ export default function Contact({
   </p>)}
           </div>
 
-          {responseMessage && (
-            <p
-              className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
-                isValidStatus ? "bg-solid" : "bg-red-600"
-              }`}
-            >
-              {responseMessage}
-            </p>
-          )}
+        
 
           <button
             type="submit"
@@ -368,6 +360,15 @@ export default function Contact({
 
       </form>
 )}
+       {responseMessage && (
+            <p
+              className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
+                isValidStatus ? "bg-solid" : "bg-red-600"
+              }`}
+            >
+              {responseMessage}
+            </p>
+          )}
     </div>
   );
 }
