@@ -354,12 +354,13 @@ export default function Contact({
 
         
 
-          <button
-            type="submit"
-            className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-          >
-            Envoyer m🏓n message
-          </button>
+        <button
+  type="submit"
+  disabled={isSubmitted}
+  className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+>
+  {isSubmitted ? "Envoi en cours..." : "Envoyer m🏓n message"}
+</button>
 
         </div>
 
