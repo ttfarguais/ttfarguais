@@ -87,17 +87,18 @@ export default function Contact({
     </div>*/}
      
       {/* Formulaire */}
+ <form
+  onSubmit={handleSubmit}
+  className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
+>
   {isSubmitted ? (
-  <div className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-8 text-center">
-    <p className="text-green-600 font-bold text-lg">
-      {responseMessage}
-    </p>
-  </div>
-) : (
-  <form
-    onSubmit={handleSubmit}
-    className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
-  >
+    <div className="text-center py-8">
+      <p className="text-green-600 font-bold text-lg">
+        {responseMessage}
+      </p>
+    </div>
+  ) : (
+    <div className="flex flex-col gap-5">
 
           {/* Nom / Prénom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
@@ -366,10 +367,10 @@ export default function Contact({
           Envoyer m🏓n message
         </button>
 
-      </div>
+       </div>
+  )}
 
-    </form>
-)}
-  </div>
+</form>
+
+</div>
 );
-}
