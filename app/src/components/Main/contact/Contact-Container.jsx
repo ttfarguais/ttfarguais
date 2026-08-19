@@ -31,6 +31,7 @@ export default function ContactContainer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
     const emailValid = isValidEmail(formData.email);
     const phoneValid = isValidPhoneNumber(formData.tel);
 
@@ -62,8 +63,6 @@ export default function ContactContainer() {
       const data = await res.json();
       setIsValidStatus(true);
       setResponseMessage(data.message);
-      setIsSubmitted(true);
-      
       setFormData({
         lastName: "",
         firstName: "",
@@ -78,9 +77,7 @@ export default function ContactContainer() {
     } catch (error) {
       console.error("Erreur:", error);
       setIsValidStatus(false);
-    setIsSubmitted(false);
-      
-      setResponseMessage("Le formulaire n'a pas été transmis.\n" +
+      setResponseMessage("Le formulaire n'a pas été envoyé.\n" +
                          "Merci d'envoyer un mail à notre Président :\n\n" +                        
                          "jeanpaul.vergote@neuf.fr\n" +
                          " ");
