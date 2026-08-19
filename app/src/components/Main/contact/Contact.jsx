@@ -276,14 +276,20 @@ export default function Contact({
               onChange={handleChange}
               onBlur={handleBlur}
               required
-              className={`${inputClass(formData.typePlayer)} pl-12 appearance-none text-gray-900`}
+             className={`${inputClass(formData.typePlayer)} pl-12 appearance-none ${
+  formData.typePlayer ? "text-gray-900" : "text-gray-400"
+             }`}
             >
               <option value="">Joueur... Débutant, Loisir ou Compétiteur ?</option>
 
               {playerType.map((type, index) => (
-                <option key={index} value={type.title}>
-                  {type.title}
-                </option>
+                <option
+      key={index}
+      value={type.title}
+      className="text-gray-900"
+    >
+      {type.title}
+    </option>
               ))}
             </select>
   {touched.typePlayer && !formData.typePlayer && (
