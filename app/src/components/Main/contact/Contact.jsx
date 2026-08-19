@@ -358,4 +358,13 @@ export default function Contact({
 
  </form>
     ):(
-     
+     responseMessage && (
+    <p
+      className={`w-full max-w-3xl whitespace-pre-line rounded-xl p-4 text-white text-center ${
+        isValidStatus ? "bg-solid" : "bg-red-600"
+      }`}
+    >
+      {responseMessage}
+    </p>
+  )
+)}
