@@ -89,12 +89,11 @@ export default function Contact({
      
       {/* Formulaire */}
 
-      <form
-        onSubmit={handleSubmit}
-       className={`w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8 ${
-    !isFormVisible ? "hidden" : ""
-  }`}
-      >
+    {isFormVisible ? (
+  <form
+    onSubmit={handleSubmit}
+    className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
+  >
 
         <div className="flex flex-col gap-5">
 
@@ -357,10 +356,8 @@ export default function Contact({
             Envoyer m🏓n message
           </button>
 
-        </div>
-
-      </form>
-
+ </form>
+    ):(
      
        {responseMessage && (
             <p
@@ -369,8 +366,6 @@ export default function Contact({
               }`}
             >
               {responseMessage}
-            </p>
-          )}
-    </div>
-  );
-}
+    </p>
+  )
+)}
