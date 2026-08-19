@@ -20,6 +20,7 @@ export default function ContactContainer() {
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidStatus, setIsValidStatus] = useState(null);
+  const [isFormVisible, setIsFormVisible] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
