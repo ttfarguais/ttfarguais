@@ -57,7 +57,7 @@ export async function POST(request) {
   const info = await transporter.sendMail(mailOptions);
   console.log("Message envoyé :", info);
   return NextResponse.json(
-    { message: "VOTRE DEMANDE\n\nA ÉTÉ ENVOYÉE AVEC SUCCÈS !\n\nÀ TRÈS VITE AUTOUR DE LA TABLE..." },
+    { message: "VOTRE DEMANDE\nA ÉTÉ ENVOYÉE AVEC SUCCÈS !\n\nÀ TRÈS VITE AUTOUR DE LA TABLE..." },
     { status: 200 }
   );
 } catch (error) {
