@@ -89,11 +89,12 @@ export default function Contact({
      
       {/* Formulaire */}
 
-    {isFormVisible ? (
-  <form
-    onSubmit={handleSubmit}
-    className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
-  >
+      <form
+        onSubmit={handleSubmit}
+       className={`w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8 ${
+    !isFormVisible ? "hidden" : ""
+  }`}
+      >
 
         <div className="flex flex-col gap-5">
 
@@ -348,6 +349,7 @@ export default function Contact({
           </div>
 
         
+
           <button
             type="submit"
             className="mx-auto block rounded-full bg-solid text-white px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -356,19 +358,19 @@ export default function Contact({
           </button>
 
         </div>
-      </form>
-    ) : (
-      responseMessage && (
-        <p
-          className={`w-full max-w-3xl whitespace-pre-line rounded-xl p-4 text-white text-center ${
-            isValidStatus ? "bg-solid" : "bg-red-600"
-          }`}
-        >
-          {responseMessage}
-        </p>
-      )
-    )}
 
-  </div>
+      </form>
+
+     
+       {responseMessage && (
+            <p
+              className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
+                isValidStatus ? "bg-solid" : "bg-red-600"
+              }`}
+            >
+              {responseMessage}
+            </p>
+          )}
+    </div>
   );
 }
