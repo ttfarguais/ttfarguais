@@ -89,10 +89,11 @@ export default function Contact({
      
       {/* Formulaire */}
 
-     {isFormVisible && (
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
+       className={`w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8 ${
+    !isFormVisible ? "hidden" : ""
+  }`}
       >
 
         <div className="flex flex-col gap-5">
@@ -359,7 +360,8 @@ export default function Contact({
         </div>
 
       </form>
-)}
+
+     
        {responseMessage && (
             <p
               className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
