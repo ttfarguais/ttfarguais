@@ -1,0 +1,71 @@
+import { NextResponse } from "next/server";
+import transporter from "../../src/lib/transporter";
+export async function POST(request) {
+  const {
+    lastName,
+    firstName,
+    email,
+    message,
+    tel,
+    age,
+    municipality,
+    typePlayer,
+    description,
+  } = await request.json();
+
+  const mailOptions = {
+    from: email,
+ //  to: `${process.env.USER_EMAIL},${process.env.USER_EMAIL1},${process.env.USER_EMAIL2},${process.env.USER_EMAIL3}`,//
+    to: `${process.env.USER_EMAIL1}`,
+    subject: `Nouveau Contact du Site TTFARGUAIS`,
+    text: `
+      Nom: ${lastName}
+      Prénom: ${firstName}
+      Email: ${email}
+      Téléphone: ${tel}
+      
+      Age: ${age}
+      Commune: ${municipality}
+      Type de joueur: ${typePlayer}
+      Comment avez-vous connu le club: ${description}
+      Message: ${message} `,
+    html: `<p><strong>Nom</strong> : ${lastName}</p>
+    <p><strong>Prénom</strong> : ${firstName}</p>
+    ${tel ? `<p><strong>Téléphone</strong> : ${tel}</p>` : ""}
+    <p><strong>Email</strong> : ${email}</p>
+    <p><strong>Age</strong> : ${age}</p>
+    ${municipality ? `<p><strong>Commune</strong> : ${municipality}</p>` : ""}
+    ${typePlayer ? `<p><strong>Type de joueur</strong> : ${typePlayer}</p>` : ""}
+    ${description ? `<p><strong>Comment avez-vous connu le club ?</strong> : ${description}</p>` : ""}
+    <p><strong>Message</strong> : ${message}</p>`,
+  };
+
+/*  try {
+    await transporter.sendMail(mailOptions);
+    return NextResponse.json(
+      { message: "Formulaire soumis avec succès" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Erreur lors de l'envoi de l'email:", error);
+    return NextResponse.json(
+      { message: "Erreur lors de l'envoi de l'email." },
+      { status: 500 }
+    );
+  }*/
+  
+  try {
+  const info = await transporter.sendMail(mailOptions);
+  console.log("Message envoyé :", info);
+  return NextResponse.json(
+    { message: "Votre demande\na été envoyée avec succès !\n\nÀ très vite autour d'une table..." },
+    { status: 200 }
+  );
+} catch (error) {
+  console.error("Erreur lors de l'envoi de l'email:", error);
+  return NextResponse.json(
+    { message: "Erreur lors de l'envoi de l'email." },
+    { status: 500 }
+  );
+}
+}
