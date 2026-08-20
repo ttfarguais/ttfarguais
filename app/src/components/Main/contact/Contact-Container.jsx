@@ -41,79 +41,66 @@ const handleSubmit = async (e) => {
   setIsSending(true);
   setIsSubmitted(true);
 
-    const emailValid = isValidEmail(formData.email);
-    const phoneValid = isValidPhoneNumber(formData.tel);
+  const emailValid = isValidEmail(formData.email);
+  const phoneValid = isValidPhoneNumber(formData.tel);
 
-    if (!emailValid) {
-      setIsValidStatus(false);
-      setResponseMessage("Veuillez entrer une adresse email valide");
-      return;
-    }
+  if (!emailValid) {
+    setIsValidStatus(false);
+    setResponseMessage("Veuillez entrer une adresse email valide");
+    setIsSending(false);
+    return;
+  }
 
-    if (!phoneValid) {
-      setIsValidStatus(false);
-      setResponseMessage("Veuillez entrer un numéro de téléphone valide");
-      return;
-    }
+  if (!phoneValid) {
+    setIsValidStatus(false);
+    setResponseMessage("Veuillez entrer un numéro de téléphone valide");
+    setIsSending(false);
+    return;
+  }
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      if (!res.ok) {
-        throw new Error(
-          "Erreur lors de la soumission du formulaire Api Contact"
-        );
-      }
-
-      const data = await res.json();
-
-      setIsValidStatus(true);
-      setResponseMessage(data.message);
-      setIsFormVisible(false);
-
-      setFormData({
-        lastName: "",
-        firstName: "",
-        email: "",
-        message: "",
-        tel: "",
-        age: "",
-        municipality: "",
-        typePlayer: "",
-        source: "",
-      });
-    } catch (error) {
-      console.error("Erreur:", error);
-
-      setIsValidStatus(false);
-      setResponseMessage(
-        "Le formulaire n'a pas été envoyé.\n" +
-          "Merci d'envoyer un mail à notre Président :\n\n" +
-          "jeanpaul.vergote@neuf.fr"
+    if (!res.ok) {
+      throw new Error(
+        "Erreur lors de la soumission du formulaire Api Contact"
       );
-    } finally {
-  setIsSubmitted(false);
-  setIsSending(false);
-}
-  };
+    }
 
-  return (
-    <Contact
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-      formData={formData}
-      validateEmail={() => isValidEmail(formData.email)}
-      validatePhone={() => isValidPhoneNumber(formData.tel)}
-      responseMessage={responseMessage}
-      isSubmitted={isSubmitted}
-      isValidStatus={isValidStatus}
-      isFormVisible={isFormVisible}
-    />
-  );
-}
+    const data = await res.json();
+
+    setIsValidStatus(true);
+    setResponseMessage(data.message);
+    setIsFormVisible(false);
+
+    setFormData({
+      lastName: "",
+      firstName: "",
+      email: "",
+      message: "",
+      tel: "",
+      age: "",
+      municipality: "",
+      typePlayer: "",
+      source: "",
+    });
+  } catch (error) {
+    console.error("Erreur:", error);
+
+    setIsValidStatus(false);
+    setResponseMessage(
+      "Le formulaire n'a pas été envoyé.\n" +
+        "Merci d'envoyer un mail à notre Président :\n\n" +
+        "jeanpaul.vergote@neuf.fr"
+    );
+  } finally {
+    setIsSubmitted(false);
+    setIsSending(false);
+  }
+};
