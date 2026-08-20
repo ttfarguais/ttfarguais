@@ -331,7 +331,7 @@ export default function Contact({
           </div>
 
           {/* Bouton */}
-         <button
+        <button
   type="submit"
   disabled={!isFormValid}
   className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
@@ -340,7 +340,9 @@ export default function Contact({
       : "bg-gray-300 text-gray-500 cursor-not-allowed"
   }`}
 >
-  Envoyer m🏓n message
+  {isFormValid
+    ? "Envoyer m🏓n message"
+    : "B🏓ssez un peu..."}
 </button>
         </div>
       </form>
