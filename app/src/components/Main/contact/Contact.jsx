@@ -236,6 +236,7 @@ const focusFirstEmptyField = (currentField) => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                onFocus={() => focusFirstEmptyField("email")}
                 onBlur={handleBlur}
                 placeholder="E-m@il"
                 required
@@ -261,6 +262,7 @@ const focusFirstEmptyField = (currentField) => {
                 name="tel"
                 value={formData.tel}
                 onChange={handleChange}
+                onFocus={() => focusFirstEmptyField("tel")}
                 onBlur={handleBlur}
                 placeholder="Téléphone"
                 required
@@ -288,6 +290,7 @@ const focusFirstEmptyField = (currentField) => {
               name="municipality"
               value={formData.municipality}
               onChange={handleChange}
+              onFocus={() => focusFirstEmptyField("municipality")}
               onBlur={handleBlur}
               placeholder="Commune"
               required
@@ -313,6 +316,7 @@ const focusFirstEmptyField = (currentField) => {
               name="typePlayer"
               value={formData.typePlayer}
               onChange={handleChange}
+              onFocus={() => focusFirstEmptyField("typePlayer")}
               onBlur={handleBlur}
               required
               className={`${inputClass(
@@ -354,6 +358,7 @@ const focusFirstEmptyField = (currentField) => {
               name="source"
               value={formData.source}
               onChange={handleChange}
+              onFocus={() => focusFirstEmptyField("source")}
               onBlur={handleBlur}
               placeholder="Comment avez-vous connu le Club ?"
               required
@@ -379,6 +384,7 @@ const focusFirstEmptyField = (currentField) => {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              onFocus={() => focusFirstEmptyField("message")}
               onBlur={handleBlur}
               placeholder="Votre demande..."
               rows={3}
