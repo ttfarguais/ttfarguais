@@ -416,16 +416,22 @@ const focusFirstEmptyField = (currentField) => {
         </div>
       </form>
 
+      {isSending && (
+  <p className="mt-4 rounded-xl bg-solid p-4 text-center text-white">
+    Envoi en cours...
+  </p>
+)}
+
       {/* Message de validation */}
-      {responseMessage && (
-        <p
-          className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
-            isValidStatus ? "bg-solid" : "bg-red-600"
-          }`}
-        >
-          {responseMessage}
-        </p>
-      )}
+    {responseMessage && !isSending && (
+  <p
+    className={`mt-4 whitespace-pre-line rounded-xl p-4 text-center text-white ${
+      isValidStatus ? "bg-solid" : "bg-red-600"
+    }`}
+  >
+    {responseMessage}
+  </p>
+)}
     </div>
   );
 }
