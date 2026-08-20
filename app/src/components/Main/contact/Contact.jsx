@@ -134,10 +134,14 @@ export default function Contact({
       </h1>
 
       {/* Formulaire */}
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
-      >
+     <form
+  onSubmit={handleSubmit}
+  className={
+    isFormVisible
+      ? "w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
+      : "w-full flex justify-center"
+  }
+>
         {/* Champs */}
         {isFormVisible && (
           <div className="flex flex-col gap-5">
@@ -323,20 +327,25 @@ export default function Contact({
                 }`}
               />
 
-              <select
-                name="typePlayer"
-                value={formData.typePlayer}
-                onChange={handleChange}
-                onFocus={() => focusFirstEmptyField("typePlayer")}
-                onBlur={handleBlur}
-                required
-                className={`${inputClass(
-                  formData.typePlayer
-                )} pl-12 appearance-none ${
-                  formData.typePlayer
-                    ? "text-gray-900"
-                    : "text-gray-400"
-                }`}
+            <select
+  name="typePlayer"
+  value={formData.typePlayer}
+  onChange={handleChange}
+  onMouseDown={(e) => {
+    if (!focusFirstEmptyField("typePlayer")) {
+      e.preventDefault();
+    }
+  }}
+  onBlur={handleBlur}
+  required
+  className={`${inputClass(
+    formData.typePlayer
+  )} pl-12 appearance-none ${
+    formData.typePlayer
+      ? "text-gray-900"
+      : "text-gray-400"
+  }`}
+>
               >
                 <option value="" className="text-gray-400">
                   Joueur... Débutant, Loisir ou Compétiteur ?
