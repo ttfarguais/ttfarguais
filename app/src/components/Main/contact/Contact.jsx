@@ -178,7 +178,7 @@ const focusFirstEmptyField = (currentField) => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-//                onFocus={() => focusFirstEmptyField("firstName")}//
+                onFocus={() => focusFirstEmptyField("firstName")}
                 onBlur={handleBlur}
                 placeholder="Prénom"
                 required
@@ -384,7 +384,7 @@ const focusFirstEmptyField = (currentField) => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-      //        onFocus={() => focusFirstEmptyField("message")}//
+              onFocus={() => focusFirstEmptyField("message")}
               onBlur={handleBlur}
               placeholder="Votre demande..."
               rows={3}
