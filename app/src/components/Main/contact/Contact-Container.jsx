@@ -24,6 +24,7 @@ export default function ContactContainer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidStatus, setIsValidStatus] = useState(null);
   const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,10 +35,11 @@ export default function ContactContainer() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setIsSubmitted(true);
+  setIsSending(true);
+  setIsSubmitted(true);
 
     const emailValid = isValidEmail(formData.email);
     const phoneValid = isValidPhoneNumber(formData.tel);
@@ -96,8 +98,9 @@ export default function ContactContainer() {
           "jeanpaul.vergote@neuf.fr"
       );
     } finally {
-      setIsSubmitted(false);
-    }
+  setIsSubmitted(false);
+  setIsSending(false);
+}
   };
 
   return (
