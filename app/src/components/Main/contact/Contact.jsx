@@ -320,7 +320,7 @@ export default function Contact({
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Votre demande..."
-              rows={6}
+              rows={2}
               required
               className={`${inputClass(formData.message)} pl-12 resize-none`}
             />
