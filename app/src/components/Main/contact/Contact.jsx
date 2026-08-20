@@ -331,18 +331,20 @@ export default function Contact({
           </div>
 
           {/* Bouton */}
-        <button
+       <button
   type="submit"
-  disabled={!isFormValid}
+  disabled={!isFormValid || isSending}
   className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-    isFormValid
+    isFormValid && !isSending
       ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
       : "bg-gray-300 text-gray-500 cursor-not-allowed"
   }`}
 >
-  {isFormValid
-    ? "Envoyer m🏓n message"
-    : "B🏓ssez un peu..."}
+  {isSending
+    ? "Envoi en cours..."
+    : isFormValid
+      ? "Envoyer m🏓n message"
+      : "B🏓ssez un peu..."}
 </button>
         </div>
       </form>
