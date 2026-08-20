@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from 'react';
-import { isValidEmail, isValidPhoneNumber } from '../../../utils/verificationContact';
-import Contact from './Contact';
+import { useState } from "react";
+import {
+  isValidEmail,
+  isValidPhoneNumber,
+} from "../../../utils/verificationContact";
+import Contact from "./Contact";
 
 export default function ContactContainer() {
   const [formData, setFormData] = useState({
@@ -14,16 +17,18 @@ export default function ContactContainer() {
     age: "",
     municipality: "",
     typePlayer: "",
-    description: "",
+    source: "",
   });
 
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidStatus, setIsValidStatus] = useState(null);
   const [isFormVisible, setIsFormVisible] = useState(true);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value,
@@ -32,7 +37,9 @@ export default function ContactContainer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setIsSubmitted(true);
+
     const emailValid = isValidEmail(formData.email);
     const phoneValid = isValidPhoneNumber(formData.tel);
 
@@ -58,14 +65,17 @@ export default function ContactContainer() {
       });
 
       if (!res.ok) {
-        throw new Error("Erreur lors de la soumission du formulaire Api Contact");
+        throw new Error(
+          "Erreur lors de la soumission du formulaire Api Contact"
+        );
       }
 
       const data = await res.json();
+
       setIsValidStatus(true);
       setResponseMessage(data.message);
       setIsFormVisible(false);
-      
+
       setFormData({
         lastName: "",
         firstName: "",
@@ -75,16 +85,17 @@ export default function ContactContainer() {
         age: "",
         municipality: "",
         typePlayer: "",
-        description: "",
+        source: "",
       });
     } catch (error) {
       console.error("Erreur:", error);
+
       setIsValidStatus(false);
-      setResponseMessage("Le formulaire n'a pas été envoyé.\n" +
-                         "Merci d'envoyer un mail à notre Président :\n\n" +                        
-                         "jeanpaul.vergote@neuf.fr\n" +
-                         " ");
-        
+      setResponseMessage(
+        "Le formulaire n'a pas été envoyé.\n" +
+          "Merci d'envoyer un mail à notre Président :\n\n" +
+          "jeanpaul.vergote@neuf.fr"
+      );
     } finally {
       setIsSubmitted(false);
     }
