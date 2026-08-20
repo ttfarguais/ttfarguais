@@ -34,12 +34,34 @@ export default function Contact({
     return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel?.trim() || "");
   };
 
-  const handleBlur = (e) => {
-    setTouched((prev) => ({
-      ...prev,
-      [e.target.name]: true,
-    }));
-  };
+ const handleBlur = (e) => {
+  const fields = [
+    "lastName",
+    "firstName",
+    "age",
+    "email",
+    "tel",
+    "municipality",
+    "typePlayer",
+    "source",
+    "message",
+  ];
+
+  const currentIndex = fields.indexOf(e.target.name);
+
+  for (let i = 0; i < currentIndex; i++) {
+    const field = fields[i];
+
+    if (!formData[field]?.toString().trim()) {
+      return;
+    }
+  }
+
+  setTouched((prev) => ({
+    ...prev,
+    [e.target.name]: true,
+  }));
+};
 
  const validateAge = () => {
   const age = Number(formData.age);
