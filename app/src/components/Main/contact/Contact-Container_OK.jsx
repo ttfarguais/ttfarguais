@@ -24,7 +24,9 @@ export default function ContactContainer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isValidStatus, setIsValidStatus] = useState(null);
   const [isFormVisible, setIsFormVisible] = useState(true);
-  
+
+  // État uniquement destiné au bouton
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +40,10 @@ export default function ContactContainer() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Empêche un double clic
+    if (isSending) return;
+
+    setIsSending(true);
     setIsSubmitted(true);
 
     const emailValid = isValidEmail(formData.email);
@@ -45,13 +51,19 @@ export default function ContactContainer() {
 
     if (!emailValid) {
       setIsValidStatus(false);
-      setResponseMessage("Veuillez entrer une adresse email valide");
+      setResponseMessage(
+        "Veuillez entrer une adresse email valide"
+      );
+      setIsSending(false);
       return;
     }
 
     if (!phoneValid) {
       setIsValidStatus(false);
-      setResponseMessage("Veuillez entrer un numéro de téléphone valide");
+      setResponseMessage(
+        "Veuillez entrer un numéro de téléphone valide"
+      );
+      setIsSending(false);
       return;
     }
 
@@ -74,6 +86,10 @@ export default function ContactContainer() {
 
       setIsValidStatus(true);
       setResponseMessage(data.message);
+
+      // Petite pause pour laisser voir "Envoi en cours..."
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       setIsFormVisible(false);
 
       setFormData({
@@ -91,6 +107,7 @@ export default function ContactContainer() {
       console.error("Erreur:", error);
 
       setIsValidStatus(false);
+
       setResponseMessage(
         "Le formulaire n'a pas été envoyé.\n" +
           "Merci d'envoyer un mail à notre Président :\n\n" +
@@ -98,6 +115,7 @@ export default function ContactContainer() {
       );
     } finally {
       setIsSubmitted(false);
+      setIsSending(false);
     }
   };
 
@@ -112,6 +130,7 @@ export default function ContactContainer() {
       isSubmitted={isSubmitted}
       isValidStatus={isValidStatus}
       isFormVisible={isFormVisible}
+      isSending={isSending}
     />
   );
 }
