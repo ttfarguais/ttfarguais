@@ -186,6 +186,7 @@ const focusFirstEmptyField = (currentField) => {
                 placeholder="Âge"
                 value={formData.age || ""}
                 onChange={handleChange}
+                onFocus={() => focusFirstEmptyField("age")}
                 onBlur={handleBlur}
                 min="8"
                 max="90"
