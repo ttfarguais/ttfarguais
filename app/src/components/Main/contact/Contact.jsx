@@ -178,7 +178,7 @@ const focusFirstEmptyField = (currentField) => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                onFocus={() => focusFirstEmptyField("firstName")}
+//                onFocus={() => focusFirstEmptyField("firstName")}//
                 onBlur={handleBlur}
                 placeholder="Prénom"
                 required
