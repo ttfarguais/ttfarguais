@@ -384,7 +384,7 @@ const focusFirstEmptyField = (currentField) => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              onFocus={() => focusFirstEmptyField("message")}
+      //        onFocus={() => focusFirstEmptyField("message")}//
               onBlur={handleBlur}
               placeholder="Votre demande..."
               rows={3}
