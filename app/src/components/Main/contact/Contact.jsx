@@ -41,11 +41,48 @@ export default function Contact({
     }));
   };
 
-  const validateAge = () => {
-    const age = Number(formData.age);
+ const validateAge = () => {
+  const age = Number(formData.age);
 
-    return !isNaN(age) && age >= 8 && age <= 90;
-  };
+  return !isNaN(age) && age >= 8 && age <= 90;
+};
+
+const focusFirstEmptyField = (currentField) => {
+  const fields = [
+    "lastName",
+    "firstName",
+    "age",
+    "email",
+    "tel",
+    "municipality",
+    "typePlayer",
+    "source",
+    "message",
+  ];
+
+  const currentIndex = fields.indexOf(currentField);
+
+  for (let i = 0; i < currentIndex; i++) {
+    const field = fields[i];
+
+    if (!formData[field]?.toString().trim()) {
+      const element = document.querySelector(`[name="${field}"]`);
+
+      if (element) {
+        element.focus();
+
+        setTouched((prev) => ({
+          ...prev,
+          [field]: true,
+        }));
+      }
+
+      return false;
+    }
+  }
+
+  return true;
+};
 
   const inputClass = (value) =>
     `w-full rounded-xl border px-4 py-3 bg-white transition
@@ -119,6 +156,7 @@ export default function Contact({
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
+                onFocus={() => focusFirstEmptyField("firstName")}
                 onBlur={handleBlur}
                 placeholder="Prénom"
                 required
