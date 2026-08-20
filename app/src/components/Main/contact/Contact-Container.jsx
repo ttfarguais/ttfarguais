@@ -1,6 +1,6 @@
 "use client";
 
-omport { useState } from "react";
+import { useState } from "react";
 import {
   isValidEmail,
   isValidPhoneNumber,
