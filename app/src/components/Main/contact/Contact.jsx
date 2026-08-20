@@ -63,57 +63,77 @@ export default function Contact({
     }));
   };
 
-  const validateAge = () => {
-    const age = Number(formData.age);
+const validateAge = () => {
+  const age = Number(formData.age);
 
-    return !isNaN(age) && age >= 8 && age <= 90;
-  };
+  return !isNaN(age) && age >= 8 && age <= 90;
+};
 
-  const focusFirstEmptyField = (currentField) => {
-    const fields = [
-      "lastName",
-      "firstName",
-      "age",
-      "email",
-      "tel",
-      "municipality",
-      "typePlayer",
-      "source",
-      "message",
-    ];
+const focusFirstEmptyField = (currentField) => {
+  const fields = [
+    "lastName",
+    "firstName",
+    "age",
+    "email",
+    "tel",
+    "municipality",
+    "typePlayer",
+    "source",
+    "message",
+  ];
 
-    const currentIndex = fields.indexOf(currentField);
+  const currentIndex = fields.indexOf(currentField);
 
-    for (let i = 0; i < currentIndex; i++) {
-      const field = fields[i];
+  for (let i = 0; i < currentIndex; i++) {
+    const field = fields[i];
 
-      if (!formData[field]?.toString().trim()) {
-        const element = document.querySelector(`[name="${field}"]`);
+    let isValid = true;
 
-        if (element) {
-          element.focus();
-
-          setTouched((prev) => ({
-            ...prev,
-            [field]: true,
-          }));
-        }
-
-        return false;
-      }
+    if (!formData[field]?.toString().trim()) {
+      isValid = false;
     }
 
-    return true;
-  };
+    if (field === "age" && !validateAge()) {
+      isValid = false;
+    }
 
-  const inputClass = (value) =>
-    `w-full rounded-xl border px-4 py-3 bg-white transition
-    focus:outline-none focus:ring-4 focus:ring-green-100
-    ${
-      value
-        ? "border-green-500 ring-4 ring-green-100"
-        : "border-gray-300 focus:border-green-500"
-    }`;
+    if (field === "email" && !validateEmail()) {
+      isValid = false;
+    }
+
+    if (field === "tel" && !validatePhone()) {
+      isValid = false;
+    }
+
+    if (!isValid) {
+      const element = document.querySelector(
+        `[name="${field}"]`
+      );
+
+      if (element) {
+        element.focus();
+
+        setTouched((prev) => ({
+          ...prev,
+          [field]: true,
+        }));
+      }
+
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const inputClass = (value) =>
+  `w-full rounded-xl border px-4 py-3 bg-white transition
+  focus:outline-none focus:ring-4 focus:ring-green-100
+  ${
+    value
+      ? "border-green-500 ring-4 ring-green-100"
+      : "border-gray-300 focus:border-green-500"
+  }`;
 
   const isFormValid =
     formData.lastName &&
