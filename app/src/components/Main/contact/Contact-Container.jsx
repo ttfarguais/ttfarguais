@@ -43,29 +43,34 @@ export default function ContactContainer() {
     // Empêche un double clic
     if (isSending) return;
 
-    setIsSending(true);
-    setIsSubmitted(true);
-
     const emailValid = isValidEmail(formData.email);
     const phoneValid = isValidPhoneNumber(formData.tel);
 
+    // Sécurité supplémentaire
     if (!emailValid) {
+      setIsSubmitted(true);
       setIsValidStatus(false);
       setResponseMessage(
         "Veuillez entrer une adresse email valide"
       );
-      setIsSending(false);
       return;
     }
 
     if (!phoneValid) {
+      setIsSubmitted(true);
       setIsValidStatus(false);
       setResponseMessage(
         "Veuillez entrer un numéro de téléphone valide"
       );
-      setIsSending(false);
       return;
     }
+
+    // Tout est valide :
+    // on cache immédiatement les champs
+    // et le bouton passe en "Envoi en cours..."
+    setIsFormVisible(false);
+    setIsSending(true);
+    setIsSubmitted(true);
 
     try {
       const res = await fetch("/api/contact", {
@@ -86,11 +91,6 @@ export default function ContactContainer() {
 
       setIsValidStatus(true);
       setResponseMessage(data.message);
-
-      // Petite pause pour laisser voir "Envoi en cours..."
-      await new Promise((resolve) => setTimeout(resolve, 500));
-
-      setIsFormVisible(false);
 
       setFormData({
         lastName: "",
