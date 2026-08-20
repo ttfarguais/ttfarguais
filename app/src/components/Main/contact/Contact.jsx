@@ -317,57 +317,56 @@ export default function Contact({
               )}
             </div>
 
-            {/* Type de joueur */}
-            <div className="relative">
-              <FaMedal
-                className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-                  formData.typePlayer
-                    ? "text-green-500"
-                    : "text-gray-400"
-                }`}
-              />
+          {/* Type de joueur */}
+<div className="relative">
+  <FaMedal
+    className={`absolute left-4 top-1/2 -translate-y-1/2 ${
+      formData.typePlayer
+        ? "text-green-500"
+        : "text-gray-400"
+    }`}
+  />
 
-            <select
-  name="typePlayer"
-  value={formData.typePlayer}
-  onChange={handleChange}
-  onMouseDown={(e) => {
-    if (!focusFirstEmptyField("typePlayer")) {
-      e.preventDefault();
-    }
-  }}
-  onBlur={handleBlur}
-  required
-  className={`${inputClass(
-    formData.typePlayer
-  )} pl-12 appearance-none ${
-    formData.typePlayer
-      ? "text-gray-900"
-      : "text-gray-400"
-  }`}
->
-              >
-                <option value="" className="text-gray-400">
-                  Joueur... Débutant, Loisir ou Compétiteur ?
-                </option>
+  <select
+    name="typePlayer"
+    value={formData.typePlayer}
+    onChange={handleChange}
+    onMouseDown={(e) => {
+      if (!focusFirstEmptyField("typePlayer")) {
+        e.preventDefault();
+      }
+    }}
+    onBlur={handleBlur}
+    required
+    className={`${inputClass(
+      formData.typePlayer
+    )} pl-12 appearance-none ${
+      formData.typePlayer
+        ? "text-gray-900"
+        : "text-gray-400"
+    }`}
+  >
+    <option value="" className="text-gray-400">
+      Joueur... Débutant, Loisir ou Compétiteur ?
+    </option>
 
-                {playerType.map((type, index) => (
-                  <option
-                    key={index}
-                    value={type.title}
-                    className="text-gray-900"
-                  >
-                    {type.title}
-                  </option>
-                ))}
-              </select>
+    {playerType.map((type, index) => (
+      <option
+        key={index}
+        value={type.title}
+        className="text-gray-900"
+      >
+        {type.title}
+      </option>
+    ))}
+  </select>
 
-              {touched.typePlayer && !formData.typePlayer && (
-                <p className="text-red-600 text-sm mt-2">
-                  Niveau Camping ?
-                </p>
-              )}
-            </div>
+  {touched.typePlayer && !formData.typePlayer && (
+    <p className="text-red-600 text-sm mt-2">
+      Niveau Camping ?
+    </p>
+  )}
+</div>
 
             {/* Source */}
             <div className="relative">
