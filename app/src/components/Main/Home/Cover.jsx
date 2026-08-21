@@ -68,11 +68,11 @@ export default function Cover() {
                                     href={cacheBustingUrl(newsFile)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all animate-[newsBlink_3s_ease-in-out_infinite] ${
-                                        newsFile
-                                            ? "text-white border-white"
-                                            : "border-gray-400 text-gray-400"
-                                    }`}
+                                  className={`py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all animate-pulse ${
+    newsFile
+        ? "text-white border-white"
+        : "border-gray-400 text-gray-400"
+}`}
                                     aria-label="Consultez les actualités"
                                 >
                                     Consultez les actualités
