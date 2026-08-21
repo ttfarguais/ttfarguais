@@ -154,30 +154,27 @@ export default function Contact({
   useEffect(() => {
     if (!isFormVisible) return;
 
-    const handleDocumentMouseDown = (e) => {
-      const target = e.target;
+  const handleDocumentMouseDown = (e) => {
+  const target = e.target;
 
-      /*
-       * Les champs ET le bouton sont laissés tranquilles.
-       * Le bouton gère lui-même son comportement de focus.
-       */
-      const field = target.closest(
-        "input, textarea, select, button"
-      );
+  const button = target.closest("button");
 
-      if (field) {
-        return;
-      }
+  if (button) {
+    return;
+  }
 
-      /*
-       * Si on clique ailleurs :
-       * - titre
-       * - zone vide
-       * - extérieur du formulaire
-       *
-       * on empêche le navigateur de retirer le focus.
-       */
-      e.preventDefault();
+  const field = target.closest(
+    "input, textarea, select"
+  );
+
+  if (field) {
+    return;
+  }
+
+  e.preventDefault();
+
+  // ...
+};
 
       const fields = [
         "lastName",
@@ -644,43 +641,23 @@ export default function Contact({
 
 {/* Bouton */}
 {isFormVisible || isSending ? (
-  <button
-    type="button"
-    disabled={isSending || !isFormValid}
-    onMouseDown={(e) => {
-      if (isSending || !isFormValid) {
-        return;
-      }
-
-      const activeElement = document.activeElement;
-
-      e.preventDefault();
-
-      e.currentTarget.form?.requestSubmit();
-
-      if (
-        activeElement &&
-        typeof activeElement.focus === "function"
-      ) {
-        requestAnimationFrame(() => {
-          activeElement.focus();
-        });
-      }
-    }}
-    className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-      isSending
-        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-        : isFormValid
-        ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-    }`}
-  >
-    {isSending
-      ? "Envoi en cours..."
+<button
+  type="submit"
+  disabled={isSending || !isFormValid}
+  className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+    isSending
+      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
       : isFormValid
-      ? "Envoyer m🏓n message"
-      : "B🏓ssez un peu..."}
-  </button>
+      ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+  }`}
+>
+  {isSending
+    ? "Envoi en cours..."
+    : isFormValid
+    ? "Envoyer m🏓n message"
+    : "B🏓ssez un peu..."}
+</button>
 ) : null}
       </form>
 
