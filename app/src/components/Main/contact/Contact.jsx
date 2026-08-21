@@ -30,17 +30,6 @@ export default function Contact({
 }) {
   const [touched, setTouched] = useState({});
 
-  // Focus automatique sur le nom à l'ouverture du formulaire
-  useEffect(() => {
-    if (isFormVisible) {
-      const firstField = document.querySelector('[name="lastName"]');
-
-      if (firstField) {
-        firstField.focus();
-      }
-    }
-  }, [isFormVisible]);
-
   const validatePhone = () => {
     return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel?.trim() || "");
   };
@@ -137,35 +126,39 @@ export default function Contact({
     return true;
   };
 
-  const inputClass = (value) =>
-    `w-full rounded-xl border px-4 py-3 bg-white transition
-    focus:outline-none focus:ring-4 focus:ring-green-100
-    ${
-      value
-        ? "border-green-500 ring-4 ring-green-100"
-        : "border-gray-300 focus:border-green-500"
-    }`;
+  /*
+   * Focus automatique sur le Nom à l'ouverture
+   */
+  useEffect(() => {
+    if (!isFormVisible) return;
 
-  const isFormValid =
-    formData.lastName &&
-    formData.firstName &&
-    validateAge() &&
-    validateEmail() &&
-    validatePhone() &&
-    formData.municipality &&
-    formData.typePlayer &&
-    formData.source &&
-    formData.message;
+    const timer = setTimeout(() => {
+      const firstField = document.querySelector(
+        '[name="lastName"]'
+      );
 
-  return (
-   return (
-  <div
-    className="flex flex-col items-center m-auto py-4 px-4"
-    onMouseDown={(e) => {
+      if (firstField) {
+        firstField.focus();
+      }
+    }, 0);
+
+    return () => clearTimeout(timer);
+  }, [isFormVisible]);
+
+  /*
+   * Empêche de perdre le focus en cliquant ailleurs
+   * sur la page lorsque le formulaire est ouvert.
+   */
+  useEffect(() => {
+    if (!isFormVisible) return;
+
+    const handleDocumentMouseDown = (e) => {
       const target = e.target;
 
-      // Si on clique dans un champ, on laisse le comportement
-      // actuel de focusFirstEmptyField() fonctionner.
+      /*
+       * Si on clique dans un champ, on laisse le comportement
+       * normal fonctionner.
+       */
       const field = target.closest(
         "input, textarea, select"
       );
@@ -174,12 +167,21 @@ export default function Contact({
         return;
       }
 
-      // Si on clique ailleurs (titre, zone vide, bouton, etc.),
-      // on empêche le navigateur de retirer le focus.
+      /*
+       * Si on clique ailleurs :
+       * - bouton
+       * - titre
+       * - zone vide
+       * - extérieur du formulaire
+       *
+       * on empêche le navigateur de retirer le focus.
+       */
       e.preventDefault();
 
-      // On remet le focus sur le premier champ qui doit encore
-      // être rempli/validé.
+      /*
+       * On cherche le premier champ qui doit encore
+       * être rempli ou corrigé.
+       */
       const fields = [
         "lastName",
         "firstName",
@@ -228,8 +230,62 @@ export default function Contact({
           return;
         }
       }
-    }}
-  >
+
+      /*
+       * Si tout est valide, on conserve le focus actuel.
+       */
+      const activeElement = document.activeElement;
+
+      if (
+        activeElement &&
+        activeElement !== document.body &&
+        typeof activeElement.focus === "function"
+      ) {
+        activeElement.focus();
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleDocumentMouseDown,
+      true
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleDocumentMouseDown,
+        true
+      );
+    };
+  }, [
+    isFormVisible,
+    formData,
+    validateEmail,
+  ]);
+
+  const inputClass = (value) =>
+    `w-full rounded-xl border px-4 py-3 bg-white transition
+    focus:outline-none focus:ring-4 focus:ring-green-100
+    ${
+      value
+        ? "border-green-500 ring-4 ring-green-100"
+        : "border-gray-300 focus:border-green-500"
+    }`;
+
+  const isFormValid =
+    formData.lastName &&
+    formData.firstName &&
+    validateAge() &&
+    validateEmail() &&
+    validatePhone() &&
+    formData.municipality &&
+    formData.typePlayer &&
+    formData.source &&
+    formData.message;
+
+  return (
+    <div className="flex flex-col items-center m-auto py-4 px-4">
       {/* Titre */}
       <h1 className="text-xl text-center font-bold p-4 mb-4">
         Envie de nous rej🏓indre ?
@@ -274,11 +330,12 @@ export default function Contact({
                   )} pl-12`}
                 />
 
-                {touched.lastName && !formData.lastName && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Agent secret ?
-                  </p>
-                )}
+                {touched.lastName &&
+                  !formData.lastName && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Agent secret ?
+                    </p>
+                  )}
               </div>
 
               <div className="relative">
@@ -306,11 +363,12 @@ export default function Contact({
                   )} pl-12`}
                 />
 
-                {touched.firstName && !formData.firstName && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Sois pas timide...
-                  </p>
-                )}
+                {touched.firstName &&
+                  !formData.firstName && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Sois pas timide...
+                    </p>
+                  )}
               </div>
             </div>
 
@@ -331,7 +389,9 @@ export default function Contact({
                   placeholder="Âge"
                   value={formData.age || ""}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("age")}
+                  onFocus={() =>
+                    focusFirstEmptyField("age")
+                  }
                   onBlur={handleBlur}
                   min="8"
                   max="90"
@@ -467,7 +527,9 @@ export default function Contact({
                 onChange={handleChange}
                 onMouseDown={(e) => {
                   if (
-                    !focusFirstEmptyField("typePlayer")
+                    !focusFirstEmptyField(
+                      "typePlayer"
+                    )
                   ) {
                     e.preventDefault();
                   }
@@ -482,8 +544,12 @@ export default function Contact({
                     : "text-gray-400"
                 }`}
               >
-                <option value="" className="text-gray-400">
-                  Joueur... Débutant, Loisir ou Compétiteur ?
+                <option
+                  value=""
+                  className="text-gray-400"
+                >
+                  Joueur... Débutant, Loisir ou
+                  Compétiteur ?
                 </option>
 
                 {playerType.map((type, index) => (
@@ -531,11 +597,12 @@ export default function Contact({
                 )} pl-12`}
               />
 
-              {touched.source && !formData.source && (
-                <p className="text-red-600 text-sm mt-2">
-                  Le nom de votre indic ?
-                </p>
-              )}
+              {touched.source &&
+                !formData.source && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Le nom de votre indic ?
+                  </p>
+                )}
             </div>
 
             {/* Message */}
@@ -564,11 +631,12 @@ export default function Contact({
                 )} pl-12 resize-none`}
               />
 
-              {touched.message && !formData.message && (
-                <p className="text-red-600 text-sm mt-2">
-                  Lâchez vous !
-                </p>
-              )}
+              {touched.message &&
+                !formData.message && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Lâchez vous !
+                  </p>
+                )}
             </div>
           </div>
         )}
@@ -599,7 +667,9 @@ export default function Contact({
       {responseMessage && !isSending && (
         <p
           className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
-            isValidStatus ? "bg-solid" : "bg-red-600"
+            isValidStatus
+              ? "bg-solid"
+              : "bg-red-600"
           }`}
         >
           {responseMessage}
