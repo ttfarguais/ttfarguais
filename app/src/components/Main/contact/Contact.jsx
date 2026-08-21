@@ -157,40 +157,6 @@ export default function Contact({
       const target = e.target;
 
       /*
-       * CLIC SUR LE BOUTON
-       */
-      const button = target.closest("button");
-
-      if (button) {
-        /*
-         * Si le bouton est désactivé :
-         * on empêche le navigateur de retirer
-         * le focus du champ actuel.
-         */
-        if (button.disabled) {
-          e.preventDefault();
-          return;
-        }
-
-        /*
-         * Si le bouton est actif :
-         * on empêche le navigateur de lui donner le focus.
-         */
-        e.preventDefault();
-
-        /*
-         * On déclenche le submit du formulaire.
-         */
-        const form = button.closest("form");
-
-        if (form) {
-          form.requestSubmit();
-        }
-
-        return;
-      }
-
-      /*
        * CLIC DANS UN CHAMP :
        * on laisse le comportement normal.
        */
@@ -675,7 +641,18 @@ export default function Contact({
         {isFormVisible || isSending ? (
           <button
             type="submit"
-            disabled={isSending || !isFormValid}
+            aria-disabled={isSending || !isFormValid}
+            onMouseDown={(e) => {
+              if (isSending || !isFormValid) {
+                e.preventDefault();
+              }
+            }}
+            onClick={(e) => {
+              if (isSending || !isFormValid) {
+                e.preventDefault();
+                e.stopPropagation();
+              }
+            }}
             className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
               isSending
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
