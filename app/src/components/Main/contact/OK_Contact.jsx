@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import playerType from "../../../data/playerType";
 
@@ -63,77 +63,215 @@ export default function Contact({
     }));
   };
 
-const validateAge = () => {
-  const age = Number(formData.age);
+  const validateAge = () => {
+    const age = Number(formData.age);
 
-  return !isNaN(age) && age >= 8 && age <= 90;
-};
+    return !isNaN(age) && age >= 8 && age <= 90;
+  };
 
-const focusFirstEmptyField = (currentField) => {
-  const fields = [
-    "lastName",
-    "firstName",
-    "age",
-    "email",
-    "tel",
-    "municipality",
-    "typePlayer",
-    "source",
-    "message",
-  ];
+  const focusFirstEmptyField = (currentField) => {
+    const fields = [
+      "lastName",
+      "firstName",
+      "age",
+      "email",
+      "tel",
+      "municipality",
+      "typePlayer",
+      "source",
+      "message",
+    ];
 
-  const currentIndex = fields.indexOf(currentField);
+    const currentIndex = fields.indexOf(currentField);
 
-  for (let i = 0; i < currentIndex; i++) {
-    const field = fields[i];
+    for (let i = 0; i < currentIndex; i++) {
+      const field = fields[i];
 
-    let isValid = true;
+      let isValid = true;
 
-    if (!formData[field]?.toString().trim()) {
-      isValid = false;
-    }
-
-    if (field === "age" && !validateAge()) {
-      isValid = false;
-    }
-
-    if (field === "email" && !validateEmail()) {
-      isValid = false;
-    }
-
-    if (field === "tel" && !validatePhone()) {
-      isValid = false;
-    }
-
-    if (!isValid) {
-      const element = document.querySelector(
-        `[name="${field}"]`
-      );
-
-      if (element) {
-        element.focus();
-
-        setTouched((prev) => ({
-          ...prev,
-          [field]: true,
-        }));
+      if (!formData[field]?.toString().trim()) {
+        isValid = false;
       }
 
-      return false;
+      if (field === "age" && !validateAge()) {
+        isValid = false;
+      }
+
+      if (field === "email" && !validateEmail()) {
+        isValid = false;
+      }
+
+      if (field === "tel" && !validatePhone()) {
+        isValid = false;
+      }
+
+      if (!isValid) {
+        const element = document.querySelector(
+          `[name="${field}"]`
+        );
+
+        if (element) {
+          element.focus();
+
+          setTouched((prev) => ({
+            ...prev,
+            [field]: true,
+          }));
+        }
+
+        return false;
+      }
     }
-  }
 
-  return true;
-};
+    return true;
+  };
 
-const inputClass = (value) =>
-  `w-full rounded-xl border px-4 py-3 bg-white transition
-  focus:outline-none focus:ring-4 focus:ring-green-100
-  ${
-    value
-      ? "border-green-500 ring-4 ring-green-100"
-      : "border-gray-300 focus:border-green-500"
-  }`;
+  /*
+   * Focus automatique sur le Nom à l'ouverture
+   */
+  useEffect(() => {
+    if (!isFormVisible) return;
+
+    const timer = setTimeout(() => {
+      const firstField = document.querySelector(
+        '[name="lastName"]'
+      );
+
+      if (firstField) {
+        firstField.focus();
+      }
+    }, 0);
+
+    return () => clearTimeout(timer);
+  }, [isFormVisible]);
+
+  /*
+   * Empêche de perdre le focus en cliquant ailleurs
+   * sur la page lorsque le formulaire est ouvert.
+   */
+  useEffect(() => {
+    if (!isFormVisible) return;
+
+    const handleDocumentMouseDown = (e) => {
+      const target = e.target;
+
+      /*
+       * Si on clique dans un champ, on laisse le comportement
+       * normal fonctionner.
+       */
+      const field = target.closest(
+        "input, textarea, select"
+      );
+
+      if (field) {
+        return;
+      }
+
+      /*
+       * Si on clique ailleurs :
+       * - bouton
+       * - titre
+       * - zone vide
+       * - extérieur du formulaire
+       *
+       * on empêche le navigateur de retirer le focus.
+       */
+      e.preventDefault();
+
+      /*
+       * On cherche le premier champ qui doit encore
+       * être rempli ou corrigé.
+       */
+      const fields = [
+        "lastName",
+        "firstName",
+        "age",
+        "email",
+        "tel",
+        "municipality",
+        "typePlayer",
+        "source",
+        "message",
+      ];
+
+      for (const fieldName of fields) {
+        let isValid = true;
+
+        if (!formData[fieldName]?.toString().trim()) {
+          isValid = false;
+        }
+
+        if (fieldName === "age" && !validateAge()) {
+          isValid = false;
+        }
+
+        if (fieldName === "email" && !validateEmail()) {
+          isValid = false;
+        }
+
+        if (fieldName === "tel" && !validatePhone()) {
+          isValid = false;
+        }
+
+        if (!isValid) {
+          const element = document.querySelector(
+            `[name="${fieldName}"]`
+          );
+
+          if (element) {
+            element.focus();
+
+            setTouched((prev) => ({
+              ...prev,
+              [fieldName]: true,
+            }));
+          }
+
+          return;
+        }
+      }
+
+      /*
+       * Si tout est valide, on conserve le focus actuel.
+       */
+      const activeElement = document.activeElement;
+
+      if (
+        activeElement &&
+        activeElement !== document.body &&
+        typeof activeElement.focus === "function"
+      ) {
+        activeElement.focus();
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleDocumentMouseDown,
+      true
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleDocumentMouseDown,
+        true
+      );
+    };
+  }, [
+    isFormVisible,
+    formData,
+    validateEmail,
+  ]);
+
+  const inputClass = (value) =>
+    `w-full rounded-xl border px-4 py-3 bg-white transition
+    focus:outline-none focus:ring-4 focus:ring-green-100
+    ${
+      value
+        ? "border-green-500 ring-4 ring-green-100"
+        : "border-gray-300 focus:border-green-500"
+    }`;
 
   const isFormValid =
     formData.lastName &&
@@ -154,14 +292,14 @@ const inputClass = (value) =>
       </h1>
 
       {/* Formulaire */}
-     <form
-  onSubmit={handleSubmit}
-  className={
-    isFormVisible
-      ? "w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
-      : "w-full flex justify-center"
-  }
->
+      <form
+        onSubmit={handleSubmit}
+        className={
+          isFormVisible
+            ? "w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
+            : "w-full flex justify-center"
+        }
+      >
         {/* Champs */}
         {isFormVisible && (
           <div className="flex flex-col gap-5">
@@ -170,7 +308,9 @@ const inputClass = (value) =>
               <div className="relative">
                 <FaUser
                   className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-                    formData.lastName ? "text-green-500" : "text-gray-400"
+                    formData.lastName
+                      ? "text-green-500"
+                      : "text-gray-400"
                   }`}
                 />
 
@@ -179,18 +319,23 @@ const inputClass = (value) =>
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("lastName")}
+                  onFocus={() =>
+                    focusFirstEmptyField("lastName")
+                  }
                   onBlur={handleBlur}
                   placeholder="Votre Nom"
                   required
-                  className={`${inputClass(formData.lastName)} pl-12`}
+                  className={`${inputClass(
+                    formData.lastName
+                  )} pl-12`}
                 />
 
-                {touched.lastName && !formData.lastName && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Agent secret ?
-                  </p>
-                )}
+                {touched.lastName &&
+                  !formData.lastName && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Agent secret ?
+                    </p>
+                  )}
               </div>
 
               <div className="relative">
@@ -207,18 +352,23 @@ const inputClass = (value) =>
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("firstName")}
+                  onFocus={() =>
+                    focusFirstEmptyField("firstName")
+                  }
                   onBlur={handleBlur}
                   placeholder="Prénom"
                   required
-                  className={`${inputClass(formData.firstName)} pl-12`}
+                  className={`${inputClass(
+                    formData.firstName
+                  )} pl-12`}
                 />
 
-                {touched.firstName && !formData.firstName && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Sois pas timide...
-                  </p>
-                )}
+                {touched.firstName &&
+                  !formData.firstName && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Sois pas timide...
+                    </p>
+                  )}
               </div>
             </div>
 
@@ -227,7 +377,9 @@ const inputClass = (value) =>
               <div className="relative">
                 <FaBirthdayCake
                   className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-                    formData.age ? "text-green-500" : "text-gray-400"
+                    formData.age
+                      ? "text-green-500"
+                      : "text-gray-400"
                   }`}
                 />
 
@@ -237,20 +389,25 @@ const inputClass = (value) =>
                   placeholder="Âge"
                   value={formData.age || ""}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("age")}
+                  onFocus={() =>
+                    focusFirstEmptyField("age")
+                  }
                   onBlur={handleBlur}
                   min="8"
                   max="90"
                   step="1"
                   required
-                  className={`${inputClass(formData.age)} pl-12`}
+                  className={`${inputClass(
+                    formData.age
+                  )} pl-12`}
                 />
 
-                {(touched.age || isSubmitted) && !validateAge() && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Entre 8 et 90 ans c&apos;est mieux !
-                  </p>
-                )}
+                {(touched.age || isSubmitted) &&
+                  !validateAge() && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Entre 8 et 90 ans c&apos;est mieux !
+                    </p>
+                  )}
               </div>
 
               <div className="relative">
@@ -267,24 +424,31 @@ const inputClass = (value) =>
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("email")}
+                  onFocus={() =>
+                    focusFirstEmptyField("email")
+                  }
                   onBlur={handleBlur}
                   placeholder="E-m@il"
                   required
-                  className={`${inputClass(formData.email)} pl-12`}
+                  className={`${inputClass(
+                    formData.email
+                  )} pl-12`}
                 />
 
-                {(touched.email || isSubmitted) && !validateEmail() && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Pas celui du voisin !
-                  </p>
-                )}
+                {(touched.email || isSubmitted) &&
+                  !validateEmail() && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Pas celui du voisin !
+                    </p>
+                  )}
               </div>
 
               <div className="relative">
                 <LuSmartphone
                   className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-                    formData.tel ? "text-green-500" : "text-gray-400"
+                    formData.tel
+                      ? "text-green-500"
+                      : "text-gray-400"
                   }`}
                 />
 
@@ -293,18 +457,23 @@ const inputClass = (value) =>
                   name="tel"
                   value={formData.tel}
                   onChange={handleChange}
-                  onFocus={() => focusFirstEmptyField("tel")}
+                  onFocus={() =>
+                    focusFirstEmptyField("tel")
+                  }
                   onBlur={handleBlur}
                   placeholder="Téléphone"
                   required
-                  className={`${inputClass(formData.tel)} pl-12`}
+                  className={`${inputClass(
+                    formData.tel
+                  )} pl-12`}
                 />
 
-                {(touched.tel || isSubmitted) && !validatePhone() && (
-                  <p className="text-red-600 text-sm mt-2">
-                    Celui là il va pas sonner !
-                  </p>
-                )}
+                {(touched.tel || isSubmitted) &&
+                  !validatePhone() && (
+                    <p className="text-red-600 text-sm mt-2">
+                      Celui là il va pas sonner !
+                    </p>
+                  )}
               </div>
             </div>
 
@@ -323,70 +492,84 @@ const inputClass = (value) =>
                 name="municipality"
                 value={formData.municipality}
                 onChange={handleChange}
-                onFocus={() => focusFirstEmptyField("municipality")}
+                onFocus={() =>
+                  focusFirstEmptyField("municipality")
+                }
                 onBlur={handleBlur}
                 placeholder="Commune"
                 required
-                className={`${inputClass(formData.municipality)} pl-12`}
+                className={`${inputClass(
+                  formData.municipality
+                )} pl-12`}
               />
 
-              {touched.municipality && !formData.municipality && (
-                <p className="text-red-600 text-sm mt-2">
-                  C&apos;est en France ?
-                </p>
-              )}
+              {touched.municipality &&
+                !formData.municipality && (
+                  <p className="text-red-600 text-sm mt-2">
+                    C&apos;est en France ?
+                  </p>
+                )}
             </div>
 
-          {/* Type de joueur */}
-<div className="relative">
-  <FaMedal
-    className={`absolute left-4 top-1/2 -translate-y-1/2 ${
-      formData.typePlayer
-        ? "text-green-500"
-        : "text-gray-400"
-    }`}
-  />
+            {/* Type de joueur */}
+            <div className="relative">
+              <FaMedal
+                className={`absolute left-4 top-1/2 -translate-y-1/2 ${
+                  formData.typePlayer
+                    ? "text-green-500"
+                    : "text-gray-400"
+                }`}
+              />
 
-  <select
-    name="typePlayer"
-    value={formData.typePlayer}
-    onChange={handleChange}
-    onMouseDown={(e) => {
-      if (!focusFirstEmptyField("typePlayer")) {
-        e.preventDefault();
-      }
-    }}
-    onBlur={handleBlur}
-    required
-    className={`${inputClass(
-      formData.typePlayer
-    )} pl-12 appearance-none ${
-      formData.typePlayer
-        ? "text-gray-900"
-        : "text-gray-400"
-    }`}
-  >
-    <option value="" className="text-gray-400">
-      Joueur... Débutant, Loisir ou Compétiteur ?
-    </option>
+              <select
+                name="typePlayer"
+                value={formData.typePlayer}
+                onChange={handleChange}
+                onMouseDown={(e) => {
+                  if (
+                    !focusFirstEmptyField(
+                      "typePlayer"
+                    )
+                  ) {
+                    e.preventDefault();
+                  }
+                }}
+                onBlur={handleBlur}
+                required
+                className={`${inputClass(
+                  formData.typePlayer
+                )} pl-12 appearance-none ${
+                  formData.typePlayer
+                    ? "text-gray-900"
+                    : "text-gray-400"
+                }`}
+              >
+                <option
+                  value=""
+                  className="text-gray-400"
+                >
+                  Joueur... Débutant, Loisir ou
+                  Compétiteur ?
+                </option>
 
-    {playerType.map((type, index) => (
-      <option
-        key={index}
-        value={type.title}
-        className="text-gray-900"
-      >
-        {type.title}
-      </option>
-    ))}
-  </select>
+                {playerType.map((type, index) => (
+                  <option
+                    key={index}
+                    value={type.title}
+                    className="text-gray-900"
+                  >
+                    {type.title}
+                  </option>
+                ))}
+              </select>
 
-  {touched.typePlayer && !formData.typePlayer && (
-    <p className="text-red-600 text-sm mt-2">
-      Niveau Camping ?
-    </p>
-  )}
-</div>
+              {touched.typePlayer &&
+                !formData.typePlayer && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Niveau Camping ?
+                  </p>
+                )}
+            </div>
 
             {/* Source */}
             <div className="relative">
@@ -403,18 +586,23 @@ const inputClass = (value) =>
                 name="source"
                 value={formData.source}
                 onChange={handleChange}
-                onFocus={() => focusFirstEmptyField("source")}
+                onFocus={() =>
+                  focusFirstEmptyField("source")
+                }
                 onBlur={handleBlur}
                 placeholder="Comment avez-vous connu le Club ?"
                 required
-                className={`${inputClass(formData.source)} pl-12`}
+                className={`${inputClass(
+                  formData.source
+                )} pl-12`}
               />
 
-              {touched.source && !formData.source && (
-                <p className="text-red-600 text-sm mt-2">
-                  Le nom de votre indic ?
-                </p>
-              )}
+              {touched.source &&
+                !formData.source && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Le nom de votre indic ?
+                  </p>
+                )}
             </div>
 
             {/* Message */}
@@ -431,7 +619,9 @@ const inputClass = (value) =>
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                onFocus={() => focusFirstEmptyField("message")}
+                onFocus={() =>
+                  focusFirstEmptyField("message")
+                }
                 onBlur={handleBlur}
                 placeholder="Votre demande..."
                 rows={3}
@@ -441,11 +631,12 @@ const inputClass = (value) =>
                 )} pl-12 resize-none`}
               />
 
-              {touched.message && !formData.message && (
-                <p className="text-red-600 text-sm mt-2">
-                  Lâchez vous !
-                </p>
-              )}
+              {touched.message &&
+                !formData.message && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Lâchez vous !
+                  </p>
+                )}
             </div>
           </div>
         )}
@@ -476,7 +667,9 @@ const inputClass = (value) =>
       {responseMessage && !isSending && (
         <p
           className={`whitespace-pre-line rounded-xl p-4 text-white text-center ${
-            isValidStatus ? "bg-solid" : "bg-red-600"
+            isValidStatus
+              ? "bg-solid"
+              : "bg-red-600"
           }`}
         >
           {responseMessage}
