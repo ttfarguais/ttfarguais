@@ -137,41 +137,21 @@ useEffect(() => {
   const handleDocumentMouseDown = (e) => {
     const target = e.target;
 
-    /*
-     * Si on clique dans un champ :
-     * on laisse le navigateur gérer normalement le focus.
-     */
+    // Clic dans un champ : comportement normal
     if (target.closest("input, textarea, select")) {
       return;
     }
 
-    /*
-     * Si on clique sur le bouton :
-     * on ne fait RIEN.
-     *
-     * Le bouton reste donc responsable de son propre
-     * comportement (disabled / submit).
-     */
+    // Clic sur le bouton : ne pas intervenir
     if (target.closest("button")) {
       return;
     }
 
-    /*
-     * Pour tout autre clic dans la page :
-     * on empêche la perte du focus.
-     */
+    // Clic ailleurs : empêcher la perte du focus
     e.preventDefault();
 
-    /*
-     * On conserve précisément l'élément qui avait
-     * le focus avant le clic.
-     */
     const activeElement = document.activeElement;
 
-    /*
-     * Si un champ était actif, on lui rend immédiatement
-     * le focus.
-     */
     if (
       activeElement &&
       activeElement !== document.body &&
