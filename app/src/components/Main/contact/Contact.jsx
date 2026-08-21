@@ -154,28 +154,49 @@ export default function Contact({
   useEffect(() => {
     if (!isFormVisible) return;
 
-  const handleDocumentMouseDown = (e) => {
-  const target = e.target;
+    const handleDocumentMouseDown = (e) => {
+      const target = e.target;
 
-  const button = target.closest("button");
+      /*
+       * Si on clique sur un bouton, on laisse totalement
+       * le navigateur gérer le bouton.
+       *
+       * Cela est particulièrement important pour le bouton
+       * disabled : le gestionnaire global ne doit pas
+       * intercepter son mousedown.
+       */
+      const button = target.closest("button");
 
-  if (button) {
-    return;
-  }
+      if (button) {
+        return;
+      }
 
-  const field = target.closest(
-    "input, textarea, select"
-  );
+      /*
+       * Si on clique dans un champ, on laisse le comportement
+       * normal fonctionner.
+       */
+      const field = target.closest(
+        "input, textarea, select"
+      );
 
-  if (field) {
-    return;
-  }
+      if (field) {
+        return;
+      }
 
-  e.preventDefault();
+      /*
+       * Si on clique ailleurs :
+       * - titre
+       * - zone vide
+       * - extérieur du formulaire
+       *
+       * on empêche le navigateur de retirer le focus.
+       */
+      e.preventDefault();
 
-  // ...
-};
-
+      /*
+       * On cherche le premier champ qui doit encore
+       * être rempli ou corrigé.
+       */
       const fields = [
         "lastName",
         "firstName",
@@ -188,10 +209,6 @@ export default function Contact({
         "message",
       ];
 
-      /*
-       * On cherche le premier champ qui doit encore
-       * être rempli ou corrigé.
-       */
       for (const fieldName of fields) {
         let isValid = true;
 
@@ -639,26 +656,26 @@ export default function Contact({
           </div>
         )}
 
-{/* Bouton */}
-{isFormVisible || isSending ? (
-<button
-  type="submit"
-  disabled={isSending || !isFormValid}
-  className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-    isSending
-      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-      : isFormValid
-      ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-  }`}
->
-  {isSending
-    ? "Envoi en cours..."
-    : isFormValid
-    ? "Envoyer m🏓n message"
-    : "B🏓ssez un peu..."}
-</button>
-) : null}
+        {/* Bouton */}
+        {isFormVisible || isSending ? (
+          <button
+            type="submit"
+            disabled={isSending || !isFormValid}
+            className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+              isSending
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : isFormValid
+                ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+          >
+            {isSending
+              ? "Envoi en cours..."
+              : isFormValid
+              ? "Envoyer m🏓n message"
+              : "B🏓ssez un peu..."}
+          </button>
+        ) : null}
       </form>
 
       {/* Message de validation */}
