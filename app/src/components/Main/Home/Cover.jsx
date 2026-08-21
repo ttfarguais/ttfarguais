@@ -1,10 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cacheBustingUrl from "../../../utils/cacheBustingUrl";
 
 export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
+    const [buttonDistance, setButtonDistance] = useState(0);
+
+    const buttonContainerRef = useRef(null);
+    const buttonRef = useRef(null);
 
     const fetchNews = async () => {
         try {
@@ -39,6 +43,46 @@ export default function Cover() {
         fetchNews();
     }, []);
 
+    useEffect(() => {
+        const updateButtonDistance = () => {
+            if (
+                !buttonContainerRef.current ||
+                !buttonRef.current
+            ) {
+                return;
+            }
+
+            const containerWidth =
+                buttonContainerRef.current.offsetWidth;
+
+            const buttonWidth =
+                buttonRef.current.offsetWidth;
+
+            const distance = Math.max(
+                0,
+                containerWidth - buttonWidth
+            );
+
+            setButtonDistance(distance);
+        };
+
+        updateButtonDistance();
+
+        const resizeObserver = new ResizeObserver(
+            updateButtonDistance
+        );
+
+        if (buttonContainerRef.current) {
+            resizeObserver.observe(
+                buttonContainerRef.current
+            );
+        }
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, [newsFile]);
+
     return (
         <section>
             <section className="mb-16">
@@ -60,13 +104,30 @@ export default function Cover() {
                         </p>
 
                         {newsFile && (
-                            <div className="news-button-container">
+                            <div
+                                ref={buttonContainerRef}
+                                className="w-full overflow-hidden mt-6"
+                            >
                                 <a
-                                    href={cacheBustingUrl(newsFile)}
+                                    ref={buttonRef}
+                                    href={cacheBustingUrl(
+                                        newsFile
+                                    )}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="news-button py-2 px-4 border rounded-xl text-sm text-white border-white hover:bg-white hover:text-black transition-all"
                                     aria-label="Consultez les actualités"
+                                    className="inline-block py-2 px-4 border rounded-xl text-sm text-white border-white hover:bg-white hover:text-black transition-all"
+                                    style={{
+                                        animation:
+                                            buttonDistance > 0
+                                                ? `newsButtonMove ${Math.max(
+                                                      2,
+                                                      buttonDistance /
+                                                          50
+                                                  )}s ease-in-out infinite alternate`
+                                                : "none",
+                                        "--button-distance": `${buttonDistance}px`,
+                                    }}
                                 >
                                     Consultez les actualités
                                 </a>
