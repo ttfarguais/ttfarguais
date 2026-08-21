@@ -148,8 +148,7 @@ export default function Contact({
   }, [isFormVisible]);
 
   /*
-   * Empêche de perdre le focus en cliquant ailleurs
-   * sur la page lorsque le formulaire est ouvert.
+   * Gestion du focus lorsqu'on clique ailleurs
    */
   useEffect(() => {
     if (!isFormVisible) return;
@@ -158,22 +157,40 @@ export default function Contact({
       const target = e.target;
 
       /*
-       * Si on clique sur un bouton, on laisse totalement
-       * le navigateur gérer le bouton.
-       *
-       * Cela est particulièrement important pour le bouton
-       * disabled : le gestionnaire global ne doit pas
-       * intercepter son mousedown.
+       * CLIC SUR LE BOUTON
        */
       const button = target.closest("button");
 
       if (button) {
+        /*
+         * Si le bouton est désactivé :
+         * on ne fait absolument rien.
+         */
+        if (button.disabled) {
+          return;
+        }
+
+        /*
+         * Si le bouton est actif :
+         * on empêche le navigateur de lui donner le focus.
+         */
+        e.preventDefault();
+
+        /*
+         * On déclenche le submit du formulaire.
+         */
+        const form = button.closest("form");
+
+        if (form) {
+          form.requestSubmit();
+        }
+
         return;
       }
 
       /*
-       * Si on clique dans un champ, on laisse le comportement
-       * normal fonctionner.
+       * CLIC DANS UN CHAMP :
+       * on laisse le comportement normal.
        */
       const field = target.closest(
         "input, textarea, select"
@@ -184,19 +201,11 @@ export default function Contact({
       }
 
       /*
-       * Si on clique ailleurs :
-       * - titre
-       * - zone vide
-       * - extérieur du formulaire
-       *
-       * on empêche le navigateur de retirer le focus.
+       * CLIC AILLEURS :
+       * on empêche la perte du focus.
        */
       e.preventDefault();
 
-      /*
-       * On cherche le premier champ qui doit encore
-       * être rempli ou corrigé.
-       */
       const fields = [
         "lastName",
         "firstName",
@@ -209,6 +218,10 @@ export default function Contact({
         "message",
       ];
 
+      /*
+       * Recherche du premier champ qui doit encore
+       * être rempli ou corrigé.
+       */
       for (const fieldName of fields) {
         let isValid = true;
 
