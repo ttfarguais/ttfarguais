@@ -31,7 +31,9 @@ export default function Contact({
   const [touched, setTouched] = useState({});
 
   const validatePhone = () => {
-    return /^(\+33|0)[1-9](\d{8})$/.test(formData.tel?.trim() || "");
+    return /^(\+33|0)[1-9](\d{8})$/.test(
+      formData.tel?.trim() || ""
+    );
   };
 
   const handleBlur = (e) => {
@@ -156,8 +158,8 @@ export default function Contact({
       const target = e.target;
 
       /*
-       * Si on clique dans un champ, on laisse le comportement
-       * normal fonctionner.
+       * Les champs ET le bouton sont laissés tranquilles.
+       * Le bouton gère lui-même son comportement de focus.
        */
       const field = target.closest(
         "input, textarea, select, button"
@@ -169,7 +171,6 @@ export default function Contact({
 
       /*
        * Si on clique ailleurs :
-       * - bouton
        * - titre
        * - zone vide
        * - extérieur du formulaire
@@ -178,10 +179,6 @@ export default function Contact({
        */
       e.preventDefault();
 
-      /*
-       * On cherche le premier champ qui doit encore
-       * être rempli ou corrigé.
-       */
       const fields = [
         "lastName",
         "firstName",
@@ -194,6 +191,10 @@ export default function Contact({
         "message",
       ];
 
+      /*
+       * On cherche le premier champ qui doit encore
+       * être rempli ou corrigé.
+       */
       for (const fieldName of fields) {
         let isValid = true;
 
@@ -642,25 +643,30 @@ export default function Contact({
         )}
 
         {/* Bouton */}
-{isFormVisible || isSending ? (
- <button
-  type="submit"
-  disabled={isSending || !isFormValid}
-  className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-    isSending
-      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-      : isFormValid
-      ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-      : "bg-gray-300 text-gray-500 cursor-not-allowed"
-  }`}
->
-  {isSending
-    ? "Envoi en cours..."
-    : isFormValid
-    ? "Envoyer m🏓n message"
-    : "B🏓ssez un peu..."}
-</button>
-) : null}
+        {isFormVisible || isSending ? (
+          <button
+            type="submit"
+            disabled={isSending || !isFormValid}
+            onMouseDown={(e) => {
+              if (!isSending && isFormValid) {
+                e.preventDefault();
+              }
+            }}
+            className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+              isSending
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : isFormValid
+                ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+          >
+            {isSending
+              ? "Envoi en cours..."
+              : isFormValid
+              ? "Envoyer m🏓n message"
+              : "B🏓ssez un peu..."}
+          </button>
+        ) : null}
       </form>
 
       {/* Message de validation */}
