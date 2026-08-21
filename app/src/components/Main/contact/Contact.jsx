@@ -131,8 +131,70 @@ export default function Contact({
   /*
    * Focus automatique sur le Nom à l'ouverture
    */
-  useEffect(() => {
-    if (!isFormVisible) return;
+useEffect(() => {
+  if (!isFormVisible) return;
+
+  const handleDocumentMouseDown = (e) => {
+    const target = e.target;
+
+    /*
+     * Si on clique dans un champ :
+     * on laisse le navigateur gérer normalement le focus.
+     */
+    if (target.closest("input, textarea, select")) {
+      return;
+    }
+
+    /*
+     * Si on clique sur le bouton :
+     * on ne fait RIEN.
+     *
+     * Le bouton reste donc responsable de son propre
+     * comportement (disabled / submit).
+     */
+    if (target.closest("button")) {
+      return;
+    }
+
+    /*
+     * Pour tout autre clic dans la page :
+     * on empêche la perte du focus.
+     */
+    e.preventDefault();
+
+    /*
+     * On conserve précisément l'élément qui avait
+     * le focus avant le clic.
+     */
+    const activeElement = document.activeElement;
+
+    /*
+     * Si un champ était actif, on lui rend immédiatement
+     * le focus.
+     */
+    if (
+      activeElement &&
+      activeElement !== document.body &&
+      typeof activeElement.focus === "function"
+    ) {
+      activeElement.focus();
+    }
+  };
+
+  document.addEventListener(
+    "mousedown",
+    handleDocumentMouseDown,
+    true
+  );
+
+  return () => {
+    document.removeEventListener(
+      "mousedown",
+      handleDocumentMouseDown,
+      true
+    );
+  };
+}, [isFormVisible]);
 
     const timer = setTimeout(() => {
       const firstField = document.querySelector(
@@ -669,16 +731,11 @@ export default function Contact({
           </div>
         )}
 
-   {/* Bouton */}
+{/* Bouton */}
 {isFormVisible || isSending ? (
   <button
     type="submit"
     disabled={isSending || !isFormValid}
-    onMouseDown={(e) => {
-      if (!e.currentTarget.disabled) {
-        e.preventDefault();
-      }
-    }}
     className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
       isSending
         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
