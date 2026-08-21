@@ -60,21 +60,24 @@ export default function Cover() {
                         </p>
 
                         {newsFile && (
-                    <div className="mt-6 flex flex-col items-center">
-    <span className="mb-2 rounded-full bg-solid px-3 py-1 text-xs font-bold text-white shadow-md">
-        NOUVEAU
-    </span>
-
+                  <button
+    className="mt-6 news-button-move"
+    disabled={!newsFile}
+>
     <a
-        href={newsFile ? cacheBustingUrl(newsFile) : undefined}
+        href={cacheBustingUrl(newsFile)}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Consultez les actualités"
-        className={`inline-block py-2 px-5 border rounded-xl text-sm font-semibold transition-all duration-300 ${
+        className={`py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all ${
             newsFile
-                ? "text-white border-white bg-solid hover:bg-white hover:text-black hover:scale-105 hover:shadow-lg"
-                : "border-gray-400 text-gray-400 cursor-not-allowed pointer-events-none"
+                ? "text-white border-white"
+                : "border-gray-400 text-gray-400"
         }`}
+        aria-label="Consultez les actualités"
+    >
+        Consultez les actualités
+    </a>
+</button>
     >
         Consultez les actualités
     </a>
