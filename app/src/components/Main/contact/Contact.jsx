@@ -164,7 +164,23 @@ const inputClass = (value) =>
 >
         {/* Champs */}
         {isFormVisible && (
-          <div className="flex flex-col gap-5">
+  <div
+    className="flex flex-col gap-5"
+    onMouseDown={(e) => {
+      const target = e.target;
+
+      if (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.tagName === "SELECT" ||
+        target.tagName === "BUTTON"
+      ) {
+        return;
+      }
+
+      focusFirstEmptyField("message");
+    }}
+  >
             {/* Nom / Prénom */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
               <div className="relative">
