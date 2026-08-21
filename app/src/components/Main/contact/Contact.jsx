@@ -131,50 +131,8 @@ export default function Contact({
   /*
    * Focus automatique sur le Nom à l'ouverture
    */
-useEffect(() => {
-  if (!isFormVisible) return;
-
-  const handleDocumentMouseDown = (e) => {
-    const target = e.target;
-
-    // Clic dans un champ : comportement normal
-    if (target.closest("input, textarea, select")) {
-      return;
-    }
-
-    // Clic sur le bouton : ne pas intervenir
-    if (target.closest("button")) {
-      return;
-    }
-
-    // Clic ailleurs : empêcher la perte du focus
-    e.preventDefault();
-
-    const activeElement = document.activeElement;
-
-    if (
-      activeElement &&
-      activeElement !== document.body &&
-      typeof activeElement.focus === "function"
-    ) {
-      activeElement.focus();
-    }
-  };
-
-  document.addEventListener(
-    "mousedown",
-    handleDocumentMouseDown,
-    true
-  );
-
-  return () => {
-    document.removeEventListener(
-      "mousedown",
-      handleDocumentMouseDown,
-      true
-    );
-  };
-}, [isFormVisible]);
+  useEffect(() => {
+    if (!isFormVisible) return;
 
     const timer = setTimeout(() => {
       const firstField = document.querySelector(
@@ -206,9 +164,11 @@ useEffect(() => {
       if (button) {
         /*
          * Si le bouton est désactivé :
-         * on ne fait absolument rien.
+         * on empêche le navigateur de retirer
+         * le focus du champ actuel.
          */
         if (button.disabled) {
+          e.preventDefault();
           return;
         }
 
@@ -711,26 +671,26 @@ useEffect(() => {
           </div>
         )}
 
-{/* Bouton */}
-{isFormVisible || isSending ? (
-  <button
-    type="submit"
-    disabled={isSending || !isFormValid}
-    className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-      isSending
-        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-        : isFormValid
-        ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-    }`}
-  >
-    {isSending
-      ? "Envoi en cours..."
-      : isFormValid
-      ? "Envoyer m🏓n message"
-      : "B🏓ssez un peu..."}
-  </button>
-) : null}
+        {/* Bouton */}
+        {isFormVisible || isSending ? (
+          <button
+            type="submit"
+            disabled={isSending || !isFormValid}
+            className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+              isSending
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : isFormValid
+                ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+          >
+            {isSending
+              ? "Envoi en cours..."
+              : isFormValid
+              ? "Envoyer m🏓n message"
+              : "B🏓ssez un peu..."}
+          </button>
+        ) : null}
       </form>
 
       {/* Message de validation */}
