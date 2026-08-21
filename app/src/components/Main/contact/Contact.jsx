@@ -642,30 +642,46 @@ export default function Contact({
           </div>
         )}
 
-        {/* Bouton */}
-        {isFormVisible || isSending ? (
-          <button
-            type="submit"
-            disabled={isSending || !isFormValid}
-            onMouseDown={(e) => {
-              if (!isSending && isFormValid) {
-                e.preventDefault();
-              }
-            }}
-            className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-              isSending
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : isFormValid
-                ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
-          >
-            {isSending
-              ? "Envoi en cours..."
-              : isFormValid
-              ? "Envoyer m🏓n message"
-              : "B🏓ssez un peu..."}
-          </button>
+{/* Bouton */}
+{isFormVisible || isSending ? (
+  <button
+    type="button"
+    disabled={isSending || !isFormValid}
+    onMouseDown={(e) => {
+      if (isSending || !isFormValid) {
+        return;
+      }
+
+      const activeElement = document.activeElement;
+
+      e.preventDefault();
+
+      e.currentTarget.form?.requestSubmit();
+
+      if (
+        activeElement &&
+        typeof activeElement.focus === "function"
+      ) {
+        requestAnimationFrame(() => {
+          activeElement.focus();
+        });
+      }
+    }}
+    className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+      isSending
+        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+        : isFormValid
+        ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+    }`}
+  >
+    {isSending
+      ? "Envoi en cours..."
+      : isFormValid
+      ? "Envoyer m🏓n message"
+      : "B🏓ssez un peu..."}
+  </button>
+) : null}
         ) : null}
       </form>
 
