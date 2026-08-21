@@ -682,7 +682,6 @@ export default function Contact({
       : "B🏓ssez un peu..."}
   </button>
 ) : null}
-        ) : null}
       </form>
 
       {/* Message de validation */}
