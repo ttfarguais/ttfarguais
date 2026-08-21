@@ -158,7 +158,78 @@ export default function Contact({
     formData.message;
 
   return (
-    <div className="flex flex-col items-center m-auto py-4 px-4">
+   return (
+  <div
+    className="flex flex-col items-center m-auto py-4 px-4"
+    onMouseDown={(e) => {
+      const target = e.target;
+
+      // Si on clique dans un champ, on laisse le comportement
+      // actuel de focusFirstEmptyField() fonctionner.
+      const field = target.closest(
+        "input, textarea, select"
+      );
+
+      if (field) {
+        return;
+      }
+
+      // Si on clique ailleurs (titre, zone vide, bouton, etc.),
+      // on empêche le navigateur de retirer le focus.
+      e.preventDefault();
+
+      // On remet le focus sur le premier champ qui doit encore
+      // être rempli/validé.
+      const fields = [
+        "lastName",
+        "firstName",
+        "age",
+        "email",
+        "tel",
+        "municipality",
+        "typePlayer",
+        "source",
+        "message",
+      ];
+
+      for (const fieldName of fields) {
+        let isValid = true;
+
+        if (!formData[fieldName]?.toString().trim()) {
+          isValid = false;
+        }
+
+        if (fieldName === "age" && !validateAge()) {
+          isValid = false;
+        }
+
+        if (fieldName === "email" && !validateEmail()) {
+          isValid = false;
+        }
+
+        if (fieldName === "tel" && !validatePhone()) {
+          isValid = false;
+        }
+
+        if (!isValid) {
+          const element = document.querySelector(
+            `[name="${fieldName}"]`
+          );
+
+          if (element) {
+            element.focus();
+
+            setTouched((prev) => ({
+              ...prev,
+              [fieldName]: true,
+            }));
+          }
+
+          return;
+        }
+      }
+    }}
+  >
       {/* Titre */}
       <h1 className="text-xl text-center font-bold p-4 mb-4">
         Envie de nous rej🏓indre ?
@@ -167,73 +238,6 @@ export default function Contact({
       {/* Formulaire */}
       <form
         onSubmit={handleSubmit}
-        onMouseDown={(e) => {
-          const target = e.target;
-
-          // Si on clique directement sur un champ ou le bouton,
-          // on laisse le comportement actuel fonctionner.
-          const isInteractive = target.closest(
-            "input, textarea, select, button"
-          );
-
-          if (isInteractive) {
-            return;
-          }
-
-          // Empêche le clic dans une zone vide de faire perdre
-          // le focus au champ actuellement actif.
-          e.preventDefault();
-
-          const fields = [
-            "lastName",
-            "firstName",
-            "age",
-            "email",
-            "tel",
-            "municipality",
-            "typePlayer",
-            "source",
-            "message",
-          ];
-
-          // On cherche le premier champ à remplir.
-          for (const field of fields) {
-            let isValid = true;
-
-            if (!formData[field]?.toString().trim()) {
-              isValid = false;
-            }
-
-            if (field === "age" && !validateAge()) {
-              isValid = false;
-            }
-
-            if (field === "email" && !validateEmail()) {
-              isValid = false;
-            }
-
-            if (field === "tel" && !validatePhone()) {
-              isValid = false;
-            }
-
-            if (!isValid) {
-              const element = document.querySelector(
-                `[name="${field}"]`
-              );
-
-              if (element) {
-                element.focus();
-
-                setTouched((prev) => ({
-                  ...prev,
-                  [field]: true,
-                }));
-              }
-
-              return;
-            }
-          }
-        }}
         className={
           isFormVisible
             ? "w-full max-w-3xl bg-white rounded-3xl shadow-xl p-5 md:p-8"
