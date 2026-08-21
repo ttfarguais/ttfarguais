@@ -106,4 +106,3 @@ export default function Cover() {
     box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
   }
 }
-}
