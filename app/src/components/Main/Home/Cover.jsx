@@ -5,10 +5,15 @@ import cacheBustingUrl from "../../../utils/cacheBustingUrl";
 
 export default function Cover() {
     const [newsFile, setNewsFile] = useState(null);
-    const [buttonDistance, setButtonDistance] = useState(0);
+    const [buttonX, setButtonX] = useState(0);
 
-    const buttonContainerRef = useRef(null);
+    const containerRef = useRef(null);
     const buttonRef = useRef(null);
+
+    const animationRef = useRef(null);
+    const directionRef = useRef(1);
+    const positionRef = useRef(0);
+    const lastTimeRef = useRef(null);
 
     const fetchNews = async () => {
         try {
@@ -44,42 +49,66 @@ export default function Cover() {
     }, []);
 
     useEffect(() => {
-        const updateButtonDistance = () => {
-            if (
-                !buttonContainerRef.current ||
-                !buttonRef.current
-            ) {
-                return;
+        if (!newsFile) return;
+
+        const animate = (time) => {
+            if (!lastTimeRef.current) {
+                lastTimeRef.current = time;
             }
 
-            const containerWidth =
-                buttonContainerRef.current.offsetWidth;
+            const delta = time - lastTimeRef.current;
+            lastTimeRef.current = time;
 
-            const buttonWidth =
-                buttonRef.current.offsetWidth;
+            if (
+                containerRef.current &&
+                buttonRef.current
+            ) {
+                const containerWidth =
+                    containerRef.current.offsetWidth;
 
-            const distance = Math.max(
-                0,
-                containerWidth - buttonWidth
-            );
+                const buttonWidth =
+                    buttonRef.current.offsetWidth;
 
-            setButtonDistance(distance);
+                const maxX = Math.max(
+                    0,
+                    containerWidth - buttonWidth
+                );
+
+                const speed = 0.08;
+
+                positionRef.current +=
+                    directionRef.current *
+                    speed *
+                    delta;
+
+                if (positionRef.current >= maxX) {
+                    positionRef.current = maxX;
+                    directionRef.current = -1;
+                }
+
+                if (positionRef.current <= 0) {
+                    positionRef.current = 0;
+                    directionRef.current = 1;
+                }
+
+                setButtonX(positionRef.current);
+            }
+
+            animationRef.current =
+                requestAnimationFrame(animate);
         };
 
-        updateButtonDistance();
-
-        const resizeObserver = new ResizeObserver(
-            updateButtonDistance
-        );
-
-        if (buttonContainerRef.current) {
-            resizeObserver.observe(
-                buttonContainerRef.current
-            );
-        }
+        animationRef.current =
+            requestAnimationFrame(animate);
 
         return () => {
-            resizeObserver.disconnect();
+            if (animationRef.current) {
+                cancelAnimationFrame(
+                    animationRef.current
+                );
+            }
+
+            lastTimeRef.current = null;
         };
     }, [newsFile]);
 
@@ -94,9 +123,13 @@ export default function Cover() {
                         className="absolute z-0 inset-0 w-full bg-black opacity-60 h-56 sm:h-68 md:h-72 lg:h-96"
                     ></div>
 
-                    <div className="relative text-contrast-1 xl:w-4/6">
+                    <div
+                        ref={containerRef}
+                        className="relative text-contrast-1 xl:w-4/6 w-full"
+                    >
                         <h1 className="text-3xl md:text-5xl uppercase mb-2 md:mb-4 font-bold flex flex-col">
-                            Tennis de table <span>Farguais</span>
+                            Tennis de table{" "}
+                            <span>Farguais</span>
                         </h1>
 
                         <p className="mb-2 md:mb-4 md:text-2xl">
@@ -104,10 +137,7 @@ export default function Cover() {
                         </p>
 
                         {newsFile && (
-                            <div
-                                ref={buttonContainerRef}
-                                className="w-full overflow-hidden mt-6"
-                            >
+                            <div className="w-full mt-6 overflow-hidden">
                                 <a
                                     ref={buttonRef}
                                     href={cacheBustingUrl(
@@ -118,15 +148,7 @@ export default function Cover() {
                                     aria-label="Consultez les actualités"
                                     className="inline-block py-2 px-4 border rounded-xl text-sm text-white border-white hover:bg-white hover:text-black transition-all"
                                     style={{
-                                        animation:
-                                            buttonDistance > 0
-                                                ? `newsButtonMove ${Math.max(
-                                                      2,
-                                                      buttonDistance /
-                                                          50
-                                                  )}s ease-in-out infinite alternate`
-                                                : "none",
-                                        "--button-distance": `${buttonDistance}px`,
+                                        transform: `translateX(${buttonX}px)`,
                                     }}
                                 >
                                     Consultez les actualités
