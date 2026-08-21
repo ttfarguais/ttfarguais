@@ -163,22 +163,20 @@ const inputClass = (value) =>
   }
 >
         {/* Champs */}
-        {isFormVisible && (
+       {isFormVisible && (
   <div
     className="flex flex-col gap-5"
     onMouseDown={(e) => {
       const target = e.target;
 
-      if (
+      const isField =
         target.tagName === "INPUT" ||
         target.tagName === "TEXTAREA" ||
-        target.tagName === "SELECT" ||
-        target.tagName === "BUTTON"
-      ) {
-        return;
-      }
+        target.tagName === "SELECT";
 
-      focusFirstEmptyField("message");
+      if (!isField) {
+        e.preventDefault();
+      }
     }}
   >
             {/* Nom / Prénom */}
