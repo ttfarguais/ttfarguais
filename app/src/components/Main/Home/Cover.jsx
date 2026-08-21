@@ -83,5 +83,27 @@ export default function Cover() {
                 </div>
             </section>
         </section>
-    );
+    );@keyframes newsBlink {
+  0%,
+  30% {
+    opacity: 1;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  }
+
+  45% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  75% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  90%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  }
+}
 }
