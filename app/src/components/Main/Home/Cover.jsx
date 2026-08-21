@@ -51,7 +51,7 @@ export default function Cover() {
                                 <a
                                     href={cacheBustingUrl(newsFile)}
                                     target="_blank"
-                                    className={`py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all animate-pulse ${
+                                    className={`py-2 px-4 border rounded-xl hover:bg-white hover:text-black text-sm transition-all animate-[pulse_1.2s_ease-in-out_infinite] shadow-lg ${
     newsFile
         ? "text-white border-white"
         : "border-gray-400 text-gray-400"
