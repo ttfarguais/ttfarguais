@@ -160,7 +160,7 @@ export default function Contact({
        * normal fonctionner.
        */
       const field = target.closest(
-        "input, textarea, select"
+        "input, textarea, select, button"
       );
 
       if (field) {
@@ -643,24 +643,23 @@ export default function Contact({
 
         {/* Bouton */}
 {isFormVisible || isSending ? (
-  <button
-    type="submit"
-    disabled={isSending || !isFormValid}
-    onMouseDown={(e) => e.preventDefault()}
-    className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
-      isSending
-        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-        : isFormValid
-        ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
-        : "bg-gray-300 text-gray-500 cursor-not-allowed"
-    }`}
-  >
-    {isSending
-      ? "Envoi en cours..."
+ <button
+  type="submit"
+  disabled={isSending || !isFormValid}
+  className={`mx-auto block rounded-full px-10 py-3 text-lg font-semibold shadow-lg transition-all duration-300 ${
+    isSending
+      ? "bg-gray-300 text-gray-500 cursor-not-allowed"
       : isFormValid
-      ? "Envoyer m🏓n message"
-      : "B🏓ssez un peu..."}
-  </button>
+      ? "bg-solid text-white hover:-translate-y-1 hover:shadow-xl"
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"
+  }`}
+>
+  {isSending
+    ? "Envoi en cours..."
+    : isFormValid
+    ? "Envoyer m🏓n message"
+    : "B🏓ssez un peu..."}
+</button>
 ) : null}
       </form>
 
