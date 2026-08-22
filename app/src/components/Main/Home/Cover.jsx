@@ -146,7 +146,7 @@ export default function Cover() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Consultez les actualités"
-                                    className="inline-block py-2 px-4 border rounded-xl text-sm text-white border-white hover:bg-white hover:text-black transition-all"
+                                   className="inline-block py-2 px-4 border rounded-xl text-sm text-white border-white transition-all sm:hover:bg-white sm:hover:text-black"
                                     style={{
                                         transform: `translateX(${buttonX}px)`,
                                     }}
