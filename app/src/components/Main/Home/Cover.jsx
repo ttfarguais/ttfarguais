@@ -133,7 +133,7 @@ export default function Cover() {
                         </h1>
 
                         <p className="mb-2 md:mb-4 md:text-2xl">
-                            Plaisir, Passion, Champions !
+                            Plaisir, Passion, Champions !!!
                         </p>
 
                         {newsFile && (
