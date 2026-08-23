@@ -34,7 +34,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
             Informations utiles :
           </h2>
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
-            <p className="mr-4">{inscriptionFile.name} :</p>
+            <p className="mr-4">{inscriptionFile.name} </p>
 
  <a
   href={inscriptionFile.pdf}
