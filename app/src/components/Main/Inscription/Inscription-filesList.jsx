@@ -33,14 +33,14 @@ export default function InscriptionFilesList({ document }) {
         )}
 
         <a
-          href={document.pdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
-          aria-label={`Ouvrir ${document.name}`}
-        >
-          Ouvrir
-        </a>
+  href={document.pdf}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-red-600 text-white py-1 px-4 border border-red-600 rounded-xl hover:bg-red-700 text-sm transition-all animate-pulse"
+  aria-label={`Ouvrir ${document.name} - obligatoire`}
+>
+  Ouvrir — Obligatoire
+</a>
       </div>
     </div>
   );
