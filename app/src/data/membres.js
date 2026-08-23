@@ -3,10 +3,10 @@ const clubMembres = [
   {firstname:"AIMÉE", lastname:"Mélanie", job:"Trésorière", img:"/membres/melanie.jpg", alt: "Photo"},
   {firstname:"AIMÉE", lastname:"Stéphane", job:"Secrétaire", img:"/membres/Stephane.jpg", alt: "Photo de Stéphane Aimee"},
   {firstname:"TOURNAUX", lastname:"Maxime", job:"Entaîneur Comité de Gironde", img:"/membres/MAX.jpg", alt: "Photo de Maxime Tournaux"},
-  {firstname:"MARÉCHAL", lastname:"Bernadette", job:"Membre du Comité directeur", img:"/membres/Bernadette.jpg", alt: "Photo"},
+  {firstname:"MARÉCHAL", lastname:"Bernadette", job:"Membre du Comité Directeur", img:"/membres/Bernadette.jpg", alt: "Photo"},
   {firstname:"GARNIER", lastname:"Anne Sophie", job:"Réseaux Sociaux", img:"/membres/ANNSO.jpg", alt: "Photo de Anne Sophie"},
   {firstname:"DUARTE", lastname:"José", job:"Site Internet", img:"/membres/Jose.jpg", alt: "Photo de José Duarte"},
-  {firstname:"THEVENET", lastname:"Jérémy", job:"Membre du Comité directeur", img:"/membres/Jeremy.jpg", alt: "PHOTO"},
+  {firstname:"THEVENET", lastname:"Jérémy", job:"Membre du Comité Directeur", img:"/membres/Jeremy.jpg", alt: "PHOTO"},
   {firstname:"PIKACHU", lastname:"", job:"Mutation en cours", img:"/membres/PIKA.jpg", alt: "PHOTO"},
   {firstname:"CARAPUCE", lastname:"", job:"En formation Combat !", img:"/membres/CARAPUCE.jpg", alt: "PHOTO"},
 
