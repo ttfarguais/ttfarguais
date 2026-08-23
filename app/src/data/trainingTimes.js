@@ -1,6 +1,6 @@
 const trainingTimes = [
   {
-    name: "Adultes",
+    name: "Adulte",
     schedules: [
       { day: "Lundi :", time: "18h00 - 20h30 -> Jeux Libre", who: "Loisirs et Compétiteurs" },
       { day: "Mercredi :", time: "19h00 - 21h00 -> Jeux Libre" },
