@@ -9,7 +9,7 @@ const trainingTimes = [
     ]
 },
   {
-    name: "Spécifique Jeunes",
+    name: "Jeunes",
     schedules: [
 
       { coach: "Maxime TOURNAUX", who: "Mercredi : Entraînement dirigé" },
