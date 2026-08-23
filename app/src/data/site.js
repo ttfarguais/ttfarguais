@@ -13,6 +13,9 @@ const siteLinks = [
   { title: "Entraînements", url: "/entrainements" },
   { title: "Inscription", url: "/inscription" },
   { title: "Compétition", url: "/competition" },  
+
+    /*    subLinks: [{ title: "Compétiteurs", url: "/competiteurs" }], */
+
   { title: "Contact", url: "/contact" },
 ];
 
