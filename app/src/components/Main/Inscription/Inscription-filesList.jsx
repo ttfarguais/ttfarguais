@@ -14,7 +14,7 @@ export default function InscriptionFilesList({ document }) {
           </>
         ) : (
           <>
-            {document.name} :
+            {document.name}
           </>
         )}
       </p>
