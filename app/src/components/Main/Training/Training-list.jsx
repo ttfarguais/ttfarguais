@@ -9,7 +9,7 @@ export default function TrainingList({category}) {
   }`}
 >
 {/*  Créneaux {category.name} 
-</h2> */}
+ */}</h2>
 
       
 
