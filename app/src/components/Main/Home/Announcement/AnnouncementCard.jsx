@@ -9,11 +9,10 @@ export default function AnnouncementCard({
   url,
   isLast,
 }) {
-  const borderClass = isLast ? "" : "border-b";
 
   return (
     <article
-      className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 pb-8 ${borderClass} md:w-4/6`}
+      className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 pb-8 md:w-4/6`}
     >
       <div className="w-full sm:w-2/4 flex justify-center mb-4 sm:mb-0">
         <Image
