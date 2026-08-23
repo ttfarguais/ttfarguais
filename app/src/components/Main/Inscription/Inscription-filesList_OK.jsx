@@ -2,7 +2,21 @@ export default function InscriptionFilesList({ document }) {
   return (
     <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
       <p className="mr-4">
-        {document.name} :
+        {document.name === "Questionnaire de Santé pour Majeur" ? (
+          <>
+            Questionnaire de Santé <br className="sm:hidden" />
+            pour Majeur
+          </>
+        ) : document.name === "Questionnaire de Santé pour Mineur" ? (
+          <>
+            Questionnaire de Santé <br className="sm:hidden" />
+            pour Mineur
+          </>
+        ) : (
+          <>
+            {document.name}
+          </>
+        )}
       </p>
 
       <div className="flex gap-2">
