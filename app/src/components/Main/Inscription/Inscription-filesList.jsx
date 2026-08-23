@@ -5,12 +5,12 @@ export default function InscriptionFilesList({ document }) {
         {document.name === "Questionnaire de Santé pour Majeur" ? (
           <>
             Questionnaire de Santé <br className="sm:hidden" />
-            pour Majeur :
+            pour Majeur
           </>
         ) : document.name === "Questionnaire de Santé pour Mineur" ? (
           <>
             Questionnaire de Santé <br className="sm:hidden" />
-            pour Mineur :
+            pour Mineur
           </>
         ) : (
           <>
