@@ -13,11 +13,11 @@ export default function AnnouncementCard({
 
   return (
     <article
-      className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 ${borderClass} md:w-4/6`}
+      className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 pb-8 ${borderClass} md:w-4/6`}
     >
-      <div className="w-full sm:w-2/4 h-48 flex items-center justify-center mb-4">
+      <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0">
         <Image
-          className="max-w-full max-h-full rounded-xl object-contain"
+          className="rounded-xl object-contain"
           src={src}
           alt={alt}
           width={500}
