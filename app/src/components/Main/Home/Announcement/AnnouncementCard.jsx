@@ -15,9 +15,9 @@ export default function AnnouncementCard({
     <article
       className={`w-full max-w-full flex flex-col sm:flex-row items-center p-4 ${borderClass} md:w-4/6`}
     >
-      <div className="block w-full h-48 sm:h-auto sm:w-2/4 relative mb-4 sm:mb-0">
+      <div className="w-full sm:w-2/4 h-48 flex items-center justify-center mb-4 sm:mb-0">
         <Image
-          className="w-full h-auto rounded-xl object-contain"
+          className="w-full h-full rounded-xl object-contain"
           src={src}
           alt={alt}
           width={500}
@@ -26,7 +26,9 @@ export default function AnnouncementCard({
       </div>
 
       <div className="w-full sm:w-2/4 sm:p-4">
-        <h3 className="font-bold uppercase mb-4">{title}</h3>
+        <h3 className="font-bold uppercase mb-4">
+          {title}
+        </h3>
 
         <p className="text-sm mb-4 text-justify">
           {description}
