@@ -4,7 +4,7 @@ const times = [
 ]
 
 const documents = [
-   { name: "Parcours de Prévention Santé (PPS)", pdf: "https://malicence.fftt.com",
+   { name: "Parcours de Prévention Santé PPS pour Majeur", pdf: "https://malicence.fftt.com",
       tutorial: "https://www.youtube.com/watch?v=JuIKNZKWKG8"},  
   { name: "Questionnaire de Santé pour Majeur", pdf: "/pdf/autoquestionnaire-medical-majeur.pdf" },
   { name: "Questionnaire de Santé pour Mineur", pdf: "/pdf/autoquestionnaire-medical-mineur.pdf" },
