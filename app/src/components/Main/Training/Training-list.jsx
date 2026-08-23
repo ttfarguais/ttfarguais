@@ -3,13 +3,13 @@ export default function TrainingList({category}) {
     <li className="mb-6">
     
       
-      <h2
+  /*    <h2
   className={`mb-8 text-xl font-extrabold text-solid ${
     category.name === "Jeunes" ? "mt-14" : "mt-4"
   }`}
 >
-/*  Créneaux {category.name} */
-</h2>
+  Créneaux {category.name} 
+</h2> */
 
       
 
