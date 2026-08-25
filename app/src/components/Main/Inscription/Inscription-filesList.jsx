@@ -1,4 +1,7 @@
 export default function InscriptionFilesList({ document }) {
+  const isPPS =
+    document.name === "Parcours de Prévention Santé [PPS] pour Majeur";
+
   return (
     <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
       <p className="mr-4">
@@ -36,10 +39,14 @@ export default function InscriptionFilesList({ document }) {
           href={document.pdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
+          className={
+            isPPS
+              ? "bg-red-600 text-white py-1 px-4 border border-red-600 rounded-xl text-sm animate-pulse"
+              : "bg-solid text-contrast-1 py-1 px-4 border border-solid rounded-xl hover:bg-white hover:text-solid text-sm transition-all"
+          }
           aria-label={`Ouvrir ${document.name}`}
         >
-          Ouvrir
+          {isPPS ? "Ouvrir — Obligatoire" : "Ouvrir"}
         </a>
       </div>
     </div>
