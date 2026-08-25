@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { FacebookLink, InstagramLink } from "../UI/Icons";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 
 export default function FooterSocialLinks() {
   return (
     <div>
-      <ul className="flex gap-3 justify-center items-center">
+      <ul className="flex gap-3 justify-center">
         <li className="w-8 h-8">
           <FacebookLink />
         </li>
@@ -16,7 +16,7 @@ export default function FooterSocialLinks() {
 
         <li className="w-8 h-8">
           <Link href="/contact" aria-label="Nous contacter">
-            <MdOutlineEmail className="w-8 h-8" />
+          <MdAlternateEmail className="w-8 h-8" />
           </Link>
         </li>
       </ul>
