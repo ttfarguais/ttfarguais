@@ -8,7 +8,7 @@ export default function TrainingList({category}) {
     category.name === "Jeunes" ? "mt-14" : "mt-4"
   }`}
 >
-* {category.name} 
+{category.name} 
 </h2>
 
       
