@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FacebookLink, InstagramLink } from "../UI/Icons";
-import { HiOutlineEnvelope } from "react-icons/hi2";
+import { MdOutlineEmail } from "react-icons/md";
 
 export default function FooterSocialLinks() {
   return (
@@ -16,7 +16,7 @@ export default function FooterSocialLinks() {
 
         <li className="w-8 h-8">
           <Link href="/contact" aria-label="Nous contacter">
-            <HiOutlineEnvelope className="w-8 h-8 text-white hover:text-green-400 transition-colors duration-200" />
+            <MdOutlineEmail className="w-8 h-8" />
           </Link>
         </li>
       </ul>
