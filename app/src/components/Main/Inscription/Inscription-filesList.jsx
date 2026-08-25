@@ -46,7 +46,7 @@ export default function InscriptionFilesList({ document }) {
           }
           aria-label={`Ouvrir ${document.name}`}
         >
-          {isPPS ? "Ouvrir — Obligatoire" : "Ouvrir"}
+          {isPPS ? "Obligatoire" : "Ouvrir"}
         </a>
       </div>
     </div>
