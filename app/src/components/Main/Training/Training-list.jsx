@@ -8,8 +8,7 @@ export default function TrainingList({category}) {
     category.name === "Jeunes" ? "mt-14" : "mt-4"
   }`}
 >
-// Horaires //
-        {category.name} 
+// Horaires //{category.name} 
 </h2>
 
       
