@@ -31,7 +31,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
 
         <section className="flex flex-col mb-8 ">
           <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-            Informations utiles :
+            Informations utiles
           </h2>
           <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
             <p className="mr-4">{inscriptionFile.name} </p>
@@ -53,7 +53,7 @@ export default function Inscription({ times, documents, inscriptionFile }) {
         <section className="flex flex-col gap-4 mb-8 ">
           <div>
             <h2 className="mb-8 text-xl font-extrabold text-solid mt-4">
-              Documents à fournir : </h2>
+              Documents à fournir </h2>
       
             <ul className="flex flex-col gap-6">
               {documents.map((document, index) => (
