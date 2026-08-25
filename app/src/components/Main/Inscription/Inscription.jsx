@@ -1,5 +1,6 @@
 export default function InscriptionFilesList({ document }) {
-  const isPPS = document.name === "const isPPS = document.name === "Parcours de Prévention Santé [PPS] pour Majeur";";
+  const isPPS =
+    document.name === "Parcours de Prévention Santé [PPS] pour Majeur";
 
   return (
     <div className="flex items-center justify-between hover:bg-contrast-2 p-2 rounded-xl">
