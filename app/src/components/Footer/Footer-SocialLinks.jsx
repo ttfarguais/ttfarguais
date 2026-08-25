@@ -5,7 +5,7 @@ import { MdAlternateEmail } from "react-icons/md";
 export default function FooterSocialLinks() {
   return (
     <div>
-      <ul className="flex gap-8 justify-center">
+      <ul className="flex gap-3 justify-center">
         <li className="w-8 h-8">
           <FacebookLink />
         </li>
