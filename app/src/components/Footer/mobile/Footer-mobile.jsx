@@ -1,20 +1,25 @@
-import FooterAdress from "../Footer-Adress";
-import FooterMoreInformation from "../Footer-MoreInformation";
-import FooterSocialLinks from "../Footer-SocialLinks";
-import FooterSponsorMobile from "./Footer-SponsorMobile";
+import Link from "next/link";
+import { FacebookLink, InstagramLink } from "../UI/Icons";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
-export default function FooterMobile() {
+export default function FooterSocialLinks() {
   return (
-    <div className="flex lg:hidden flex-col items-center gap-6 justify-center bg-solid text-contrast-1 px-8 pb-6 pt-10">
-      <div className="flex justify-center items-center gap-6 w-full">
-        <FooterAdress />
+    <div>
+      <ul className="flex gap-3 justify-center items-center">
+        <li className="w-8 h-8">
+          <FacebookLink />
+        </li>
 
-        <FooterSocialLinks />
-      </div>
+        <li className="w-8 h-8">
+          <InstagramLink />
+        </li>
 
-      <FooterSponsorMobile />
-
-      <FooterMoreInformation />
+        <li className="w-8 h-8">
+          <Link href="/contact" aria-label="Nous contacter">
+            <HiOutlineEnvelope className="w-8 h-8 text-white hover:text-green-400 transition-colors duration-200" />
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }
