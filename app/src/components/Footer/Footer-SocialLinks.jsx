@@ -16,7 +16,7 @@ export default function FooterSocialLinks() {
 
         <li className="w-8 h-8">
           <Link href="/contact" aria-label="Nous contacter">
-            <MdAlternateEmail className="w-8 h-8" />
+          <MdAlternateEmail className="w-8 h-8" />
           </Link>
         </li>
       </ul>
