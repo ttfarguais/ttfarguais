@@ -1,25 +1,20 @@
-import Link from "next/link";
-import { FacebookLink, InstagramLink } from "../../UI/Icons";
-import { MdAlternateEmail } from "react-icons/md";
+import FooterAdress from "../Footer-Adress";
+import FooterMoreInformation from "../Footer-MoreInformation";
+import FooterSocialLinks from "../Footer-SocialLinks";
+import FooterSponsorMobile from "./Footer-SponsorMobile";
 
-export default function FooterSocialLinks() {
+export default function FooterMobile() {
   return (
-    <div>
-      <ul className="flex gap-3 justify-center">
-        <li className="w-8 h-8">
-          <FacebookLink />
-        </li>
+    <div className="flex lg:hidden flex-col items-center gap-6 justify-center bg-solid text-contrast-1 px-8 pb-6 pt-10">
+      <div className="flex justify-center items-center gap-6 w-full">
+        <FooterAdress />
 
-        <li className="w-8 h-8">
-          <InstagramLink />
-        </li>
+        <FooterSocialLinks />
+      </div>
 
-        <li className="w-8 h-8">
-          <Link href="/contact" aria-label="Nous contacter">
-          <MdAlternateEmail className="w-8 h-8" />
-          </Link>
-        </li>
-      </ul>
+      <FooterSponsorMobile />
+
+      <FooterMoreInformation />
     </div>
   );
 }
