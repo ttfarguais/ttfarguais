@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FacebookLink, InstagramLink } from "../../UI/Icons";
+import { FacebookLink, InstagramLink } from "../UI/Icons";
 import { MdAlternateEmail } from "react-icons/md";
 
 export default function FooterSocialLinks() {
