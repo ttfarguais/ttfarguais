@@ -9,8 +9,8 @@ const clubMembres = [
   {firstname:"JACQUELIN", lastname:"Simon", job:"Gestion des Salles", img:"/membres/SIMON.jpg"},
   {firstname:"DUARTE", lastname:"José", job:"Site Internet", img:"/membres/Jose.jpg"},
   {firstname:"THEVENET", lastname:"Jérémy", job:"Membre du Comité Directeur", img:"/membres/Jeremy.jpg"},
-  {firstname:"PIKACHU", lastname:"", job:"Mutation en cours", img:"/membres/PIKA.jpg"},
-  {firstname:"CARAPUCE", lastname:"", job:"En formation Combat !", img:"/membres/CARAPUCE.jpg"},
+  {firstname:"PIKACHU", lastname:"", job:"Mutation en cours...", img:"/membres/PIKA.jpg"},
+  {firstname:"CARAPUCE", lastname:"", job:"En formation Attaque !", img:"/membres/CARAPUCE.jpg"},
 
 ]
 
