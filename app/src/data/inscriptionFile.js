@@ -1,5 +1,5 @@
 const times = [
-  {day: "Lundi", time: "18h00 - 20h30"},
+  {day: "Lundi", time: "18h00 - 21h00"},
   {day: "Mercredi", time: "14h00 - 21h00"},
 ]
 
