@@ -151,7 +151,7 @@ export default function Cover() {
                                         transform: `translateX(${buttonX}px)`,
                                     }}
                                 >
-                                    Des actualités ?
+                                    Les actualités !
                                 </a>
                             </div>
                         )}
