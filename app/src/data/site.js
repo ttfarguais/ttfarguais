@@ -12,10 +12,12 @@ const siteLinks = [
   
   { title: "Entraînements", url: "/entrainements" },
   { title: "Inscriptions", url: "/inscription" },
-  { title: "Compétition", url: "/competition" },  
-
+  { title: "Compétition", url: "/competition" ,  
+    subLinks: [ 
   { title: "Compétiteurs", url: "/competiteurs" },
-
+  ],
+  },
+  
   { title: "Contact", url: "/contact" },
 ];
 
