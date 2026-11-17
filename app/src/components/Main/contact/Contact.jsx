@@ -284,7 +284,7 @@ export default function Contact({
     <div className="flex flex-col items-center m-auto py-4 px-4">
       {/* Titre */}
       <h1 className="text-xl text-center font-bold p-4 mb-4">
-        Envie de nous rej🏓indre ?
+        Envie de n🏓us rejoindre ?
       </h1>
 
       {/* Formulaire */}
